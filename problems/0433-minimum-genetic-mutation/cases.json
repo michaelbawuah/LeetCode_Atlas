@@ -1,0 +1,59 @@
+[
+  {
+    "name": "single mutation",
+    "args": [
+      "AACCGGTT",
+      "AACCGGTA",
+      [
+        "AACCGGTA"
+      ]
+    ],
+    "expected": 1
+  },
+  {
+    "name": "two mutations",
+    "args": [
+      "AACCGGTT",
+      "AAACGGTA",
+      [
+        "AACCGGTA",
+        "AACCGCTA",
+        "AAACGGTA"
+      ]
+    ],
+    "expected": 2
+  },
+  {
+    "name": "target absent",
+    "args": [
+      "AAAAAAAA",
+      "CAAAAAAA",
+      []
+    ],
+    "expected": -1
+  },
+  {
+    "name": "target isolated",
+    "args": [
+      "AAAAAAAA",
+      "CCCCCCCC",
+      [
+        "CCCCCCCC"
+      ]
+    ],
+    "expected": -1
+  },
+  {
+    "name": "branching bank",
+    "args": [
+      "AAAAACCC",
+      "AACCCCCC",
+      [
+        "AAAACCCC",
+        "AAACCCCC",
+        "AACCCCCC"
+      ]
+    ],
+    "expected": 3
+  }
+]

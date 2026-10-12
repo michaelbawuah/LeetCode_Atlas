@@ -1,0 +1,29 @@
+{
+  "id": 433,
+  "title": "Minimum Genetic Mutation",
+  "slug": "minimum-genetic-mutation",
+  "difficulty": "Medium",
+  "patterns": [
+    "graph",
+    "breadth-first-search"
+  ],
+  "method": "minMutation",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity_language": "Python",
+  "complexity": {
+    "time": "O(B L^2) expected for fixed alphabet",
+    "space": "O(B L) auxiliary"
+  },
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O(B L^2) expected for fixed alphabet",
+    "space": "O(B L) auxiliary"
+  }
+}
