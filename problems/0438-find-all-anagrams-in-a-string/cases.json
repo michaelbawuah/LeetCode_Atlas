@@ -1,0 +1,56 @@
+[
+  {
+    "name": "ordinary",
+    "args": [
+      "cbaebabacd",
+      "abc"
+    ],
+    "expected": [
+      0,
+      6
+    ]
+  },
+  {
+    "name": "overlap",
+    "args": [
+      "abab",
+      "ab"
+    ],
+    "expected": [
+      0,
+      1,
+      2
+    ]
+  },
+  {
+    "name": "too-long",
+    "args": [
+      "a",
+      "ab"
+    ],
+    "expected": []
+  },
+  {
+    "name": "duplicate-letters",
+    "args": [
+      "baa",
+      "aa"
+    ],
+    "expected": [
+      1
+    ]
+  },
+  {
+    "name": "single-letter",
+    "args": [
+      "aaaa",
+      "a"
+    ],
+    "expected": [
+      0,
+      1,
+      2,
+      3
+    ]
+  }
+]

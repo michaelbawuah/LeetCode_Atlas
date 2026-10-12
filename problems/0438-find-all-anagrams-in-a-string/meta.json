@@ -1,0 +1,23 @@
+{
+  "id": 438,
+  "slug": "find-all-anagrams-in-a-string",
+  "title": "Find All Anagrams in a String",
+  "difficulty": "Medium",
+  "patterns": [
+    "sliding-window",
+    "frequency-counting"
+  ],
+  "method": "findAnagrams",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "kind": "method",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n + m) for the fixed alphabet",
+    "space": "O(1) auxiliary; O(n) output"
+  },
+  "judge_status": "not_recorded"
+}
