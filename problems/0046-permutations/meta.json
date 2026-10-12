@@ -17,5 +17,10 @@
     "time": "O(n n!)",
     "space": "O(n) auxiliary; O(n n!) output"
   },
-  "judge_status": "not_recorded"
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n n!)",
+    "space": "O(n) auxiliary; O(n n!) output"
+  }
 }

@@ -21,3 +21,7 @@ There are n! results, each copied in O(n) time: O(n n!) total time and output st
 Storing the same mutable list repeatedly makes all results reflect later swaps. Copy each completed ordering, and undo swaps when returning. Tests compare against an independent exhaustive iterator and check the factorial result count. Outer answer order is arbitrary; order within each permutation is essential.
 
 **Follow-up:** how should branches be deduplicated when input values can repeat?
+
+## Python and C++23 comparison
+
+Both versions swap values in a private copy and undo each swap after returning from a branch. C++ appends a new copied vector for every complete permutation, while Python appends a new copied list. Time is O(n n!), auxiliary copy and recursion storage O(n), and result storage O(n n!). The caller's input order is preserved.
