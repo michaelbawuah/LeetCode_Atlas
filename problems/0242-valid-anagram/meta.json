@@ -1,0 +1,22 @@
+{
+  "id": 242,
+  "title": "Valid Anagram",
+  "slug": "valid-anagram",
+  "difficulty": "Easy",
+  "patterns": [
+    "frequency-counting"
+  ],
+  "method": "isAnagram",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n + m) expected",
+    "space": "O(sigma)"
+  },
+  "judge_status": "not_recorded"
+}

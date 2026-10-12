@@ -1,0 +1,58 @@
+[
+  {
+    "name": "matching counts",
+    "args": [
+      "anagram",
+      "nagaram"
+    ],
+    "expected": true
+  },
+  {
+    "name": "different letters",
+    "args": [
+      "rat",
+      "car"
+    ],
+    "expected": false
+  },
+  {
+    "name": "same single letter",
+    "args": [
+      "a",
+      "a"
+    ],
+    "expected": true
+  },
+  {
+    "name": "different single letters",
+    "args": [
+      "a",
+      "b"
+    ],
+    "expected": false
+  },
+  {
+    "name": "different lengths",
+    "args": [
+      "ab",
+      "a"
+    ],
+    "expected": false
+  },
+  {
+    "name": "same character set different counts",
+    "args": [
+      "aacc",
+      "ccac"
+    ],
+    "expected": false
+  },
+  {
+    "name": "rearranged repeated letters",
+    "args": [
+      "abab",
+      "bbaa"
+    ],
+    "expected": true
+  }
+]
