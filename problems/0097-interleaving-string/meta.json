@@ -20,5 +20,9 @@
     "space": "O(min(m, n) + 1)"
   },
   "complexity_language": "Python",
-  "judge_status": "not_recorded"
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O(m n + m + n + r + 1)",
+    "space": "O(m + n + r + 1) including string copies; O(min(m, n) + 1) DP states"
+  }
 }

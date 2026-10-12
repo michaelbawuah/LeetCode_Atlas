@@ -22,3 +22,9 @@ How would the same state graph count all valid interleavings instead of only rep
 
 ## Verification
 Named fixtures and independent generated-input references accompany the implementation. Official judge results are tracked separately in metadata.
+
+## C++23 counterpart
+
+The sources are swapped in constant time to keep the Boolean DP row on the shorter source. The three judge-facing by-value string copies are included: m and n are source lengths and r is the candidate length. A total-length mismatch returns before DP allocation, while the general core retains O(min(m, n) + 1) states.
+
+C++: **O(m n + m + n + r + 1) time; O(m + n + r + 1) including string copies; O(min(m, n) + 1) DP states space**. Named fixtures and 150 reproducible generated inputs compare this implementation with the Python track.
