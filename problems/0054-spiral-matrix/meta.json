@@ -1,0 +1,22 @@
+{
+  "id": 54,
+  "title": "Spiral Matrix",
+  "slug": "spiral-matrix",
+  "difficulty": "Medium",
+  "patterns": [
+    "matrix",
+    "simulation"
+  ],
+  "method": "spiralOrder",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(mn)",
+    "space": "O(1) auxiliary; O(mn) output"
+  },
+  "judge_status": "not_recorded"
+}
