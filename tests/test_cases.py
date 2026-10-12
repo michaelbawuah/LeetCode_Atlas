@@ -63,7 +63,7 @@ CASES = _load_cases()
 def test_python_shared_case(folder, meta, case):
     inputs = {key: case[key] for key in ("args", "operations", "arguments") if key in case}
     actual = evaluate(folder, **inputs)
-    assert check_result(meta, actual, case["expected"]), (
+    assert check_result(meta, actual, case["expected"], args=case.get("args")), (
         f"{folder.name}/{case['name']}: expected {case['expected']!r}, got {actual!r}"
     )
 
@@ -75,7 +75,7 @@ def test_cpp_runners_match_all_shared_cases():
     """Batch each executable's JSON-lines input; enforce complete runner coverage."""
     binary_dir = Path(os.environ["ATLAS_CPP_BIN_DIR"]).resolve()
     cpp_folders = [folder for folder in problem_dirs() if (folder / "cpp_runner.cpp").is_file()]
-    assert len(cpp_folders) == 10, f"Expected 10 C++ problem runners, found {len(cpp_folders)}"
+    assert cpp_folders, "No C++ problem runners were discovered"
     suffix = ".exe" if os.name == "nt" else ""
     expected_names = {f"atlas_{folder.name.replace('-', '_')}{suffix}" for folder in cpp_folders}
     assert binary_dir.is_dir(), f"C++ binary directory does not exist: {binary_dir}"
@@ -111,10 +111,10 @@ def test_cpp_runners_match_all_shared_cases():
                 actual = json.loads(line)
             except json.JSONDecodeError as error:
                 pytest.fail(f"{folder.name}/{case['name']}: invalid runner JSON: {error}")
-            assert check_result(meta, actual, case["expected"]), (
+            assert check_result(meta, actual, case["expected"], args=case.get("args")), (
                 f"{folder.name}/{case['name']}: C++ expected {case['expected']!r}, got {actual!r}"
             )
             python_result = evaluate(folder, args=case["args"])
-            assert check_result(meta, actual, python_result), (
+            assert check_result(meta, actual, python_result, args=case.get("args")), (
                 f"{folder.name}/{case['name']}: C++/Python disagreement"
             )

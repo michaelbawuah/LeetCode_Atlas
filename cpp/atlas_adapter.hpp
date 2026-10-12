@@ -4,6 +4,8 @@
 #include <cstdint>
 #include <limits>
 #include <memory>
+#include <optional>
+#include <queue>
 #include <stdexcept>
 #include <string>
 #include <unordered_set>
@@ -76,6 +78,122 @@ inline json list_to_json(const ListNode* head) {
         }
         values.push_back(head->val);
         head = head->next;
+    }
+    return values;
+}
+
+struct TreeNode {
+    int val = 0;
+    TreeNode* left = nullptr;
+    TreeNode* right = nullptr;
+
+    TreeNode() = default;
+    explicit TreeNode(int value) : val(value) {}
+};
+
+class TreeArena {
+public:
+    TreeNode* build(const json& values) {
+        if (!values.is_array()) {
+            throw std::invalid_argument("a binary tree must be a JSON level-order array");
+        }
+        std::vector<std::optional<int>> decoded;
+        decoded.reserve(values.size());
+        for (const json& value : values) {
+            decoded.push_back(value.is_null() ? std::nullopt : std::optional<int>(read_value(value)));
+        }
+        if (decoded.empty()) {
+            return nullptr;
+        }
+        if (!decoded.front().has_value()) {
+            for (const auto& value : decoded) {
+                if (value.has_value()) {
+                    throw std::invalid_argument("a null tree root cannot have descendants");
+                }
+            }
+            return nullptr;
+        }
+        std::vector<std::unique_ptr<TreeNode>> new_nodes;
+        new_nodes.push_back(std::make_unique<TreeNode>(*decoded.front()));
+        TreeNode* root = new_nodes.front().get();
+        std::queue<TreeNode*> parents;
+        parents.push(root);
+        std::size_t index = 1;
+        while (!parents.empty() && index < decoded.size()) {
+            TreeNode* parent = parents.front();
+            parents.pop();
+            for (int side = 0; side < 2 && index < decoded.size(); ++side, ++index) {
+                if (!decoded[index].has_value()) {
+                    continue;
+                }
+                new_nodes.push_back(std::make_unique<TreeNode>(*decoded[index]));
+                TreeNode* child = new_nodes.back().get();
+                if (side == 0) {
+                    parent->left = child;
+                } else {
+                    parent->right = child;
+                }
+                parents.push(child);
+            }
+        }
+        for (; index < decoded.size(); ++index) {
+            if (decoded[index].has_value()) {
+                throw std::invalid_argument("binary-tree array contains an unreachable node");
+            }
+        }
+        nodes_.reserve(nodes_.size() + new_nodes.size());
+        for (auto& node : new_nodes) {
+            nodes_.push_back(std::move(node));
+        }
+        return root;
+    }
+
+private:
+    static int read_value(const json& value) {
+        if (!value.is_number_integer()) {
+            throw std::invalid_argument("binary-tree values must be integers or null");
+        }
+        if (value.is_number_unsigned()) {
+            const auto number = value.get<std::uint64_t>();
+            if (number > static_cast<std::uint64_t>(std::numeric_limits<int>::max())) {
+                throw std::out_of_range("binary-tree value does not fit int");
+            }
+            return static_cast<int>(number);
+        }
+        const auto number = value.get<std::int64_t>();
+        if (number < std::numeric_limits<int>::min() || number > std::numeric_limits<int>::max()) {
+            throw std::out_of_range("binary-tree value does not fit int");
+        }
+        return static_cast<int>(number);
+    }
+
+    std::vector<std::unique_ptr<TreeNode>> nodes_;
+};
+
+inline json tree_to_json(const TreeNode* root) {
+    json values = json::array();
+    if (root == nullptr) {
+        return values;
+    }
+    std::queue<const TreeNode*> nodes;
+    std::unordered_set<const TreeNode*> visited;
+    nodes.push(root);
+    while (!nodes.empty()) {
+        const TreeNode* node = nodes.front();
+        nodes.pop();
+        if (node == nullptr) {
+            values.push_back(nullptr);
+            continue;
+        }
+        if (!visited.insert(node).second) {
+            throw std::invalid_argument("cannot serialize a cyclic or shared-node binary tree");
+        }
+        values.push_back(node->val);
+        nodes.push(node->left);
+        nodes.push(node->right);
+    }
+    while (!values.empty() && values.back().is_null()) {
+        values.erase(values.size() - 1);
     }
     return values;
 }

@@ -52,7 +52,7 @@ def main():
         case = cases[args.case]
         inputs = {key: case[key] for key in ("args", "operations", "arguments") if key in case}
         actual = evaluate(folder, **inputs)
-        passed = check_result(meta, actual, case["expected"])
+        passed = check_result(meta, actual, case["expected"], args=case.get("args"))
         print(json.dumps({"case": case["name"], "result": actual, "passed": passed}))
         return 0 if passed else 1
     except (ValueError, TypeError, KeyError) as error:

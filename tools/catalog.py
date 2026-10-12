@@ -33,12 +33,27 @@ def collect(root: Path = ROOT) -> list[dict]:
             raise ValueError(f"Use kebab-case pattern tags: {folder.name}")
         if meta["kind"] not in {"method", "design"}:
             raise ValueError(f"Unknown invocation kind: {folder.name}")
-        if meta["checker"] not in {"exact", "unordered", "unordered_groups", "unordered_rows"}:
+        if meta["checker"] not in {
+            "exact",
+            "unordered",
+            "unordered_groups",
+            "unordered_rows",
+            "topological_order",
+        }:
             raise ValueError(f"Unknown checker: {folder.name}")
         if any(t not in {"value", "listnode", "treenode"} for t in meta["args_types"]):
             raise ValueError(f"Unknown argument adapter: {folder.name}")
         if meta["return_type"] not in {"value", "listnode", "treenode"}:
             raise ValueError(f"Unknown result adapter: {folder.name}")
+        if "result_from_arg" in meta:
+            index = meta["result_from_arg"]
+            if (
+                meta["kind"] != "method"
+                or type(index) is not int
+                or not 0 <= index < len(meta["args_types"])
+                or meta["args_types"][index] != meta["return_type"]
+            ):
+                raise ValueError(f"Invalid in-place result argument: {folder.name}")
         if meta["judge_status"] not in {"not_recorded", "accepted"}:
             raise ValueError(f"Unknown judge status: {folder.name}")
         if meta["judge_status"] == "accepted" and not meta.get("submission_evidence"):
@@ -133,7 +148,19 @@ def render(entries: list[dict]) -> dict[str, str]:
             for e in group
         )
         pattern_lines.append("")
+    readme = (ROOT / "README.md").read_text()
+    stats_pattern = r"<!-- atlas:stats:start -->.*?<!-- atlas:stats:end -->"
+    if len(re.findall(stats_pattern, readme, flags=re.DOTALL)) != 1:
+        raise ValueError("README needs exactly one generated atlas statistics section")
+    stats = (
+        "<!-- atlas:stats:start -->\n"
+        f"**{len(entries)} distinct problems · {counts['Python']} Python solutions · "
+        f"{counts['C++23']} C++23 counterparts**\n"
+        "<!-- atlas:stats:end -->"
+    )
+    readme = re.sub(stats_pattern, lambda match: stats, readme, flags=re.DOTALL)
     return {
+        "README.md": readme,
         "catalog.json": json.dumps(catalog, indent=2, ensure_ascii=False) + "\n",
         "docs/problems.md": "\n".join(lines),
         "docs/pattern-index.md": "\n".join(pattern_lines) + "\n",

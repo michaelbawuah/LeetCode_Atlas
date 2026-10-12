@@ -71,3 +71,59 @@ TEST_CASE("The line protocol accepts only one JSON argument array") {
     REQUIRE_THROWS_AS(parse_case_args("[] []"), json::parse_error);
     REQUIRE(parse_case_args("[[9]]") == json::array({json::array({9})}));
 }
+
+TEST_CASE("Empty trees have a canonical empty-array serialization") {
+    TreeArena arena;
+    REQUIRE(arena.build(json::array()) == nullptr);
+    REQUIRE(arena.build(json::array({nullptr})) == nullptr);
+    REQUIRE(arena.build(json::array({nullptr, nullptr})) == nullptr);
+    REQUIRE(tree_to_json(nullptr) == json::array());
+}
+
+TEST_CASE("Tree conversion preserves sparse level-order shapes and integer boundaries") {
+    TreeArena arena;
+    const json sparse = json::array({1, nullptr, 2, 3});
+    REQUIRE(tree_to_json(arena.build(sparse)) == sparse);
+    const json uneven = json::array({1, 2, 3, nullptr, 4, 5, nullptr, 6});
+    REQUIRE(tree_to_json(arena.build(uneven)) == uneven);
+    const json boundaries = json::array({0, std::numeric_limits<int>::min(), std::numeric_limits<int>::max()});
+    REQUIRE(tree_to_json(arena.build(boundaries)) == boundaries);
+    REQUIRE(tree_to_json(arena.build(json::array({8, nullptr, nullptr, nullptr}))) == json::array({8}));
+}
+
+TEST_CASE("Tree arenas keep earlier trees alive and isolate malformed input") {
+    TreeArena arena;
+    TreeNode* first = arena.build(json::array({4, 2, 6}));
+    TreeNode* second = arena.build(json::array({7, nullptr, 9}));
+    REQUIRE(first != second);
+    second->right->val = 10;
+    REQUIRE(tree_to_json(first) == json::array({4, 2, 6}));
+    REQUIRE(tree_to_json(second) == json::array({7, nullptr, 10}));
+    REQUIRE_THROWS_AS(arena.build(json::object()), std::invalid_argument);
+    REQUIRE_THROWS_AS(arena.build(json::array({nullptr, 1})), std::invalid_argument);
+    REQUIRE_THROWS_AS(arena.build(json::array({1, nullptr, nullptr, 2})), std::invalid_argument);
+    REQUIRE_THROWS_AS(arena.build(json::array({1, true})), std::invalid_argument);
+    REQUIRE_THROWS_AS(arena.build(json::array({1, 2.5})), std::invalid_argument);
+    REQUIRE_THROWS_AS(arena.build(json::array({1, "2"})), std::invalid_argument);
+    const auto above_max = static_cast<std::int64_t>(std::numeric_limits<int>::max()) + 1;
+    const auto below_min = static_cast<std::int64_t>(std::numeric_limits<int>::min()) - 1;
+    REQUIRE_THROWS_AS(arena.build(json::array({above_max})), std::out_of_range);
+    REQUIRE_THROWS_AS(arena.build(json::array({below_min})), std::out_of_range);
+    REQUIRE_THROWS_AS(arena.build(json::array({std::numeric_limits<std::uint64_t>::max()})), std::out_of_range);
+    REQUIRE(tree_to_json(first) == json::array({4, 2, 6}));
+    REQUIRE(tree_to_json(arena.build(json::array({11}))) == json::array({11}));
+}
+
+TEST_CASE("Tree serialization rejects cycles and repeated node identities") {
+    TreeArena arena;
+    TreeNode* root = arena.build(json::array({1, 2, 3}));
+    TreeNode* left = root->left;
+    left->left = root;
+    REQUIRE_THROWS_AS(tree_to_json(root), std::invalid_argument);
+    left->left = nullptr;
+    TreeNode* right = root->right;
+    root->right = left;
+    REQUIRE_THROWS_AS(tree_to_json(root), std::invalid_argument);
+    root->right = right;
+    REQUIRE(tree_to_json(root) == json::array({1, 2, 3}));
+}

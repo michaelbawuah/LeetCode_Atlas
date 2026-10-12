@@ -175,7 +175,13 @@ def evaluate(
             raise ValueError("Argument count does not match metadata")
         adapted = [_adapt(value, kind) for value, kind in zip(deepcopy(args), kinds, strict=True)]
         method = getattr(module.Solution(), meta["method"])
-        return _serialize(method(*adapted), meta["return_type"])
+        result = method(*adapted)
+        if "result_from_arg" in meta:
+            index = meta["result_from_arg"]
+            if type(index) is not int or not 0 <= index < len(adapted):
+                raise ValueError("In-place result index does not match arguments")
+            result = adapted[index]
+        return _serialize(result, meta["return_type"])
     if meta["kind"] == "design":
         if args is not None or operations is None or arguments is None:
             raise ValueError("Design cases require operations and arguments only")
@@ -233,6 +239,23 @@ def normalize(meta: dict[str, Any], result: Any) -> Any:
     raise ValueError(f"Unknown checker: {checker}")
 
 
-def check_result(meta: dict[str, Any], actual: Any, expected: Any) -> bool:
+def check_result(
+    meta: dict[str, Any], actual: Any, expected: Any, args: list[Any] | None = None
+) -> bool:
     """Compare JSON values with explicit ordering rules and scalar types."""
+    if meta.get("checker") == "topological_order":
+        if args is None or len(args) != 2:
+            raise ValueError("Topological checker requires course count and prerequisites")
+        if expected == []:
+            return _json_key(actual) == "[]"
+        count, prerequisites = args
+        if (
+            not isinstance(actual, list)
+            or len(actual) != count
+            or any(type(course) is not int for course in actual)
+            or set(actual) != set(range(count))
+        ):
+            return False
+        positions = {course: index for index, course in enumerate(actual)}
+        return all(positions[before] < positions[after] for after, before in prerequisites)
     return _json_key(normalize(meta, actual)) == _json_key(normalize(meta, expected))

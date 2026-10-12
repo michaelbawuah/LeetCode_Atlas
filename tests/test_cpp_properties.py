@@ -4,11 +4,12 @@ import json
 import os
 import random
 import subprocess
+from collections import Counter, deque
 from pathlib import Path
 
 import pytest
 
-from atlas.runtime import check_result, evaluate, metadata, problem_dirs
+from atlas.runtime import TreeNode, check_result, evaluate, metadata, problem_dirs, tree_to_json
 
 FOLDERS = [
     "0001-two-sum",
@@ -21,6 +22,21 @@ FOLDERS = [
     "0033-search-in-rotated-sorted-array",
     "0206-reverse-linked-list",
     "0198-house-robber",
+    "0128-longest-consecutive-sequence",
+    "0053-maximum-subarray",
+    "0056-merge-intervals",
+    "0057-insert-interval",
+    "0076-minimum-window-substring",
+    "0150-evaluate-reverse-polish-notation",
+    "0875-koko-eating-bananas",
+    "0215-kth-largest-element-in-an-array",
+    "0019-remove-nth-node-from-end-of-list",
+    "0098-validate-binary-search-tree",
+    "0207-course-schedule",
+    "0684-redundant-connection",
+    "0994-rotting-oranges",
+    "0322-coin-change",
+    "0300-longest-increasing-subsequence",
 ]
 
 
@@ -59,6 +75,79 @@ def generated_args(folder, rng):
         return [[rng.randint(-100, 100) for _ in range(rng.randint(0, 40))]]
     if folder == "0198-house-robber":
         return [[rng.randint(0, 20) for _ in range(rng.randint(1, 15))]]
+    if folder == "0128-longest-consecutive-sequence":
+        return [[rng.randint(-20, 20) for _ in range(rng.randint(0, 40))]]
+    if folder == "0053-maximum-subarray":
+        return [[rng.randint(-20, 20) for _ in range(rng.randint(1, 30))]]
+    if folder == "0056-merge-intervals":
+        return [[sorted(rng.sample(range(50), 2)) for _ in range(rng.randint(1, 15))]]
+    if folder == "0057-insert-interval":
+        intervals = []
+        cursor = 0
+        for _ in range(rng.randint(0, 12)):
+            start = cursor + rng.randint(0, 3)
+            end = start + rng.randint(0, 5)
+            intervals.append([start, end])
+            cursor = end + rng.randint(1, 4)
+        return [intervals, sorted(rng.sample(range(cursor + 10), 2))]
+    if folder == "0076-minimum-window-substring":
+        s = "".join(rng.choices("aAbBc", k=rng.randint(1, 35)))
+        t = "".join(rng.choices("aAbBc", k=rng.randint(1, 6)))
+        return [s, t]
+    if folder == "0150-evaluate-reverse-polish-notation":
+        a, b, c = (rng.randint(-50, 50) for _ in range(3))
+        first, second = rng.choices(["+", "-", "*", "/"], k=2)
+        if first == "/" and b == 0:
+            b = 1
+        if second == "/" and c == 0:
+            c = 1
+        return [[str(a), str(b), first, str(c), second]]
+    if folder == "0875-koko-eating-bananas":
+        piles = [rng.randint(1, 1000) for _ in range(rng.randint(1, 12))]
+        return [piles, rng.randint(len(piles), 20 * len(piles))]
+    if folder == "0215-kth-largest-element-in-an-array":
+        nums = [rng.randint(-100, 100) for _ in range(rng.randint(1, 40))]
+        return [nums, rng.randint(1, len(nums))]
+    if folder == "0019-remove-nth-node-from-end-of-list":
+        nums = [rng.randint(0, 100) for _ in range(rng.randint(1, 30))]
+        return [nums, rng.randint(1, len(nums))]
+    if folder == "0098-validate-binary-search-tree":
+        root = TreeNode(rng.randint(-20, 20))
+        pending = deque([(root, 0)])
+        while pending:
+            node, depth = pending.popleft()
+            if depth == 4:
+                continue
+            for side in ("left", "right"):
+                if rng.random() < 0.65:
+                    child = TreeNode(rng.randint(-20, 20))
+                    setattr(node, side, child)
+                    pending.append((child, depth + 1))
+        return [tree_to_json(root)]
+    if folder == "0207-course-schedule":
+        count = rng.randint(1, 10)
+        possibilities = [[a, b] for a in range(count) for b in range(count)]
+        return [count, rng.sample(possibilities, rng.randint(0, min(len(possibilities), 16)))]
+    if folder == "0684-redundant-connection":
+        count = rng.randint(3, 10)
+        edges = [sorted([node, rng.randrange(1, node)]) for node in range(2, count + 1)]
+        present = {tuple(sorted(edge)) for edge in edges}
+        choices = [
+            [a, b]
+            for a in range(1, count + 1)
+            for b in range(a + 1, count + 1)
+            if (a, b) not in present
+        ]
+        edges.append(rng.choice(choices))
+        rng.shuffle(edges)
+        return [edges]
+    if folder == "0994-rotting-oranges":
+        rows, columns = rng.randint(1, 5), rng.randint(1, 5)
+        return [[[rng.randint(0, 2) for _ in range(columns)] for _ in range(rows)]]
+    if folder == "0322-coin-change":
+        return [rng.sample(range(1, 21), rng.randint(1, 6)), rng.randint(0, 80)]
+    if folder == "0300-longest-increasing-subsequence":
+        return [[rng.randint(-100, 100) for _ in range(rng.randint(1, 30))]]
     raise ValueError(f"No generator for {folder}")
 
 
@@ -94,5 +183,18 @@ def test_generated_cpp_python_parity(folder):
             assert all(type(i) is int and 0 <= i < len(args[0]) for i in actual)
             assert actual[0] != actual[1]
             assert args[0][actual[0]] + args[0][actual[1]] == args[1]
+        elif folder == "0076-minimum-window-substring":
+            # Generated inputs can have tied shortest windows, beyond the unique-answer contract.
+            assert isinstance(actual, str) and len(actual) == len(expected)
+            if actual:
+                assert actual in args[0]
+                counts = Counter(actual)
+                assert all(counts[letter] >= needed for letter, needed in Counter(args[1]).items())
         else:
-            assert check_result(meta, actual, expected), (folder, index, args, actual, expected)
+            assert check_result(meta, actual, expected, args=args), (
+                folder,
+                index,
+                args,
+                actual,
+                expected,
+            )
