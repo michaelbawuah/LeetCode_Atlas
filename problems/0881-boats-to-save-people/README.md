@@ -21,3 +21,7 @@ The independent oracle explores all pairings using a memoized subset mask, witho
 A boat can carry at most two people, regardless of unused weight capacity. Every individual weight is at most limit under the contract.
 
 **Follow-up:** Why does allowing three people per boat destroy this simple pairing argument?
+
+## C++23 counterpart
+
+C++ sorts a copied vector, preserving input; the O(n) copy dominates its sorting stack. The sum of two valid weights is at most 60,000 under the 30,000 limit bound and safely fits `int`. Signed indexes handle the final singleton without unsigned underflow. Time is O(n log n), and auxiliary space is O(n).
