@@ -1,0 +1,106 @@
+[
+  {
+    "name": "resends on chain",
+    "args": [
+      [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      [
+        0,
+        2,
+        1
+      ]
+    ],
+    "expected": 8
+  },
+  {
+    "name": "no resends triangle",
+    "args": [
+      [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      [
+        0,
+        10,
+        10
+      ]
+    ],
+    "expected": 3
+  },
+  {
+    "name": "one server link",
+    "args": [
+      [
+        [
+          0,
+          1
+        ]
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "expected": 4
+  },
+  {
+    "name": "reply exactly at patience",
+    "args": [
+      [
+        [
+          0,
+          1
+        ]
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "expected": 3
+  },
+  {
+    "name": "different resend gaps",
+    "args": [
+      [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      [
+        0,
+        5,
+        3,
+        2
+      ]
+    ],
+    "expected": 11
+  }
+]

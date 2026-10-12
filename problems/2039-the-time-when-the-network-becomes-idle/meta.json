@@ -1,0 +1,24 @@
+{
+  "id": 2039,
+  "title": "The Time When the Network Becomes Idle",
+  "slug": "the-time-when-the-network-becomes-idle",
+  "difficulty": "Medium",
+  "patterns": [
+    "graph",
+    "breadth-first-search"
+  ],
+  "method": "networkBecomesIdle",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity_language": "Python",
+  "complexity": {
+    "time": "O(V + E)",
+    "space": "O(V + E)"
+  },
+  "judge_status": "not_recorded"
+}
