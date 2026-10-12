@@ -1,0 +1,91 @@
+[
+  {
+    "name": "connected triangle",
+    "args": [
+      3,
+      [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      0,
+      2
+    ],
+    "expected": true
+  },
+  {
+    "name": "separate components",
+    "args": [
+      4,
+      [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      0,
+      3
+    ],
+    "expected": false
+  },
+  {
+    "name": "same vertex",
+    "args": [
+      1,
+      [],
+      0,
+      0
+    ],
+    "expected": true
+  },
+  {
+    "name": "no edges",
+    "args": [
+      3,
+      [],
+      0,
+      2
+    ],
+    "expected": false
+  },
+  {
+    "name": "indirect chain",
+    "args": [
+      5,
+      [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      0,
+      4
+    ],
+    "expected": true
+  }
+]
