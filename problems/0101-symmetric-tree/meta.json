@@ -1,0 +1,27 @@
+{
+  "id": 101,
+  "title": "Symmetric Tree",
+  "difficulty": "Easy",
+  "method": "isSymmetric",
+  "args_types": [
+    "treenode"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(h)"
+  },
+  "patterns": [
+    "tree",
+    "depth-first-search"
+  ],
+  "checker": "exact",
+  "slug": "symmetric-tree",
+  "kind": "method",
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n)",
+    "space": "O(h)"
+  }
+}

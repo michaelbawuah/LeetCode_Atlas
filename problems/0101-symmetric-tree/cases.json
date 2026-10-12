@@ -1,0 +1,77 @@
+[
+  {
+    "name": "mirrored",
+    "args": [
+      [
+        1,
+        2,
+        2,
+        3,
+        4,
+        4,
+        3
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "name": "shape_mismatch",
+    "args": [
+      [
+        1,
+        2,
+        2,
+        null,
+        3,
+        null,
+        3
+      ]
+    ],
+    "expected": false
+  },
+  {
+    "name": "singleton",
+    "args": [
+      [
+        1
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "name": "value_mismatch",
+    "args": [
+      [
+        1,
+        2,
+        3
+      ]
+    ],
+    "expected": false
+  },
+  {
+    "name": "sparse_mirror",
+    "args": [
+      [
+        1,
+        2,
+        2,
+        null,
+        3,
+        3,
+        null
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "name": "one_child",
+    "args": [
+      [
+        1,
+        2
+      ]
+    ],
+    "expected": false
+  }
+]
