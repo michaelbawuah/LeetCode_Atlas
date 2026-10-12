@@ -1,0 +1,27 @@
+{
+  "id": 63,
+  "title": "Unique Paths II",
+  "slug": "unique-paths-ii",
+  "difficulty": "Medium",
+  "patterns": [
+    "dynamic-programming",
+    "grid"
+  ],
+  "method": "uniquePathsWithObstacles",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(r c) arithmetic operations",
+    "space": "O(c) integer states"
+  },
+  "complexity_language": "Python",
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O(r c) bounded-width operations",
+    "space": "O(c)"
+  }
+}
