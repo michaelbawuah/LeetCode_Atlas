@@ -19,3 +19,6 @@ Running the linear algorithm on the entire circle can select both endpoints. Exc
 
 ## Follow-up
 What changes when the forbidden neighbor distance is two rather than one?
+
+## C++23 counterpart
+The C++23 counterpart uses index ranges rather than copying either linear subarray, matching Python’s O(n) time/O(1) auxiliary space. Rolling amounts use int64_t before the bounded int result is returned. Neither version changes the amounts.
