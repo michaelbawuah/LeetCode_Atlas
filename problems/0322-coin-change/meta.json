@@ -1,0 +1,27 @@
+{
+  "id": 322,
+  "title": "Coin Change",
+  "difficulty": "Medium",
+  "patterns": [
+    "dynamic-programming"
+  ],
+  "method": "coinChange",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(a * c)",
+    "space": "O(a)"
+  },
+  "slug": "coin-change",
+  "kind": "method",
+  "checker": "exact",
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(a c + a + 1)",
+    "space": "O(a + 1) auxiliary; O(1) scalar output"
+  }
+}
