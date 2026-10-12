@@ -1,0 +1,23 @@
+{
+  "id": 47,
+  "title": "Permutations II",
+  "slug": "permutations-ii",
+  "difficulty": "Medium",
+  "patterns": [
+    "backtracking",
+    "frequency-counting"
+  ],
+  "method": "permuteUnique",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "unordered_rows",
+  "complexity": {
+    "time": "O(n + U log U + n U P) conservative bound",
+    "space": "O(n + U) auxiliary; O(n P) output"
+  },
+  "complexity_language": "Python",
+  "judge_status": "not_recorded"
+}
