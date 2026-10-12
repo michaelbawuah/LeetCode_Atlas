@@ -1,0 +1,97 @@
+[
+  {
+    "name": "shrink to two elements",
+    "args": [
+      7,
+      [
+        2,
+        3,
+        1,
+        2,
+        4,
+        3
+      ]
+    ],
+    "expected": 2
+  },
+  {
+    "name": "one element meets target",
+    "args": [
+      4,
+      [
+        1,
+        4,
+        4
+      ]
+    ],
+    "expected": 1
+  },
+  {
+    "name": "unreachable sum",
+    "args": [
+      11,
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "entire array required",
+    "args": [
+      15,
+      [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    ],
+    "expected": 5
+  },
+  {
+    "name": "positive singleton",
+    "args": [
+      1,
+      [
+        1
+      ]
+    ],
+    "expected": 1
+  },
+  {
+    "name": "best window near end",
+    "args": [
+      8,
+      [
+        1,
+        1,
+        1,
+        5,
+        3
+      ]
+    ],
+    "expected": 2
+  },
+  {
+    "name": "shorter late singleton",
+    "args": [
+      10,
+      [
+        2,
+        3,
+        10,
+        1
+      ]
+    ],
+    "expected": 1
+  }
+]
