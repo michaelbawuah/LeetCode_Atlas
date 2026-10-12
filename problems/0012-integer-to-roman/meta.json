@@ -1,0 +1,27 @@
+{
+  "id": 12,
+  "slug": "integer-to-roman",
+  "title": "Integer to Roman",
+  "difficulty": "Medium",
+  "patterns": [
+    "math",
+    "greedy"
+  ],
+  "method": "intToRoman",
+  "args_types": [
+    "value"
+  ],
+  "kind": "method",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(1) under 1..3999",
+    "space": "O(1) bounded output"
+  },
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(1) under 1..3999",
+    "space": "O(1) bounded output"
+  }
+}
