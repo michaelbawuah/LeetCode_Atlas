@@ -1,0 +1,21 @@
+{
+  "id": 190,
+  "title": "Reverse Bits",
+  "difficulty": "Easy",
+  "patterns": [
+    "bit-manipulation"
+  ],
+  "method": "reverseBits",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(1) for 32 bits",
+    "space": "O(1)"
+  },
+  "slug": "reverse-bits",
+  "kind": "method",
+  "checker": "exact",
+  "judge_status": "not_recorded"
+}

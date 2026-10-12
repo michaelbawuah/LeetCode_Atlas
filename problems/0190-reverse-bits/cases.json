@@ -1,0 +1,58 @@
+[
+  {
+    "name": "mixed_bits",
+    "args": [
+      43261596
+    ],
+    "expected": 964176192
+  },
+  {
+    "name": "near_signed_limit",
+    "args": [
+      2147483644
+    ],
+    "expected": 1073741822
+  },
+  {
+    "name": "zero",
+    "args": [
+      0
+    ],
+    "expected": 0
+  },
+  {
+    "name": "second_bit",
+    "args": [
+      2
+    ],
+    "expected": 1073741824
+  },
+  {
+    "name": "third_bit",
+    "args": [
+      4
+    ],
+    "expected": 536870912
+  },
+  {
+    "name": "adjacent_low_bits",
+    "args": [
+      6
+    ],
+    "expected": 1610612736
+  },
+  {
+    "name": "high_input_bit",
+    "args": [
+      1073741824
+    ],
+    "expected": 2
+  },
+  {
+    "name": "even_signed_limit",
+    "args": [
+      2147483646
+    ],
+    "expected": 2147483646
+  }
+]
