@@ -22,3 +22,9 @@ What extra restriction is necessary if zero or negative values are permitted?
 
 ## Verification
 Named fixtures and an independent generated-input oracle accompany this implementation. Official judge results are recorded separately in metadata.
+
+## C++23 counterpart
+
+Every count update uses only nonnegative addition and copying. Clamping each count to INT_MAX commutes with these operations: min(M, min(M, a) + min(M, b)) = min(M, a + b). Each sum is widened to int64_t before addition and then clamped. The guaranteed final answer fits int, so its clamped value remains exact even when unrelated intermediate counts exceed 64 bits. Positivity ensures every predecessor subtotal is smaller and all transitions remain nonnegative. The odd target with even allowed values is unreachable despite huge counts at even subtotals; it specifically exercises the saturation rule. The core holds T + 1 fixed-width states and reads the input vector by reference.
+
+C++: **O(n T) time; O(T + 1) fixed-width integer states space**. Named fixtures and 150 reproducible generated inputs compare this implementation with the Python track.
