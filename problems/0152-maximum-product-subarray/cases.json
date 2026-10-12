@@ -1,0 +1,88 @@
+[
+  {
+    "name": "positive prefix",
+    "args": [
+      [
+        2,
+        3,
+        -2,
+        4
+      ]
+    ],
+    "expected": 6
+  },
+  {
+    "name": "zero separates negatives",
+    "args": [
+      [
+        -2,
+        0,
+        -1
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "two negatives make large product",
+    "args": [
+      [
+        -2,
+        3,
+        -4
+      ]
+    ],
+    "expected": 24
+  },
+  {
+    "name": "negative singleton",
+    "args": [
+      [
+        -2
+      ]
+    ],
+    "expected": -2
+  },
+  {
+    "name": "zero singleton",
+    "args": [
+      [
+        0
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "three negative units",
+    "args": [
+      [
+        -1,
+        -1,
+        -1
+      ]
+    ],
+    "expected": 1
+  },
+  {
+    "name": "separated positive factors",
+    "args": [
+      [
+        0,
+        2,
+        0,
+        3
+      ]
+    ],
+    "expected": 3
+  },
+  {
+    "name": "minimum product becomes useful",
+    "args": [
+      [
+        -3,
+        -1,
+        -1
+      ]
+    ],
+    "expected": 3
+  }
+]
