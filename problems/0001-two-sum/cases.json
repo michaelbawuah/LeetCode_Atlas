@@ -1,0 +1,93 @@
+[
+  {
+    "name": "basic example",
+    "args": [
+      [
+        2,
+        7,
+        11,
+        15
+      ],
+      9
+    ],
+    "expected": [
+      0,
+      1
+    ]
+  },
+  {
+    "name": "complement must be a different index",
+    "args": [
+      [
+        3,
+        2,
+        4
+      ],
+      6
+    ],
+    "expected": [
+      1,
+      2
+    ]
+  },
+  {
+    "name": "equal pair",
+    "args": [
+      [
+        3,
+        3
+      ],
+      6
+    ],
+    "expected": [
+      0,
+      1
+    ]
+  },
+  {
+    "name": "negative complement",
+    "args": [
+      [
+        -3,
+        4,
+        3,
+        90
+      ],
+      0
+    ],
+    "expected": [
+      0,
+      2
+    ]
+  },
+  {
+    "name": "two zeroes",
+    "args": [
+      [
+        0,
+        4,
+        3,
+        0
+      ],
+      0
+    ],
+    "expected": [
+      0,
+      3
+    ]
+  },
+  {
+    "name": "large opposite values",
+    "args": [
+      [
+        1000000000,
+        -1000000000
+      ],
+      0
+    ],
+    "expected": [
+      0,
+      1
+    ]
+  }
+]

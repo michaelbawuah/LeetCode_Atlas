@@ -1,0 +1,22 @@
+{
+  "id": 1,
+  "title": "Two Sum",
+  "slug": "two-sum",
+  "difficulty": "Easy",
+  "patterns": [
+    "hash-map"
+  ],
+  "method": "twoSum",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "unordered",
+  "complexity": {
+    "time": "O(n) expected",
+    "space": "O(n)"
+  },
+  "judge_status": "not_recorded"
+}
