@@ -1,0 +1,44 @@
+[
+  {
+    "name": "single_vowel",
+    "args": [
+      1
+    ],
+    "expected": 5
+  },
+  {
+    "name": "valid_pairs",
+    "args": [
+      2
+    ],
+    "expected": 10
+  },
+  {
+    "name": "triples",
+    "args": [
+      3
+    ],
+    "expected": 19
+  },
+  {
+    "name": "four_letters",
+    "args": [
+      4
+    ],
+    "expected": 35
+  },
+  {
+    "name": "five_letters",
+    "args": [
+      5
+    ],
+    "expected": 68
+  },
+  {
+    "name": "modular_upper_bound",
+    "args": [
+      20000
+    ],
+    "expected": 759959057
+  }
+]
