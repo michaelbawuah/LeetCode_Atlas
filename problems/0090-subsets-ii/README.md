@@ -22,3 +22,11 @@ How could a frequency representation choose a count from zero through each value
 
 ## Verification
 Named fixtures and independent generated-input references accompany the implementation. Official judge results are tracked separately in metadata.
+
+## C++23 counterpart
+
+C++ sorts a copy and emits each current path once. Skip equal siblings only at the current depth so subsets can still contain multiple occurrences. The checker ignores answer and subset order while retaining duplicate counts.
+
+Time: O(n log n + n 2^n). Space: O(n) auxiliary; O(n 2^n) output.
+
+The JSON adapter creates fresh state per case. Named fixtures and 150 deterministic generated inputs compare the two language implementations; existing independent Python oracles supply a separate behavioral reference.

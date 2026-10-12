@@ -19,5 +19,9 @@
     "space": "O(n) auxiliary; O(n 2^n) output"
   },
   "complexity_language": "Python",
-  "judge_status": "not_recorded"
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O(n log n + n 2^n)",
+    "space": "O(n) auxiliary; O(n 2^n) output"
+  }
 }
