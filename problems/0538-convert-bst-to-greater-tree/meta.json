@@ -1,0 +1,23 @@
+{
+  "id": 538,
+  "title": "Convert BST to Greater Tree",
+  "difficulty": "Medium",
+  "method": "convertBST",
+  "args_types": [
+    "treenode"
+  ],
+  "return_type": "treenode",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(h)"
+  },
+  "patterns": [
+    "tree",
+    "binary-search-tree",
+    "in-place"
+  ],
+  "checker": "exact",
+  "slug": "convert-bst-to-greater-tree",
+  "kind": "method",
+  "judge_status": "not_recorded"
+}
