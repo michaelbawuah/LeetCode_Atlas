@@ -1,0 +1,28 @@
+{
+  "id": 752,
+  "title": "Open the Lock",
+  "slug": "open-the-lock",
+  "difficulty": "Medium",
+  "patterns": [
+    "graph",
+    "breadth-first-search"
+  ],
+  "method": "openLock",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity_language": "Python",
+  "complexity": {
+    "time": "O(D L + S L^2) expected; D deadends, S <= 10000 states, L = 4",
+    "space": "O(S L + D) auxiliary"
+  },
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O(D L + S L^2) expected; D deadends, S <= 10000 states, L = 4",
+    "space": "O(S L + D L) auxiliary"
+  }
+}
