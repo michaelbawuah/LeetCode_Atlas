@@ -1,0 +1,79 @@
+[
+  {
+    "name": "mixed",
+    "args": [
+      [
+        8,
+        3,
+        10,
+        1,
+        6,
+        null,
+        14,
+        null,
+        null,
+        4,
+        7,
+        13
+      ]
+    ],
+    "expected": 7
+  },
+  {
+    "name": "two_nodes",
+    "args": [
+      [
+        1,
+        5
+      ]
+    ],
+    "expected": 4
+  },
+  {
+    "name": "large_difference",
+    "args": [
+      [
+        0,
+        100000
+      ]
+    ],
+    "expected": 100000
+  },
+  {
+    "name": "equal_values",
+    "args": [
+      [
+        3,
+        3,
+        3
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "descending_chain",
+    "args": [
+      [
+        9,
+        5,
+        null,
+        1
+      ]
+    ],
+    "expected": 8
+  },
+  {
+    "name": "inside_branch",
+    "args": [
+      [
+        1,
+        null,
+        2,
+        null,
+        0,
+        3
+      ]
+    ],
+    "expected": 3
+  }
+]

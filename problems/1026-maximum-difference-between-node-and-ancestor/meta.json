@@ -1,0 +1,22 @@
+{
+  "id": 1026,
+  "title": "Maximum Difference Between Node and Ancestor",
+  "difficulty": "Medium",
+  "method": "maxAncestorDiff",
+  "args_types": [
+    "treenode"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(h)"
+  },
+  "patterns": [
+    "tree",
+    "depth-first-search"
+  ],
+  "checker": "exact",
+  "slug": "maximum-difference-between-node-and-ancestor",
+  "kind": "method",
+  "judge_status": "not_recorded"
+}
