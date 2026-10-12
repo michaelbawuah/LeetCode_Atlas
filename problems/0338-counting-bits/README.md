@@ -19,3 +19,6 @@ The result includes both zero and n, so its length is n+1. Powers of two have on
 
 ## Follow-up
 Can you derive the alternative recurrence using value & (value−1)?
+
+## C++23 counterpart
+The C++23 counterpart uses the same O(n) time, O(n) returned storage, and O(1) space beyond the output. Official n ≤ 100,000 bounds each popcount far below the int limit. No input mutation occurs.
