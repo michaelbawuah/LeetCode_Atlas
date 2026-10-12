@@ -19,3 +19,8 @@ Following only right-child links misses deeper visible nodes in left subtrees. T
 
 ## Follow-up
 Produce both the left and right views in one level-order traversal.
+
+## Python and C++23
+Both versions visit right regions first and keep the first value seen at each depth. The C++ depth type matches vector size comparisons. Neither method changes the borrowed tree links.
+
+C++23 submission-method complexity: **O(n) time; O(h) auxiliary; O(h) output space**. Adapter ownership and JSON conversion costs are separate.
