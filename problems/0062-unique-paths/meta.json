@@ -1,0 +1,22 @@
+{
+  "id": 62,
+  "title": "Unique Paths",
+  "difficulty": "Medium",
+  "patterns": [
+    "dynamic-programming"
+  ],
+  "method": "uniquePaths",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(m * n)",
+    "space": "O(min(m, n))"
+  },
+  "slug": "unique-paths",
+  "kind": "method",
+  "checker": "exact",
+  "judge_status": "not_recorded"
+}

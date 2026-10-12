@@ -1,0 +1,66 @@
+[
+  {
+    "name": "rectangular_grid",
+    "args": [
+      3,
+      7
+    ],
+    "expected": 28
+  },
+  {
+    "name": "small_grid",
+    "args": [
+      3,
+      2
+    ],
+    "expected": 3
+  },
+  {
+    "name": "single_cell",
+    "args": [
+      1,
+      1
+    ],
+    "expected": 1
+  },
+  {
+    "name": "single_row",
+    "args": [
+      1,
+      100
+    ],
+    "expected": 1
+  },
+  {
+    "name": "single_column",
+    "args": [
+      100,
+      1
+    ],
+    "expected": 1
+  },
+  {
+    "name": "two_by_two",
+    "args": [
+      2,
+      2
+    ],
+    "expected": 2
+  },
+  {
+    "name": "square_grid",
+    "args": [
+      3,
+      3
+    ],
+    "expected": 6
+  },
+  {
+    "name": "transpose",
+    "args": [
+      7,
+      3
+    ],
+    "expected": 28
+  }
+]
