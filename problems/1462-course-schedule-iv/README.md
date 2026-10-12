@@ -21,3 +21,7 @@ O(n^3 + Q) time. O(n^2) auxiliary; O(Q) output space. These bounds describe the 
 The prerequisite pair here means before→after; reversing it changes every directional query. Named fixtures cover different structural boundaries. An independent bounded reference accompanies deterministic generated inputs in `test_properties.py`; `parity.py` supplies varied inputs for the shared language checks.
 
 **Follow-up:** Use topological bitsets to reduce preprocessing on larger DAGs.
+
+## Python and C++23 comparison
+
+Both sources build a directed transitive-closure table before answering the queries. C++ owns a boolean reachability matrix and returns a boolean vector; input edges and queries are unchanged. O(n³+Q) time and O(n²) auxiliary storage exclude O(Q) output and the runner’s decoded input copies. Prerequisite pairs mean `before → after`, matching this problem’s contract rather than Course Schedule II’s pair ordering.

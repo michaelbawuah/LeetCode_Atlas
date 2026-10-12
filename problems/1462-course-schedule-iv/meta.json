@@ -21,5 +21,9 @@
     "time": "O(n^3 + Q)",
     "space": "O(n^2) auxiliary; O(Q) output"
   },
-  "judge_status": "not_recorded"
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O(n^3 + Q)",
+    "space": "O(n^2) auxiliary; O(Q) output"
+  }
 }
