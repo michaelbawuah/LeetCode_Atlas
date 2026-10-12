@@ -1,0 +1,51 @@
+[
+  {
+    "name": "ignore punctuation and case",
+    "args": [
+      "A man, a plan, a canal: Panama"
+    ],
+    "expected": true
+  },
+  {
+    "name": "non-palindrome phrase",
+    "args": [
+      "race a car"
+    ],
+    "expected": false
+  },
+  {
+    "name": "space only",
+    "args": [
+      " "
+    ],
+    "expected": true
+  },
+  {
+    "name": "digit and letter are different",
+    "args": [
+      "0P"
+    ],
+    "expected": false
+  },
+  {
+    "name": "punctuation only",
+    "args": [
+      ".,:!"
+    ],
+    "expected": true
+  },
+  {
+    "name": "case-insensitive mirrored letters",
+    "args": [
+      "Aa"
+    ],
+    "expected": true
+  },
+  {
+    "name": "digits with punctuation",
+    "args": [
+      "1,2,1"
+    ],
+    "expected": true
+  }
+]
