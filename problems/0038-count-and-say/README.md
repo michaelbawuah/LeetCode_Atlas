@@ -25,3 +25,11 @@ Return the run-length pairs before converting them to the next string.
 ## Verification
 
 Named cases and an independent generated-input oracle or operation model accompany the source. Judge results are recorded separately in metadata.
+
+## C++23 counterpart
+
+Append complete run counts and symbols into the next string, then move it into the current term. Amortized append avoids repeatedly copying the full prefix. S includes all generated characters; L is the maximum term length, rather than the iteration count n.
+
+Time: O(S) amortized string appends; S is total generated term length. Space: O(L), with current and next terms alive together.
+
+The JSON adapter creates fresh state per case. Named fixtures and 150 deterministic generated inputs compare the two language implementations; existing independent Python oracles supply a separate behavioral reference.

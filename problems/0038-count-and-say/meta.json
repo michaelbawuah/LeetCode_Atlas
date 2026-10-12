@@ -18,5 +18,10 @@
     "time": "O(S), S is total length of generated terms",
     "space": "O(L), L is maximum generated term length"
   },
-  "judge_status": "not_recorded"
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(S) amortized string appends; S is total generated term length",
+    "space": "O(L), with current and next terms alive together"
+  }
 }
