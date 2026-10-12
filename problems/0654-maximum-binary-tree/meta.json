@@ -1,0 +1,23 @@
+{
+  "id": 654,
+  "title": "Maximum Binary Tree",
+  "difficulty": "Medium",
+  "method": "constructMaximumBinaryTree",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "treenode",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(h) auxiliary; O(n) output"
+  },
+  "patterns": [
+    "tree",
+    "monotonic-stack",
+    "cartesian-tree"
+  ],
+  "checker": "exact",
+  "slug": "maximum-binary-tree",
+  "kind": "method",
+  "judge_status": "not_recorded"
+}

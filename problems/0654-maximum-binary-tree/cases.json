@@ -1,0 +1,101 @@
+[
+  {
+    "name": "mixed",
+    "args": [
+      [
+        3,
+        2,
+        1,
+        6,
+        0,
+        5
+      ]
+    ],
+    "expected": [
+      6,
+      3,
+      5,
+      null,
+      2,
+      0,
+      null,
+      null,
+      1
+    ]
+  },
+  {
+    "name": "singleton",
+    "args": [
+      [
+        0
+      ]
+    ],
+    "expected": [
+      0
+    ]
+  },
+  {
+    "name": "increasing",
+    "args": [
+      [
+        1,
+        2,
+        3
+      ]
+    ],
+    "expected": [
+      3,
+      2,
+      null,
+      1
+    ]
+  },
+  {
+    "name": "decreasing",
+    "args": [
+      [
+        3,
+        2,
+        1
+      ]
+    ],
+    "expected": [
+      3,
+      null,
+      2,
+      null,
+      1
+    ]
+  },
+  {
+    "name": "middle_maximum",
+    "args": [
+      [
+        1,
+        3,
+        2
+      ]
+    ],
+    "expected": [
+      3,
+      1,
+      2
+    ]
+  },
+  {
+    "name": "zero_inside",
+    "args": [
+      [
+        2,
+        0,
+        1
+      ]
+    ],
+    "expected": [
+      2,
+      null,
+      1,
+      0
+    ]
+  }
+]
