@@ -1,0 +1,27 @@
+{
+  "id": 547,
+  "title": "Number of Provinces",
+  "slug": "number-of-provinces",
+  "difficulty": "Medium",
+  "patterns": [
+    "graph",
+    "depth-first-search"
+  ],
+  "method": "findCircleNum",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity_language": "Python",
+  "complexity": {
+    "time": "O(n^2)",
+    "space": "O(n)"
+  },
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O(n^2)",
+    "space": "O(n) auxiliary; O(1) scalar output"
+  }
+}
