@@ -17,5 +17,10 @@
     "time": "O(d * 4^d)",
     "space": "O(d * 4^d) output; O(d) auxiliary"
   },
-  "judge_status": "not_recorded"
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(d * 4^d)",
+    "space": "O(d) auxiliary; O(d * 4^d) output"
+  }
 }

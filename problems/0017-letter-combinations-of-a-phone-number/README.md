@@ -17,3 +17,11 @@ Follow-up: generate combinations lazily, or prune them against a dictionary pref
 ## Verification
 
 Named fixtures and an independent generated-input reference cover behavior. Judge results are recorded separately in metadata.
+
+## C++23 counterpart
+
+Python enumerates an itertools Cartesian product; C++ backtracks through a single reserved path. Every leaf copies a length-d string. The order-insensitive checker remains the same. Seeded comparisons use the current official length range of 1 through 4; the historical empty-input fixture remains supported as an extension.
+
+Time: O(d * 4^d). Space: O(d) auxiliary; O(d * 4^d) output.
+
+The JSON adapter creates fresh state per case. Named fixtures and 150 deterministic generated inputs compare the two language implementations; existing independent Python oracles supply a separate behavioral reference.
