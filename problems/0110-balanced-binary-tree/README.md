@@ -19,3 +19,9 @@ Similar heights at the root can hide an unbalanced subtree. Measure subtree heig
 
 ## Follow-up
 Can an explicit traversal frame return heights to its parent while retaining only O(h) memory?
+
+## C++23 implementation
+
+C++23 explicit postorder frames carry child heights back to their parent and discard completed child frames. This gives deterministic O(n) time and O(h) auxiliary space without a retained hash map or native call-depth dependency. An early imbalance return leaves the tree unchanged; the adapter checks all original links and values.
+
+C++23 submission cost: **O(n) time; O(h) space**. Here n is node count, h is tree height, w is maximum level width, and L is the number of returned path elements when applicable. Adapter construction, snapshots, and serialization are measured separately.
