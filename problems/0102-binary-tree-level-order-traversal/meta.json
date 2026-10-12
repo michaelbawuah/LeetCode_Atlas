@@ -1,0 +1,22 @@
+{
+  "id": 102,
+  "title": "Binary Tree Level Order Traversal",
+  "difficulty": "Medium",
+  "patterns": [
+    "tree",
+    "breadth-first-search"
+  ],
+  "method": "levelOrder",
+  "args_types": [
+    "treenode"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(w) auxiliary; O(n) output"
+  },
+  "slug": "binary-tree-level-order-traversal",
+  "kind": "method",
+  "checker": "exact",
+  "judge_status": "not_recorded"
+}
