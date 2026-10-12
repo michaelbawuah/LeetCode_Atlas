@@ -22,3 +22,11 @@ How would you compute the minimum number of cuts without enumerating all partiti
 
 ## Verification
 Named fixtures and independent generated-input references accompany the implementation. Official judge results are tracked separately in metadata.
+
+## C++23 counterpart
+
+C++ uses the same palindrome-interval table and endpoint search. Substring and output copies are charged by character count; the live path covers at most n characters. The checker reorders only complete partitions, preserving the order of pieces within each partition.
+
+Time: O(n^2 + n 2^n). Space: O(n^2) auxiliary; O(K n) output.
+
+The JSON adapter creates fresh state per case. Named fixtures and 150 deterministic generated inputs compare the two language implementations; existing independent Python oracles supply a separate behavioral reference.

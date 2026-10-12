@@ -19,5 +19,9 @@
     "space": "O(n\u00b2) auxiliary; O(K n) output"
   },
   "complexity_language": "Python",
-  "judge_status": "not_recorded"
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O(n^2 + n 2^n)",
+    "space": "O(n^2) auxiliary; O(K n) output"
+  }
 }
