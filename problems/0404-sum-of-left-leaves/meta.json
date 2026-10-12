@@ -1,0 +1,27 @@
+{
+  "id": 404,
+  "title": "Sum of Left Leaves",
+  "difficulty": "Easy",
+  "method": "sumOfLeftLeaves",
+  "args_types": [
+    "treenode"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(h)"
+  },
+  "patterns": [
+    "tree",
+    "depth-first-search"
+  ],
+  "checker": "exact",
+  "slug": "sum-of-left-leaves",
+  "kind": "method",
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n)",
+    "space": "O(h)"
+  }
+}
