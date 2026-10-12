@@ -1,0 +1,162 @@
+[
+  {
+    "name": "mixed_duplicates",
+    "args": [
+      [
+        10,
+        1,
+        2,
+        7,
+        6,
+        1,
+        5
+      ],
+      8
+    ],
+    "expected": [
+      [
+        1,
+        1,
+        6
+      ],
+      [
+        1,
+        2,
+        5
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        2,
+        6
+      ]
+    ]
+  },
+  {
+    "name": "three_twos",
+    "args": [
+      [
+        2,
+        5,
+        2,
+        1,
+        2
+      ],
+      5
+    ],
+    "expected": [
+      [
+        1,
+        2,
+        2
+      ],
+      [
+        5
+      ]
+    ]
+  },
+  {
+    "name": "exact_single_candidate",
+    "args": [
+      [
+        1
+      ],
+      1
+    ],
+    "expected": [
+      [
+        1
+      ]
+    ]
+  },
+  {
+    "name": "no_solution",
+    "args": [
+      [
+        2
+      ],
+      1
+    ],
+    "expected": []
+  },
+  {
+    "name": "duplicate_choices_once",
+    "args": [
+      [
+        1,
+        1,
+        1
+      ],
+      2
+    ],
+    "expected": [
+      [
+        1,
+        1
+      ]
+    ]
+  },
+  {
+    "name": "two_distinct_pairs",
+    "args": [
+      [
+        1,
+        2,
+        3,
+        4
+      ],
+      5
+    ],
+    "expected": [
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        3
+      ]
+    ]
+  },
+  {
+    "name": "use_every_duplicate",
+    "args": [
+      [
+        2,
+        2,
+        2
+      ],
+      6
+    ],
+    "expected": [
+      [
+        2,
+        2,
+        2
+      ]
+    ]
+  },
+  {
+    "name": "unsorted_equal_choices",
+    "args": [
+      [
+        5,
+        1,
+        4,
+        1
+      ],
+      5
+    ],
+    "expected": [
+      [
+        1,
+        4
+      ],
+      [
+        5
+      ]
+    ]
+  }
+]
