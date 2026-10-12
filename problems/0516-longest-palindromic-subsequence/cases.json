@@ -1,0 +1,44 @@
+[
+  {
+    "name": "repeated_b",
+    "args": [
+      "bbbab"
+    ],
+    "expected": 4
+  },
+  {
+    "name": "even_subsequence",
+    "args": [
+      "cbbd"
+    ],
+    "expected": 2
+  },
+  {
+    "name": "single",
+    "args": [
+      "a"
+    ],
+    "expected": 1
+  },
+  {
+    "name": "no_repeat",
+    "args": [
+      "abcd"
+    ],
+    "expected": 1
+  },
+  {
+    "name": "whole_palindrome",
+    "args": [
+      "racecar"
+    ],
+    "expected": 7
+  },
+  {
+    "name": "skip_middle",
+    "args": [
+      "agbdba"
+    ],
+    "expected": 5
+  }
+]
