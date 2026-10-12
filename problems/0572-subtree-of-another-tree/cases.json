@@ -1,0 +1,118 @@
+[
+  {
+    "name": "present",
+    "args": [
+      [
+        3,
+        4,
+        5,
+        1,
+        2
+      ],
+      [
+        4,
+        1,
+        2
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "name": "extra_descendant",
+    "args": [
+      [
+        3,
+        4,
+        5,
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        0
+      ],
+      [
+        4,
+        1,
+        2
+      ]
+    ],
+    "expected": false
+  },
+  {
+    "name": "whole_tree",
+    "args": [
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        1,
+        2,
+        3
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "name": "matching_leaf",
+    "args": [
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        3
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "name": "missing_value",
+    "args": [
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "expected": false
+  },
+  {
+    "name": "repeated_values",
+    "args": [
+      [
+        1,
+        1,
+        null,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "name": "different_shape",
+    "args": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        null,
+        2
+      ]
+    ],
+    "expected": false
+  }
+]

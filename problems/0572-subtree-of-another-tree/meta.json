@@ -1,0 +1,23 @@
+{
+  "id": 572,
+  "title": "Subtree of Another Tree",
+  "difficulty": "Easy",
+  "patterns": [
+    "tree",
+    "depth-first-search"
+  ],
+  "method": "isSubtree",
+  "args_types": [
+    "treenode",
+    "treenode"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(n * m)",
+    "space": "O(h + hs)"
+  },
+  "slug": "subtree-of-another-tree",
+  "kind": "method",
+  "checker": "exact",
+  "judge_status": "not_recorded"
+}
