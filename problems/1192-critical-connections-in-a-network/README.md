@@ -21,3 +21,7 @@ O(V + E) time. O(V + E) auxiliary; O(E) output space. These bounds describe the 
 Propagate a child’s low-link value after all its neighbors finish; doing it at first discovery can miss a later return route. Official inputs have no repeated connections. If extending the problem to parallel edges, skip only the specific parent edge so another edge to that parent can supply a return route. Explicit frames avoid recursion failure at 100,000 vertices. Named fixtures cover different structural boundaries. An independent bounded reference accompanies deterministic generated inputs in `test_properties.py`; `parity.py` supplies varied inputs for the shared language checks.
 
 **Follow-up:** Group vertices into components after deleting all bridges.
+
+## Python and C++23 comparison
+
+Both sources implement Tarjan’s bridge test with explicit DFS frames, carrying a node, parent edge ID, and next-neighbor offset. A child’s low-link value is propagated only when its frame completes. C++ owns adjacency vectors, discovery/low arrays, and the frame stack; it takes O(V+E) time and auxiliary storage plus O(E) maximum output. Edge IDs ensure only the actual parent edge is skipped. The runner owns its decoded edge copy, and input connections remain unchanged. The 100,000-vertex path is handled without recursive calls; edge orientation and output ordering use the shared unordered-groups checker.
