@@ -1,0 +1,79 @@
+[
+  {
+    "name": "pair then singleton",
+    "args": [
+      [
+        2,
+        2,
+        1
+      ]
+    ],
+    "expected": 1
+  },
+  {
+    "name": "interleaved pairs",
+    "args": [
+      [
+        4,
+        1,
+        2,
+        1,
+        2
+      ]
+    ],
+    "expected": 4
+  },
+  {
+    "name": "singleton",
+    "args": [
+      [
+        1
+      ]
+    ],
+    "expected": 1
+  },
+  {
+    "name": "negative singleton",
+    "args": [
+      [
+        -8,
+        -3,
+        -8
+      ]
+    ],
+    "expected": -3
+  },
+  {
+    "name": "zero singleton",
+    "args": [
+      [
+        0,
+        2,
+        2
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "large signed values",
+    "args": [
+      [
+        -30000,
+        30000,
+        30000
+      ]
+    ],
+    "expected": -30000
+  },
+  {
+    "name": "pair surrounds zero",
+    "args": [
+      [
+        5,
+        0,
+        5
+      ]
+    ],
+    "expected": 0
+  }
+]
