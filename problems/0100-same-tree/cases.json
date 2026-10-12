@@ -1,0 +1,103 @@
+[
+  {
+    "name": "equal",
+    "args": [
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        1,
+        2,
+        3
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "name": "different_shape",
+    "args": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        null,
+        2
+      ]
+    ],
+    "expected": false
+  },
+  {
+    "name": "different_values",
+    "args": [
+      [
+        1,
+        2,
+        1
+      ],
+      [
+        1,
+        1,
+        2
+      ]
+    ],
+    "expected": false
+  },
+  {
+    "name": "both_empty",
+    "args": [
+      [],
+      []
+    ],
+    "expected": true
+  },
+  {
+    "name": "one_empty",
+    "args": [
+      [],
+      [
+        1
+      ]
+    ],
+    "expected": false
+  },
+  {
+    "name": "sparse_equal",
+    "args": [
+      [
+        1,
+        null,
+        2,
+        3
+      ],
+      [
+        1,
+        null,
+        2,
+        3
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "name": "leaf_value_differs",
+    "args": [
+      [
+        1,
+        null,
+        2,
+        3
+      ],
+      [
+        1,
+        null,
+        2,
+        4
+      ]
+    ],
+    "expected": false
+  }
+]
