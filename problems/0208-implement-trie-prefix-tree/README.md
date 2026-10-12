@@ -23,3 +23,11 @@ Add deletion without removing a prefix used by another word, or maintain the cou
 
 ## Verification
 Named fixtures and an independent generated-input reference accompany this implementation. Official judge results are tracked separately in metadata.
+
+## C++23 counterpart
+
+[Source](solution.cpp) · [Local adapter](cpp_runner.cpp)
+
+C++ stores nodes in a vector with fixed 26-child index arrays. Node indexes survive vector reallocation; no pointer or reference is held across an insertion. Nodes are owned by the vector; inserted words are represented by node paths rather than retained strings. By-value word and prefix parameters copy O(L) characters.
+
+Time: O(L) amortized per insert; O(L) search/prefix. Space: O(T) stored, plus O(L) by-value parameter copying. The local adapter constructs a fresh object for each fixture and owns any converted inputs.

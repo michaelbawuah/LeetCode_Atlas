@@ -17,5 +17,10 @@
     "space": "O(T) stored; O(1) auxiliary per operation"
   },
   "judge_status": "not_recorded",
-  "class_name": "Trie"
+  "class_name": "Trie",
+  "complexity_cpp": {
+    "time": "O(L) amortized per insert; O(L) search/prefix",
+    "space": "O(T) stored; O(L) by-value parameter copying"
+  },
+  "complexity_language": "Python"
 }
