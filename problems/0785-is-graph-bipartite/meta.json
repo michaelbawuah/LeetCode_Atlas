@@ -1,0 +1,24 @@
+{
+  "id": 785,
+  "title": "Is Graph Bipartite?",
+  "slug": "is-graph-bipartite",
+  "difficulty": "Medium",
+  "patterns": [
+    "graph",
+    "breadth-first-search",
+    "graph-coloring"
+  ],
+  "method": "isBipartite",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity_language": "Python",
+  "complexity": {
+    "time": "O(V + E)",
+    "space": "O(V)"
+  },
+  "judge_status": "not_recorded"
+}

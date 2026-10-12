@@ -1,0 +1,164 @@
+[
+  {
+    "name": "square",
+    "args": [
+      [
+        [
+          1,
+          3
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          0,
+          2
+        ]
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "name": "triangle",
+    "args": [
+      [
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    ],
+    "expected": false
+  },
+  {
+    "name": "isolated vertex",
+    "args": [
+      [
+        []
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "name": "no edges",
+    "args": [
+      [
+        [],
+        [],
+        []
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "name": "star",
+    "args": [
+      [
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "name": "disconnected odd cycle",
+    "args": [
+      [
+        [
+          1
+        ],
+        [
+          0
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ]
+    ],
+    "expected": false
+  },
+  {
+    "name": "path",
+    "args": [
+      [
+        [
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2
+        ]
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "name": "complete four",
+    "args": [
+      [
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          1,
+          2
+        ]
+      ]
+    ],
+    "expected": false
+  }
+]
