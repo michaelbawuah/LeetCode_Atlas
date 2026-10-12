@@ -21,5 +21,9 @@
     "space": "O(rows * cols)"
   },
   "judge_status": "not_recorded",
-  "result_from_arg": 0
+  "result_from_arg": 0,
+  "complexity_cpp": {
+    "time": "O(rows * cols)",
+    "space": "O(rows * cols) auxiliary; in-place board output"
+  }
 }

@@ -21,3 +21,7 @@ O(rows × cols) time and worst-case O(rows × cols) stack space. The method muta
 Diagonal contact with a border O is not an escape route. Cases cover diagonal separation, thin boards, and a long open path to a border. The independent oracle searches outward from each original O rather than inward from all borders.
 
 **Follow-up:** compute the number and total area of captured components during the same operation.
+
+## Python and C++23 comparison
+
+Both sources protect border-connected open cells using an explicit traversal stack and then capture the remaining open cells. C++ changes the supplied `vector<vector<char>>` in place and returns `void`, matching Python’s mutation contract. The runner decodes one-character JSON strings into chars and serializes the final board as one-character strings, avoiding numeric character codes. O(rows × cols) time and worst-case auxiliary stack space exclude the runner’s O(rows × cols) decoded input and serialized output copies. No recursion or manual allocation is used.
