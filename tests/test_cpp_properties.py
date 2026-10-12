@@ -1,17 +1,22 @@
 """Reproducible generated parity checks across the Python and C++ tracks."""
 
+import importlib.util
+import inspect
 import json
 import os
 import random
 import subprocess
 from collections import Counter, deque
+from copy import deepcopy
+from functools import lru_cache
 from pathlib import Path
+from uuid import uuid4
 
 import pytest
 
 from atlas.runtime import TreeNode, check_result, evaluate, metadata, problem_dirs, tree_to_json
 
-FOLDERS = [
+LEGACY_FOLDERS = [
     "0001-two-sum",
     "0003-longest-substring-without-repeating-characters",
     "0011-container-with-most-water",
@@ -89,10 +94,175 @@ FOLDERS = [
     "1584-min-cost-to-connect-all-points",
 ]
 
+NEW_FOLDERS = [
+    "0002-add-two-numbers",
+    "0007-reverse-integer",
+    "0009-palindrome-number",
+    "0012-integer-to-roman",
+    "0013-roman-to-integer",
+    "0023-merge-k-sorted-lists",
+    "0028-find-the-index-of-the-first-occurrence-in-a-string",
+    "0031-next-permutation",
+    "0032-longest-valid-parentheses",
+    "0058-length-of-last-word",
+    "0061-rotate-list",
+    "0063-unique-paths-ii",
+    "0064-minimum-path-sum",
+    "0067-add-binary",
+    "0075-sort-colors",
+    "0082-remove-duplicates-from-sorted-list-ii",
+    "0083-remove-duplicates-from-sorted-list",
+    "0086-partition-list",
+    "0088-merge-sorted-array",
+    "0096-unique-binary-search-trees",
+    "0101-symmetric-tree",
+    "0103-binary-tree-zigzag-level-order-traversal",
+    "0107-binary-tree-level-order-traversal-ii",
+    "0118-pascals-triangle",
+    "0119-pascals-triangle-ii",
+    "0120-triangle",
+    "0122-best-time-to-buy-and-sell-stock-ii",
+    "0137-single-number-ii",
+    "0151-reverse-words-in-a-string",
+    "0171-excel-sheet-column-number",
+    "0205-isomorphic-strings",
+    "0221-maximal-square",
+    "0222-count-complete-tree-nodes",
+    "0240-search-a-2d-matrix-ii",
+    "0279-perfect-squares",
+    "0287-find-the-duplicate-number",
+    "0310-minimum-height-trees",
+    "0344-reverse-string",
+    "0349-intersection-of-two-arrays",
+    "0404-sum-of-left-leaves",
+    "0433-minimum-genetic-mutation",
+    "0454-4sum-ii",
+    "0496-next-greater-element-i",
+    "0513-find-bottom-left-tree-value",
+    "0515-find-largest-value-in-each-tree-row",
+    "0516-longest-palindromic-subsequence",
+    "0525-contiguous-array",
+    "0542-01-matrix",
+    "0583-delete-operation-for-two-strings",
+    "0622-design-circular-queue",
+    "0658-find-k-closest-elements",
+    "0712-minimum-ascii-delete-sum-for-two-strings",
+    "0714-best-time-to-buy-and-sell-stock-with-transaction-fee",
+    "0740-delete-and-earn",
+    "0752-open-the-lock",
+    "0797-all-paths-from-source-to-target",
+    "0802-find-eventual-safe-states",
+    "0841-keys-and-rooms",
+    "0886-possible-bipartition",
+    "0901-online-stock-span",
+    "0909-snakes-and-ladders",
+    "0931-minimum-falling-path-sum",
+    "0933-number-of-recent-calls",
+    "0938-range-sum-of-bst",
+    "0947-most-stones-removed-with-same-row-or-column",
+    "1011-capacity-to-ship-packages-within-d-days",
+    "1020-number-of-enclaves",
+    "1094-car-pooling",
+    "1137-n-th-tribonacci-number",
+    "1220-count-vowels-permutation",
+    "1319-number-of-operations-to-make-network-connected",
+    "1448-count-good-nodes-in-binary-tree",
+    "1631-path-with-minimum-effort",
+    "1926-nearest-exit-from-entrance-in-maze",
+    "1971-find-if-path-exists-in-graph",
+]
+
+FOLDERS = sorted(LEGACY_FOLDERS + NEW_FOLDERS)
+
+
+def validate_counterpart_coverage(discovered):
+    registered = set(FOLDERS)
+    if len(FOLDERS) != 150 or len(registered) != 150 or discovered != registered:
+        raise ValueError(
+            f"C++ strategy coverage mismatch: missing={sorted(registered - discovered)}, "
+            f"unexpected={sorted(discovered - registered)}"
+        )
+
+
+@lru_cache(maxsize=None)
+def load_parity_generator(path):
+    path = Path(path).resolve()
+    if not path.is_file():
+        raise ValueError(f"Missing per-problem parity module: {path}")
+    spec = importlib.util.spec_from_file_location(f"atlas_parity_{uuid4().hex}", path)
+    if spec is None or spec.loader is None:
+        raise ValueError(f"Cannot load parity module: {path}")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    generator = getattr(module, "generate", None)
+    if not callable(generator):
+        raise ValueError(f"Parity module must define callable generate(rng): {path}")
+    parameters = list(inspect.signature(generator).parameters.values())
+    if len(parameters) != 1 or parameters[0].kind not in {
+        inspect.Parameter.POSITIONAL_ONLY,
+        inspect.Parameter.POSITIONAL_OR_KEYWORD,
+    }:
+        raise ValueError(f"Parity generator must accept exactly one RNG parameter: {path}")
+    return generator
+
+
+def validate_generated_payload(meta, payload):
+    if not isinstance(payload, list):
+        raise ValueError("Generated payload must be a JSON argument array")
+
+    def json_value(value):
+        if value is None or type(value) in {str, bool, int, float}:
+            return True
+        if isinstance(value, list):
+            return all(json_value(item) for item in value)
+        if isinstance(value, dict):
+            return all(type(key) is str and json_value(item) for key, item in value.items())
+        return False
+
+    if not json_value(payload):
+        raise ValueError("Generated payload must contain native JSON values")
+    try:
+        json.dumps(payload, allow_nan=False)
+    except (TypeError, ValueError) as error:
+        raise ValueError("Generated payload must contain finite JSON values") from error
+    if meta["kind"] == "method":
+        if len(payload) != len(meta["args_types"]):
+            raise ValueError("Generated method payload does not match metadata arity")
+    elif meta["kind"] == "design":
+        if len(payload) != 2:
+            raise ValueError("Generated design payload requires operations and arguments")
+        operations, arguments = payload
+        if (
+            not isinstance(operations, list)
+            or not operations
+            or not isinstance(arguments, list)
+            or len(operations) != len(arguments)
+            or any(not isinstance(operation, str) for operation in operations)
+            or any(not isinstance(values, list) for values in arguments)
+            or operations[0] != meta["class_name"]
+            or any(
+                operation.startswith("_") or operation == meta["class_name"]
+                for operation in operations[1:]
+            )
+        ):
+            raise ValueError("Generated design payload has invalid operation shape or constructor")
+    else:
+        raise ValueError("Generated payload uses an unknown invocation kind")
+    return deepcopy(payload)
+
 
 def test_every_cpp_counterpart_has_a_generated_case_strategy():
     discovered = {folder.name for folder in problem_dirs() if (folder / "solution.cpp").is_file()}
-    assert set(FOLDERS) == discovered, "Add a parity generator when adding a C++ counterpart"
+    validate_counterpart_coverage(discovered)
+    root = Path(__file__).resolve().parents[1]
+    for folder in NEW_FOLDERS:
+        generator = load_parity_generator(root / "problems" / folder / "parity.py")
+        meta = metadata(folder)
+        seed = 20261012 + int(folder.split("-", 1)[0])
+        first_rng, second_rng = random.Random(seed), random.Random(seed)
+        first = [validate_generated_payload(meta, generator(first_rng)) for _ in range(3)]
+        second = [validate_generated_payload(meta, generator(second_rng)) for _ in range(3)]
+        assert first == second, f"{folder}: use the supplied RNG for reproducible parity inputs"
 
 
 def _random_tree(rng, *, nonempty=False, unique=False):
@@ -151,6 +321,9 @@ def _gas_starts(gas, cost):
 
 
 def generated_args(folder, rng):
+    if folder in NEW_FOLDERS:
+        path = Path(__file__).resolve().parents[1] / "problems" / folder / "parity.py"
+        return validate_generated_payload(metadata(folder), load_parity_generator(path)(rng))
     if folder == "0001-two-sum":
         while True:
             nums = rng.sample(range(-100, 101), rng.randint(2, 15))
@@ -523,9 +696,10 @@ def generated_args(folder, rng):
 )
 @pytest.mark.parametrize("folder", FOLDERS)
 def test_generated_cpp_python_parity(folder):
-    """150 cases per problem; Python has independently checked property oracles."""
+    """150 cases per counterpart: 22,500 comparisons across the two language tracks."""
     rng = random.Random(20261012 + int(folder.split("-", 1)[0]))
-    cases = [generated_args(folder, rng) for _ in range(150)]
+    meta = metadata(folder)
+    cases = [validate_generated_payload(meta, generated_args(folder, rng)) for _ in range(150)]
     binary_dir = Path(os.environ["ATLAS_CPP_BIN_DIR"]).resolve()
     suffix = ".exe" if os.name == "nt" else ""
     binary = binary_dir / f"atlas_{folder.replace('-', '_')}{suffix}"
@@ -540,7 +714,6 @@ def test_generated_cpp_python_parity(folder):
     assert result.returncode == 0, result.stderr
     lines = result.stdout.splitlines()
     assert len(lines) == len(cases), f"{folder}: missing or extra result lines"
-    meta = metadata(folder)
     for index, (line, args) in enumerate(zip(lines, cases, strict=True)):
         actual = json.loads(line)
         expected = (

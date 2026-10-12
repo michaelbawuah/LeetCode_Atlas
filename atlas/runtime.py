@@ -88,6 +88,14 @@ def build_list(values: list[int]) -> ListNode | None:
     return dummy.next
 
 
+def build_list_array(values: list[list[int]]) -> list[ListNode | None]:
+    if not isinstance(values, list) or any(
+        not isinstance(row, list) or any(type(value) is not int for value in row) for row in values
+    ):
+        raise ValueError("List-node arrays require an outer array of integer arrays")
+    return [build_list(row) for row in values]
+
+
 def build_list_cycle(value: dict[str, Any]) -> ListNode | None:
     """Build the platform's cyclic-list fixture without losing node identities."""
     if not isinstance(value, dict) or set(value) != {"values", "pos"}:
@@ -165,6 +173,34 @@ def tree_to_json(root: TreeNode | None) -> list[int | None]:
     return values
 
 
+def _tree_nodes(root: TreeNode | None) -> list[TreeNode]:
+    nodes = []
+    seen: set[int] = set()
+    pending = [root] if root is not None else []
+    while pending:
+        node = pending.pop()
+        if not isinstance(node, TreeNode) or type(node.val) is not int:
+            raise ValueError("Tree references require integer-valued platform nodes")
+        if id(node) in seen:
+            raise ValueError("Tree references cannot use a cycle or shared child")
+        seen.add(id(node))
+        nodes.append(node)
+        for child in (node.left, node.right):
+            if child is not None:
+                pending.append(child)
+    return nodes
+
+
+def resolve_tree_ref(root: TreeNode | None, value: int) -> TreeNode:
+    """Resolve a fixture value to the unique existing node in the original tree."""
+    if type(value) is not int:
+        raise ValueError("Tree reference values must be integers")
+    matches = [node for node in _tree_nodes(root) if node.val == value]
+    if len(matches) != 1:
+        raise ValueError("Tree reference must identify exactly one existing node")
+    return matches[0]
+
+
 def build_graph(adjacency: list[list[int]]) -> GraphNode | None:
     """Decode 1-based adjacency labels; graph cycles are ordinary edges."""
     if not isinstance(adjacency, list) or any(not isinstance(row, list) for row in adjacency):
@@ -211,6 +247,8 @@ def _adapt(value: Any, kind: str) -> Any:
         return value
     if kind == "listnode":
         return build_list(value)
+    if kind == "listnode_array":
+        return build_list_array(value)
     if kind == "listnode_cycle":
         return build_list_cycle(value)
     if kind == "treenode":
@@ -220,13 +258,28 @@ def _adapt(value: Any, kind: str) -> Any:
     raise ValueError(f"Unknown argument type: {kind}")
 
 
-def _serialize(value: Any, kind: str) -> Any:
+def _serialize(
+    value: Any, kind: str, original_tree_nodes: dict[TreeNode, int] | None = None
+) -> Any:
     if kind == "value":
         return value
     if kind == "listnode":
         return list_to_json(value)
     if kind == "treenode":
         return tree_to_json(value)
+    if kind == "tree_ref":
+        if value is None:
+            return None
+        if (
+            not isinstance(value, TreeNode)
+            or original_tree_nodes is None
+            or value not in original_tree_nodes
+        ):
+            raise ValueError("Returned tree reference must belong to the original tree")
+        original_value = original_tree_nodes[value]
+        if type(value.val) is not int or value.val != original_value:
+            raise ValueError("Returned tree reference changed its original value")
+        return original_value
     if kind == "graphnode":
         return graph_to_json(value)
     raise ValueError(f"Unknown return type: {kind}")
@@ -246,7 +299,19 @@ def evaluate(
         kinds = meta["args_types"]
         if len(args) != len(kinds):
             raise ValueError("Argument count does not match metadata")
-        adapted = [_adapt(value, kind) for value, kind in zip(deepcopy(args), kinds, strict=True)]
+        adapted = []
+        for value, kind in zip(deepcopy(args), kinds, strict=True):
+            if kind == "tree_ref":
+                if not adapted or kinds[0] != "treenode":
+                    raise ValueError("Tree reference arguments require an original tree first")
+                adapted.append(resolve_tree_ref(adapted[0], value))
+            else:
+                adapted.append(_adapt(value, kind))
+        original_tree_nodes = None
+        if meta["return_type"] == "tree_ref":
+            if not kinds or kinds[0] != "treenode":
+                raise ValueError("Tree reference results require an original tree first")
+            original_tree_nodes = {node: node.val for node in _tree_nodes(adapted[0])}
         method = getattr(module.Solution(), meta["method"])
         result = method(*adapted)
         if "result_from_arg" in meta:
@@ -254,7 +319,7 @@ def evaluate(
             if type(index) is not int or not 0 <= index < len(adapted):
                 raise ValueError("In-place result index does not match arguments")
             result = adapted[index]
-        return _serialize(result, meta["return_type"])
+        return _serialize(result, meta["return_type"], original_tree_nodes)
     if meta["kind"] == "design":
         if args is not None or operations is None or arguments is None:
             raise ValueError("Design cases require operations and arguments only")
@@ -320,17 +385,109 @@ def normalize(meta: dict[str, Any], result: Any) -> Any:
     raise ValueError(f"Unknown checker: {checker}")
 
 
+def _finite_number(value: Any) -> bool:
+    if type(value) not in {int, float}:
+        return False
+    try:
+        return math.isfinite(value)
+    except OverflowError:
+        return False
+
+
+def _numeric_list_tolerance(meta: dict[str, Any]) -> tuple[float, float]:
+    policy = meta.get("numeric_tolerance", {"relative": 1e-9, "absolute": 1e-12})
+    if (
+        not isinstance(policy, dict)
+        or set(policy) != {"relative", "absolute"}
+        or any(not _finite_number(value) or value < 0 for value in policy.values())
+    ):
+        raise ValueError(
+            "Numeric tolerance requires finite nonnegative relative and absolute values"
+        )
+    return float(policy["relative"]), float(policy["absolute"])
+
+
 def check_result(
     meta: dict[str, Any], actual: Any, expected: Any, args: list[Any] | None = None
 ) -> bool:
     """Compare JSON values with explicit ordering rules and scalar types."""
     checker = meta.get("checker", "exact")
+    if checker == "approx_list":
+        relative, absolute = _numeric_list_tolerance(meta)
+        return (
+            isinstance(actual, list)
+            and isinstance(expected, list)
+            and len(actual) == len(expected)
+            and all(
+                _finite_number(found)
+                and _finite_number(reference)
+                and math.isclose(found, reference, rel_tol=relative, abs_tol=absolute)
+                for found, reference in zip(actual, expected, strict=True)
+            )
+        )
+    if checker == "peak_index":
+        if (
+            args is None
+            or len(args) != 1
+            or not isinstance(args[0], list)
+            or not args[0]
+            or any(type(value) is not int for value in args[0])
+        ):
+            raise ValueError("Peak checker requires the original nonempty integer array")
+        nums = args[0]
+        return (
+            type(actual) is int
+            and 0 <= actual < len(nums)
+            and (actual == 0 or nums[actual] > nums[actual - 1])
+            and (actual == len(nums) - 1 or nums[actual] > nums[actual + 1])
+        )
+    if checker in {"balanced_bst", "bst_inorder"}:
+        if checker == "balanced_bst":
+            if args is None or len(args) != 1 or not isinstance(args[0], list):
+                raise ValueError("Balanced-BST checker requires the original sorted array")
+            wanted = args[0]
+        else:
+            wanted = expected
+        if (
+            not isinstance(wanted, list)
+            or any(type(value) is not int for value in wanted)
+            or any(first >= second for first, second in zip(wanted[:-1], wanted[1:], strict=True))
+        ):
+            raise ValueError("BST reference requires sorted unique integer values")
+        if not isinstance(actual, list) or any(
+            value is not None and type(value) is not int for value in actual
+        ):
+            return False
+        try:
+            root = build_tree(actual)
+            nodes = _tree_nodes(root)
+        except ValueError:
+            return False
+        inorder = []
+        stack = []
+        current = root
+        while current is not None or stack:
+            while current is not None:
+                stack.append(current)
+                current = current.left
+            current = stack.pop()
+            inorder.append(current.val)
+            current = current.right
+        if inorder != wanted:
+            return False
+        if checker == "bst_inorder":
+            return True
+        heights: dict[TreeNode, int] = {}
+        for node in reversed(nodes):
+            left, right = heights.get(node.left, 0), heights.get(node.right, 0)
+            if abs(left - right) > 1:
+                return False
+            heights[node] = 1 + max(left, right)
+        return True
     if checker == "approx":
         return (
-            type(actual) in {int, float}
-            and type(expected) in {int, float}
-            and math.isfinite(actual)
-            and math.isfinite(expected)
+            _finite_number(actual)
+            and _finite_number(expected)
             and math.isclose(actual, expected, rel_tol=1e-9, abs_tol=1e-12)
         )
     if checker == "longest_palindrome":

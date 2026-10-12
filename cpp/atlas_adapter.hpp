@@ -82,6 +82,34 @@ inline json list_to_json(const ListNode* head) {
     return values;
 }
 
+// Use only for freshly allocated result lists, never borrowed ListArena nodes.
+class ListResultOwner {
+public:
+    explicit ListResultOwner(ListNode* head) : head_(head) {}
+    ListResultOwner(const ListResultOwner&) = delete;
+    ListResultOwner& operator=(const ListResultOwner&) = delete;
+    ListResultOwner(ListResultOwner&& other) noexcept : head_(std::exchange(other.head_, nullptr)) {}
+    ListResultOwner& operator=(ListResultOwner&&) = delete;
+
+    ~ListResultOwner() {
+        std::unordered_set<ListNode*> owned;
+        ListNode* current = head_;
+        while (current != nullptr && owned.insert(current).second) {
+            current = current->next;
+        }
+        for (ListNode* node : owned) {
+            delete node;
+        }
+    }
+
+    ListNode* get() const noexcept {
+        return head_;
+    }
+
+private:
+    ListNode* head_;
+};
+
 struct TreeNode {
     int val = 0;
     TreeNode* left = nullptr;

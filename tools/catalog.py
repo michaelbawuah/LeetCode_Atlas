@@ -13,6 +13,39 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def _validate_complexity(meta: dict, field: str, folder: Path) -> None:
+    bounds = meta.get(field)
+    placeholders = {"todo", "tbd", "unknown", "pending", "n/a", "none", "-", "?"}
+    if not isinstance(bounds, dict) or any(
+        not isinstance(bounds.get(key), str)
+        or not bounds[key].strip()
+        or bounds[key].strip().casefold() in placeholders
+        for key in ("time", "space")
+    ):
+        raise ValueError(f"{field} requires meaningful time and space bounds: {folder.name}")
+
+
+def _validate_numeric_tolerance(meta: dict, folder: Path) -> None:
+    if "numeric_tolerance" not in meta:
+        return
+    policy = meta["numeric_tolerance"]
+    if (
+        meta["checker"] != "approx_list"
+        or not isinstance(policy, dict)
+        or set(policy) != {"relative", "absolute"}
+    ):
+        raise ValueError(f"Numeric tolerance requires an approximate-list policy: {folder.name}")
+    for value in policy.values():
+        try:
+            valid = type(value) in {int, float} and value >= 0 and math.isfinite(value)
+        except OverflowError:
+            valid = False
+        if not valid:
+            raise ValueError(
+                f"Numeric tolerance must be finite, nonnegative and nonboolean: {folder.name}"
+            )
+
+
 def collect(root: Path = ROOT) -> list[dict]:
     entries = []
     ids = set()
@@ -44,14 +77,28 @@ def collect(root: Path = ROOT) -> list[dict]:
             "longest_palindrome",
             "gas_station",
             "graph_adjacency",
+            "peak_index",
+            "balanced_bst",
+            "bst_inorder",
+            "approx_list",
         }:
             raise ValueError(f"Unknown checker: {folder.name}")
+        _validate_numeric_tolerance(meta, folder)
         if not isinstance(meta["args_types"], list) or any(
-            t not in {"value", "listnode", "listnode_cycle", "treenode", "graphnode"}
+            t
+            not in {
+                "value",
+                "listnode",
+                "listnode_array",
+                "listnode_cycle",
+                "treenode",
+                "tree_ref",
+                "graphnode",
+            }
             for t in meta["args_types"]
         ):
             raise ValueError(f"Unknown argument adapter: {folder.name}")
-        if meta["return_type"] not in {"value", "listnode", "treenode", "graphnode"}:
+        if meta["return_type"] not in {"value", "listnode", "treenode", "tree_ref", "graphnode"}:
             raise ValueError(f"Unknown result adapter: {folder.name}")
         if meta["kind"] == "method":
             if not isinstance(meta.get("method"), str) or not meta["method"].isidentifier():
@@ -67,6 +114,8 @@ def collect(root: Path = ROOT) -> list[dict]:
             "longest_palindrome": (["value"], "value"),
             "gas_station": (["value", "value"], "value"),
             "graph_adjacency": (["graphnode"], "graphnode"),
+            "peak_index": (["value"], "value"),
+            "balanced_bst": (["value"], "treenode"),
         }
         if meta["checker"] in checker_declarations:
             adapters, result_adapter = checker_declarations[meta["checker"]]
@@ -76,10 +125,23 @@ def collect(root: Path = ROOT) -> list[dict]:
                 or meta["return_type"] != result_adapter
             ):
                 raise ValueError(f"Checker declaration does not match its adapters: {folder.name}")
-        if meta["checker"] == "approx" and (
+        if meta["checker"] in {"approx", "approx_list"} and (
             meta["kind"] != "method" or meta["return_type"] != "value"
         ):
             raise ValueError(f"Approximate checker requires a numeric value result: {folder.name}")
+        if meta["checker"] == "bst_inorder" and (
+            meta["kind"] != "method" or meta["return_type"] != "treenode"
+        ):
+            raise ValueError(f"BST-inorder checker requires a tree result: {folder.name}")
+        if "tree_ref" in meta["args_types"] or meta["return_type"] == "tree_ref":
+            if (
+                meta["kind"] != "method"
+                or meta["args_types"] != ["treenode", "tree_ref", "tree_ref"]
+                or meta["return_type"] != "tree_ref"
+            ):
+                raise ValueError(
+                    f"Tree references require an original tree and two node references: {folder.name}"
+                )
         if "result_from_arg" in meta:
             index = meta["result_from_arg"]
             if (
@@ -98,6 +160,17 @@ def collect(root: Path = ROOT) -> list[dict]:
                 raise ValueError(f"Missing {filename}: {folder.name}")
         if (folder / "solution.cpp").exists() != (folder / "cpp_runner.cpp").exists():
             raise ValueError(f"C++ implementation and runner must both exist: {folder.name}")
+        _validate_complexity(meta, "complexity", folder)
+        if meta.get("complexity_language", "Python") != "Python":
+            raise ValueError(f"Generic complexity must describe Python: {folder.name}")
+        if (folder / "solution.cpp").is_file():
+            if meta.get("complexity_language") != "Python":
+                raise ValueError(
+                    f"C++ pairs require explicit Python complexity scope: {folder.name}"
+                )
+            _validate_complexity(meta, "complexity_cpp", folder)
+        elif "complexity_cpp" in meta:
+            _validate_complexity(meta, "complexity_cpp", folder)
         cases = json.loads((folder / "cases.json").read_text())
         if not cases or len({c["name"] for c in cases}) != len(cases):
             raise ValueError(f"Empty or duplicated named fixtures: {folder.name}")
@@ -121,6 +194,31 @@ def collect(root: Path = ROOT) -> list[dict]:
                 raise ValueError(
                     f"Gas-station fixture requires an integer start or -1: {folder.name}"
                 )
+            if meta["checker"] == "approx_list" and (
+                not isinstance(case["expected"], list)
+                or any(
+                    type(value) not in {int, float} or not math.isfinite(value)
+                    for value in case["expected"]
+                )
+            ):
+                raise ValueError(
+                    f"Approximate-list fixture requires finite numeric values: {folder.name}"
+                )
+            if meta["checker"] == "bst_inorder" and (
+                not isinstance(case["expected"], list)
+                or any(type(value) is not int for value in case["expected"])
+                or any(
+                    first >= second
+                    for first, second in zip(
+                        case["expected"][:-1], case["expected"][1:], strict=True
+                    )
+                )
+            ):
+                raise ValueError(
+                    f"BST-inorder reference requires sorted unique values: {folder.name}"
+                )
+            if meta["checker"] == "peak_index" and type(case["expected"]) is not int:
+                raise ValueError(f"Peak fixture requires an integer witness: {folder.name}")
             if meta["kind"] == "method":
                 if (
                     not isinstance(case.get("args"), list)

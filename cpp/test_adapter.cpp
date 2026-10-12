@@ -156,3 +156,31 @@ TEST_CASE("Result ownership releases each node once even in malformed shared or 
     REQUIRE_THROWS_AS(tree_to_json(owned.get()), std::invalid_argument);
     // Sanitizer builds verify destruction avoids a leak, infinite loop, or double deletion.
 }
+
+TEST_CASE("New result lists preserve values and transfer ownership while borrowed lists live") {
+    ListArena borrowed;
+    ListNode* original = borrowed.build(json::array({7, 0, 8}));
+    {
+        auto* head = new ListNode(7);
+        head->next = new ListNode(0);
+        head->next->next = new ListNode(8);
+        ListResultOwner first(head);
+        ListResultOwner moved(std::move(first));
+        REQUIRE(first.get() == nullptr);
+        REQUIRE(moved.get() != original);
+        REQUIRE(list_to_json(moved.get()) == json::array({7, 0, 8}));
+    }
+    REQUIRE(list_to_json(original) == json::array({7, 0, 8}));
+    ListResultOwner empty(nullptr);
+    REQUIRE(list_to_json(empty.get()) == json::array());
+}
+
+TEST_CASE("Fresh list ownership safely destroys cyclic results after serialization fails") {
+    auto* head = new ListNode(1);
+    auto* second = new ListNode(2);
+    head->next = second;
+    second->next = head;
+    ListResultOwner owned(head);
+    REQUIRE_THROWS_AS(list_to_json(owned.get()), std::invalid_argument);
+    // Sanitizer builds verify every newly allocated node is deleted exactly once.
+}
