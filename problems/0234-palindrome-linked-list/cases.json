@@ -1,0 +1,92 @@
+[
+  {
+    "name": "even_palindrome",
+    "args": [
+      [
+        1,
+        2,
+        2,
+        1
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "name": "different_pair",
+    "args": [
+      [
+        1,
+        2
+      ]
+    ],
+    "expected": false
+  },
+  {
+    "name": "singleton",
+    "args": [
+      [
+        7
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "name": "odd_palindrome",
+    "args": [
+      [
+        1,
+        2,
+        3,
+        2,
+        1
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "name": "same_digits",
+    "args": [
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "name": "odd_mismatch",
+    "args": [
+      [
+        1,
+        2,
+        3
+      ]
+    ],
+    "expected": false
+  },
+  {
+    "name": "interior_mismatch",
+    "args": [
+      [
+        1,
+        2,
+        3,
+        1
+      ]
+    ],
+    "expected": false
+  },
+  {
+    "name": "zeros_and_nines",
+    "args": [
+      [
+        0,
+        9,
+        9,
+        0
+      ]
+    ],
+    "expected": true
+  }
+]

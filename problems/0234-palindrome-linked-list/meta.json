@@ -1,0 +1,22 @@
+{
+  "id": 234,
+  "title": "Palindrome Linked List",
+  "difficulty": "Easy",
+  "patterns": [
+    "linked-list",
+    "two-pointers"
+  ],
+  "method": "isPalindrome",
+  "args_types": [
+    "listnode"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "slug": "palindrome-linked-list",
+  "kind": "method",
+  "judge_status": "not_recorded",
+  "checker": "exact"
+}
