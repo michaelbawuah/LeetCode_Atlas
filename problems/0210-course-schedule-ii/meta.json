@@ -1,0 +1,23 @@
+{
+  "id": 210,
+  "title": "Course Schedule II",
+  "slug": "course-schedule-ii",
+  "difficulty": "Medium",
+  "patterns": [
+    "graph",
+    "topological-sort"
+  ],
+  "method": "findOrder",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "topological_order",
+  "complexity": {
+    "time": "O(V + E)",
+    "space": "O(V + E)"
+  },
+  "judge_status": "not_recorded"
+}
