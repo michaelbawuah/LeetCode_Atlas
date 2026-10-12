@@ -1,0 +1,37 @@
+[
+  {
+    "name": "small",
+    "args": [
+      "III"
+    ],
+    "expected": 3
+  },
+  {
+    "name": "subtractive",
+    "args": [
+      "IV"
+    ],
+    "expected": 4
+  },
+  {
+    "name": "mixed",
+    "args": [
+      "LVIII"
+    ],
+    "expected": 58
+  },
+  {
+    "name": "all-places",
+    "args": [
+      "MCMXCIV"
+    ],
+    "expected": 1994
+  },
+  {
+    "name": "maximum",
+    "args": [
+      "MMMCMXCIX"
+    ],
+    "expected": 3999
+  }
+]
