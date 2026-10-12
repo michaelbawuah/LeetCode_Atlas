@@ -91,6 +91,43 @@ struct TreeNode {
     explicit TreeNode(int value) : val(value) {}
 };
 
+// Use only for freshly allocated result trees, never borrowed TreeArena nodes.
+class TreeResultOwner {
+public:
+    explicit TreeResultOwner(TreeNode* root) : root_(root) {}
+    TreeResultOwner(const TreeResultOwner&) = delete;
+    TreeResultOwner& operator=(const TreeResultOwner&) = delete;
+    TreeResultOwner(TreeResultOwner&& other) noexcept : root_(std::exchange(other.root_, nullptr)) {}
+    TreeResultOwner& operator=(TreeResultOwner&&) = delete;
+
+    ~TreeResultOwner() {
+        std::vector<TreeNode*> pending;
+        std::unordered_set<TreeNode*> owned;
+        if (root_ != nullptr) {
+            pending.push_back(root_);
+        }
+        while (!pending.empty()) {
+            TreeNode* node = pending.back();
+            pending.pop_back();
+            if (node == nullptr || !owned.insert(node).second) {
+                continue;
+            }
+            pending.push_back(node->left);
+            pending.push_back(node->right);
+        }
+        for (TreeNode* node : owned) {
+            delete node;
+        }
+    }
+
+    TreeNode* get() const noexcept {
+        return root_;
+    }
+
+private:
+    TreeNode* root_;
+};
+
 class TreeArena {
 public:
     TreeNode* build(const json& values) {

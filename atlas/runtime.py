@@ -7,6 +7,7 @@ change shared fixtures or later invocations.
 
 import importlib.util
 import json
+import math
 from collections import deque
 from copy import deepcopy
 from pathlib import Path
@@ -34,6 +35,12 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
+
+
+class GraphNode:
+    def __init__(self, val: int = 0, neighbors: "list[GraphNode] | None" = None):
+        self.val = val
+        self.neighbors = list(neighbors) if neighbors is not None else []
 
 
 def _folder_path(folder: str | Path) -> Path:
@@ -66,6 +73,8 @@ def load_module(folder: str | Path) -> ModuleType:
     module = importlib.util.module_from_spec(spec)
     module.ListNode = ListNode
     module.TreeNode = TreeNode
+    module.GraphNode = GraphNode
+    module.Node = GraphNode
     spec.loader.exec_module(module)
     return module
 
@@ -77,6 +86,23 @@ def build_list(values: list[int]) -> ListNode | None:
         tail.next = ListNode(value)
         tail = tail.next
     return dummy.next
+
+
+def build_list_cycle(value: dict[str, Any]) -> ListNode | None:
+    """Build the platform's cyclic-list fixture without losing node identities."""
+    if not isinstance(value, dict) or set(value) != {"values", "pos"}:
+        raise ValueError("Cyclic-list input requires values and pos only")
+    values, position = value["values"], value["pos"]
+    if not isinstance(values, list) or any(type(item) is not int for item in values):
+        raise ValueError("Cyclic-list values must be an integer array")
+    if type(position) is not int or not (-1 <= position < len(values)):
+        raise ValueError("Cyclic-list pos must be -1 or a valid node index")
+    nodes = [ListNode(item) for item in values]
+    for first, second in zip(nodes[:-1], nodes[1:], strict=True):
+        first.next = second
+    if nodes and position >= 0:
+        nodes[-1].next = nodes[position]
+    return nodes[0] if nodes else None
 
 
 def list_to_json(head: ListNode | None) -> list[int]:
@@ -139,13 +165,58 @@ def tree_to_json(root: TreeNode | None) -> list[int | None]:
     return values
 
 
+def build_graph(adjacency: list[list[int]]) -> GraphNode | None:
+    """Decode 1-based adjacency labels; graph cycles are ordinary edges."""
+    if not isinstance(adjacency, list) or any(not isinstance(row, list) for row in adjacency):
+        raise ValueError("Graph adjacency must be an array of neighbor arrays")
+    count = len(adjacency)
+    if any(type(label) is not int or not 1 <= label <= count for row in adjacency for label in row):
+        raise ValueError("Graph neighbor labels must be integers in 1..n")
+    nodes = [GraphNode(index + 1) for index in range(count)]
+    for node, labels in zip(nodes, adjacency, strict=True):
+        node.neighbors = [nodes[label - 1] for label in labels]
+    return nodes[0] if nodes else None
+
+
+def graph_to_json(root: GraphNode | None) -> list[list[int]]:
+    """Serialize root-reachable nodes by label, preserving edge multiplicity."""
+    if root is None:
+        return []
+    nodes: dict[int, GraphNode] = {}
+    seen: set[int] = set()
+    pending = deque([root])
+    while pending:
+        node = pending.popleft()
+        if not isinstance(node, GraphNode):
+            raise ValueError("Graph neighbors must be graph nodes")
+        if id(node) in seen:
+            continue
+        seen.add(id(node))
+        if type(node.val) is not int or node.val < 1:
+            raise ValueError("Graph node labels must be positive integers")
+        if node.val in nodes:
+            raise ValueError("Distinct graph nodes cannot share a label")
+        if not isinstance(node.neighbors, list):
+            raise ValueError("Graph neighbors must be a list")
+        nodes[node.val] = node
+        pending.extend(node.neighbors)
+    result: list[list[int]] = [[] for _ in range(max(nodes))]
+    for label, node in nodes.items():
+        result[label - 1] = sorted(neighbor.val for neighbor in node.neighbors)
+    return result
+
+
 def _adapt(value: Any, kind: str) -> Any:
     if kind == "value":
         return value
     if kind == "listnode":
         return build_list(value)
+    if kind == "listnode_cycle":
+        return build_list_cycle(value)
     if kind == "treenode":
         return build_tree(value)
+    if kind == "graphnode":
+        return build_graph(value)
     raise ValueError(f"Unknown argument type: {kind}")
 
 
@@ -156,6 +227,8 @@ def _serialize(value: Any, kind: str) -> Any:
         return list_to_json(value)
     if kind == "treenode":
         return tree_to_json(value)
+    if kind == "graphnode":
+        return graph_to_json(value)
     raise ValueError(f"Unknown return type: {kind}")
 
 
@@ -236,6 +309,14 @@ def normalize(meta: dict[str, Any], result: Any) -> Any:
         if any(isinstance(value, (list, dict)) for group in result for value in group):
             raise ValueError("unordered_groups checker requires flat groups")
         return sorted((sorted(group, key=_json_key) for group in result), key=_json_key)
+    if checker == "graph_adjacency":
+        if any(not isinstance(row, list) for row in result) or any(
+            type(label) is not int or not 1 <= label <= len(result)
+            for row in result
+            for label in row
+        ):
+            raise ValueError("graph_adjacency checker requires 1-based integer neighbor rows")
+        return [sorted(row) for row in result]
     raise ValueError(f"Unknown checker: {checker}")
 
 
@@ -243,6 +324,56 @@ def check_result(
     meta: dict[str, Any], actual: Any, expected: Any, args: list[Any] | None = None
 ) -> bool:
     """Compare JSON values with explicit ordering rules and scalar types."""
+    checker = meta.get("checker", "exact")
+    if checker == "approx":
+        return (
+            type(actual) in {int, float}
+            and type(expected) in {int, float}
+            and math.isfinite(actual)
+            and math.isfinite(expected)
+            and math.isclose(actual, expected, rel_tol=1e-9, abs_tol=1e-12)
+        )
+    if checker == "longest_palindrome":
+        if args is None or len(args) != 1 or not isinstance(args[0], str):
+            raise ValueError("Longest-palindrome checker requires the original string")
+        if isinstance(expected, str):
+            maximum_length = len(expected)
+        elif type(expected) is int and expected >= 0:
+            maximum_length = expected
+        else:
+            raise ValueError("Longest-palindrome reference must be a substring or length")
+        return (
+            isinstance(actual, str)
+            and actual in args[0]
+            and actual == actual[::-1]
+            and len(actual) == maximum_length
+        )
+    if checker == "gas_station":
+        if (
+            args is None
+            or len(args) != 2
+            or any(not isinstance(values, list) for values in args)
+            or not args[0]
+            or len(args[0]) != len(args[1])
+            or any(type(value) is not int or value < 0 for values in args for value in values)
+        ):
+            raise ValueError("Gas-station checker requires equal nonempty gas and cost arrays")
+        if type(expected) is not int or not -1 <= expected < len(args[0]):
+            raise ValueError("Gas-station reference must be -1 or a station index")
+        if type(actual) is not int:
+            return False
+        gas, cost = args
+        if expected == -1:
+            return actual == -1 and sum(gas) < sum(cost)
+        if not 0 <= actual < len(gas):
+            return False
+        fuel = 0
+        for offset in range(len(gas)):
+            station = (actual + offset) % len(gas)
+            fuel += gas[station] - cost[station]
+            if fuel < 0:
+                return False
+        return True
     if meta.get("checker") == "topological_order":
         if args is None or len(args) != 2:
             raise ValueError("Topological checker requires course count and prerequisites")

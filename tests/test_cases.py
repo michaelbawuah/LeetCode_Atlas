@@ -92,10 +92,15 @@ def test_cpp_runners_match_all_shared_cases():
         binary = binary_dir / f"atlas_{folder.name.replace('-', '_')}{suffix}"
         assert os.access(binary, os.X_OK), f"Runner is not executable: {binary}"
         entries = [(meta, case) for current, meta, case in CASES if current == folder]
-        assert all(meta["kind"] == "method" for meta, _ in entries), (
-            "C++ batch adapter expects method cases"
+        payload = "".join(
+            json.dumps(
+                case["args"]
+                if meta["kind"] == "method"
+                else [case["operations"], case["arguments"]]
+            )
+            + "\n"
+            for meta, case in entries
         )
-        payload = "".join(json.dumps(case["args"]) + "\n" for _, case in entries)
         result = subprocess.run(
             [str(binary)], input=payload, text=True, capture_output=True, timeout=30, check=False
         )
@@ -114,7 +119,8 @@ def test_cpp_runners_match_all_shared_cases():
             assert check_result(meta, actual, case["expected"], args=case.get("args")), (
                 f"{folder.name}/{case['name']}: C++ expected {case['expected']!r}, got {actual!r}"
             )
-            python_result = evaluate(folder, args=case["args"])
+            inputs = {key: case[key] for key in ("args", "operations", "arguments") if key in case}
+            python_result = evaluate(folder, **inputs)
             assert check_result(meta, actual, python_result, args=case.get("args")), (
                 f"{folder.name}/{case['name']}: C++/Python disagreement"
             )

@@ -127,3 +127,32 @@ TEST_CASE("Tree serialization rejects cycles and repeated node identities") {
     root->right = right;
     REQUIRE(tree_to_json(root) == json::array({1, 2, 3}));
 }
+
+TEST_CASE("New result trees stay alive through serialization and transfer ownership") {
+    TreeArena borrowed;
+    TreeNode* original = borrowed.build(json::array({4, 2, 6}));
+    {
+        auto* root = new TreeNode(4);
+        root->left = new TreeNode(2);
+        root->right = new TreeNode(6);
+        TreeResultOwner first(root);
+        TreeResultOwner moved(std::move(first));
+        REQUIRE(first.get() == nullptr);
+        REQUIRE(tree_to_json(moved.get()) == json::array({4, 2, 6}));
+        REQUIRE(moved.get() != original);
+    }
+    REQUIRE(tree_to_json(original) == json::array({4, 2, 6}));
+    TreeResultOwner empty(nullptr);
+    REQUIRE(tree_to_json(empty.get()) == json::array());
+}
+
+TEST_CASE("Result ownership releases each node once even in malformed shared or cyclic trees") {
+    auto* root = new TreeNode(1);
+    auto* child = new TreeNode(2);
+    root->left = child;
+    root->right = child;
+    child->left = root;
+    TreeResultOwner owned(root);
+    REQUIRE_THROWS_AS(tree_to_json(owned.get()), std::invalid_argument);
+    // Sanitizer builds verify destruction avoids a leak, infinite loop, or double deletion.
+}

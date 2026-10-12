@@ -18,5 +18,10 @@
     "time": "O(n)",
     "space": "O(min(n, a)) where a is the alphabet size"
   },
-  "judge_status": "not_recorded"
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n)",
+    "space": "O(1) working state; O(n) value-parameter copy"
+  }
 }
