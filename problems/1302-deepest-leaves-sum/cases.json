@@ -1,0 +1,83 @@
+[
+  {
+    "name": "mixed",
+    "args": [
+      [
+        1,
+        2,
+        3,
+        4,
+        5,
+        null,
+        6,
+        7,
+        null,
+        null,
+        null,
+        null,
+        8
+      ]
+    ],
+    "expected": 15
+  },
+  {
+    "name": "complete",
+    "args": [
+      [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    ],
+    "expected": 22
+  },
+  {
+    "name": "singleton",
+    "args": [
+      [
+        5
+      ]
+    ],
+    "expected": 5
+  },
+  {
+    "name": "chain",
+    "args": [
+      [
+        1,
+        null,
+        2,
+        null,
+        3
+      ]
+    ],
+    "expected": 3
+  },
+  {
+    "name": "unequal_depth",
+    "args": [
+      [
+        1,
+        2,
+        3,
+        4
+      ]
+    ],
+    "expected": 4
+  },
+  {
+    "name": "duplicates",
+    "args": [
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    "expected": 2
+  }
+]

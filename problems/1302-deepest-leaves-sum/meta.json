@@ -1,0 +1,22 @@
+{
+  "id": 1302,
+  "title": "Deepest Leaves Sum",
+  "difficulty": "Medium",
+  "method": "deepestLeavesSum",
+  "args_types": [
+    "treenode"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(h)"
+  },
+  "patterns": [
+    "tree",
+    "depth-first-search"
+  ],
+  "checker": "exact",
+  "slug": "deepest-leaves-sum",
+  "kind": "method",
+  "judge_status": "not_recorded"
+}
