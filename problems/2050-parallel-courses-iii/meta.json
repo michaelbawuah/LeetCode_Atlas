@@ -1,0 +1,26 @@
+{
+  "id": 2050,
+  "title": "Parallel Courses III",
+  "slug": "parallel-courses-iii",
+  "difficulty": "Hard",
+  "patterns": [
+    "graph",
+    "topological-sort",
+    "dynamic-programming"
+  ],
+  "method": "minimumTime",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity_language": "Python",
+  "complexity": {
+    "time": "O(V + E)",
+    "space": "O(V + E)"
+  },
+  "judge_status": "not_recorded"
+}
