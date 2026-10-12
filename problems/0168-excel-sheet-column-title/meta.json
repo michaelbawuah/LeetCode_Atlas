@@ -1,0 +1,21 @@
+{
+  "id": 168,
+  "slug": "excel-sheet-column-title",
+  "title": "Excel Sheet Column Title",
+  "difficulty": "Easy",
+  "patterns": [
+    "math"
+  ],
+  "method": "convertToTitle",
+  "args_types": [
+    "value"
+  ],
+  "kind": "method",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(log(columnNumber + 1))",
+    "space": "O(log(columnNumber + 1)) output"
+  },
+  "judge_status": "not_recorded"
+}
