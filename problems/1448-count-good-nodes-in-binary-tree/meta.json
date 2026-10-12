@@ -1,0 +1,27 @@
+{
+  "id": 1448,
+  "title": "Count Good Nodes in Binary Tree",
+  "difficulty": "Medium",
+  "method": "goodNodes",
+  "args_types": [
+    "treenode"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(h)"
+  },
+  "patterns": [
+    "tree",
+    "depth-first-search"
+  ],
+  "checker": "exact",
+  "slug": "count-good-nodes-in-binary-tree",
+  "kind": "method",
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n)",
+    "space": "O(h)"
+  }
+}
