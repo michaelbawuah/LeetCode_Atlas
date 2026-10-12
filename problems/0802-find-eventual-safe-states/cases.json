@@ -1,0 +1,106 @@
+[
+  {
+    "name": "mixed safe and cycle",
+    "args": [
+      [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          5
+        ],
+        [
+          0
+        ],
+        [
+          5
+        ],
+        [],
+        []
+      ]
+    ],
+    "expected": [
+      2,
+      4,
+      5,
+      6
+    ]
+  },
+  {
+    "name": "all nodes safe with one edge",
+    "args": [
+      [
+        [
+          1
+        ],
+        [],
+        []
+      ]
+    ],
+    "expected": [
+      0,
+      1,
+      2
+    ]
+  },
+  {
+    "name": "self loop",
+    "args": [
+      [
+        [
+          0
+        ]
+      ]
+    ],
+    "expected": []
+  },
+  {
+    "name": "chain into cycle",
+    "args": [
+      [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          1
+        ],
+        []
+      ]
+    ],
+    "expected": [
+      3
+    ]
+  },
+  {
+    "name": "acyclic diamond",
+    "args": [
+      [
+        [
+          1,
+          2
+        ],
+        [
+          3
+        ],
+        [
+          3
+        ],
+        []
+      ]
+    ],
+    "expected": [
+      0,
+      1,
+      2,
+      3
+    ]
+  }
+]
