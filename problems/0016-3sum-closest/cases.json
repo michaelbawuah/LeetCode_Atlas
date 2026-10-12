@@ -1,0 +1,103 @@
+[
+  {
+    "name": "mixed example",
+    "args": [
+      [
+        -1,
+        2,
+        1,
+        -4
+      ],
+      1
+    ],
+    "expected": 2
+  },
+  {
+    "name": "all zeroes",
+    "args": [
+      [
+        0,
+        0,
+        0
+      ],
+      1
+    ],
+    "expected": 0
+  },
+  {
+    "name": "target above every sum",
+    "args": [
+      [
+        -5,
+        -2,
+        1,
+        4
+      ],
+      100
+    ],
+    "expected": 3
+  },
+  {
+    "name": "target below every sum",
+    "args": [
+      [
+        1,
+        2,
+        3,
+        4
+      ],
+      -100
+    ],
+    "expected": 6
+  },
+  {
+    "name": "negative triple only",
+    "args": [
+      [
+        -8,
+        -6,
+        -3
+      ],
+      -10
+    ],
+    "expected": -17
+  },
+  {
+    "name": "repeated optimal values",
+    "args": [
+      [
+        1,
+        1,
+        1,
+        0
+      ],
+      100
+    ],
+    "expected": 3
+  },
+  {
+    "name": "extreme target",
+    "args": [
+      [
+        -1000,
+        0,
+        1000
+      ],
+      9999
+    ],
+    "expected": 0
+  },
+  {
+    "name": "closest without exact match",
+    "args": [
+      [
+        0,
+        2,
+        1,
+        -3
+      ],
+      1
+    ],
+    "expected": 0
+  }
+]

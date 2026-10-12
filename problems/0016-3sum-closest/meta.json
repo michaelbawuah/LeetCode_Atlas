@@ -1,0 +1,23 @@
+{
+  "id": 16,
+  "title": "3Sum Closest",
+  "slug": "3sum-closest",
+  "difficulty": "Medium",
+  "patterns": [
+    "sorting",
+    "two-pointers"
+  ],
+  "method": "threeSumClosest",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n^2)",
+    "space": "O(n)"
+  },
+  "judge_status": "not_recorded"
+}
