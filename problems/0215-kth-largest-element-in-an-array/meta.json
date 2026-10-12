@@ -1,0 +1,27 @@
+{
+  "id": 215,
+  "title": "Kth Largest Element in an Array",
+  "slug": "kth-largest-element-in-an-array",
+  "difficulty": "Medium",
+  "patterns": [
+    "heap"
+  ],
+  "method": "findKthLargest",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "kind": "method",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n log(k + 1))",
+    "space": "O(k)"
+  },
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n) comparisons on average; worst-case linear complexity is not guaranteed",
+    "space": "In-place partition; internal auxiliary storage is implementation-dependent; O(1) scalar output"
+  }
+}

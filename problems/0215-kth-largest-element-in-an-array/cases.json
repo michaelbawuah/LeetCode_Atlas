@@ -1,0 +1,108 @@
+[
+  {
+    "name": "second-largest",
+    "args": [
+      [
+        3,
+        2,
+        1,
+        5,
+        6,
+        4
+      ],
+      2
+    ],
+    "expected": 5
+  },
+  {
+    "name": "duplicates-count",
+    "args": [
+      [
+        3,
+        2,
+        3,
+        1,
+        2,
+        4,
+        5,
+        5,
+        6
+      ],
+      4
+    ],
+    "expected": 4
+  },
+  {
+    "name": "single-value",
+    "args": [
+      [
+        -1
+      ],
+      1
+    ],
+    "expected": -1
+  },
+  {
+    "name": "largest-rank",
+    "args": [
+      [
+        -5,
+        0,
+        2,
+        9
+      ],
+      1
+    ],
+    "expected": 9
+  },
+  {
+    "name": "smallest-rank",
+    "args": [
+      [
+        -5,
+        0,
+        2,
+        9
+      ],
+      4
+    ],
+    "expected": -5
+  },
+  {
+    "name": "all-equal",
+    "args": [
+      [
+        7,
+        7,
+        7
+      ],
+      2
+    ],
+    "expected": 7
+  },
+  {
+    "name": "negative-values",
+    "args": [
+      [
+        -3,
+        -2,
+        -1,
+        -4
+      ],
+      3
+    ],
+    "expected": -3
+  },
+  {
+    "name": "integer-boundaries",
+    "args": [
+      [
+        -10000,
+        10000,
+        0
+      ],
+      2
+    ],
+    "expected": 0
+  }
+]
