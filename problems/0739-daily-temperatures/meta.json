@@ -1,0 +1,21 @@
+{
+  "id": 739,
+  "title": "Daily Temperatures",
+  "slug": "daily-temperatures",
+  "difficulty": "Medium",
+  "patterns": [
+    "monotonic-stack"
+  ],
+  "method": "dailyTemperatures",
+  "args_types": [
+    "value"
+  ],
+  "kind": "method",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "judge_status": "not_recorded"
+}
