@@ -1,0 +1,22 @@
+{
+  "id": 39,
+  "title": "Combination Sum",
+  "slug": "combination-sum",
+  "difficulty": "Medium",
+  "patterns": [
+    "backtracking"
+  ],
+  "method": "combinationSum",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "unordered_groups",
+  "complexity": {
+    "time": "Output-sensitive exponential time; O(c log c + d c^d) conservative bound",
+    "space": "O(c + d) auxiliary; O(kd) output"
+  },
+  "judge_status": "not_recorded"
+}

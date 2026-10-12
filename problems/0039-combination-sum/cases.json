@@ -1,0 +1,153 @@
+[
+  {
+    "name": "two representations",
+    "args": [
+      [
+        2,
+        3,
+        6,
+        7
+      ],
+      7
+    ],
+    "expected": [
+      [
+        2,
+        2,
+        3
+      ],
+      [
+        7
+      ]
+    ]
+  },
+  {
+    "name": "different lengths",
+    "args": [
+      [
+        2,
+        3,
+        5
+      ],
+      8
+    ],
+    "expected": [
+      [
+        2,
+        2,
+        2,
+        2
+      ],
+      [
+        2,
+        3,
+        3
+      ],
+      [
+        3,
+        5
+      ]
+    ]
+  },
+  {
+    "name": "impossible target",
+    "args": [
+      [
+        2
+      ],
+      1
+    ],
+    "expected": []
+  },
+  {
+    "name": "single reused candidate",
+    "args": [
+      [
+        2
+      ],
+      6
+    ],
+    "expected": [
+      [
+        2,
+        2,
+        2
+      ]
+    ]
+  },
+  {
+    "name": "exact candidate",
+    "args": [
+      [
+        5,
+        8
+      ],
+      5
+    ],
+    "expected": [
+      [
+        5
+      ]
+    ]
+  },
+  {
+    "name": "unsorted candidates",
+    "args": [
+      [
+        7,
+        3,
+        2
+      ],
+      7
+    ],
+    "expected": [
+      [
+        2,
+        2,
+        3
+      ],
+      [
+        7
+      ]
+    ]
+  },
+  {
+    "name": "odd target even candidates",
+    "args": [
+      [
+        2,
+        4,
+        6
+      ],
+      7
+    ],
+    "expected": []
+  },
+  {
+    "name": "several repeated choices",
+    "args": [
+      [
+        2,
+        4
+      ],
+      8
+    ],
+    "expected": [
+      [
+        2,
+        2,
+        2,
+        2
+      ],
+      [
+        2,
+        2,
+        4
+      ],
+      [
+        4,
+        4
+      ]
+    ]
+  }
+]
