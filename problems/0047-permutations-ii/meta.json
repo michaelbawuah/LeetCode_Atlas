@@ -19,5 +19,9 @@
     "space": "O(n + U) auxiliary; O(n P) output"
   },
   "complexity_language": "Python",
-  "judge_status": "not_recorded"
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O(n log(U + 1) + n U P) conservative bound",
+    "space": "O(n + U) auxiliary; O(n P) output"
+  }
 }

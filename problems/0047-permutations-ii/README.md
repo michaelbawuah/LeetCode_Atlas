@@ -22,3 +22,11 @@ How would lexicographic ranking let you retrieve one unique permutation without 
 
 ## Verification
 Named fixtures and independent generated-input references accompany the implementation. Official judge results are tracked separately in metadata.
+
+## C++23 counterpart
+
+C++ uses std::map to keep U distinct values ordered, so frequency construction costs O(n log(U+1)); Python uses a Counter and then sorts its distinct keys. Both scan U choices per prefix and copy each length-n output. Counts are decremented and restored without inserting or erasing map entries during recursion.
+
+Time: O(n log(U + 1) + n U P) conservative bound. Space: O(n + U) auxiliary; O(n P) output.
+
+The JSON adapter creates fresh state per case. Named fixtures and 150 deterministic generated inputs compare the two language implementations; existing independent Python oracles supply a separate behavioral reference.
