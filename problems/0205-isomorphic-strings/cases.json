@@ -1,0 +1,42 @@
+[
+  {
+    "name": "consistent",
+    "args": [
+      "egg",
+      "add"
+    ],
+    "expected": true
+  },
+  {
+    "name": "inconsistent",
+    "args": [
+      "foo",
+      "bar"
+    ],
+    "expected": false
+  },
+  {
+    "name": "longer",
+    "args": [
+      "paper",
+      "title"
+    ],
+    "expected": true
+  },
+  {
+    "name": "many-to-one",
+    "args": [
+      "ab",
+      "aa"
+    ],
+    "expected": false
+  },
+  {
+    "name": "one",
+    "args": [
+      "a",
+      "z"
+    ],
+    "expected": true
+  }
+]

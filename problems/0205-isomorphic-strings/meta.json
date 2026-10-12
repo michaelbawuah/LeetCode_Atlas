@@ -1,0 +1,28 @@
+{
+  "id": 205,
+  "slug": "isomorphic-strings",
+  "title": "Isomorphic Strings",
+  "difficulty": "Easy",
+  "patterns": [
+    "hash-map",
+    "string"
+  ],
+  "method": "isIsomorphic",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "kind": "method",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n) expected",
+    "space": "O(a), a is encountered alphabet size"
+  },
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n)",
+    "space": "O(1), two fixed ASCII tables"
+  }
+}
