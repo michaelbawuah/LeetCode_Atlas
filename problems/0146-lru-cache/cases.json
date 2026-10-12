@@ -1,0 +1,251 @@
+[
+  {
+    "name": "eviction-example",
+    "operations": [
+      "LRUCache",
+      "put",
+      "put",
+      "get",
+      "put",
+      "get",
+      "put",
+      "get",
+      "get",
+      "get"
+    ],
+    "arguments": [
+      [
+        2
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        1
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        2
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        1
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "expected": [
+      null,
+      null,
+      null,
+      1,
+      null,
+      -1,
+      null,
+      -1,
+      3,
+      4
+    ]
+  },
+  {
+    "name": "capacity-one",
+    "operations": [
+      "LRUCache",
+      "put",
+      "put",
+      "get",
+      "get"
+    ],
+    "arguments": [
+      [
+        1
+      ],
+      [
+        1,
+        9
+      ],
+      [
+        2,
+        8
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "expected": [
+      null,
+      null,
+      null,
+      -1,
+      8
+    ]
+  },
+  {
+    "name": "update-is-recent",
+    "operations": [
+      "LRUCache",
+      "put",
+      "put",
+      "put",
+      "put",
+      "get",
+      "get"
+    ],
+    "arguments": [
+      [
+        2
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        2
+      ],
+      [
+        1
+      ]
+    ],
+    "expected": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      -1,
+      7
+    ]
+  },
+  {
+    "name": "missing-read-no-recency",
+    "operations": [
+      "LRUCache",
+      "put",
+      "put",
+      "get",
+      "put",
+      "get"
+    ],
+    "arguments": [
+      [
+        2
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        9
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        1
+      ]
+    ],
+    "expected": [
+      null,
+      null,
+      null,
+      -1,
+      null,
+      -1
+    ]
+  },
+  {
+    "name": "zero-key-and-value",
+    "operations": [
+      "LRUCache",
+      "put",
+      "get"
+    ],
+    "arguments": [
+      [
+        1
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0
+      ]
+    ],
+    "expected": [
+      null,
+      null,
+      0
+    ]
+  },
+  {
+    "name": "repeat-read",
+    "operations": [
+      "LRUCache",
+      "put",
+      "get",
+      "get",
+      "get"
+    ],
+    "arguments": [
+      [
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "expected": [
+      null,
+      null,
+      2,
+      2,
+      -1
+    ]
+  }
+]

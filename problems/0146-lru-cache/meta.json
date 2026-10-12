@@ -1,0 +1,27 @@
+{
+  "id": 146,
+  "slug": "lru-cache",
+  "title": "LRU Cache",
+  "difficulty": "Medium",
+  "patterns": [
+    "hash-map",
+    "design",
+    "linked-list"
+  ],
+  "method": null,
+  "args_types": [],
+  "kind": "design",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(1) expected per get/put",
+    "space": "O(capacity)"
+  },
+  "judge_status": "not_recorded",
+  "class_name": "LRUCache",
+  "complexity_cpp": {
+    "time": "O(1) expected get/put",
+    "space": "O(capacity)"
+  },
+  "complexity_language": "Python"
+}
