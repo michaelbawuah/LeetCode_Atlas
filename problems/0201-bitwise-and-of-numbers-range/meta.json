@@ -1,0 +1,27 @@
+{
+  "id": 201,
+  "title": "Bitwise AND of Numbers Range",
+  "slug": "bitwise-and-of-numbers-range",
+  "difficulty": "Medium",
+  "patterns": [
+    "bit-manipulation"
+  ],
+  "method": "rangeBitwiseAnd",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(w), at most 31 shifts",
+    "space": "O(1) for the fixed-width input domain"
+  },
+  "complexity_language": "Python",
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O(w), at most 31 shifts",
+    "space": "O(1) for the fixed-width input domain"
+  }
+}

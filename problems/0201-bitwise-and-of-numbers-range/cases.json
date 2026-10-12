@@ -1,0 +1,66 @@
+[
+  {
+    "name": "small_range",
+    "args": [
+      5,
+      7
+    ],
+    "expected": 4
+  },
+  {
+    "name": "zero_singleton",
+    "args": [
+      0,
+      0
+    ],
+    "expected": 0
+  },
+  {
+    "name": "whole_positive_domain",
+    "args": [
+      1,
+      2147483647
+    ],
+    "expected": 0
+  },
+  {
+    "name": "power_of_two_boundary",
+    "args": [
+      7,
+      8
+    ],
+    "expected": 0
+  },
+  {
+    "name": "shared_high_bit",
+    "args": [
+      8,
+      15
+    ],
+    "expected": 8
+  },
+  {
+    "name": "nonzero_singleton",
+    "args": [
+      12,
+      12
+    ],
+    "expected": 12
+  },
+  {
+    "name": "signed_upper_endpoint",
+    "args": [
+      2147483646,
+      2147483647
+    ],
+    "expected": 2147483646
+  },
+  {
+    "name": "zero_and_one",
+    "args": [
+      0,
+      1
+    ],
+    "expected": 0
+  }
+]
