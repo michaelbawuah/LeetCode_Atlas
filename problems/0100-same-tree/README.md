@@ -19,3 +19,8 @@ Traversal values without null markers lose shape information. Comparing node ide
 
 ## Follow-up
 How would comparison change if swapping the two children at any node were allowed?
+
+## Python and C++23
+Both versions compare matching positions with explicit node pairs. Null-child placement is part of equality, while object identity is not. The adapters own separate input nodes; submission methods read their values and links without mutation.
+
+C++23 submission-method complexity: **O(n + m) time; O(hp + hq) space**. Adapter ownership and JSON conversion costs are separate.
