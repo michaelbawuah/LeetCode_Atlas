@@ -1,0 +1,103 @@
+[
+  {
+    "name": "multiple basins",
+    "args": [
+      [
+        0,
+        1,
+        0,
+        2,
+        1,
+        0,
+        1,
+        3,
+        2,
+        1,
+        2,
+        1
+      ]
+    ],
+    "expected": 6
+  },
+  {
+    "name": "unequal outer walls",
+    "args": [
+      [
+        4,
+        2,
+        0,
+        3,
+        2,
+        5
+      ]
+    ],
+    "expected": 9
+  },
+  {
+    "name": "single zero",
+    "args": [
+      [
+        0
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "one basin",
+    "args": [
+      [
+        3,
+        0,
+        3
+      ]
+    ],
+    "expected": 3
+  },
+  {
+    "name": "rising bars",
+    "args": [
+      [
+        1,
+        2,
+        3,
+        4
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "falling bars",
+    "args": [
+      [
+        4,
+        3,
+        2,
+        1
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "flat plateau",
+    "args": [
+      [
+        2,
+        2,
+        2
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "low right boundary",
+    "args": [
+      [
+        5,
+        4,
+        1,
+        2
+      ]
+    ],
+    "expected": 1
+  }
+]
