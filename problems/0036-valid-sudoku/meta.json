@@ -18,5 +18,10 @@
     "time": "O(1), fixed 9 x 9 board",
     "space": "O(1), fixed 9 x 9 board"
   },
-  "judge_status": "not_recorded"
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(1), fixed 9 x 9 board",
+    "space": "O(1), fixed 9 x 9 board"
+  }
 }

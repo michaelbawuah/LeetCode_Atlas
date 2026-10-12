@@ -33,3 +33,7 @@ remove random cells from a valid grid. Repeated digits in unrelated units are al
 Validity checks the filled cells; it does not prove that a partial board has a solution.
 
 **Follow-up:** how would candidate sets and backtracking extend this into a solver?
+
+## C++23 counterpart
+
+C++ uses three zero-initialized 9×9 boolean tables instead of hash sets. The contract restricts each cell to a dot or digit 1–9; dots are skipped before indexing the digit table. The adapter converts the one-character JSON strings to the standard `vector<vector<char>>` interface. These fixed tables keep time and auxiliary space O(1), and the board is preserved.
