@@ -1,0 +1,24 @@
+# 337 · House Robber III
+
+[LeetCode problem](https://leetcode.com/problems/house-robber-iii/)
+
+## Intuition
+For each subtree, retain separate best totals when its root is taken and when it is skipped.
+
+## Baseline and approach
+Enumerating all nonadjacent node subsets is exponential. Iterative postorder computes each subtree’s two outcomes once.
+
+## Why it works
+Taking a node forces both child roots to be skipped. Skipping it permits either outcome independently for each child. Once child states are ready, these two cases cover all legal selections in the parent subtree. Their maximum at the root is globally optimal.
+
+## Complexity
+Python: **O(n) expected time; O(n) auxiliary space**. n is node count. Each node is visited a constant number of times; expected dictionary lookup cost gives O(n) time. The outcome map uses O(n) space in addition to the O(h) traversal stack.
+
+## Pitfalls
+Use node identity as the map key: duplicate values are different houses. The enter/ready stack avoids Python recursion failure on a legal 10,000-node chain. The tree is not modified.
+
+## Follow-up
+Can child outcomes be discarded after their parent is processed to reduce retained storage?
+
+## Verification
+Named fixtures and an independent generated-input oracle accompany this implementation. Official judge results are recorded separately in metadata.

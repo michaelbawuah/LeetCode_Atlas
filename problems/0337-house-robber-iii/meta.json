@@ -1,0 +1,24 @@
+{
+  "id": 337,
+  "title": "House Robber III",
+  "slug": "house-robber-iii",
+  "difficulty": "Medium",
+  "patterns": [
+    "dynamic-programming",
+    "tree",
+    "depth-first-search"
+  ],
+  "method": "rob",
+  "kind": "method",
+  "args_types": [
+    "treenode"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n) expected",
+    "space": "O(n)"
+  },
+  "complexity_language": "Python",
+  "judge_status": "not_recorded"
+}
