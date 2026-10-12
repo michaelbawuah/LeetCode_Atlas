@@ -1,0 +1,66 @@
+[
+  {
+    "name": "gapped_match",
+    "args": [
+      "abcde",
+      "ace"
+    ],
+    "expected": 3
+  },
+  {
+    "name": "identical",
+    "args": [
+      "abc",
+      "abc"
+    ],
+    "expected": 3
+  },
+  {
+    "name": "disjoint",
+    "args": [
+      "abc",
+      "def"
+    ],
+    "expected": 0
+  },
+  {
+    "name": "single_match",
+    "args": [
+      "a",
+      "a"
+    ],
+    "expected": 1
+  },
+  {
+    "name": "single_mismatch",
+    "args": [
+      "a",
+      "b"
+    ],
+    "expected": 0
+  },
+  {
+    "name": "repeated_letters",
+    "args": [
+      "aaaa",
+      "aa"
+    ],
+    "expected": 2
+  },
+  {
+    "name": "reversed_order",
+    "args": [
+      "abc",
+      "cba"
+    ],
+    "expected": 1
+  },
+  {
+    "name": "shorter_first",
+    "args": [
+      "ace",
+      "abcde"
+    ],
+    "expected": 3
+  }
+]

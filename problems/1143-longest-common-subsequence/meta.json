@@ -1,0 +1,22 @@
+{
+  "id": 1143,
+  "title": "Longest Common Subsequence",
+  "difficulty": "Medium",
+  "patterns": [
+    "dynamic-programming"
+  ],
+  "method": "longestCommonSubsequence",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(m * n)",
+    "space": "O(min(m, n))"
+  },
+  "slug": "longest-common-subsequence",
+  "kind": "method",
+  "checker": "exact",
+  "judge_status": "not_recorded"
+}
