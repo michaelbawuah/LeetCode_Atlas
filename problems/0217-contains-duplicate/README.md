@@ -32,3 +32,7 @@ unless mutation is an intentional part of the interface.
 
 **Follow-up:** what changes if you must report all duplicated values or work
 under a strict memory limit?
+
+## Python and C++23
+
+Both versions use a hash set, taking O(n) expected time and O(n) auxiliary space. C++ reserves capacity and tests whether insertion succeeds; Python checks membership before adding. C++ receives the vector by reference and neither version mutates it. Hash-table operations have expected, rather than guaranteed worst-case, constant time.

@@ -17,5 +17,10 @@
     "time": "O(n) expected",
     "space": "O(n)"
   },
-  "judge_status": "not_recorded"
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n) expected",
+    "space": "O(n) auxiliary and scalar output"
+  }
 }
