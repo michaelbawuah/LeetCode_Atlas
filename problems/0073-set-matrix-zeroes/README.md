@@ -30,3 +30,7 @@ encode both first-unit flags by itself. A second application can spread newly
 created zeroes further, so idempotence is not a valid general property here.
 
 **Follow-up:** how would marking change if the matrix representation were sparse?
+
+## C++23 counterpart
+
+C++ saves the original first-row and first-column conditions before using those cells as markers. No row or column sets are allocated; the method returns `void`, and the adapter reads the mutated matrix. All entries, including signed integer limits, are only compared with zero or replaced by zero, so no arithmetic overflow occurs. Complexity remains O(mn) time and O(1) auxiliary space.
