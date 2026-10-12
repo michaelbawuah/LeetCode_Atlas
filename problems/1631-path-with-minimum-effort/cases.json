@@ -1,0 +1,88 @@
+[
+  {
+    "name": "detour helps",
+    "args": [
+      [
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          3,
+          8,
+          2
+        ],
+        [
+          5,
+          3,
+          5
+        ]
+      ]
+    ],
+    "expected": 2
+  },
+  {
+    "name": "small jumps route",
+    "args": [
+      [
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          3,
+          8,
+          4
+        ],
+        [
+          5,
+          3,
+          5
+        ]
+      ]
+    ],
+    "expected": 1
+  },
+  {
+    "name": "singleton",
+    "args": [
+      [
+        [
+          9
+        ]
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "flat grid",
+    "args": [
+      [
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          2
+        ]
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "one row jump",
+    "args": [
+      [
+        [
+          1,
+          10,
+          2
+        ]
+      ]
+    ],
+    "expected": 9
+  }
+]

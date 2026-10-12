@@ -1,0 +1,28 @@
+{
+  "id": 1631,
+  "title": "Path With Minimum Effort",
+  "slug": "path-with-minimum-effort",
+  "difficulty": "Medium",
+  "patterns": [
+    "graph",
+    "dijkstra",
+    "grid"
+  ],
+  "method": "minimumEffortPath",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity_language": "Python",
+  "complexity": {
+    "time": "O(R C log(R C + 1))",
+    "space": "O(R C)"
+  },
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O(R C log(R C + 1))",
+    "space": "O(R C)"
+  }
+}
