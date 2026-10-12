@@ -1,0 +1,26 @@
+{
+  "id": 1137,
+  "title": "N-th Tribonacci Number",
+  "slug": "n-th-tribonacci-number",
+  "difficulty": "Easy",
+  "patterns": [
+    "dynamic-programming"
+  ],
+  "method": "tribonacci",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n + 1)",
+    "space": "O(1)"
+  },
+  "complexity_language": "Python",
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O(n + 1)",
+    "space": "O(1)"
+  }
+}
