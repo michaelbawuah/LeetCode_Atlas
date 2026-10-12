@@ -1,0 +1,24 @@
+{
+  "id": 113,
+  "title": "Path Sum II",
+  "difficulty": "Medium",
+  "patterns": [
+    "tree",
+    "depth-first-search",
+    "backtracking"
+  ],
+  "method": "pathSum",
+  "args_types": [
+    "treenode",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "unordered_rows",
+  "complexity": {
+    "time": "O(n + L), L = total returned path elements",
+    "space": "O(h) auxiliary; O(L) output"
+  },
+  "slug": "path-sum-ii",
+  "kind": "method",
+  "judge_status": "not_recorded"
+}
