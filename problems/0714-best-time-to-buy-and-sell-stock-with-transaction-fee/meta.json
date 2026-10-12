@@ -1,0 +1,28 @@
+{
+  "id": 714,
+  "title": "Best Time to Buy and Sell Stock with Transaction Fee",
+  "slug": "best-time-to-buy-and-sell-stock-with-transaction-fee",
+  "difficulty": "Medium",
+  "patterns": [
+    "dynamic-programming",
+    "state-machine"
+  ],
+  "method": "maxProfit",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "complexity_language": "Python",
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O(n)",
+    "space": "O(1)"
+  }
+}

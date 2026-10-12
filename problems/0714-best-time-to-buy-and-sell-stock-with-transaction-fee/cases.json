@@ -1,0 +1,79 @@
+[
+  {
+    "name": "classic_fee",
+    "args": [
+      [
+        1,
+        3,
+        2,
+        8,
+        4,
+        9
+      ],
+      2
+    ],
+    "expected": 8
+  },
+  {
+    "name": "merge_transactions",
+    "args": [
+      [
+        1,
+        3,
+        7,
+        5,
+        10,
+        3
+      ],
+      3
+    ],
+    "expected": 6
+  },
+  {
+    "name": "no_fee",
+    "args": [
+      [
+        1,
+        5,
+        1,
+        5
+      ],
+      0
+    ],
+    "expected": 8
+  },
+  {
+    "name": "fee_prevents_profit",
+    "args": [
+      [
+        1,
+        2,
+        3
+      ],
+      9
+    ],
+    "expected": 0
+  },
+  {
+    "name": "singleton",
+    "args": [
+      [
+        7
+      ],
+      2
+    ],
+    "expected": 0
+  },
+  {
+    "name": "decreasing",
+    "args": [
+      [
+        8,
+        5,
+        2
+      ],
+      1
+    ],
+    "expected": 0
+  }
+]
