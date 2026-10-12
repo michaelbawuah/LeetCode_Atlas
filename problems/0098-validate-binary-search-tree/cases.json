@@ -1,0 +1,98 @@
+[
+  {
+    "name": "valid",
+    "args": [
+      [
+        2,
+        1,
+        3
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "name": "ancestor_violation",
+    "args": [
+      [
+        5,
+        1,
+        4,
+        null,
+        null,
+        3,
+        6
+      ]
+    ],
+    "expected": false
+  },
+  {
+    "name": "duplicate",
+    "args": [
+      [
+        2,
+        2,
+        3
+      ]
+    ],
+    "expected": false
+  },
+  {
+    "name": "singleton",
+    "args": [
+      [
+        0
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "name": "integer_boundaries",
+    "args": [
+      [
+        0,
+        -2147483648,
+        2147483647
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "name": "nonlocal_violation",
+    "args": [
+      [
+        5,
+        4,
+        6,
+        null,
+        null,
+        3,
+        7
+      ]
+    ],
+    "expected": false
+  },
+  {
+    "name": "negative_valid",
+    "args": [
+      [
+        -2,
+        -3,
+        -1
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "name": "right_chain",
+    "args": [
+      [
+        1,
+        null,
+        2,
+        null,
+        3
+      ]
+    ],
+    "expected": true
+  }
+]

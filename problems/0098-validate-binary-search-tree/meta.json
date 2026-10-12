@@ -1,0 +1,28 @@
+{
+  "id": 98,
+  "title": "Validate Binary Search Tree",
+  "difficulty": "Medium",
+  "patterns": [
+    "tree",
+    "depth-first-search",
+    "binary-search-tree"
+  ],
+  "method": "isValidBST",
+  "args_types": [
+    "treenode"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(h)"
+  },
+  "slug": "validate-binary-search-tree",
+  "kind": "method",
+  "checker": "exact",
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n)",
+    "space": "O(h) auxiliary; O(1) scalar output"
+  }
+}
