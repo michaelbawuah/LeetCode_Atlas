@@ -1,0 +1,21 @@
+{
+  "id": 746,
+  "title": "Min Cost Climbing Stairs",
+  "difficulty": "Easy",
+  "patterns": [
+    "dynamic-programming"
+  ],
+  "method": "minCostClimbingStairs",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "slug": "min-cost-climbing-stairs",
+  "kind": "method",
+  "checker": "exact",
+  "judge_status": "not_recorded"
+}

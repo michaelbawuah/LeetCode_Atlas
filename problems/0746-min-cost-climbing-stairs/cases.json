@@ -1,0 +1,97 @@
+[
+  {
+    "name": "three_steps",
+    "args": [
+      [
+        10,
+        15,
+        20
+      ]
+    ],
+    "expected": 15
+  },
+  {
+    "name": "alternating_cheap",
+    "args": [
+      [
+        1,
+        100,
+        1,
+        1,
+        1,
+        100,
+        1,
+        1,
+        100,
+        1
+      ]
+    ],
+    "expected": 6
+  },
+  {
+    "name": "start_second",
+    "args": [
+      [
+        10,
+        1
+      ]
+    ],
+    "expected": 1
+  },
+  {
+    "name": "start_first",
+    "args": [
+      [
+        1,
+        10
+      ]
+    ],
+    "expected": 1
+  },
+  {
+    "name": "free_stairs",
+    "args": [
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "equal_costs",
+    "args": [
+      [
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    ],
+    "expected": 10
+  },
+  {
+    "name": "skip_expensive_middle",
+    "args": [
+      [
+        1,
+        999,
+        1
+      ]
+    ],
+    "expected": 2
+  },
+  {
+    "name": "free_second_start",
+    "args": [
+      [
+        999,
+        0
+      ]
+    ],
+    "expected": 0
+  }
+]
