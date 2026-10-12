@@ -19,3 +19,9 @@ Save child references by pushing them before later rewiring can erase them. The 
 
 ## Follow-up
 Thread the original tree through predecessor links to flatten it with O(1) auxiliary storage.
+
+## C++23 implementation
+
+C++23 has the standard `void flatten(TreeNode*)` interface. Its adapter serializes the changed argument zero and checks the exact original preorder node identities, unchanged values, null left links, and an acyclic right-only tail. The method creates or deletes no nodes.
+
+C++23 submission cost: **O(n) time; O(h) space**. Here n is node count, h is tree height, w is maximum level width, and L is the number of returned path elements when applicable. Adapter construction, snapshots, and serialization are measured separately.
