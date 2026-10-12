@@ -1,0 +1,28 @@
+{
+  "id": 658,
+  "title": "Find K Closest Elements",
+  "slug": "find-k-closest-elements",
+  "difficulty": "Medium",
+  "patterns": [
+    "binary-search"
+  ],
+  "method": "findClosestElements",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(log(n - k + 1) + k)",
+    "space": "O(1) auxiliary; O(k) output"
+  },
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(log(n - k + 1) + k)",
+    "space": "O(1) auxiliary; O(k) output"
+  }
+}

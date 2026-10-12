@@ -1,0 +1,127 @@
+[
+  {
+    "name": "tie prefers smaller",
+    "args": [
+      [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      4,
+      3
+    ],
+    "expected": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "name": "target below all values",
+    "args": [
+      [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      4,
+      -1
+    ],
+    "expected": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "name": "exact singleton",
+    "args": [
+      [
+        1,
+        2,
+        3
+      ],
+      1,
+      2
+    ],
+    "expected": [
+      2
+    ]
+  },
+  {
+    "name": "duplicates at tie boundary",
+    "args": [
+      [
+        1,
+        1,
+        2,
+        3,
+        3
+      ],
+      3,
+      2
+    ],
+    "expected": [
+      1,
+      1,
+      2
+    ]
+  },
+  {
+    "name": "entire array",
+    "args": [
+      [
+        1,
+        2,
+        3
+      ],
+      3,
+      99
+    ],
+    "expected": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "name": "target above all values",
+    "args": [
+      [
+        1,
+        2,
+        3,
+        4
+      ],
+      2,
+      10
+    ],
+    "expected": [
+      3,
+      4
+    ]
+  },
+  {
+    "name": "negative target",
+    "args": [
+      [
+        -5,
+        -2,
+        0,
+        3
+      ],
+      2,
+      -1
+    ],
+    "expected": [
+      -2,
+      0
+    ]
+  }
+]
