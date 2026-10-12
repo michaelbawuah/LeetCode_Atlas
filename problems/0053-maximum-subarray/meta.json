@@ -1,0 +1,27 @@
+{
+  "id": 53,
+  "title": "Maximum Subarray",
+  "slug": "maximum-subarray",
+  "difficulty": "Medium",
+  "patterns": [
+    "dynamic-programming",
+    "kadane"
+  ],
+  "method": "maxSubArray",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n)",
+    "space": "O(1) auxiliary and scalar output"
+  }
+}
