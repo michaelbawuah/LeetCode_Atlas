@@ -1,0 +1,23 @@
+{
+  "id": 141,
+  "title": "Linked List Cycle",
+  "difficulty": "Easy",
+  "patterns": [
+    "linked-list",
+    "two-pointers",
+    "cycle-detection"
+  ],
+  "method": "hasCycle",
+  "args_types": [
+    "listnode_cycle"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "slug": "linked-list-cycle",
+  "kind": "method",
+  "judge_status": "not_recorded",
+  "checker": "exact"
+}

@@ -1,0 +1,109 @@
+[
+  {
+    "name": "cycle_after_prefix",
+    "args": [
+      {
+        "values": [
+          3,
+          2,
+          0,
+          -4
+        ],
+        "pos": 1
+      }
+    ],
+    "expected": true
+  },
+  {
+    "name": "cycle_to_head",
+    "args": [
+      {
+        "values": [
+          1,
+          2
+        ],
+        "pos": 0
+      }
+    ],
+    "expected": true
+  },
+  {
+    "name": "singleton_linear",
+    "args": [
+      {
+        "values": [
+          1
+        ],
+        "pos": -1
+      }
+    ],
+    "expected": false
+  },
+  {
+    "name": "empty",
+    "args": [
+      {
+        "values": [],
+        "pos": -1
+      }
+    ],
+    "expected": false
+  },
+  {
+    "name": "self_cycle",
+    "args": [
+      {
+        "values": [
+          5
+        ],
+        "pos": 0
+      }
+    ],
+    "expected": true
+  },
+  {
+    "name": "equal_values_no_cycle",
+    "args": [
+      {
+        "values": [
+          7,
+          7,
+          7,
+          7
+        ],
+        "pos": -1
+      }
+    ],
+    "expected": false
+  },
+  {
+    "name": "tail_self_cycle",
+    "args": [
+      {
+        "values": [
+          1,
+          2,
+          3
+        ],
+        "pos": 2
+      }
+    ],
+    "expected": true
+  },
+  {
+    "name": "longer_linear",
+    "args": [
+      {
+        "values": [
+          -1,
+          0,
+          1,
+          2,
+          3
+        ],
+        "pos": -1
+      }
+    ],
+    "expected": false
+  }
+]
