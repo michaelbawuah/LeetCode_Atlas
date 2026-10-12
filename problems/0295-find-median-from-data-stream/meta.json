@@ -1,0 +1,21 @@
+{
+  "id": 295,
+  "title": "Find Median from Data Stream",
+  "slug": "find-median-from-data-stream",
+  "difficulty": "Hard",
+  "patterns": [
+    "heap",
+    "design"
+  ],
+  "method": null,
+  "args_types": [],
+  "kind": "design",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "addNum O(log n); findMedian O(1)",
+    "space": "O(n)"
+  },
+  "judge_status": "not_recorded",
+  "class_name": "MedianFinder"
+}
