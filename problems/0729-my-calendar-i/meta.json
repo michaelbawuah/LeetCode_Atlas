@@ -17,5 +17,10 @@
     "space": "O(n)"
   },
   "judge_status": "not_recorded",
-  "class_name": "MyCalendar"
+  "class_name": "MyCalendar",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "book O(log(n + 1))",
+    "space": "O(n) stored; O(1) auxiliary per book"
+  }
 }
