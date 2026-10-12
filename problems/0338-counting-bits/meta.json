@@ -1,0 +1,22 @@
+{
+  "id": 338,
+  "title": "Counting Bits",
+  "difficulty": "Easy",
+  "patterns": [
+    "bit-manipulation",
+    "dynamic-programming"
+  ],
+  "method": "countBits",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n) including output; O(1) beyond output"
+  },
+  "slug": "counting-bits",
+  "kind": "method",
+  "checker": "exact",
+  "judge_status": "not_recorded"
+}
