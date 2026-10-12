@@ -1,0 +1,91 @@
+[
+  {
+    "name": "corner sources",
+    "args": [
+      [
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ]
+      ]
+    ],
+    "expected": 2
+  },
+  {
+    "name": "one corner",
+    "args": [
+      [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    ],
+    "expected": 4
+  },
+  {
+    "name": "all land",
+    "args": [
+      [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    ],
+    "expected": -1
+  },
+  {
+    "name": "all water",
+    "args": [
+      [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    ],
+    "expected": -1
+  },
+  {
+    "name": "singleton land",
+    "args": [
+      [
+        [
+          1
+        ]
+      ]
+    ],
+    "expected": -1
+  }
+]
