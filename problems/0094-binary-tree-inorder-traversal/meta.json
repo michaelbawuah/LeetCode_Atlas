@@ -1,0 +1,28 @@
+{
+  "id": 94,
+  "title": "Binary Tree Inorder Traversal",
+  "difficulty": "Easy",
+  "patterns": [
+    "tree",
+    "depth-first-search",
+    "stack"
+  ],
+  "method": "inorderTraversal",
+  "args_types": [
+    "treenode"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(h) auxiliary; O(n) output"
+  },
+  "slug": "binary-tree-inorder-traversal",
+  "kind": "method",
+  "judge_status": "not_recorded",
+  "checker": "exact",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n)",
+    "space": "O(h) auxiliary; O(n) output"
+  }
+}
