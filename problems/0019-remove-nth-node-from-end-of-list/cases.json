@@ -1,0 +1,108 @@
+[
+  {
+    "name": "middle",
+    "args": [
+      [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      2
+    ],
+    "expected": [
+      1,
+      2,
+      3,
+      5
+    ]
+  },
+  {
+    "name": "single_node",
+    "args": [
+      [
+        1
+      ],
+      1
+    ],
+    "expected": []
+  },
+  {
+    "name": "remove_head",
+    "args": [
+      [
+        1,
+        2
+      ],
+      2
+    ],
+    "expected": [
+      2
+    ]
+  },
+  {
+    "name": "remove_tail",
+    "args": [
+      [
+        1,
+        2
+      ],
+      1
+    ],
+    "expected": [
+      1
+    ]
+  },
+  {
+    "name": "duplicates",
+    "args": [
+      [
+        4,
+        4,
+        4
+      ],
+      2
+    ],
+    "expected": [
+      4,
+      4
+    ]
+  },
+  {
+    "name": "zero_values",
+    "args": [
+      [
+        0,
+        0,
+        3
+      ],
+      3
+    ],
+    "expected": [
+      0,
+      3
+    ]
+  },
+  {
+    "name": "longer_tail",
+    "args": [
+      [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      1
+    ],
+    "expected": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+]

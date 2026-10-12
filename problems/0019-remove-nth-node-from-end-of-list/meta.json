@@ -1,0 +1,28 @@
+{
+  "id": 19,
+  "title": "Remove Nth Node From End of List",
+  "difficulty": "Medium",
+  "patterns": [
+    "linked-list",
+    "two-pointers"
+  ],
+  "method": "removeNthFromEnd",
+  "args_types": [
+    "listnode",
+    "value"
+  ],
+  "return_type": "listnode",
+  "complexity": {
+    "time": "O(L)",
+    "space": "O(1)"
+  },
+  "slug": "remove-nth-node-from-end-of-list",
+  "kind": "method",
+  "checker": "exact",
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(L)",
+    "space": "O(1) auxiliary; output reuses existing nodes"
+  }
+}
