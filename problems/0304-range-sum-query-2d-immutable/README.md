@@ -17,3 +17,11 @@ Follow-up: support point updates without rebuilding all prefixes. Compare a two-
 ## Verification
 
 Named fixtures and an independent generated-input reference cover behavior. Judge results are recorded separately in metadata.
+
+## C++23 counterpart
+
+C++ stores int64_t prefix totals so inclusion-exclusion arithmetic is widened before addition and subtraction. Under the problem bounds m,n<=200 and absolute cell value<=10000, a rectangle total is at most 400000000 in magnitude and safely returns int. The matrix is borrowed during construction and never modified; prefixes own their storage.
+
+Time: constructor O(mn); sumRegion O(1). Space: O(mn).
+
+The JSON adapter creates fresh state per case. Named fixtures and 150 deterministic generated inputs compare the two language implementations; existing independent Python oracles supply a separate behavioral reference.

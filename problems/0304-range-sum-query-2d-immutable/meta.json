@@ -18,5 +18,10 @@
     "space": "O(mn)"
   },
   "judge_status": "not_recorded",
-  "class_name": "NumMatrix"
+  "class_name": "NumMatrix",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "constructor O(mn); sumRegion O(1)",
+    "space": "O(mn)"
+  }
 }
