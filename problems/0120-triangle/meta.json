@@ -1,0 +1,26 @@
+{
+  "id": 120,
+  "title": "Triangle",
+  "slug": "triangle",
+  "difficulty": "Medium",
+  "patterns": [
+    "dynamic-programming"
+  ],
+  "method": "minimumTotal",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(h\u00b2)",
+    "space": "O(h)"
+  },
+  "complexity_language": "Python",
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O(h\u00b2)",
+    "space": "O(h)"
+  }
+}
