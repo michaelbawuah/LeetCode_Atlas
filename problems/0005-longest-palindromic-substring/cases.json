@@ -1,0 +1,58 @@
+[
+  {
+    "name": "two_maximal_witnesses",
+    "args": [
+      "babad"
+    ],
+    "expected": "bab"
+  },
+  {
+    "name": "even_center",
+    "args": [
+      "cbbd"
+    ],
+    "expected": "bb"
+  },
+  {
+    "name": "singleton",
+    "args": [
+      "a"
+    ],
+    "expected": "a"
+  },
+  {
+    "name": "distinct_characters",
+    "args": [
+      "ac"
+    ],
+    "expected": "a"
+  },
+  {
+    "name": "all_same",
+    "args": [
+      "aaaa"
+    ],
+    "expected": "aaaa"
+  },
+  {
+    "name": "separated_equal_maxima",
+    "args": [
+      "abacdfgdcaba"
+    ],
+    "expected": "aba"
+  },
+  {
+    "name": "prefix_palindrome",
+    "args": [
+      "noonabc"
+    ],
+    "expected": "noon"
+  },
+  {
+    "name": "letters_and_digits",
+    "args": [
+      "a1b1a"
+    ],
+    "expected": "a1b1a"
+  }
+]
