@@ -1,0 +1,30 @@
+{
+  "id": 399,
+  "title": "Evaluate Division",
+  "slug": "evaluate-division",
+  "difficulty": "Medium",
+  "patterns": [
+    "graph",
+    "depth-first-search",
+    "weighted-graph"
+  ],
+  "method": "calcEquation",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "approx_list",
+  "complexity_language": "Python",
+  "complexity": {
+    "time": "O(E + Q(V + E))",
+    "space": "O(V + E) auxiliary; O(Q) output"
+  },
+  "judge_status": "not_recorded",
+  "numeric_tolerance": {
+    "relative": 1e-05,
+    "absolute": 1e-05
+  }
+}
