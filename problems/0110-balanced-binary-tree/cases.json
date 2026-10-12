@@ -1,0 +1,89 @@
+[
+  {
+    "name": "balanced",
+    "args": [
+      [
+        3,
+        9,
+        20,
+        null,
+        null,
+        15,
+        7
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "name": "unbalanced",
+    "args": [
+      [
+        1,
+        2,
+        2,
+        3,
+        3,
+        null,
+        null,
+        4,
+        4
+      ]
+    ],
+    "expected": false
+  },
+  {
+    "name": "empty",
+    "args": [
+      []
+    ],
+    "expected": true
+  },
+  {
+    "name": "singleton",
+    "args": [
+      [
+        0
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "name": "two_nodes",
+    "args": [
+      [
+        1,
+        null,
+        2
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "name": "three_node_chain",
+    "args": [
+      [
+        1,
+        null,
+        2,
+        null,
+        3
+      ]
+    ],
+    "expected": false
+  },
+  {
+    "name": "perfect",
+    "args": [
+      [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    ],
+    "expected": true
+  }
+]

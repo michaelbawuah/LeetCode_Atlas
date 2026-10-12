@@ -1,0 +1,22 @@
+{
+  "id": 110,
+  "title": "Balanced Binary Tree",
+  "difficulty": "Easy",
+  "patterns": [
+    "tree",
+    "depth-first-search"
+  ],
+  "method": "isBalanced",
+  "args_types": [
+    "treenode"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "slug": "balanced-binary-tree",
+  "kind": "method",
+  "checker": "exact",
+  "judge_status": "not_recorded"
+}
