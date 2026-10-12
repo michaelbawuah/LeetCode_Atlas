@@ -1,0 +1,29 @@
+{
+  "id": 1926,
+  "title": "Nearest Exit from Entrance in Maze",
+  "slug": "nearest-exit-from-entrance-in-maze",
+  "difficulty": "Medium",
+  "patterns": [
+    "graph",
+    "breadth-first-search",
+    "grid"
+  ],
+  "method": "nearestExit",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity_language": "Python",
+  "complexity": {
+    "time": "O(R C)",
+    "space": "O(R C)"
+  },
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O(R C)",
+    "space": "O(R C)"
+  }
+}
