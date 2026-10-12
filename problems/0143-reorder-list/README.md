@@ -19,3 +19,9 @@ Disconnect the halves before reversing, or the result can contain a cycle. Save 
 
 ## Follow-up
 Can the same split-and-weave idea be generalized to alternate nodes from three equal-length segments?
+
+## C++23 implementation
+
+C++23 has the standard `void reorderList(ListNode*)` interface. After split, reversal, and weaving, the adapter serializes argument zero and verifies the exact original-node order, unchanged values, and termination without extra nodes or a cycle. No new list nodes are created.
+
+C++23 submission cost: **O(n) time; O(1) space**. Here n is node count, h is tree height, w is maximum level width, and L is the number of returned path elements when applicable. Adapter construction, snapshots, and serialization are measured separately.
