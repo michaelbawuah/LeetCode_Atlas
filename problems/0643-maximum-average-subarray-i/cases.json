@@ -1,0 +1,86 @@
+[
+  {
+    "name": "mixed window averages",
+    "args": [
+      [
+        1,
+        12,
+        -5,
+        -6,
+        50,
+        3
+      ],
+      4
+    ],
+    "expected": 12.75
+  },
+  {
+    "name": "singleton",
+    "args": [
+      [
+        5
+      ],
+      1
+    ],
+    "expected": 5.0
+  },
+  {
+    "name": "all negative",
+    "args": [
+      [
+        -3,
+        -2,
+        -5
+      ],
+      2
+    ],
+    "expected": -2.5
+  },
+  {
+    "name": "whole array window",
+    "args": [
+      [
+        1,
+        2,
+        3
+      ],
+      3
+    ],
+    "expected": 2.0
+  },
+  {
+    "name": "unit window",
+    "args": [
+      [
+        1,
+        2,
+        3
+      ],
+      1
+    ],
+    "expected": 3.0
+  },
+  {
+    "name": "zeroes",
+    "args": [
+      [
+        0,
+        0,
+        0
+      ],
+      2
+    ],
+    "expected": 0.0
+  },
+  {
+    "name": "opposite bounds",
+    "args": [
+      [
+        -10000,
+        10000
+      ],
+      2
+    ],
+    "expected": 0.0
+  }
+]
