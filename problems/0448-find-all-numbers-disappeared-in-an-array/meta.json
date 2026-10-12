@@ -1,0 +1,22 @@
+{
+  "id": 448,
+  "title": "Find All Numbers Disappeared in an Array",
+  "slug": "find-all-numbers-disappeared-in-an-array",
+  "difficulty": "Easy",
+  "patterns": [
+    "index-marking",
+    "in-place"
+  ],
+  "method": "findDisappearedNumbers",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "unordered",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1) auxiliary; O(n) output"
+  },
+  "judge_status": "not_recorded"
+}
