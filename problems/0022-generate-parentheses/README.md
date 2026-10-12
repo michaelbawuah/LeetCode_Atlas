@@ -21,3 +21,7 @@ There are C_n valid results, the nth Catalan number. Runtime and output storage 
 Equal opening and closing counts alone do not imply validity: `)(` has matching counts but a negative first prefix. The independent oracle enumerates all binary strings at small n, checks every prefix, and compares complete result sets. A separate n = 8 check validates the Catalan count and uniqueness.
 
 **Follow-up:** support several bracket types and explain how nesting changes the state.
+
+## Python and C++23 comparison
+
+Both versions prune invalid prefixes and share one mutable path across recursive calls. C++ reserves the path's 2n characters and copies it only when a balanced result is complete; Python joins its character list at each leaf. Time and output storage are O(n C_n), with O(n) auxiliary path and recursion depth. Every result owns its own character sequence.

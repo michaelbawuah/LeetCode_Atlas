@@ -17,5 +17,10 @@
     "time": "O(n C_n), where C_n is the nth Catalan number",
     "space": "O(n) auxiliary; O(n C_n) output"
   },
-  "judge_status": "not_recorded"
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n C_n), where C_n is the nth Catalan number",
+    "space": "O(n) auxiliary; O(n C_n) output"
+  }
 }
