@@ -1,0 +1,26 @@
+{
+  "id": 509,
+  "slug": "fibonacci-number",
+  "title": "Fibonacci Number",
+  "difficulty": "Easy",
+  "patterns": [
+    "dynamic-programming"
+  ],
+  "method": "fib",
+  "args_types": [
+    "value"
+  ],
+  "kind": "method",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "complexity_language": "Python"
+}
