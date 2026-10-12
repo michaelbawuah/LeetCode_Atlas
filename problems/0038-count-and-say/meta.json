@@ -1,0 +1,22 @@
+{
+  "id": 38,
+  "slug": "count-and-say",
+  "title": "Count and Say",
+  "difficulty": "Medium",
+  "patterns": [
+    "string",
+    "simulation"
+  ],
+  "method": "countAndSay",
+  "args_types": [
+    "value"
+  ],
+  "kind": "method",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(S), S is total length of generated terms",
+    "space": "O(L), L is maximum generated term length"
+  },
+  "judge_status": "not_recorded"
+}

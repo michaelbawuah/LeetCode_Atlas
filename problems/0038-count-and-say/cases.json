@@ -1,0 +1,37 @@
+[
+  {
+    "name": "first",
+    "args": [
+      1
+    ],
+    "expected": "1"
+  },
+  {
+    "name": "second",
+    "args": [
+      2
+    ],
+    "expected": "11"
+  },
+  {
+    "name": "third",
+    "args": [
+      3
+    ],
+    "expected": "21"
+  },
+  {
+    "name": "fourth",
+    "args": [
+      4
+    ],
+    "expected": "1211"
+  },
+  {
+    "name": "sixth",
+    "args": [
+      6
+    ],
+    "expected": "312211"
+  }
+]
