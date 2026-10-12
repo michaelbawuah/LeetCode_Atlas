@@ -17,5 +17,10 @@
   "slug": "find-minimum-in-rotated-sorted-array",
   "kind": "method",
   "checker": "exact",
-  "judge_status": "not_recorded"
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(log n)",
+    "space": "O(1)"
+  }
 }

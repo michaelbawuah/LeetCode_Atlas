@@ -19,3 +19,7 @@ Do not discard `mid` when moving the right boundary: it might be the minimum. An
 
 ## Follow-up
 How do duplicate values weaken the strict comparison, and why can the worst case become linear?
+
+## C++23 counterpart
+
+The C++ method searches the vector directly using signed bounds and `left + (right - left) / 2`. It relies on the same nonempty, distinct-value rotated-sorted contract as Python, preserves input, and uses O(log n) time and O(1) auxiliary space. Generated cases vary both the sorted values and rotation pivot.
