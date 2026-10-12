@@ -1,0 +1,21 @@
+{
+  "id": 155,
+  "title": "Min Stack",
+  "slug": "min-stack",
+  "difficulty": "Medium",
+  "patterns": [
+    "stack",
+    "design"
+  ],
+  "method": null,
+  "args_types": [],
+  "kind": "design",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(1) per operation",
+    "space": "O(n)"
+  },
+  "judge_status": "not_recorded",
+  "class_name": "MinStack"
+}

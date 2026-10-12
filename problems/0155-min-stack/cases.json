@@ -1,0 +1,220 @@
+[
+  {
+    "name": "example",
+    "operations": [
+      "MinStack",
+      "push",
+      "push",
+      "push",
+      "getMin",
+      "pop",
+      "top",
+      "getMin"
+    ],
+    "arguments": [
+      [],
+      [
+        -2
+      ],
+      [
+        0
+      ],
+      [
+        -3
+      ],
+      [],
+      [],
+      [],
+      []
+    ],
+    "expected": [
+      null,
+      null,
+      null,
+      null,
+      -3,
+      null,
+      0,
+      -2
+    ]
+  },
+  {
+    "name": "duplicate-minima",
+    "operations": [
+      "MinStack",
+      "push",
+      "push",
+      "push",
+      "pop",
+      "getMin",
+      "pop",
+      "getMin"
+    ],
+    "arguments": [
+      [],
+      [
+        2
+      ],
+      [
+        1
+      ],
+      [
+        1
+      ],
+      [],
+      [],
+      [],
+      []
+    ],
+    "expected": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      1,
+      null,
+      2
+    ]
+  },
+  {
+    "name": "integer-boundaries",
+    "operations": [
+      "MinStack",
+      "push",
+      "push",
+      "getMin",
+      "top",
+      "pop",
+      "getMin"
+    ],
+    "arguments": [
+      [],
+      [
+        2147483647
+      ],
+      [
+        -2147483648
+      ],
+      [],
+      [],
+      [],
+      []
+    ],
+    "expected": [
+      null,
+      null,
+      null,
+      -2147483648,
+      -2147483648,
+      null,
+      2147483647
+    ]
+  },
+  {
+    "name": "empty-then-reuse",
+    "operations": [
+      "MinStack",
+      "push",
+      "pop",
+      "push",
+      "top",
+      "getMin"
+    ],
+    "arguments": [
+      [],
+      [
+        10
+      ],
+      [],
+      [
+        -5
+      ],
+      [],
+      []
+    ],
+    "expected": [
+      null,
+      null,
+      null,
+      null,
+      -5,
+      -5
+    ]
+  },
+  {
+    "name": "ascending-values",
+    "operations": [
+      "MinStack",
+      "push",
+      "push",
+      "push",
+      "getMin",
+      "top"
+    ],
+    "arguments": [
+      [],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [],
+      []
+    ],
+    "expected": [
+      null,
+      null,
+      null,
+      null,
+      1,
+      3
+    ]
+  },
+  {
+    "name": "negative-values",
+    "operations": [
+      "MinStack",
+      "push",
+      "push",
+      "push",
+      "getMin",
+      "pop",
+      "getMin",
+      "pop",
+      "getMin"
+    ],
+    "arguments": [
+      [],
+      [
+        -1
+      ],
+      [
+        -4
+      ],
+      [
+        -2
+      ],
+      [],
+      [],
+      [],
+      [],
+      []
+    ],
+    "expected": [
+      null,
+      null,
+      null,
+      null,
+      -4,
+      null,
+      -4,
+      null,
+      -1
+    ]
+  }
+]
