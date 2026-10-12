@@ -1,0 +1,22 @@
+{
+  "id": 394,
+  "slug": "decode-string",
+  "title": "Decode String",
+  "difficulty": "Medium",
+  "patterns": [
+    "stack",
+    "parsing"
+  ],
+  "method": "decodeString",
+  "args_types": [
+    "value"
+  ],
+  "kind": "method",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n + Ld), decoded length L and nesting depth d",
+    "space": "O(n + L)"
+  },
+  "judge_status": "not_recorded"
+}

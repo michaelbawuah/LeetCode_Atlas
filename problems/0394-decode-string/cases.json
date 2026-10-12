@@ -1,0 +1,37 @@
+[
+  {
+    "name": "separate-groups",
+    "args": [
+      "3[a]2[bc]"
+    ],
+    "expected": "aaabcbc"
+  },
+  {
+    "name": "nested",
+    "args": [
+      "3[a2[c]]"
+    ],
+    "expected": "accaccacc"
+  },
+  {
+    "name": "suffix",
+    "args": [
+      "2[abc]3[cd]ef"
+    ],
+    "expected": "abcabccdcdcdef"
+  },
+  {
+    "name": "plain",
+    "args": [
+      "abc"
+    ],
+    "expected": "abc"
+  },
+  {
+    "name": "multi-digit-count",
+    "args": [
+      "10[a]"
+    ],
+    "expected": "aaaaaaaaaa"
+  }
+]
