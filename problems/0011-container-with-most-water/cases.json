@@ -1,0 +1,88 @@
+[
+  {
+    "name": "wide optimum",
+    "args": [
+      [
+        1,
+        8,
+        6,
+        2,
+        5,
+        4,
+        8,
+        3,
+        7
+      ]
+    ],
+    "expected": 49
+  },
+  {
+    "name": "two equal bars",
+    "args": [
+      [
+        1,
+        1
+      ]
+    ],
+    "expected": 1
+  },
+  {
+    "name": "all zero heights",
+    "args": [
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "short outer and tall inner bars",
+    "args": [
+      [
+        1,
+        100,
+        100,
+        1
+      ]
+    ],
+    "expected": 100
+  },
+  {
+    "name": "increasing heights",
+    "args": [
+      [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    ],
+    "expected": 6
+  },
+  {
+    "name": "large two-bar area",
+    "args": [
+      [
+        10000,
+        10000
+      ]
+    ],
+    "expected": 10000
+  },
+  {
+    "name": "equal outer bars",
+    "args": [
+      [
+        4,
+        3,
+        2,
+        1,
+        4
+      ]
+    ],
+    "expected": 16
+  }
+]
