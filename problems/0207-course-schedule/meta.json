@@ -1,0 +1,28 @@
+{
+  "id": 207,
+  "title": "Course Schedule",
+  "slug": "course-schedule",
+  "difficulty": "Medium",
+  "patterns": [
+    "graph",
+    "topological-sort"
+  ],
+  "method": "canFinish",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(V + E)",
+    "space": "O(V + E)"
+  },
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(V + E)",
+    "space": "O(V + E) auxiliary; O(1) boolean output"
+  }
+}
