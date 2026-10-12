@@ -5,7 +5,7 @@
 An algorithm collection organized around **why a solution works**: the state it maintains, the invariant that makes it correct, and the counterexamples that test it.
 
 <!-- atlas:stats:start -->
-**300 distinct problems · 300 Python solutions · 150 C++23 counterparts**
+**300 distinct problems · 300 Python solutions · 225 C++23 counterparts**
 <!-- atlas:stats:end -->
 
 [Browse every problem](docs/problems.md) · [Explore patterns](docs/patterns.md) · [Follow algorithm traces](docs/traces.md) · [Choose a practice route](docs/practice.md) · [Run the checks](docs/verification.md)
@@ -85,4 +85,4 @@ Official LeetCode submission evidence is tracked separately from local verificat
 
 ## Grow the atlas
 
-The **300-problem target is present: 300 Python implementations and 150 C++23 counterparts**. The [roadmap](docs/roadmap.md) records the cumulative milestones; the [practice routes](docs/practice.md) connect the collection to explanation, timed attempts, and re-solving. A later 500-problem stretch can follow the remaining pattern gaps.
+The collection contains **300 Python implementations and 225 C++23 counterparts**. The C++ expansion adds cyclic lists, identity-preserving tree queries, bounded counting DP, grid traversals, and stateful designs to the paired track. The [roadmap](docs/roadmap.md) records the cumulative milestones; the [practice routes](docs/practice.md) connect the collection to explanation, timed attempts, and re-solving. A later 500-problem stretch can follow the remaining pattern gaps.
