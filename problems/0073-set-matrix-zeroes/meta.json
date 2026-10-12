@@ -1,0 +1,23 @@
+{
+  "id": 73,
+  "title": "Set Matrix Zeroes",
+  "slug": "set-matrix-zeroes",
+  "difficulty": "Medium",
+  "patterns": [
+    "matrix",
+    "in-place"
+  ],
+  "method": "setZeroes",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(mn)",
+    "space": "O(1)"
+  },
+  "judge_status": "not_recorded",
+  "result_from_arg": 0
+}
