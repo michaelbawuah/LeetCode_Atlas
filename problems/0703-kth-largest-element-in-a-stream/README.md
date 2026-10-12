@@ -23,3 +23,11 @@ Support changing k after construction. Which discarded values would have to be r
 
 ## Verification
 Named fixtures and an independent generated-input reference accompany this implementation. Official judge results are tracked separately in metadata.
+
+## C++23 counterpart
+
+[Source](solution.cpp) · [Local adapter](cpp_runner.cpp)
+
+C++ keeps a min-priority-queue of at most k values. The constructor reads the provided vector without mutating it.
+
+Time: constructor O(n log(k + 1)); add O(log(k + 1)). Space: O(k). The local adapter constructs a fresh object for each fixture and owns any converted inputs.

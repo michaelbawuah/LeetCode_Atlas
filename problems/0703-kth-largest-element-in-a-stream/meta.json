@@ -17,5 +17,10 @@
     "space": "O(k)"
   },
   "judge_status": "not_recorded",
-  "class_name": "KthLargest"
+  "class_name": "KthLargest",
+  "complexity_cpp": {
+    "time": "constructor O(n log(k + 1)); add O(log(k + 1))",
+    "space": "O(k)"
+  },
+  "complexity_language": "Python"
 }
