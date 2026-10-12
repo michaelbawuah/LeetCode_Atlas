@@ -1,0 +1,27 @@
+{
+  "id": 221,
+  "title": "Maximal Square",
+  "slug": "maximal-square",
+  "difficulty": "Medium",
+  "patterns": [
+    "dynamic-programming",
+    "grid"
+  ],
+  "method": "maximalSquare",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(r c)",
+    "space": "O(c)"
+  },
+  "complexity_language": "Python",
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O(r c)",
+    "space": "O(c)"
+  }
+}
