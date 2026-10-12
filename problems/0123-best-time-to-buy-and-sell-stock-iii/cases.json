@@ -72,5 +72,17 @@
       ]
     ],
     "expected": 0
+  },
+  {
+    "name": "two_maximum_price_gains",
+    "args": [
+      [
+        0,
+        100000,
+        0,
+        100000
+      ]
+    ],
+    "expected": 200000
   }
 ]
