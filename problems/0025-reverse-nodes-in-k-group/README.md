@@ -19,3 +19,9 @@ Do not reverse a partial final group. Save its following node before modifying l
 
 ## Follow-up
 What additional state is required if alternating groups should be reversed while the others remain unchanged?
+
+## C++23 implementation
+
+C++23 uses the same complete-group boundary and pointer rewiring with a stack-allocated dummy. The adapter verifies the precise original-node permutation, unchanged node values, and acyclic termination; its snapshots are outside the submission cost.
+
+C++23 submission cost: **O(n) time; O(1) space**. Here n is node count, h is tree height, w is maximum level width, and L is the number of returned path elements when applicable. Adapter construction, snapshots, and serialization are measured separately.
