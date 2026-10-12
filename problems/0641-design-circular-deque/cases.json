@@ -1,0 +1,202 @@
+[
+  {
+    "name": "empty",
+    "operations": [
+      "MyCircularDeque",
+      "isEmpty",
+      "getFront",
+      "getRear",
+      "deleteFront"
+    ],
+    "arguments": [
+      [
+        2
+      ],
+      [],
+      [],
+      [],
+      []
+    ],
+    "expected": [
+      null,
+      true,
+      -1,
+      -1,
+      false
+    ]
+  },
+  {
+    "name": "full",
+    "operations": [
+      "MyCircularDeque",
+      "insertLast",
+      "insertLast",
+      "insertLast",
+      "isFull"
+    ],
+    "arguments": [
+      [
+        2
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      []
+    ],
+    "expected": [
+      null,
+      true,
+      true,
+      false,
+      true
+    ]
+  },
+  {
+    "name": "wraparound",
+    "operations": [
+      "MyCircularDeque",
+      "insertLast",
+      "insertLast",
+      "deleteFront",
+      "insertLast",
+      "getFront",
+      "getRear"
+    ],
+    "arguments": [
+      [
+        2
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [],
+      [
+        3
+      ],
+      [],
+      []
+    ],
+    "expected": [
+      null,
+      true,
+      true,
+      true,
+      true,
+      2,
+      3
+    ]
+  },
+  {
+    "name": "capacity-one",
+    "operations": [
+      "MyCircularDeque",
+      "insertLast",
+      "insertLast",
+      "deleteFront",
+      "insertLast",
+      "getFront"
+    ],
+    "arguments": [
+      [
+        1
+      ],
+      [
+        7
+      ],
+      [
+        8
+      ],
+      [],
+      [
+        9
+      ],
+      []
+    ],
+    "expected": [
+      null,
+      true,
+      false,
+      true,
+      true,
+      9
+    ]
+  },
+  {
+    "name": "query-preserves-state",
+    "operations": [
+      "MyCircularDeque",
+      "insertLast",
+      "getFront",
+      "getRear",
+      "getFront",
+      "isEmpty"
+    ],
+    "arguments": [
+      [
+        3
+      ],
+      [
+        0
+      ],
+      [],
+      [],
+      [],
+      []
+    ],
+    "expected": [
+      null,
+      true,
+      0,
+      0,
+      0,
+      false
+    ]
+  },
+  {
+    "name": "both-ends",
+    "operations": [
+      "MyCircularDeque",
+      "insertLast",
+      "insertFront",
+      "insertLast",
+      "deleteLast",
+      "getFront",
+      "getRear"
+    ],
+    "arguments": [
+      [
+        3
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [],
+      [],
+      []
+    ],
+    "expected": [
+      null,
+      true,
+      true,
+      true,
+      true,
+      2,
+      1
+    ]
+  }
+]
