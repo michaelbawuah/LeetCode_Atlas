@@ -1,0 +1,23 @@
+{
+  "id": 678,
+  "title": "Valid Parenthesis String",
+  "slug": "valid-parenthesis-string",
+  "difficulty": "Medium",
+  "patterns": [
+    "greedy",
+    "interval-state"
+  ],
+  "method": "checkValidString",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity_language": "Python",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "judge_status": "not_recorded"
+}

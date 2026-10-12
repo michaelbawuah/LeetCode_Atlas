@@ -1,0 +1,58 @@
+[
+  {
+    "name": "ordinary pair",
+    "args": [
+      "()"
+    ],
+    "expected": true
+  },
+  {
+    "name": "empty wildcard",
+    "args": [
+      "(*)"
+    ],
+    "expected": true
+  },
+  {
+    "name": "wildcard opens",
+    "args": [
+      "(*))"
+    ],
+    "expected": true
+  },
+  {
+    "name": "closing first",
+    "args": [
+      ")*("
+    ],
+    "expected": false
+  },
+  {
+    "name": "single wildcard",
+    "args": [
+      "*"
+    ],
+    "expected": true
+  },
+  {
+    "name": "too many openings",
+    "args": [
+      "(((*)"
+    ],
+    "expected": false
+  },
+  {
+    "name": "wildcards close all",
+    "args": [
+      "(((***"
+    ],
+    "expected": true
+  },
+  {
+    "name": "opening after wildcard",
+    "args": [
+      "*("
+    ],
+    "expected": false
+  }
+]
