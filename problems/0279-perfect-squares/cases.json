@@ -1,0 +1,51 @@
+[
+  {
+    "name": "one",
+    "args": [
+      1
+    ],
+    "expected": 1
+  },
+  {
+    "name": "two",
+    "args": [
+      2
+    ],
+    "expected": 2
+  },
+  {
+    "name": "three",
+    "args": [
+      3
+    ],
+    "expected": 3
+  },
+  {
+    "name": "four_required",
+    "args": [
+      7
+    ],
+    "expected": 4
+  },
+  {
+    "name": "three_squares",
+    "args": [
+      12
+    ],
+    "expected": 3
+  },
+  {
+    "name": "two_squares",
+    "args": [
+      13
+    ],
+    "expected": 2
+  },
+  {
+    "name": "largest_perfect_square",
+    "args": [
+      10000
+    ],
+    "expected": 1
+  }
+]
