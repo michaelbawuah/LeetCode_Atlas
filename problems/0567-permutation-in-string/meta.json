@@ -19,5 +19,10 @@
     "time": "O(m + n) for the fixed 26-letter alphabet",
     "space": "O(1)"
   },
-  "judge_status": "not_recorded"
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(m + n) for the fixed 26-letter alphabet",
+    "space": "O(1) auxiliary, excluding the by-value input string copies"
+  }
 }

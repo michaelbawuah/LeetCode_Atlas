@@ -23,3 +23,7 @@ Return all starting indexes of matching windows instead of stopping at the first
 
 ## Verification
 Named local cases and an independent generated-input oracle accompany this solution. No official judge result is recorded.
+
+## C++23 counterpart
+
+C++ compares two 26-entry `std::array` frequency tables and removes the leaving character before checking a full window. Inputs are nonempty lowercase a–z strings; duplicates remain counted individually. The algorithm uses O(m + n) time and O(1) auxiliary state. Its standard by-value string parameters may copy O(m + n) input storage, which is excluded from that auxiliary bound.
