@@ -17,5 +17,10 @@
     "space": "O(k)"
   },
   "judge_status": "not_recorded",
-  "class_name": "MyCircularDeque"
+  "class_name": "MyCircularDeque",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "constructor O(k); operations O(1)",
+    "space": "O(k)"
+  }
 }

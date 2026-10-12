@@ -25,3 +25,11 @@ Resize the buffer while preserving logical order.
 ## Verification
 
 Named cases and an independent generated-input oracle or operation model accompany the source. Judge results are recorded separately in metadata.
+
+## C++23 counterpart
+
+C++ owns a fixed vector and uses unsigned head/size indexes. Moving head backwards adds capacity before subtraction, avoiding unsigned underflow. Positive capacity and early empty/full guards make modulo and endpoint access valid. Failed operations preserve head, size, and contents.
+
+Time: constructor O(k); operations O(1). Space: O(k).
+
+The JSON adapter creates fresh state per case. Named fixtures and 150 deterministic generated inputs compare the two language implementations; existing independent Python oracles supply a separate behavioral reference.
