@@ -20,5 +20,9 @@
     "time": "O(rows * cols)",
     "space": "O(rows * cols)"
   },
-  "judge_status": "not_recorded"
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O(rows * cols)",
+    "space": "O(rows * cols) auxiliary; O(1) scalar output"
+  }
 }

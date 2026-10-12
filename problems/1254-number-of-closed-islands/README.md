@@ -21,3 +21,7 @@ O(rows * cols) time. O(rows * cols) space. These bounds describe the submitted i
 Here zero means land and one means water, opposite to several neighboring island problems. Named fixtures cover different structural boundaries. An independent bounded reference accompanies deterministic generated inputs in `test_properties.py`; `parity.py` supplies varied inputs for the shared language checks.
 
 **Follow-up:** Return each closed island’s area and bounding box.
+
+## Python and C++23 comparison
+
+Both sources mark a zero-valued component visited, explore it iteratively, and retain whether it touches a border. C++ uses an owned seen matrix and traversal stack and leaves the input grid unchanged. O(rows × cols) time and auxiliary storage exclude the runner’s input copy. Marking before pushing prevents repeated discovery, and standard containers release all owned state after each case.
