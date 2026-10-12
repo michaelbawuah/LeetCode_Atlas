@@ -1,0 +1,26 @@
+{
+  "id": 119,
+  "title": "Pascal's Triangle II",
+  "slug": "pascals-triangle-ii",
+  "difficulty": "Easy",
+  "patterns": [
+    "combinatorics"
+  ],
+  "method": "getRow",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(r)",
+    "space": "O(1) auxiliary; O(r) output"
+  },
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(r)",
+    "space": "O(1) auxiliary; O(r) output"
+  }
+}
