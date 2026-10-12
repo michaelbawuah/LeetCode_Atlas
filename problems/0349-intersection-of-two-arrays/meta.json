@@ -1,0 +1,27 @@
+{
+  "id": 349,
+  "title": "Intersection of Two Arrays",
+  "slug": "intersection-of-two-arrays",
+  "difficulty": "Easy",
+  "patterns": [
+    "hash-set"
+  ],
+  "method": "intersection",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "unordered",
+  "complexity": {
+    "time": "O(n + m) expected",
+    "space": "O(n + m) auxiliary; O(min(n, m)) output"
+  },
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n + m) expected",
+    "space": "O(n) auxiliary; O(min(n, m)) output"
+  }
+}
