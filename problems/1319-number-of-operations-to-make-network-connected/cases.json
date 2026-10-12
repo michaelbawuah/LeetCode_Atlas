@@ -1,0 +1,107 @@
+[
+  {
+    "name": "one spare cable",
+    "args": [
+      4,
+      [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    ],
+    "expected": 1
+  },
+  {
+    "name": "not enough cables",
+    "args": [
+      6,
+      [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    ],
+    "expected": -1
+  },
+  {
+    "name": "already connected",
+    "args": [
+      3,
+      [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "two linked computers",
+    "args": [
+      2,
+      [
+        [
+          0,
+          1
+        ]
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "two components with spare cable",
+    "args": [
+      6,
+      [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          5
+        ]
+      ]
+    ],
+    "expected": 1
+  }
+]
