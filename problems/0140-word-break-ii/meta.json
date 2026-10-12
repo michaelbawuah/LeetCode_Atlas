@@ -1,0 +1,24 @@
+{
+  "id": 140,
+  "title": "Word Break II",
+  "slug": "word-break-ii",
+  "difficulty": "Hard",
+  "patterns": [
+    "backtracking",
+    "dynamic-programming"
+  ],
+  "method": "wordBreak",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "unordered",
+  "complexity": {
+    "time": "O(T + n L\u00b2 + L\u00b2 2^n + K n) conservative bound",
+    "space": "O(W + n + L) auxiliary; O(K n) output"
+  },
+  "complexity_language": "Python",
+  "judge_status": "not_recorded"
+}

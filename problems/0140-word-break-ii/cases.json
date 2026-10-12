@@ -1,0 +1,115 @@
+[
+  {
+    "name": "two_sentences",
+    "args": [
+      "catsanddog",
+      [
+        "cat",
+        "cats",
+        "and",
+        "sand",
+        "dog"
+      ]
+    ],
+    "expected": [
+      "cat sand dog",
+      "cats and dog"
+    ]
+  },
+  {
+    "name": "reuse_with_multiple_splits",
+    "args": [
+      "pineapplepenapple",
+      [
+        "apple",
+        "pen",
+        "applepen",
+        "pine",
+        "pineapple"
+      ]
+    ],
+    "expected": [
+      "pine apple pen apple",
+      "pineapple pen apple",
+      "pine applepen apple"
+    ]
+  },
+  {
+    "name": "impossible_suffix",
+    "args": [
+      "catsandog",
+      [
+        "cats",
+        "dog",
+        "sand",
+        "and",
+        "cat"
+      ]
+    ],
+    "expected": []
+  },
+  {
+    "name": "one_or_two_words",
+    "args": [
+      "aa",
+      [
+        "a",
+        "aa"
+      ]
+    ],
+    "expected": [
+      "a a",
+      "aa"
+    ]
+  },
+  {
+    "name": "single_word",
+    "args": [
+      "a",
+      [
+        "a"
+      ]
+    ],
+    "expected": [
+      "a"
+    ]
+  },
+  {
+    "name": "absent_word",
+    "args": [
+      "a",
+      [
+        "b"
+      ]
+    ],
+    "expected": []
+  },
+  {
+    "name": "two_prefix_choices",
+    "args": [
+      "abcd",
+      [
+        "ab",
+        "cd",
+        "a",
+        "bcd"
+      ]
+    ],
+    "expected": [
+      "ab cd",
+      "a bcd"
+    ]
+  },
+  {
+    "name": "repeated_only_word",
+    "args": [
+      "aaaa",
+      [
+        "aa"
+      ]
+    ],
+    "expected": [
+      "aa aa"
+    ]
+  }
+]
