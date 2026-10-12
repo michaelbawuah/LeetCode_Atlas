@@ -33,3 +33,7 @@ oracle and check reversal and added-character transformations.
 may require an explicit normalization policy.
 
 **Follow-up:** how would you compare anagrams when strings arrive as streams?
+
+## Python and C++23
+
+Python uses `Counter` and supports arbitrary characters under its documented counting semantics. C++ uses a fixed array of 26 counts for the official lowercase-English input constraint, giving deterministic O(n + m) time and O(1) auxiliary space. Its two strings are passed by const reference, so the method makes no parameter copies and preserves both inputs. The JSON adapter separately creates the input strings.
