@@ -1,0 +1,21 @@
+{
+  "id": 414,
+  "title": "Third Maximum Number",
+  "slug": "third-maximum-number",
+  "difficulty": "Easy",
+  "patterns": [
+    "streaming-extrema"
+  ],
+  "method": "thirdMax",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "judge_status": "not_recorded"
+}
