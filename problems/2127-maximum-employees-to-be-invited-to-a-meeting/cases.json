@@ -1,0 +1,66 @@
+[
+  {
+    "name": "pair with one chain",
+    "args": [
+      [
+        2,
+        2,
+        1,
+        2
+      ]
+    ],
+    "expected": 3
+  },
+  {
+    "name": "three cycle",
+    "args": [
+      [
+        1,
+        2,
+        0
+      ]
+    ],
+    "expected": 3
+  },
+  {
+    "name": "two expandable pairs",
+    "args": [
+      [
+        1,
+        0,
+        3,
+        2,
+        0,
+        3
+      ]
+    ],
+    "expected": 6
+  },
+  {
+    "name": "long cycle with unusable chain",
+    "args": [
+      [
+        1,
+        2,
+        3,
+        0,
+        0
+      ]
+    ],
+    "expected": 4
+  },
+  {
+    "name": "competing branches to a pair",
+    "args": [
+      [
+        1,
+        0,
+        0,
+        2,
+        0,
+        4
+      ]
+    ],
+    "expected": 4
+  }
+]

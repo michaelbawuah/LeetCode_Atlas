@@ -1,0 +1,24 @@
+{
+  "id": 2127,
+  "title": "Maximum Employees to Be Invited to a Meeting",
+  "slug": "maximum-employees-to-be-invited-to-a-meeting",
+  "difficulty": "Hard",
+  "patterns": [
+    "graph",
+    "topological-sort",
+    "functional-graph"
+  ],
+  "method": "maximumInvitations",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity_language": "Python",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "judge_status": "not_recorded"
+}
