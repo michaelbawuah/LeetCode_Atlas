@@ -1,0 +1,42 @@
+[
+  {
+    "name": "numeric-not-text",
+    "args": [
+      "1.2",
+      "1.10"
+    ],
+    "expected": -1
+  },
+  {
+    "name": "leading-zero",
+    "args": [
+      "1.01",
+      "1.001"
+    ],
+    "expected": 0
+  },
+  {
+    "name": "missing-zero-revisions",
+    "args": [
+      "1.0",
+      "1.0.0.0"
+    ],
+    "expected": 0
+  },
+  {
+    "name": "greater",
+    "args": [
+      "2.0",
+      "1.99"
+    ],
+    "expected": 1
+  },
+  {
+    "name": "later-revision",
+    "args": [
+      "1.0.1",
+      "1"
+    ],
+    "expected": 1
+  }
+]
