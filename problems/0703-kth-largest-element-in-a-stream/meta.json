@@ -1,0 +1,21 @@
+{
+  "id": 703,
+  "title": "Kth Largest Element in a Stream",
+  "slug": "kth-largest-element-in-a-stream",
+  "difficulty": "Easy",
+  "patterns": [
+    "heap",
+    "design"
+  ],
+  "method": null,
+  "args_types": [],
+  "kind": "design",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "constructor O(n log(k + 1)); add O(log(k + 1))",
+    "space": "O(k)"
+  },
+  "judge_status": "not_recorded",
+  "class_name": "KthLargest"
+}

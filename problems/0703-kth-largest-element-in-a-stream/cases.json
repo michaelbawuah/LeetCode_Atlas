@@ -1,0 +1,203 @@
+[
+  {
+    "name": "example-stream",
+    "operations": [
+      "KthLargest",
+      "add",
+      "add",
+      "add",
+      "add",
+      "add"
+    ],
+    "arguments": [
+      [
+        3,
+        [
+          4,
+          5,
+          8,
+          2
+        ]
+      ],
+      [
+        3
+      ],
+      [
+        5
+      ],
+      [
+        10
+      ],
+      [
+        9
+      ],
+      [
+        4
+      ]
+    ],
+    "expected": [
+      null,
+      4,
+      5,
+      5,
+      8,
+      8
+    ]
+  },
+  {
+    "name": "empty-initial-stream",
+    "operations": [
+      "KthLargest",
+      "add",
+      "add",
+      "add"
+    ],
+    "arguments": [
+      [
+        1,
+        []
+      ],
+      [
+        -3
+      ],
+      [
+        -2
+      ],
+      [
+        -4
+      ]
+    ],
+    "expected": [
+      null,
+      -3,
+      -2,
+      -2
+    ]
+  },
+  {
+    "name": "first-add-fills-rank",
+    "operations": [
+      "KthLargest",
+      "add",
+      "add",
+      "add"
+    ],
+    "arguments": [
+      [
+        3,
+        [
+          2,
+          4
+        ]
+      ],
+      [
+        3
+      ],
+      [
+        1
+      ],
+      [
+        5
+      ]
+    ],
+    "expected": [
+      null,
+      2,
+      2,
+      3
+    ]
+  },
+  {
+    "name": "duplicates-keep-their-ranks",
+    "operations": [
+      "KthLargest",
+      "add",
+      "add",
+      "add"
+    ],
+    "arguments": [
+      [
+        2,
+        [
+          5,
+          5
+        ]
+      ],
+      [
+        5
+      ],
+      [
+        4
+      ],
+      [
+        6
+      ]
+    ],
+    "expected": [
+      null,
+      5,
+      5,
+      5
+    ]
+  },
+  {
+    "name": "negative-values",
+    "operations": [
+      "KthLargest",
+      "add",
+      "add",
+      "add"
+    ],
+    "arguments": [
+      [
+        2,
+        [
+          -5,
+          -2
+        ]
+      ],
+      [
+        -3
+      ],
+      [
+        -1
+      ],
+      [
+        -4
+      ]
+    ],
+    "expected": [
+      null,
+      -3,
+      -2,
+      -2
+    ]
+  },
+  {
+    "name": "value-boundaries",
+    "operations": [
+      "KthLargest",
+      "add",
+      "add"
+    ],
+    "arguments": [
+      [
+        1,
+        [
+          -10000
+        ]
+      ],
+      [
+        10000
+      ],
+      [
+        0
+      ]
+    ],
+    "expected": [
+      null,
+      10000,
+      10000
+    ]
+  }
+]
