@@ -1,0 +1,104 @@
+[
+  {
+    "name": "closed center",
+    "args": [
+      [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ]
+    ],
+    "expected": 1
+  },
+  {
+    "name": "open path",
+    "args": [
+      [
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "all water",
+    "args": [
+      [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "zero singleton",
+    "args": [
+      [
+        [
+          0
+        ]
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "two closed components",
+    "args": [
+      [
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ]
+    ],
+    "expected": 2
+  }
+]
