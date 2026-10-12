@@ -1,0 +1,96 @@
+[
+  {
+    "name": "profitable-example",
+    "args": [
+      [
+        7,
+        1,
+        5,
+        3,
+        6,
+        4
+      ]
+    ],
+    "expected": 5
+  },
+  {
+    "name": "descending",
+    "args": [
+      [
+        7,
+        6,
+        4,
+        3,
+        1
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "one-day",
+    "args": [
+      [
+        5
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "flat",
+    "args": [
+      [
+        4,
+        4,
+        4,
+        4
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "zero-price",
+    "args": [
+      [
+        0,
+        2,
+        0,
+        10
+      ]
+    ],
+    "expected": 10
+  },
+  {
+    "name": "buy-must-precede-sale",
+    "args": [
+      [
+        10,
+        9,
+        1
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "later-minimum",
+    "args": [
+      [
+        3,
+        8,
+        1,
+        6
+      ]
+    ],
+    "expected": 5
+  },
+  {
+    "name": "price-boundaries",
+    "args": [
+      [
+        10000,
+        0,
+        10000
+      ]
+    ],
+    "expected": 10000
+  }
+]
