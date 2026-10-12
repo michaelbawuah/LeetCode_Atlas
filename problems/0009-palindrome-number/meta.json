@@ -1,0 +1,26 @@
+{
+  "id": 9,
+  "slug": "palindrome-number",
+  "title": "Palindrome Number",
+  "difficulty": "Easy",
+  "patterns": [
+    "math"
+  ],
+  "method": "isPalindrome",
+  "args_types": [
+    "value"
+  ],
+  "kind": "method",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(log(x + 1)) for nonnegative x",
+    "space": "O(1)"
+  },
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(log(x + 1)) for nonnegative x",
+    "space": "O(1)"
+  }
+}
