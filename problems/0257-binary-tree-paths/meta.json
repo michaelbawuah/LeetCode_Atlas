@@ -1,0 +1,23 @@
+{
+  "id": 257,
+  "title": "Binary Tree Paths",
+  "difficulty": "Easy",
+  "method": "binaryTreePaths",
+  "args_types": [
+    "treenode"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(n + L), L = total output characters",
+    "space": "O(h) auxiliary; O(L) output"
+  },
+  "patterns": [
+    "tree",
+    "depth-first-search",
+    "backtracking"
+  ],
+  "checker": "unordered",
+  "slug": "binary-tree-paths",
+  "kind": "method",
+  "judge_status": "not_recorded"
+}
