@@ -1,0 +1,23 @@
+{
+  "id": 133,
+  "title": "Clone Graph",
+  "slug": "clone-graph",
+  "difficulty": "Medium",
+  "patterns": [
+    "graph",
+    "breadth-first-search"
+  ],
+  "method": "cloneGraph",
+  "kind": "method",
+  "args_types": [
+    "graphnode"
+  ],
+  "return_type": "graphnode",
+  "checker": "graph_adjacency",
+  "complexity_language": "Python",
+  "complexity": {
+    "time": "O(V + E)",
+    "space": "O(V) auxiliary; O(V + E) cloned output"
+  },
+  "judge_status": "not_recorded"
+}
