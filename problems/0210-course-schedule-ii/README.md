@@ -21,3 +21,7 @@ O(V + E) time and O(V + E) total space, including the O(V) output. The input edg
 Sorting course IDs ignores dependencies: an edge requiring course 3 before course 0 invalidates numerical order. More than one ordering can be correct; fixtures use a semantic checker that verifies vertex coverage and prerequisite order instead of matching one arbitrary list. Generated tests establish existence independently by enumerating small permutations.
 
 **Follow-up:** use a min-heap to return the lexicographically smallest valid ordering, and account for its additional cost.
+
+## Python and C++23 comparison
+
+Both implementations run Kahn’s algorithm using indegrees and a FIFO ready queue, without modifying the prerequisite edges. C++ owns its adjacency vectors, queue, and result through standard containers. The solution takes O(V+E) time and O(V+E) auxiliary storage plus O(V) output. The runner owns the decoded edge copy. Validation checks course coverage and every prerequisite semantically because several valid topological orders can exist.

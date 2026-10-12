@@ -19,5 +19,10 @@
     "time": "O(V + E)",
     "space": "O(V + E)"
   },
-  "judge_status": "not_recorded"
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(V + E)",
+    "space": "O(V + E) auxiliary; O(V) output"
+  }
 }
