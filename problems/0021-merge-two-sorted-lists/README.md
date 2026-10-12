@@ -19,3 +19,8 @@ Attach the leftover suffix after the loop. Equal values must both survive. This 
 
 ## Follow-up
 For k sorted lists, compare repeatedly merging pairs with maintaining a heap of current heads.
+
+## Python and C++23
+Both versions reuse and relink the input nodes, allocating only a dummy predecessor. The C++ adapter retains ownership of both input lists through one ListArena, so merging does not transfer or duplicate node ownership.
+
+C++23 submission-method complexity: **O(m + n) time; O(1) space**. Adapter ownership and JSON conversion costs are separate.
