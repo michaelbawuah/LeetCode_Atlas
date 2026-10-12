@@ -1,0 +1,92 @@
+[
+  {
+    "name": "two_words",
+    "args": [
+      "leetcode",
+      [
+        "leet",
+        "code"
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "name": "reuse_dictionary_word",
+    "args": [
+      "applepenapple",
+      [
+        "apple",
+        "pen"
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "name": "missing_middle_letter",
+    "args": [
+      "catsandog",
+      [
+        "cats",
+        "dog",
+        "sand",
+        "and",
+        "cat"
+      ]
+    ],
+    "expected": false
+  },
+  {
+    "name": "reuse_single_letter",
+    "args": [
+      "aa",
+      [
+        "a"
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "name": "exact_two_segments",
+    "args": [
+      "abcd",
+      [
+        "ab",
+        "cd"
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "name": "different_word_lengths",
+    "args": [
+      "aaaaaaa",
+      [
+        "aaaa",
+        "aaa"
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "name": "no_matching_word",
+    "args": [
+      "a",
+      [
+        "b"
+      ]
+    ],
+    "expected": false
+  },
+  {
+    "name": "greedy_longest_fails",
+    "args": [
+      "cars",
+      [
+        "car",
+        "ca",
+        "rs"
+      ]
+    ],
+    "expected": true
+  }
+]

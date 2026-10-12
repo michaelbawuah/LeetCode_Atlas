@@ -1,0 +1,28 @@
+{
+  "id": 139,
+  "title": "Word Break",
+  "slug": "word-break",
+  "difficulty": "Medium",
+  "patterns": [
+    "dynamic-programming",
+    "hash-set"
+  ],
+  "method": "wordBreak",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(T + n L\u00b2) expected",
+    "space": "O(W + n + L)"
+  },
+  "complexity_language": "Python",
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O(T + n L\u00b2) expected",
+    "space": "O(T + n + L)"
+  }
+}
