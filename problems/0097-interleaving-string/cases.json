@@ -1,0 +1,74 @@
+[
+  {
+    "name": "valid_interleaving",
+    "args": [
+      "aabcc",
+      "dbbca",
+      "aadbbcbcac"
+    ],
+    "expected": true
+  },
+  {
+    "name": "invalid_order",
+    "args": [
+      "aabcc",
+      "dbbca",
+      "aadbbbaccc"
+    ],
+    "expected": false
+  },
+  {
+    "name": "all_empty",
+    "args": [
+      "",
+      "",
+      ""
+    ],
+    "expected": true
+  },
+  {
+    "name": "second_empty",
+    "args": [
+      "a",
+      "",
+      "a"
+    ],
+    "expected": true
+  },
+  {
+    "name": "alternating_sources",
+    "args": [
+      "ab",
+      "cd",
+      "acbd"
+    ],
+    "expected": true
+  },
+  {
+    "name": "second_source_reversed",
+    "args": [
+      "ab",
+      "cd",
+      "adbc"
+    ],
+    "expected": false
+  },
+  {
+    "name": "repeated_characters",
+    "args": [
+      "aa",
+      "aa",
+      "aaaa"
+    ],
+    "expected": true
+  },
+  {
+    "name": "length_mismatch",
+    "args": [
+      "a",
+      "b",
+      "a"
+    ],
+    "expected": false
+  }
+]
