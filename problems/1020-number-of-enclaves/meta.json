@@ -1,0 +1,28 @@
+{
+  "id": 1020,
+  "title": "Number of Enclaves",
+  "slug": "number-of-enclaves",
+  "difficulty": "Medium",
+  "patterns": [
+    "graph",
+    "depth-first-search",
+    "grid"
+  ],
+  "method": "numEnclaves",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity_language": "Python",
+  "complexity": {
+    "time": "O(R C)",
+    "space": "O(R C)"
+  },
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O(R C)",
+    "space": "O(R C)"
+  }
+}
