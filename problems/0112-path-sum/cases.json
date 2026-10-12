@@ -1,0 +1,87 @@
+[
+  {
+    "name": "present",
+    "args": [
+      [
+        5,
+        4,
+        8,
+        11,
+        null,
+        13,
+        4,
+        7,
+        2,
+        null,
+        null,
+        null,
+        1
+      ],
+      22
+    ],
+    "expected": true
+  },
+  {
+    "name": "absent",
+    "args": [
+      [
+        1,
+        2,
+        3
+      ],
+      5
+    ],
+    "expected": false
+  },
+  {
+    "name": "empty",
+    "args": [
+      [],
+      0
+    ],
+    "expected": false
+  },
+  {
+    "name": "singleton_match",
+    "args": [
+      [
+        0
+      ],
+      0
+    ],
+    "expected": true
+  },
+  {
+    "name": "internal_match_only",
+    "args": [
+      [
+        1,
+        2
+      ],
+      1
+    ],
+    "expected": false
+  },
+  {
+    "name": "negative_path",
+    "args": [
+      [
+        -2,
+        null,
+        -3
+      ],
+      -5
+    ],
+    "expected": true
+  },
+  {
+    "name": "singleton_mismatch",
+    "args": [
+      [
+        5
+      ],
+      0
+    ],
+    "expected": false
+  }
+]

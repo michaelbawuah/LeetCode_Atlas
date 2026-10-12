@@ -1,0 +1,28 @@
+{
+  "id": 112,
+  "title": "Path Sum",
+  "difficulty": "Easy",
+  "patterns": [
+    "tree",
+    "depth-first-search"
+  ],
+  "method": "hasPathSum",
+  "args_types": [
+    "treenode",
+    "value"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(h)"
+  },
+  "slug": "path-sum",
+  "kind": "method",
+  "judge_status": "not_recorded",
+  "checker": "exact",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n)",
+    "space": "O(h)"
+  }
+}
