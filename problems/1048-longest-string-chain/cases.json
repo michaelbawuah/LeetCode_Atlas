@@ -1,0 +1,71 @@
+[
+  {
+    "name": "classic_chain",
+    "args": [
+      [
+        "a",
+        "b",
+        "ba",
+        "bca",
+        "bda",
+        "bdca"
+      ]
+    ],
+    "expected": 4
+  },
+  {
+    "name": "different_starts",
+    "args": [
+      [
+        "xbc",
+        "pcxbcf",
+        "xb",
+        "cxbc",
+        "pcxbc"
+      ]
+    ],
+    "expected": 5
+  },
+  {
+    "name": "not_substring_chain",
+    "args": [
+      [
+        "abcd",
+        "dbqca"
+      ]
+    ],
+    "expected": 1
+  },
+  {
+    "name": "singleton",
+    "args": [
+      [
+        "word"
+      ]
+    ],
+    "expected": 1
+  },
+  {
+    "name": "duplicate_words",
+    "args": [
+      [
+        "a",
+        "ab",
+        "ab",
+        "abc"
+      ]
+    ],
+    "expected": 3
+  },
+  {
+    "name": "missing_length",
+    "args": [
+      [
+        "a",
+        "abc",
+        "abcd"
+      ]
+    ],
+    "expected": 2
+  }
+]
