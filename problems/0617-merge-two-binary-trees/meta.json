@@ -1,0 +1,23 @@
+{
+  "id": 617,
+  "title": "Merge Two Binary Trees",
+  "difficulty": "Easy",
+  "method": "mergeTrees",
+  "args_types": [
+    "treenode",
+    "treenode"
+  ],
+  "return_type": "treenode",
+  "complexity": {
+    "time": "O(n + m)",
+    "space": "O(h1 + h2) auxiliary; O(n + m) fresh output"
+  },
+  "patterns": [
+    "tree",
+    "depth-first-search"
+  ],
+  "checker": "exact",
+  "slug": "merge-two-binary-trees",
+  "kind": "method",
+  "judge_status": "not_recorded"
+}
