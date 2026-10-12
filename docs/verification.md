@@ -8,9 +8,11 @@ The repository checks problems from several directions: named cases, independent
 
 The historical [foundation record](../verification/foundation.json) covers **25 Python problems and 10 C++23 counterparts**: 255 pytest tests passed, including 180 named fixtures and 1,500 generated Python/C++ comparisons, plus the CTest adapter suite. AddressSanitizer and UndefinedBehaviorSanitizer were enabled. LeakSanitizer was disabled locally because the container runs under ptrace; the Linux Clang CI configuration enables it.
 
-The [75-problem milestone report](../verification/milestone75.json) records **75 Python implementations and 25 C++23 counterparts**, with 720 pytest checks and 3,750 generated comparisons. The separate [150-problem report](../verification/milestone150.json) covers the current **150 Python implementations and 75 C++23 counterparts**: 1,456 pytest checks passed, including 1,106 named fixtures and **11,250 generated comparisons: 150 for each counterpart**. The CTest adapter suite also passed. Earlier totals remain historical records.
+The [75-problem milestone report](../verification/milestone75.json) records **75 Python implementations and 25 C++23 counterparts**, with 720 pytest checks and 3,750 generated comparisons. The separate [150-problem report](../verification/milestone150.json) covers **150 Python implementations and 75 C++23 counterparts**: 1,456 pytest checks passed, including 1,106 named fixtures and **11,250 generated comparisons: 150 for each counterpart**. The CTest adapter suite also passed. Earlier totals remain historical records.
 
 The [300-problem report](../verification/milestone300.json) records the main target: **300 Python implementations and 150 C++23 counterparts**, including **22,500 generated comparison cases**. All 2,598 pytest checks passed, with 1,975 named fixtures and the 66-assertion CTest adapter suite. Its command outcomes, focused follow-up, and source digest identify the verified milestone.
+
+The [C++ expansion report](../verification/cpp225.json) records **300 Python implementations and 225 C++23 counterparts**, including **33,750 generated comparison cases**. All **2,690 pytest checks** passed without skips, covering 1,986 named Python fixtures, 1,510 shared C++ fixtures, and six persistent C++ stress checks. The sanitizer adapter suite passed 20 cases with 129 assertions. Earlier milestone records remain intact; the expansion report identifies its source digest and command outcomes.
 
 ## Run the Python checks
 
@@ -83,7 +85,7 @@ The C++ [adapter arenas](../cpp/atlas_adapter.hpp) retain ownership of every all
 
 Newly constructed tree outputs use `TreeResultOwner` rather than an input arena. The construction submission stages allocations for exception safety; the local owner releases the returned tree after serialization. This ownership path is tested independently of tree values.
 
-List-array fixtures build each list independently. Tree-reference fixtures resolve integer query values inside a single original tree and require returned references to belong to it. C++ fresh-list results use `ListResultOwner`; borrowed lists remain owned by their input arena. Negative adapter regressions check incorrect references, malformed witnesses, and invalid numeric values.
+List-array fixtures build each list independently. Tree-reference fixtures resolve integer query values inside a single original tree and require returned references to belong to it. The C++ reference adapter snapshots the original labels and links, rejecting copied output nodes and mutations to the query tree. Its cycle-list builder retains ownership independently of cyclic links. C++ fresh-list results use `ListResultOwner`; borrowed lists remain owned by their input arena. Negative adapter regressions check incorrect references, malformed witnesses, and invalid numeric values.
 
 ## Run the C++23 checks
 

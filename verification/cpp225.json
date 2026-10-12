@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "milestone": "cpp-expansion-225",
+  "verified_on": "2026-10-12",
+  "source_base_commit": "349f07af2d1ca321e504b991b08a9663cfe6e0af",
+  "verified_sources_sha256": "efa84df347467ed8527cca7fd9d8f3242bfe611dd2229d60b3bcb5b9af78eb9b",
+  "digest_definition": "SHA-256 of sorted source/fixture repository paths, each followed by a null byte and its binary SHA-256. Includes .py/.cpp/.hpp/.json, CMakeLists.txt, pyproject.toml, and CI; excludes catalog.json and verification reports.",
+  "distinct_problems": 300,
+  "implementations": {
+    "Python": 300,
+    "C++23": 225
+  },
+  "difficulty": {
+    "Easy": 72,
+    "Hard": 28,
+    "Medium": 200
+  },
+  "pattern_tags": 90,
+  "design_problems": 21,
+  "named_python_fixtures": 1986,
+  "named_cpp_shared_fixtures": 1510,
+  "generated_cpp_python_comparisons": 33750,
+  "official_catalog_identity_checks": {
+    "entries": 300,
+    "source": "https://leetcode.com/graphql/"
+  },
+  "new_official_interfaces_and_constraints_reviewed": 75,
+  "python_version": "3.12.14",
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0",
+  "pytest": {
+    "tests": 2690,
+    "passed": 2690,
+    "failures_or_errors": 0,
+    "skipped": 0
+  },
+  "ctest": {
+    "targets": 1,
+    "passed": 1,
+    "catch2_cases": 20,
+    "assertions": 129
+  },
+  "persistent_cpp_stress_checks": [
+    "1192: 100,000-node bridge chain",
+    "329: 200-by-200 increasing serpentine matrix",
+    "2050: 50,000-course chain with 500,000,000 total duration",
+    "235: 100,000-node original-identity BST ancestor query",
+    "236: 100,000-node original-identity tree ancestor query",
+    "234: 100,000-node palindrome with exact input restoration"
+  ],
+  "instrumentation": [
+    "AddressSanitizer",
+    "UndefinedBehaviorSanitizer"
+  ],
+  "leak_check": "Disabled locally because LeakSanitizer cannot run under this container ptrace; enabled in Linux Clang CI.",
+  "local_environment_adjustment": {
+    "owned_elf_execute_permissions_restored": [
+      "build/bin/atlas_0064_minimum_path_sum",
+      "build/bin/atlas_0067_add_binary",
+      "build/bin/atlas_0070_climbing_stairs",
+      "build/bin/atlas_0137_single_number_ii",
+      "build/bin/atlas_0143_reorder_list",
+      "build/bin/atlas_0146_lru_cache",
+      "build/bin/atlas_0947_most_stones_removed_with_same_row_or_column",
+      "build/bin/atlas_0981_time_based_key_value_store",
+      "build/bin/atlas_0994_rotting_oranges",
+      "build/bin/atlas_1011_capacity_to_ship_packages_within_d_days",
+      "build/bin/atlas_1020_number_of_enclaves"
+    ]
+  },
+  "commands": [
+    "cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug -DATLAS_SANITIZERS=ON",
+    "cmake --build build --parallel 6",
+    "ASAN_OPTIONS=detect_leaks=0 UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1 ATLAS_CPP_BIN_DIR=build/bin python -m pytest -q --junitxml=build/cpp225-tests.xml",
+    "ASAN_OPTIONS=detect_leaks=0 UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1 ctest --test-dir build --output-on-failure -V",
+    "python -m ruff check .",
+    "python -m ruff format --check .",
+    "python tools/catalog.py --check"
+  ],
+  "official_leetcode_acceptances_recorded": 0
+}
