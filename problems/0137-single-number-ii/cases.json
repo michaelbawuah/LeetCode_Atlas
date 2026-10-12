@@ -1,0 +1,86 @@
+[
+  {
+    "name": "basic triplicate",
+    "args": [
+      [
+        2,
+        2,
+        3,
+        2
+      ]
+    ],
+    "expected": 3
+  },
+  {
+    "name": "interleaved triplicates",
+    "args": [
+      [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        99
+      ]
+    ],
+    "expected": 99
+  },
+  {
+    "name": "negative singleton",
+    "args": [
+      [
+        -2,
+        -2,
+        -2,
+        -7
+      ]
+    ],
+    "expected": -7
+  },
+  {
+    "name": "zero singleton",
+    "args": [
+      [
+        0
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "minimum signed singleton",
+    "args": [
+      [
+        -2147483648,
+        1,
+        1,
+        1
+      ]
+    ],
+    "expected": -2147483648
+  },
+  {
+    "name": "maximum signed singleton",
+    "args": [
+      [
+        2147483647,
+        0,
+        0,
+        0
+      ]
+    ],
+    "expected": 2147483647
+  },
+  {
+    "name": "triplicate negative unit",
+    "args": [
+      [
+        -1,
+        -1,
+        -1,
+        0
+      ]
+    ],
+    "expected": 0
+  }
+]
