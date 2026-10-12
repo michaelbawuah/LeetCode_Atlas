@@ -1,0 +1,23 @@
+{
+  "id": 33,
+  "title": "Search in Rotated Sorted Array",
+  "slug": "search-in-rotated-sorted-array",
+  "difficulty": "Medium",
+  "patterns": [
+    "binary-search",
+    "rotated-array"
+  ],
+  "method": "search",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "kind": "method",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(log n)",
+    "space": "O(1)"
+  },
+  "judge_status": "not_recorded"
+}

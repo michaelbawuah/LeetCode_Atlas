@@ -1,0 +1,107 @@
+[
+  {
+    "name": "rotated-hit",
+    "args": [
+      [
+        4,
+        5,
+        6,
+        7,
+        0,
+        1,
+        2
+      ],
+      0
+    ],
+    "expected": 4
+  },
+  {
+    "name": "rotated-miss",
+    "args": [
+      [
+        4,
+        5,
+        6,
+        7,
+        0,
+        1,
+        2
+      ],
+      3
+    ],
+    "expected": -1
+  },
+  {
+    "name": "single-hit",
+    "args": [
+      [
+        1
+      ],
+      1
+    ],
+    "expected": 0
+  },
+  {
+    "name": "single-miss",
+    "args": [
+      [
+        1
+      ],
+      0
+    ],
+    "expected": -1
+  },
+  {
+    "name": "unrotated",
+    "args": [
+      [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      4
+    ],
+    "expected": 3
+  },
+  {
+    "name": "two-elements",
+    "args": [
+      [
+        3,
+        1
+      ],
+      1
+    ],
+    "expected": 1
+  },
+  {
+    "name": "first-element",
+    "args": [
+      [
+        5,
+        1,
+        2,
+        3,
+        4
+      ],
+      5
+    ],
+    "expected": 0
+  },
+  {
+    "name": "last-element",
+    "args": [
+      [
+        2,
+        3,
+        4,
+        5,
+        1
+      ],
+      1
+    ],
+    "expected": 4
+  }
+]
