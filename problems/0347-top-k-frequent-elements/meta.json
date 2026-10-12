@@ -1,0 +1,23 @@
+{
+  "id": 347,
+  "title": "Top K Frequent Elements",
+  "slug": "top-k-frequent-elements",
+  "difficulty": "Medium",
+  "patterns": [
+    "frequency-counting",
+    "frequency-buckets"
+  ],
+  "method": "topKFrequent",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "unordered",
+  "complexity": {
+    "time": "O(n) expected",
+    "space": "O(n)"
+  },
+  "judge_status": "not_recorded"
+}
