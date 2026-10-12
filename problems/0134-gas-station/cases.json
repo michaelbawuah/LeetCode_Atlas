@@ -1,0 +1,120 @@
+[
+  {
+    "name": "classic circuit",
+    "args": [
+      [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      [
+        3,
+        4,
+        5,
+        1,
+        2
+      ]
+    ],
+    "expected": 3
+  },
+  {
+    "name": "insufficient total fuel",
+    "args": [
+      [
+        2,
+        3,
+        4
+      ],
+      [
+        3,
+        4,
+        3
+      ]
+    ],
+    "expected": -1
+  },
+  {
+    "name": "single feasible station",
+    "args": [
+      [
+        5
+      ],
+      [
+        4
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "single impossible station",
+    "args": [
+      [
+        0
+      ],
+      [
+        1
+      ]
+    ],
+    "expected": -1
+  },
+  {
+    "name": "last station starts",
+    "args": [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "expected": 1
+  },
+  {
+    "name": "first station unique",
+    "args": [
+      [
+        3,
+        1,
+        1
+      ],
+      [
+        1,
+        2,
+        2
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "reset across two deficits",
+    "args": [
+      [
+        1,
+        0,
+        3
+      ],
+      [
+        2,
+        2,
+        0
+      ]
+    ],
+    "expected": 2
+  },
+  {
+    "name": "zero singleton",
+    "args": [
+      [
+        0
+      ],
+      [
+        0
+      ]
+    ],
+    "expected": 0
+  }
+]
