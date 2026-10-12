@@ -1,0 +1,113 @@
+[
+  {
+    "name": "standard chain",
+    "args": [
+      "hit",
+      "cog",
+      [
+        "hot",
+        "dot",
+        "dog",
+        "lot",
+        "log",
+        "cog"
+      ]
+    ],
+    "expected": 5
+  },
+  {
+    "name": "end missing",
+    "args": [
+      "hit",
+      "cog",
+      [
+        "hot",
+        "dot",
+        "dog",
+        "lot",
+        "log"
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "single edit",
+    "args": [
+      "hit",
+      "hot",
+      [
+        "hot"
+      ]
+    ],
+    "expected": 2
+  },
+  {
+    "name": "end isolated",
+    "args": [
+      "abc",
+      "xyz",
+      [
+        "xyz",
+        "xya",
+        "aya"
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "one letter words",
+    "args": [
+      "a",
+      "c",
+      [
+        "a",
+        "b",
+        "c"
+      ]
+    ],
+    "expected": 2
+  },
+  {
+    "name": "branching chain",
+    "args": [
+      "aaa",
+      "bbb",
+      [
+        "aab",
+        "abb",
+        "bbb",
+        "aba"
+      ]
+    ],
+    "expected": 4
+  },
+  {
+    "name": "begin included",
+    "args": [
+      "hit",
+      "cog",
+      [
+        "hit",
+        "hot",
+        "dot",
+        "dog",
+        "lot",
+        "log",
+        "cog"
+      ]
+    ],
+    "expected": 5
+  },
+  {
+    "name": "two letter chain",
+    "args": [
+      "aa",
+      "bb",
+      [
+        "ab",
+        "bb"
+      ]
+    ],
+    "expected": 3
+  }
+]

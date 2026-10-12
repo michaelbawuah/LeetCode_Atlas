@@ -1,0 +1,25 @@
+{
+  "id": 127,
+  "title": "Word Ladder",
+  "slug": "word-ladder",
+  "difficulty": "Hard",
+  "patterns": [
+    "graph",
+    "breadth-first-search"
+  ],
+  "method": "ladderLength",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity_language": "Python",
+  "complexity": {
+    "time": "O(N L^2) expected",
+    "space": "O(N L^2) including wildcard keys"
+  },
+  "judge_status": "not_recorded"
+}
