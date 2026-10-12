@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "distinct_problems": 25,
+  "distinct_problems": 75,
   "implementations": {
-    "Python": 25,
-    "C++23": 10
+    "Python": 75,
+    "C++23": 25
   },
-  "fixed_cases": 180,
+  "fixed_cases": 556,
   "official_acceptances_recorded": 0,
   "targets": {
     "distinct_problems": 300,
@@ -134,6 +134,41 @@
       "url": "https://leetcode.com/problems/3sum/"
     },
     {
+      "id": 19,
+      "title": "Remove Nth Node From End of List",
+      "difficulty": "Medium",
+      "patterns": [
+        "linked-list",
+        "two-pointers"
+      ],
+      "method": "removeNthFromEnd",
+      "args_types": [
+        "listnode",
+        "value"
+      ],
+      "return_type": "listnode",
+      "complexity": {
+        "time": "O(L)",
+        "space": "O(1)"
+      },
+      "slug": "remove-nth-node-from-end-of-list",
+      "kind": "method",
+      "checker": "exact",
+      "judge_status": "not_recorded",
+      "complexity_language": "Python",
+      "complexity_cpp": {
+        "time": "O(L)",
+        "space": "O(1) auxiliary; output reuses existing nodes"
+      },
+      "folder": "0019-remove-nth-node-from-end-of-list",
+      "languages": [
+        "Python",
+        "C++23"
+      ],
+      "fixed_cases": 7,
+      "url": "https://leetcode.com/problems/remove-nth-node-from-end-of-list/"
+    },
+    {
       "id": 20,
       "title": "Valid Parentheses",
       "slug": "valid-parentheses",
@@ -191,6 +226,33 @@
       "url": "https://leetcode.com/problems/merge-two-sorted-lists/"
     },
     {
+      "id": 22,
+      "title": "Generate Parentheses",
+      "slug": "generate-parentheses",
+      "difficulty": "Medium",
+      "patterns": [
+        "backtracking"
+      ],
+      "method": "generateParenthesis",
+      "kind": "method",
+      "args_types": [
+        "value"
+      ],
+      "return_type": "value",
+      "checker": "unordered",
+      "complexity": {
+        "time": "O(n C_n), where C_n is the nth Catalan number",
+        "space": "O(n) auxiliary; O(n C_n) output"
+      },
+      "judge_status": "not_recorded",
+      "folder": "0022-generate-parentheses",
+      "languages": [
+        "Python"
+      ],
+      "fixed_cases": 6,
+      "url": "https://leetcode.com/problems/generate-parentheses/"
+    },
+    {
       "id": 33,
       "title": "Search in Rotated Sorted Array",
       "slug": "search-in-rotated-sorted-array",
@@ -219,6 +281,89 @@
       ],
       "fixed_cases": 8,
       "url": "https://leetcode.com/problems/search-in-rotated-sorted-array/"
+    },
+    {
+      "id": 36,
+      "title": "Valid Sudoku",
+      "slug": "valid-sudoku",
+      "difficulty": "Medium",
+      "patterns": [
+        "hash-set",
+        "matrix"
+      ],
+      "method": "isValidSudoku",
+      "kind": "method",
+      "args_types": [
+        "value"
+      ],
+      "return_type": "value",
+      "checker": "exact",
+      "complexity": {
+        "time": "O(1), fixed 9 x 9 board",
+        "space": "O(1), fixed 9 x 9 board"
+      },
+      "judge_status": "not_recorded",
+      "folder": "0036-valid-sudoku",
+      "languages": [
+        "Python"
+      ],
+      "fixed_cases": 8,
+      "url": "https://leetcode.com/problems/valid-sudoku/"
+    },
+    {
+      "id": 39,
+      "title": "Combination Sum",
+      "slug": "combination-sum",
+      "difficulty": "Medium",
+      "patterns": [
+        "backtracking"
+      ],
+      "method": "combinationSum",
+      "kind": "method",
+      "args_types": [
+        "value",
+        "value"
+      ],
+      "return_type": "value",
+      "checker": "unordered_groups",
+      "complexity": {
+        "time": "Output-sensitive exponential time; O(c log c + d c^d) conservative bound",
+        "space": "O(c + d) auxiliary; O(kd) output"
+      },
+      "judge_status": "not_recorded",
+      "folder": "0039-combination-sum",
+      "languages": [
+        "Python"
+      ],
+      "fixed_cases": 8,
+      "url": "https://leetcode.com/problems/combination-sum/"
+    },
+    {
+      "id": 46,
+      "title": "Permutations",
+      "slug": "permutations",
+      "difficulty": "Medium",
+      "patterns": [
+        "backtracking"
+      ],
+      "method": "permute",
+      "kind": "method",
+      "args_types": [
+        "value"
+      ],
+      "return_type": "value",
+      "checker": "unordered_rows",
+      "complexity": {
+        "time": "O(n n!)",
+        "space": "O(n) auxiliary; O(n n!) output"
+      },
+      "judge_status": "not_recorded",
+      "folder": "0046-permutations",
+      "languages": [
+        "Python"
+      ],
+      "fixed_cases": 7,
+      "url": "https://leetcode.com/problems/permutations/"
     },
     {
       "id": 49,
@@ -253,6 +398,346 @@
       ],
       "fixed_cases": 6,
       "url": "https://leetcode.com/problems/group-anagrams/"
+    },
+    {
+      "id": 53,
+      "title": "Maximum Subarray",
+      "slug": "maximum-subarray",
+      "difficulty": "Medium",
+      "patterns": [
+        "dynamic-programming",
+        "kadane"
+      ],
+      "method": "maxSubArray",
+      "kind": "method",
+      "args_types": [
+        "value"
+      ],
+      "return_type": "value",
+      "checker": "exact",
+      "complexity": {
+        "time": "O(n)",
+        "space": "O(1)"
+      },
+      "judge_status": "not_recorded",
+      "complexity_language": "Python",
+      "complexity_cpp": {
+        "time": "O(n)",
+        "space": "O(1) auxiliary and scalar output"
+      },
+      "folder": "0053-maximum-subarray",
+      "languages": [
+        "Python",
+        "C++23"
+      ],
+      "fixed_cases": 8,
+      "url": "https://leetcode.com/problems/maximum-subarray/"
+    },
+    {
+      "id": 56,
+      "title": "Merge Intervals",
+      "slug": "merge-intervals",
+      "difficulty": "Medium",
+      "patterns": [
+        "sorting",
+        "intervals"
+      ],
+      "method": "merge",
+      "kind": "method",
+      "args_types": [
+        "value"
+      ],
+      "return_type": "value",
+      "checker": "unordered_rows",
+      "complexity": {
+        "time": "O(n log n)",
+        "space": "O(n) auxiliary; O(n) output"
+      },
+      "judge_status": "not_recorded",
+      "complexity_language": "Python",
+      "complexity_cpp": {
+        "time": "O(n log n)",
+        "space": "O(n) output; std::sort auxiliary storage is implementation-dependent"
+      },
+      "folder": "0056-merge-intervals",
+      "languages": [
+        "Python",
+        "C++23"
+      ],
+      "fixed_cases": 8,
+      "url": "https://leetcode.com/problems/merge-intervals/"
+    },
+    {
+      "id": 57,
+      "title": "Insert Interval",
+      "slug": "insert-interval",
+      "difficulty": "Medium",
+      "patterns": [
+        "intervals"
+      ],
+      "method": "insert",
+      "kind": "method",
+      "args_types": [
+        "value",
+        "value"
+      ],
+      "return_type": "value",
+      "checker": "exact",
+      "complexity": {
+        "time": "O(n)",
+        "space": "O(1) auxiliary; O(n) output"
+      },
+      "judge_status": "not_recorded",
+      "complexity_language": "Python",
+      "complexity_cpp": {
+        "time": "O(n)",
+        "space": "O(1) auxiliary; O(n) output"
+      },
+      "folder": "0057-insert-interval",
+      "languages": [
+        "Python",
+        "C++23"
+      ],
+      "fixed_cases": 8,
+      "url": "https://leetcode.com/problems/insert-interval/"
+    },
+    {
+      "id": 62,
+      "title": "Unique Paths",
+      "difficulty": "Medium",
+      "patterns": [
+        "dynamic-programming"
+      ],
+      "method": "uniquePaths",
+      "args_types": [
+        "value",
+        "value"
+      ],
+      "return_type": "value",
+      "complexity": {
+        "time": "O(m * n)",
+        "space": "O(min(m, n))"
+      },
+      "slug": "unique-paths",
+      "kind": "method",
+      "checker": "exact",
+      "judge_status": "not_recorded",
+      "folder": "0062-unique-paths",
+      "languages": [
+        "Python"
+      ],
+      "fixed_cases": 8,
+      "url": "https://leetcode.com/problems/unique-paths/"
+    },
+    {
+      "id": 70,
+      "title": "Climbing Stairs",
+      "difficulty": "Easy",
+      "patterns": [
+        "dynamic-programming"
+      ],
+      "method": "climbStairs",
+      "args_types": [
+        "value"
+      ],
+      "return_type": "value",
+      "complexity": {
+        "time": "O(n)",
+        "space": "O(1)"
+      },
+      "slug": "climbing-stairs",
+      "kind": "method",
+      "checker": "exact",
+      "judge_status": "not_recorded",
+      "folder": "0070-climbing-stairs",
+      "languages": [
+        "Python"
+      ],
+      "fixed_cases": 7,
+      "url": "https://leetcode.com/problems/climbing-stairs/"
+    },
+    {
+      "id": 74,
+      "title": "Search a 2D Matrix",
+      "slug": "search-a-2d-matrix",
+      "difficulty": "Medium",
+      "patterns": [
+        "binary-search",
+        "matrix"
+      ],
+      "method": "searchMatrix",
+      "args_types": [
+        "value",
+        "value"
+      ],
+      "kind": "method",
+      "return_type": "value",
+      "checker": "exact",
+      "complexity": {
+        "time": "O(log(mn))",
+        "space": "O(1)"
+      },
+      "judge_status": "not_recorded",
+      "folder": "0074-search-a-2d-matrix",
+      "languages": [
+        "Python"
+      ],
+      "fixed_cases": 8,
+      "url": "https://leetcode.com/problems/search-a-2d-matrix/"
+    },
+    {
+      "id": 76,
+      "title": "Minimum Window Substring",
+      "slug": "minimum-window-substring",
+      "difficulty": "Hard",
+      "patterns": [
+        "sliding-window",
+        "frequency-counting"
+      ],
+      "method": "minWindow",
+      "kind": "method",
+      "args_types": [
+        "value",
+        "value"
+      ],
+      "return_type": "value",
+      "checker": "exact",
+      "complexity": {
+        "time": "O(|s| + |t|) expected",
+        "space": "O(sigma) auxiliary; O(w) output"
+      },
+      "judge_status": "not_recorded",
+      "complexity_language": "Python",
+      "complexity_cpp": {
+        "time": "O(|s| + |t|)",
+        "space": "O(1) working state; O(|s| + |t|) value-parameter copies; O(w) output"
+      },
+      "folder": "0076-minimum-window-substring",
+      "languages": [
+        "Python",
+        "C++23"
+      ],
+      "fixed_cases": 8,
+      "url": "https://leetcode.com/problems/minimum-window-substring/"
+    },
+    {
+      "id": 78,
+      "title": "Subsets",
+      "slug": "subsets",
+      "difficulty": "Medium",
+      "patterns": [
+        "power-set",
+        "iterative-expansion"
+      ],
+      "method": "subsets",
+      "kind": "method",
+      "args_types": [
+        "value"
+      ],
+      "return_type": "value",
+      "checker": "unordered_groups",
+      "complexity": {
+        "time": "O(n 2^n)",
+        "space": "O(n 2^n) total including output"
+      },
+      "judge_status": "not_recorded",
+      "folder": "0078-subsets",
+      "languages": [
+        "Python"
+      ],
+      "fixed_cases": 7,
+      "url": "https://leetcode.com/problems/subsets/"
+    },
+    {
+      "id": 91,
+      "title": "Decode Ways",
+      "difficulty": "Medium",
+      "patterns": [
+        "dynamic-programming"
+      ],
+      "method": "numDecodings",
+      "args_types": [
+        "value"
+      ],
+      "return_type": "value",
+      "complexity": {
+        "time": "O(n)",
+        "space": "O(1)"
+      },
+      "slug": "decode-ways",
+      "kind": "method",
+      "checker": "exact",
+      "judge_status": "not_recorded",
+      "folder": "0091-decode-ways",
+      "languages": [
+        "Python"
+      ],
+      "fixed_cases": 8,
+      "url": "https://leetcode.com/problems/decode-ways/"
+    },
+    {
+      "id": 98,
+      "title": "Validate Binary Search Tree",
+      "difficulty": "Medium",
+      "patterns": [
+        "tree",
+        "depth-first-search",
+        "binary-search-tree"
+      ],
+      "method": "isValidBST",
+      "args_types": [
+        "treenode"
+      ],
+      "return_type": "value",
+      "complexity": {
+        "time": "O(n)",
+        "space": "O(h)"
+      },
+      "slug": "validate-binary-search-tree",
+      "kind": "method",
+      "checker": "exact",
+      "judge_status": "not_recorded",
+      "complexity_language": "Python",
+      "complexity_cpp": {
+        "time": "O(n)",
+        "space": "O(h) auxiliary; O(1) scalar output"
+      },
+      "folder": "0098-validate-binary-search-tree",
+      "languages": [
+        "Python",
+        "C++23"
+      ],
+      "fixed_cases": 8,
+      "url": "https://leetcode.com/problems/validate-binary-search-tree/"
+    },
+    {
+      "id": 100,
+      "title": "Same Tree",
+      "difficulty": "Easy",
+      "patterns": [
+        "tree",
+        "depth-first-search"
+      ],
+      "method": "isSameTree",
+      "args_types": [
+        "treenode",
+        "treenode"
+      ],
+      "return_type": "value",
+      "complexity": {
+        "time": "O(n + m)",
+        "space": "O(hp + hq)"
+      },
+      "slug": "same-tree",
+      "kind": "method",
+      "checker": "exact",
+      "judge_status": "not_recorded",
+      "folder": "0100-same-tree",
+      "languages": [
+        "Python"
+      ],
+      "fixed_cases": 7,
+      "url": "https://leetcode.com/problems/same-tree/"
     },
     {
       "id": 102,
@@ -311,6 +796,34 @@
       "url": "https://leetcode.com/problems/maximum-depth-of-binary-tree/"
     },
     {
+      "id": 110,
+      "title": "Balanced Binary Tree",
+      "difficulty": "Easy",
+      "patterns": [
+        "tree",
+        "depth-first-search"
+      ],
+      "method": "isBalanced",
+      "args_types": [
+        "treenode"
+      ],
+      "return_type": "value",
+      "complexity": {
+        "time": "O(n)",
+        "space": "O(n)"
+      },
+      "slug": "balanced-binary-tree",
+      "kind": "method",
+      "checker": "exact",
+      "judge_status": "not_recorded",
+      "folder": "0110-balanced-binary-tree",
+      "languages": [
+        "Python"
+      ],
+      "fixed_cases": 7,
+      "url": "https://leetcode.com/problems/balanced-binary-tree/"
+    },
+    {
       "id": 121,
       "title": "Best Time to Buy and Sell Stock",
       "slug": "best-time-to-buy-and-sell-stock",
@@ -364,6 +877,129 @@
       ],
       "fixed_cases": 7,
       "url": "https://leetcode.com/problems/valid-palindrome/"
+    },
+    {
+      "id": 128,
+      "title": "Longest Consecutive Sequence",
+      "slug": "longest-consecutive-sequence",
+      "difficulty": "Medium",
+      "patterns": [
+        "hash-set"
+      ],
+      "method": "longestConsecutive",
+      "kind": "method",
+      "args_types": [
+        "value"
+      ],
+      "return_type": "value",
+      "checker": "exact",
+      "complexity": {
+        "time": "O(n) expected",
+        "space": "O(n)"
+      },
+      "judge_status": "not_recorded",
+      "complexity_language": "Python",
+      "complexity_cpp": {
+        "time": "O(n) expected; O(n^2) worst case with adverse hashing",
+        "space": "O(n) auxiliary; O(1) scalar output"
+      },
+      "folder": "0128-longest-consecutive-sequence",
+      "languages": [
+        "Python",
+        "C++23"
+      ],
+      "fixed_cases": 8,
+      "url": "https://leetcode.com/problems/longest-consecutive-sequence/"
+    },
+    {
+      "id": 143,
+      "title": "Reorder List",
+      "difficulty": "Medium",
+      "patterns": [
+        "linked-list",
+        "two-pointers"
+      ],
+      "method": "reorderList",
+      "args_types": [
+        "listnode"
+      ],
+      "return_type": "listnode",
+      "result_from_arg": 0,
+      "complexity": {
+        "time": "O(n)",
+        "space": "O(1)"
+      },
+      "slug": "reorder-list",
+      "kind": "method",
+      "checker": "exact",
+      "judge_status": "not_recorded",
+      "folder": "0143-reorder-list",
+      "languages": [
+        "Python"
+      ],
+      "fixed_cases": 7,
+      "url": "https://leetcode.com/problems/reorder-list/"
+    },
+    {
+      "id": 144,
+      "title": "Binary Tree Preorder Traversal",
+      "difficulty": "Easy",
+      "patterns": [
+        "tree",
+        "depth-first-search"
+      ],
+      "method": "preorderTraversal",
+      "args_types": [
+        "treenode"
+      ],
+      "return_type": "value",
+      "complexity": {
+        "time": "O(n)",
+        "space": "O(h) auxiliary; O(n) output"
+      },
+      "slug": "binary-tree-preorder-traversal",
+      "kind": "method",
+      "checker": "exact",
+      "judge_status": "not_recorded",
+      "folder": "0144-binary-tree-preorder-traversal",
+      "languages": [
+        "Python"
+      ],
+      "fixed_cases": 7,
+      "url": "https://leetcode.com/problems/binary-tree-preorder-traversal/"
+    },
+    {
+      "id": 150,
+      "title": "Evaluate Reverse Polish Notation",
+      "slug": "evaluate-reverse-polish-notation",
+      "difficulty": "Medium",
+      "patterns": [
+        "stack"
+      ],
+      "method": "evalRPN",
+      "args_types": [
+        "value"
+      ],
+      "kind": "method",
+      "return_type": "value",
+      "checker": "exact",
+      "complexity": {
+        "time": "O(n)",
+        "space": "O(n)"
+      },
+      "judge_status": "not_recorded",
+      "complexity_language": "Python",
+      "complexity_cpp": {
+        "time": "O(n) under the bounded-token arithmetic model",
+        "space": "O(n) auxiliary; O(1) scalar output"
+      },
+      "folder": "0150-evaluate-reverse-polish-notation",
+      "languages": [
+        "Python",
+        "C++23"
+      ],
+      "fixed_cases": 8,
+      "url": "https://leetcode.com/problems/evaluate-reverse-polish-notation/"
     },
     {
       "id": 153,
@@ -420,6 +1056,61 @@
       "url": "https://leetcode.com/problems/min-stack/"
     },
     {
+      "id": 167,
+      "title": "Two Sum II - Input Array Is Sorted",
+      "slug": "two-sum-ii-input-array-is-sorted",
+      "difficulty": "Medium",
+      "patterns": [
+        "two-pointers"
+      ],
+      "method": "twoSum",
+      "kind": "method",
+      "args_types": [
+        "value",
+        "value"
+      ],
+      "return_type": "value",
+      "checker": "exact",
+      "complexity": {
+        "time": "O(n)",
+        "space": "O(1)"
+      },
+      "judge_status": "not_recorded",
+      "folder": "0167-two-sum-ii-input-array-is-sorted",
+      "languages": [
+        "Python"
+      ],
+      "fixed_cases": 7,
+      "url": "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/"
+    },
+    {
+      "id": 190,
+      "title": "Reverse Bits",
+      "difficulty": "Easy",
+      "patterns": [
+        "bit-manipulation"
+      ],
+      "method": "reverseBits",
+      "args_types": [
+        "value"
+      ],
+      "return_type": "value",
+      "complexity": {
+        "time": "O(1) for 32 bits",
+        "space": "O(1)"
+      },
+      "slug": "reverse-bits",
+      "kind": "method",
+      "checker": "exact",
+      "judge_status": "not_recorded",
+      "folder": "0190-reverse-bits",
+      "languages": [
+        "Python"
+      ],
+      "fixed_cases": 8,
+      "url": "https://leetcode.com/problems/reverse-bits/"
+    },
+    {
       "id": 198,
       "title": "House Robber",
       "difficulty": "Medium",
@@ -446,6 +1137,34 @@
       ],
       "fixed_cases": 8,
       "url": "https://leetcode.com/problems/house-robber/"
+    },
+    {
+      "id": 199,
+      "title": "Binary Tree Right Side View",
+      "difficulty": "Medium",
+      "patterns": [
+        "tree",
+        "depth-first-search"
+      ],
+      "method": "rightSideView",
+      "args_types": [
+        "treenode"
+      ],
+      "return_type": "value",
+      "complexity": {
+        "time": "O(n)",
+        "space": "O(h) auxiliary; O(h) output"
+      },
+      "slug": "binary-tree-right-side-view",
+      "kind": "method",
+      "checker": "exact",
+      "judge_status": "not_recorded",
+      "folder": "0199-binary-tree-right-side-view",
+      "languages": [
+        "Python"
+      ],
+      "fixed_cases": 7,
+      "url": "https://leetcode.com/problems/binary-tree-right-side-view/"
     },
     {
       "id": 200,
@@ -505,6 +1224,213 @@
       "url": "https://leetcode.com/problems/reverse-linked-list/"
     },
     {
+      "id": 207,
+      "title": "Course Schedule",
+      "slug": "course-schedule",
+      "difficulty": "Medium",
+      "patterns": [
+        "graph",
+        "topological-sort"
+      ],
+      "method": "canFinish",
+      "kind": "method",
+      "args_types": [
+        "value",
+        "value"
+      ],
+      "return_type": "value",
+      "checker": "exact",
+      "complexity": {
+        "time": "O(V + E)",
+        "space": "O(V + E)"
+      },
+      "judge_status": "not_recorded",
+      "complexity_language": "Python",
+      "complexity_cpp": {
+        "time": "O(V + E)",
+        "space": "O(V + E) auxiliary; O(1) boolean output"
+      },
+      "folder": "0207-course-schedule",
+      "languages": [
+        "Python",
+        "C++23"
+      ],
+      "fixed_cases": 8,
+      "url": "https://leetcode.com/problems/course-schedule/"
+    },
+    {
+      "id": 208,
+      "title": "Implement Trie (Prefix Tree)",
+      "slug": "implement-trie-prefix-tree",
+      "difficulty": "Medium",
+      "patterns": [
+        "trie",
+        "design"
+      ],
+      "method": null,
+      "args_types": [],
+      "kind": "design",
+      "return_type": "value",
+      "checker": "exact",
+      "complexity": {
+        "time": "O(L) per operation",
+        "space": "O(T) stored; O(1) auxiliary per operation"
+      },
+      "judge_status": "not_recorded",
+      "class_name": "Trie",
+      "folder": "0208-implement-trie-prefix-tree",
+      "languages": [
+        "Python"
+      ],
+      "fixed_cases": 6,
+      "url": "https://leetcode.com/problems/implement-trie-prefix-tree/"
+    },
+    {
+      "id": 209,
+      "title": "Minimum Size Subarray Sum",
+      "slug": "minimum-size-subarray-sum",
+      "difficulty": "Medium",
+      "patterns": [
+        "sliding-window"
+      ],
+      "method": "minSubArrayLen",
+      "kind": "method",
+      "args_types": [
+        "value",
+        "value"
+      ],
+      "return_type": "value",
+      "checker": "exact",
+      "complexity": {
+        "time": "O(n)",
+        "space": "O(1)"
+      },
+      "judge_status": "not_recorded",
+      "folder": "0209-minimum-size-subarray-sum",
+      "languages": [
+        "Python"
+      ],
+      "fixed_cases": 7,
+      "url": "https://leetcode.com/problems/minimum-size-subarray-sum/"
+    },
+    {
+      "id": 210,
+      "title": "Course Schedule II",
+      "slug": "course-schedule-ii",
+      "difficulty": "Medium",
+      "patterns": [
+        "graph",
+        "topological-sort"
+      ],
+      "method": "findOrder",
+      "kind": "method",
+      "args_types": [
+        "value",
+        "value"
+      ],
+      "return_type": "value",
+      "checker": "topological_order",
+      "complexity": {
+        "time": "O(V + E)",
+        "space": "O(V + E)"
+      },
+      "judge_status": "not_recorded",
+      "folder": "0210-course-schedule-ii",
+      "languages": [
+        "Python"
+      ],
+      "fixed_cases": 8,
+      "url": "https://leetcode.com/problems/course-schedule-ii/"
+    },
+    {
+      "id": 211,
+      "title": "Design Add and Search Words Data Structure",
+      "slug": "design-add-and-search-words-data-structure",
+      "difficulty": "Medium",
+      "patterns": [
+        "trie",
+        "design"
+      ],
+      "method": null,
+      "args_types": [],
+      "kind": "design",
+      "return_type": "value",
+      "checker": "exact",
+      "complexity": {
+        "time": "addWord O(L); search O(min(N, L * 26^w))",
+        "space": "O(T) stored; O(min(N, 26^w)) search frontier"
+      },
+      "judge_status": "not_recorded",
+      "class_name": "WordDictionary",
+      "folder": "0211-design-add-and-search-words-data-structure",
+      "languages": [
+        "Python"
+      ],
+      "fixed_cases": 6,
+      "url": "https://leetcode.com/problems/design-add-and-search-words-data-structure/"
+    },
+    {
+      "id": 213,
+      "title": "House Robber II",
+      "difficulty": "Medium",
+      "patterns": [
+        "dynamic-programming"
+      ],
+      "method": "rob",
+      "args_types": [
+        "value"
+      ],
+      "return_type": "value",
+      "complexity": {
+        "time": "O(n)",
+        "space": "O(1)"
+      },
+      "slug": "house-robber-ii",
+      "kind": "method",
+      "checker": "exact",
+      "judge_status": "not_recorded",
+      "folder": "0213-house-robber-ii",
+      "languages": [
+        "Python"
+      ],
+      "fixed_cases": 8,
+      "url": "https://leetcode.com/problems/house-robber-ii/"
+    },
+    {
+      "id": 215,
+      "title": "Kth Largest Element in an Array",
+      "slug": "kth-largest-element-in-an-array",
+      "difficulty": "Medium",
+      "patterns": [
+        "heap"
+      ],
+      "method": "findKthLargest",
+      "args_types": [
+        "value",
+        "value"
+      ],
+      "kind": "method",
+      "return_type": "value",
+      "checker": "exact",
+      "complexity": {
+        "time": "O(n log(k + 1))",
+        "space": "O(k)"
+      },
+      "judge_status": "not_recorded",
+      "complexity_language": "Python",
+      "complexity_cpp": {
+        "time": "O(n) comparisons on average; worst-case linear complexity is not guaranteed",
+        "space": "In-place partition; internal auxiliary storage is implementation-dependent; O(1) scalar output"
+      },
+      "folder": "0215-kth-largest-element-in-an-array",
+      "languages": [
+        "Python",
+        "C++23"
+      ],
+      "fixed_cases": 8,
+      "url": "https://leetcode.com/problems/kth-largest-element-in-an-array/"
+    },
+    {
       "id": 217,
       "title": "Contains Duplicate",
       "slug": "contains-duplicate",
@@ -530,6 +1456,64 @@
       ],
       "fixed_cases": 6,
       "url": "https://leetcode.com/problems/contains-duplicate/"
+    },
+    {
+      "id": 226,
+      "title": "Invert Binary Tree",
+      "difficulty": "Easy",
+      "patterns": [
+        "tree",
+        "depth-first-search"
+      ],
+      "method": "invertTree",
+      "args_types": [
+        "treenode"
+      ],
+      "return_type": "treenode",
+      "complexity": {
+        "time": "O(n)",
+        "space": "O(h)"
+      },
+      "slug": "invert-binary-tree",
+      "kind": "method",
+      "checker": "exact",
+      "judge_status": "not_recorded",
+      "folder": "0226-invert-binary-tree",
+      "languages": [
+        "Python"
+      ],
+      "fixed_cases": 7,
+      "url": "https://leetcode.com/problems/invert-binary-tree/"
+    },
+    {
+      "id": 230,
+      "title": "Kth Smallest Element in a BST",
+      "difficulty": "Medium",
+      "patterns": [
+        "tree",
+        "depth-first-search",
+        "binary-search-tree"
+      ],
+      "method": "kthSmallest",
+      "args_types": [
+        "treenode",
+        "value"
+      ],
+      "return_type": "value",
+      "complexity": {
+        "time": "O(h + k)",
+        "space": "O(h)"
+      },
+      "slug": "kth-smallest-element-in-a-bst",
+      "kind": "method",
+      "checker": "exact",
+      "judge_status": "not_recorded",
+      "folder": "0230-kth-smallest-element-in-a-bst",
+      "languages": [
+        "Python"
+      ],
+      "fixed_cases": 7,
+      "url": "https://leetcode.com/problems/kth-smallest-element-in-a-bst/"
     },
     {
       "id": 238,
@@ -588,6 +1572,158 @@
       "url": "https://leetcode.com/problems/valid-anagram/"
     },
     {
+      "id": 283,
+      "title": "Move Zeroes",
+      "slug": "move-zeroes",
+      "difficulty": "Easy",
+      "patterns": [
+        "two-pointers",
+        "in-place"
+      ],
+      "method": "moveZeroes",
+      "kind": "method",
+      "args_types": [
+        "value"
+      ],
+      "return_type": "value",
+      "checker": "exact",
+      "complexity": {
+        "time": "O(n)",
+        "space": "O(1)"
+      },
+      "judge_status": "not_recorded",
+      "result_from_arg": 0,
+      "folder": "0283-move-zeroes",
+      "languages": [
+        "Python"
+      ],
+      "fixed_cases": 8,
+      "url": "https://leetcode.com/problems/move-zeroes/"
+    },
+    {
+      "id": 295,
+      "title": "Find Median from Data Stream",
+      "slug": "find-median-from-data-stream",
+      "difficulty": "Hard",
+      "patterns": [
+        "heap",
+        "design"
+      ],
+      "method": null,
+      "args_types": [],
+      "kind": "design",
+      "return_type": "value",
+      "checker": "exact",
+      "complexity": {
+        "time": "addNum O(log n); findMedian O(1)",
+        "space": "O(n)"
+      },
+      "judge_status": "not_recorded",
+      "class_name": "MedianFinder",
+      "folder": "0295-find-median-from-data-stream",
+      "languages": [
+        "Python"
+      ],
+      "fixed_cases": 6,
+      "url": "https://leetcode.com/problems/find-median-from-data-stream/"
+    },
+    {
+      "id": 300,
+      "title": "Longest Increasing Subsequence",
+      "difficulty": "Medium",
+      "patterns": [
+        "binary-search",
+        "dynamic-programming"
+      ],
+      "method": "lengthOfLIS",
+      "args_types": [
+        "value"
+      ],
+      "return_type": "value",
+      "complexity": {
+        "time": "O(n log n)",
+        "space": "O(n)"
+      },
+      "slug": "longest-increasing-subsequence",
+      "kind": "method",
+      "checker": "exact",
+      "judge_status": "not_recorded",
+      "complexity_language": "Python",
+      "complexity_cpp": {
+        "time": "O(n log(n + 1))",
+        "space": "O(n) auxiliary; O(1) scalar output"
+      },
+      "folder": "0300-longest-increasing-subsequence",
+      "languages": [
+        "Python",
+        "C++23"
+      ],
+      "fixed_cases": 8,
+      "url": "https://leetcode.com/problems/longest-increasing-subsequence/"
+    },
+    {
+      "id": 322,
+      "title": "Coin Change",
+      "difficulty": "Medium",
+      "patterns": [
+        "dynamic-programming"
+      ],
+      "method": "coinChange",
+      "args_types": [
+        "value",
+        "value"
+      ],
+      "return_type": "value",
+      "complexity": {
+        "time": "O(a * c)",
+        "space": "O(a)"
+      },
+      "slug": "coin-change",
+      "kind": "method",
+      "checker": "exact",
+      "judge_status": "not_recorded",
+      "complexity_language": "Python",
+      "complexity_cpp": {
+        "time": "O(a c + a + 1)",
+        "space": "O(a + 1) auxiliary; O(1) scalar output"
+      },
+      "folder": "0322-coin-change",
+      "languages": [
+        "Python",
+        "C++23"
+      ],
+      "fixed_cases": 8,
+      "url": "https://leetcode.com/problems/coin-change/"
+    },
+    {
+      "id": 338,
+      "title": "Counting Bits",
+      "difficulty": "Easy",
+      "patterns": [
+        "bit-manipulation",
+        "dynamic-programming"
+      ],
+      "method": "countBits",
+      "args_types": [
+        "value"
+      ],
+      "return_type": "value",
+      "complexity": {
+        "time": "O(n)",
+        "space": "O(n) including output; O(1) beyond output"
+      },
+      "slug": "counting-bits",
+      "kind": "method",
+      "checker": "exact",
+      "judge_status": "not_recorded",
+      "folder": "0338-counting-bits",
+      "languages": [
+        "Python"
+      ],
+      "fixed_cases": 8,
+      "url": "https://leetcode.com/problems/counting-bits/"
+    },
+    {
       "id": 347,
       "title": "Top K Frequent Elements",
       "slug": "top-k-frequent-elements",
@@ -615,6 +1751,35 @@
       ],
       "fixed_cases": 6,
       "url": "https://leetcode.com/problems/top-k-frequent-elements/"
+    },
+    {
+      "id": 417,
+      "title": "Pacific Atlantic Water Flow",
+      "slug": "pacific-atlantic-water-flow",
+      "difficulty": "Medium",
+      "patterns": [
+        "graph",
+        "depth-first-search",
+        "grid"
+      ],
+      "method": "pacificAtlantic",
+      "kind": "method",
+      "args_types": [
+        "value"
+      ],
+      "return_type": "value",
+      "checker": "unordered_rows",
+      "complexity": {
+        "time": "O(rows * cols)",
+        "space": "O(rows * cols)"
+      },
+      "judge_status": "not_recorded",
+      "folder": "0417-pacific-atlantic-water-flow",
+      "languages": [
+        "Python"
+      ],
+      "fixed_cases": 8,
+      "url": "https://leetcode.com/problems/pacific-atlantic-water-flow/"
     },
     {
       "id": 424,
@@ -646,6 +1811,35 @@
       "url": "https://leetcode.com/problems/longest-repeating-character-replacement/"
     },
     {
+      "id": 435,
+      "title": "Non-overlapping Intervals",
+      "slug": "non-overlapping-intervals",
+      "difficulty": "Medium",
+      "patterns": [
+        "sorting",
+        "intervals",
+        "greedy"
+      ],
+      "method": "eraseOverlapIntervals",
+      "kind": "method",
+      "args_types": [
+        "value"
+      ],
+      "return_type": "value",
+      "checker": "exact",
+      "complexity": {
+        "time": "O(n log n)",
+        "space": "O(n)"
+      },
+      "judge_status": "not_recorded",
+      "folder": "0435-non-overlapping-intervals",
+      "languages": [
+        "Python"
+      ],
+      "fixed_cases": 8,
+      "url": "https://leetcode.com/problems/non-overlapping-intervals/"
+    },
+    {
       "id": 567,
       "title": "Permutation in String",
       "slug": "permutation-in-string",
@@ -673,6 +1867,125 @@
       ],
       "fixed_cases": 8,
       "url": "https://leetcode.com/problems/permutation-in-string/"
+    },
+    {
+      "id": 572,
+      "title": "Subtree of Another Tree",
+      "difficulty": "Easy",
+      "patterns": [
+        "tree",
+        "depth-first-search"
+      ],
+      "method": "isSubtree",
+      "args_types": [
+        "treenode",
+        "treenode"
+      ],
+      "return_type": "value",
+      "complexity": {
+        "time": "O(n * m)",
+        "space": "O(h + hs)"
+      },
+      "slug": "subtree-of-another-tree",
+      "kind": "method",
+      "checker": "exact",
+      "judge_status": "not_recorded",
+      "folder": "0572-subtree-of-another-tree",
+      "languages": [
+        "Python"
+      ],
+      "fixed_cases": 7,
+      "url": "https://leetcode.com/problems/subtree-of-another-tree/"
+    },
+    {
+      "id": 684,
+      "title": "Redundant Connection",
+      "slug": "redundant-connection",
+      "difficulty": "Medium",
+      "patterns": [
+        "graph",
+        "union-find"
+      ],
+      "method": "findRedundantConnection",
+      "kind": "method",
+      "args_types": [
+        "value"
+      ],
+      "return_type": "value",
+      "checker": "exact",
+      "complexity": {
+        "time": "O(n alpha(n))",
+        "space": "O(n)"
+      },
+      "judge_status": "not_recorded",
+      "complexity_language": "Python",
+      "complexity_cpp": {
+        "time": "O(n alpha(n)) amortized",
+        "space": "O(n) auxiliary; O(1) two-endpoint output"
+      },
+      "folder": "0684-redundant-connection",
+      "languages": [
+        "Python",
+        "C++23"
+      ],
+      "fixed_cases": 8,
+      "url": "https://leetcode.com/problems/redundant-connection/"
+    },
+    {
+      "id": 695,
+      "title": "Max Area of Island",
+      "slug": "max-area-of-island",
+      "difficulty": "Medium",
+      "patterns": [
+        "graph",
+        "depth-first-search",
+        "grid"
+      ],
+      "method": "maxAreaOfIsland",
+      "kind": "method",
+      "args_types": [
+        "value"
+      ],
+      "return_type": "value",
+      "checker": "exact",
+      "complexity": {
+        "time": "O(rows * cols)",
+        "space": "O(rows * cols)"
+      },
+      "judge_status": "not_recorded",
+      "folder": "0695-max-area-of-island",
+      "languages": [
+        "Python"
+      ],
+      "fixed_cases": 8,
+      "url": "https://leetcode.com/problems/max-area-of-island/"
+    },
+    {
+      "id": 703,
+      "title": "Kth Largest Element in a Stream",
+      "slug": "kth-largest-element-in-a-stream",
+      "difficulty": "Easy",
+      "patterns": [
+        "heap",
+        "design"
+      ],
+      "method": null,
+      "args_types": [],
+      "kind": "design",
+      "return_type": "value",
+      "checker": "exact",
+      "complexity": {
+        "time": "constructor O(n log(k + 1)); add O(log(k + 1))",
+        "space": "O(k)"
+      },
+      "judge_status": "not_recorded",
+      "class_name": "KthLargest",
+      "folder": "0703-kth-largest-element-in-a-stream",
+      "languages": [
+        "Python"
+      ],
+      "fixed_cases": 6,
+      "url": "https://leetcode.com/problems/kth-largest-element-in-a-stream/"
     },
     {
       "id": 704,
@@ -729,6 +2042,188 @@
       ],
       "fixed_cases": 8,
       "url": "https://leetcode.com/problems/daily-temperatures/"
+    },
+    {
+      "id": 746,
+      "title": "Min Cost Climbing Stairs",
+      "difficulty": "Easy",
+      "patterns": [
+        "dynamic-programming"
+      ],
+      "method": "minCostClimbingStairs",
+      "args_types": [
+        "value"
+      ],
+      "return_type": "value",
+      "complexity": {
+        "time": "O(n)",
+        "space": "O(1)"
+      },
+      "slug": "min-cost-climbing-stairs",
+      "kind": "method",
+      "checker": "exact",
+      "judge_status": "not_recorded",
+      "folder": "0746-min-cost-climbing-stairs",
+      "languages": [
+        "Python"
+      ],
+      "fixed_cases": 8,
+      "url": "https://leetcode.com/problems/min-cost-climbing-stairs/"
+    },
+    {
+      "id": 853,
+      "title": "Car Fleet",
+      "slug": "car-fleet",
+      "difficulty": "Medium",
+      "patterns": [
+        "sorting",
+        "greedy"
+      ],
+      "method": "carFleet",
+      "args_types": [
+        "value",
+        "value",
+        "value"
+      ],
+      "kind": "method",
+      "return_type": "value",
+      "checker": "exact",
+      "complexity": {
+        "time": "O(n log n)",
+        "space": "O(n)"
+      },
+      "judge_status": "not_recorded",
+      "folder": "0853-car-fleet",
+      "languages": [
+        "Python"
+      ],
+      "fixed_cases": 8,
+      "url": "https://leetcode.com/problems/car-fleet/"
+    },
+    {
+      "id": 875,
+      "title": "Koko Eating Bananas",
+      "slug": "koko-eating-bananas",
+      "difficulty": "Medium",
+      "patterns": [
+        "binary-search"
+      ],
+      "method": "minEatingSpeed",
+      "args_types": [
+        "value",
+        "value"
+      ],
+      "kind": "method",
+      "return_type": "value",
+      "checker": "exact",
+      "complexity": {
+        "time": "O(n log M)",
+        "space": "O(1)"
+      },
+      "judge_status": "not_recorded",
+      "complexity_language": "Python",
+      "complexity_cpp": {
+        "time": "O(n log(M + 1))",
+        "space": "O(1) auxiliary; O(1) scalar output"
+      },
+      "folder": "0875-koko-eating-bananas",
+      "languages": [
+        "Python",
+        "C++23"
+      ],
+      "fixed_cases": 8,
+      "url": "https://leetcode.com/problems/koko-eating-bananas/"
+    },
+    {
+      "id": 994,
+      "title": "Rotting Oranges",
+      "slug": "rotting-oranges",
+      "difficulty": "Medium",
+      "patterns": [
+        "graph",
+        "breadth-first-search",
+        "grid"
+      ],
+      "method": "orangesRotting",
+      "kind": "method",
+      "args_types": [
+        "value"
+      ],
+      "return_type": "value",
+      "checker": "exact",
+      "complexity": {
+        "time": "O(rows * cols)",
+        "space": "O(rows * cols)"
+      },
+      "judge_status": "not_recorded",
+      "complexity_language": "Python",
+      "complexity_cpp": {
+        "time": "O(rows * cols)",
+        "space": "O(rows * cols) auxiliary; O(1) scalar output"
+      },
+      "folder": "0994-rotting-oranges",
+      "languages": [
+        "Python",
+        "C++23"
+      ],
+      "fixed_cases": 8,
+      "url": "https://leetcode.com/problems/rotting-oranges/"
+    },
+    {
+      "id": 1046,
+      "title": "Last Stone Weight",
+      "slug": "last-stone-weight",
+      "difficulty": "Easy",
+      "patterns": [
+        "heap",
+        "simulation"
+      ],
+      "method": "lastStoneWeight",
+      "args_types": [
+        "value"
+      ],
+      "kind": "method",
+      "return_type": "value",
+      "checker": "exact",
+      "complexity": {
+        "time": "O(n log n)",
+        "space": "O(n)"
+      },
+      "judge_status": "not_recorded",
+      "folder": "1046-last-stone-weight",
+      "languages": [
+        "Python"
+      ],
+      "fixed_cases": 8,
+      "url": "https://leetcode.com/problems/last-stone-weight/"
+    },
+    {
+      "id": 1143,
+      "title": "Longest Common Subsequence",
+      "difficulty": "Medium",
+      "patterns": [
+        "dynamic-programming"
+      ],
+      "method": "longestCommonSubsequence",
+      "args_types": [
+        "value",
+        "value"
+      ],
+      "return_type": "value",
+      "complexity": {
+        "time": "O(m * n)",
+        "space": "O(min(m, n))"
+      },
+      "slug": "longest-common-subsequence",
+      "kind": "method",
+      "checker": "exact",
+      "judge_status": "not_recorded",
+      "folder": "1143-longest-common-subsequence",
+      "languages": [
+        "Python"
+      ],
+      "fixed_cases": 8,
+      "url": "https://leetcode.com/problems/longest-common-subsequence/"
     }
   ]
 }
