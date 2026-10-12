@@ -1,0 +1,21 @@
+{
+  "id": 665,
+  "title": "Non-decreasing Array",
+  "slug": "non-decreasing-array",
+  "difficulty": "Medium",
+  "patterns": [
+    "greedy"
+  ],
+  "method": "checkPossibility",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "judge_status": "not_recorded"
+}

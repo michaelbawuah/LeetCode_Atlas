@@ -1,0 +1,81 @@
+[
+  {
+    "name": "lower first value",
+    "args": [
+      [
+        4,
+        2,
+        3
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "name": "two decreases",
+    "args": [
+      [
+        4,
+        2,
+        1
+      ]
+    ],
+    "expected": false
+  },
+  {
+    "name": "local change cannot repair both sides",
+    "args": [
+      [
+        3,
+        4,
+        2,
+        3
+      ]
+    ],
+    "expected": false
+  },
+  {
+    "name": "singleton",
+    "args": [
+      [
+        1
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "name": "already nondecreasing",
+    "args": [
+      [
+        1,
+        2,
+        3
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "name": "raise low interior value",
+    "args": [
+      [
+        5,
+        7,
+        1,
+        8
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "name": "duplicates around decrease",
+    "args": [
+      [
+        2,
+        3,
+        3,
+        2,
+        4
+      ]
+    ],
+    "expected": true
+  }
+]
