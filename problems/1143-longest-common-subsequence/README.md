@@ -19,3 +19,9 @@ A subsequence may contain gaps; it is not a contiguous substring. Do not combine
 
 ## Follow-up
 What information would you retain to reconstruct a common subsequence instead of only its length?
+
+## C++23 counterpart
+
+The shorter copied string determines the two O(min(m, n) + 1) integer rows. By-value judge-facing string copies add O(m + n) bytes and are included in the C++ space bound; swapping them does not copy their contents. Official lengths <= 1000 bound each count. Repeated characters preserve position order rather than merely matching frequencies.
+
+C++: **O(m n + m + n) time; O(m + n) including string copies; O(min(m, n) + 1) DP states space**. Named fixtures and 150 reproducible generated inputs compare this implementation with the Python track.

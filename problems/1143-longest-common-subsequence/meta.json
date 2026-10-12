@@ -18,5 +18,10 @@
   "slug": "longest-common-subsequence",
   "kind": "method",
   "checker": "exact",
-  "judge_status": "not_recorded"
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(m n + m + n)",
+    "space": "O(m + n) including string copies; O(min(m, n) + 1) DP states"
+  }
 }
