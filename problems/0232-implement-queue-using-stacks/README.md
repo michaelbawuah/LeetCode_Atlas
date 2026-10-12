@@ -17,3 +17,11 @@ Follow-up: support a minimum query by storing prefix minima in both stacks.
 ## Verification
 
 Named fixtures and an independent generated-input reference cover behavior. Judge results are recorded separately in metadata.
+
+## C++23 counterpart
+
+C++ uses two std::stack instances backed by their default deques. Transfer only when outgoing is empty, so each value crosses once before removal. A read may transfer n values, while the total cost over a valid history is linear in the number of operations.
+
+Time: push O(1); pop/peek O(1) amortized, O(n) worst-case; empty O(1). Space: O(n).
+
+The JSON adapter creates fresh state per case. Named fixtures and 150 deterministic generated inputs compare the two language implementations; existing independent Python oracles supply a separate behavioral reference.

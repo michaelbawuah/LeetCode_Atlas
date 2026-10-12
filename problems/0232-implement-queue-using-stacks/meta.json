@@ -17,5 +17,10 @@
     "space": "O(n)"
   },
   "judge_status": "not_recorded",
-  "class_name": "MyQueue"
+  "class_name": "MyQueue",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "push O(1); pop/peek O(1) amortized, O(n) worst-case; empty O(1)",
+    "space": "O(n)"
+  }
 }
