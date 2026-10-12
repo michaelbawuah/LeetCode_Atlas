@@ -1,0 +1,23 @@
+{
+  "id": 79,
+  "slug": "word-search",
+  "title": "Word Search",
+  "difficulty": "Medium",
+  "patterns": [
+    "backtracking",
+    "grid"
+  ],
+  "method": "exist",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "kind": "method",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(mn * 4^L)",
+    "space": "O(L) auxiliary"
+  },
+  "judge_status": "not_recorded"
+}

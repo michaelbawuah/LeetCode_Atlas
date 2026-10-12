@@ -1,0 +1,124 @@
+[
+  {
+    "name": "found-path",
+    "args": [
+      [
+        [
+          "A",
+          "B",
+          "C",
+          "E"
+        ],
+        [
+          "S",
+          "F",
+          "C",
+          "S"
+        ],
+        [
+          "A",
+          "D",
+          "E",
+          "E"
+        ]
+      ],
+      "ABCCED"
+    ],
+    "expected": true
+  },
+  {
+    "name": "another-path",
+    "args": [
+      [
+        [
+          "A",
+          "B",
+          "C",
+          "E"
+        ],
+        [
+          "S",
+          "F",
+          "C",
+          "S"
+        ],
+        [
+          "A",
+          "D",
+          "E",
+          "E"
+        ]
+      ],
+      "SEE"
+    ],
+    "expected": true
+  },
+  {
+    "name": "reuse-forbidden",
+    "args": [
+      [
+        [
+          "A",
+          "B",
+          "C",
+          "E"
+        ],
+        [
+          "S",
+          "F",
+          "C",
+          "S"
+        ],
+        [
+          "A",
+          "D",
+          "E",
+          "E"
+        ]
+      ],
+      "ABCB"
+    ],
+    "expected": false
+  },
+  {
+    "name": "single-hit",
+    "args": [
+      [
+        [
+          "a"
+        ]
+      ],
+      "a"
+    ],
+    "expected": true
+  },
+  {
+    "name": "single-miss",
+    "args": [
+      [
+        [
+          "a"
+        ]
+      ],
+      "b"
+    ],
+    "expected": false
+  },
+  {
+    "name": "diagonal-forbidden",
+    "args": [
+      [
+        [
+          "a",
+          "b"
+        ],
+        [
+          "c",
+          "d"
+        ]
+      ],
+      "ad"
+    ],
+    "expected": false
+  }
+]
