@@ -1,0 +1,66 @@
+[
+  {
+    "name": "permutation-present",
+    "args": [
+      "ab",
+      "eidbaooo"
+    ],
+    "expected": true
+  },
+  {
+    "name": "permutation-absent",
+    "args": [
+      "ab",
+      "eidboaoo"
+    ],
+    "expected": false
+  },
+  {
+    "name": "source-too-long",
+    "args": [
+      "abc",
+      "ab"
+    ],
+    "expected": false
+  },
+  {
+    "name": "whole-string-permutation",
+    "args": [
+      "abc",
+      "bca"
+    ],
+    "expected": true
+  },
+  {
+    "name": "duplicate-counts-matter",
+    "args": [
+      "aab",
+      "abb"
+    ],
+    "expected": false
+  },
+  {
+    "name": "duplicate-match-at-end",
+    "args": [
+      "aab",
+      "xxbaa"
+    ],
+    "expected": true
+  },
+  {
+    "name": "single-letter-match",
+    "args": [
+      "a",
+      "ba"
+    ],
+    "expected": true
+  },
+  {
+    "name": "single-letter-missing",
+    "args": [
+      "a",
+      "bbbb"
+    ],
+    "expected": false
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "id": 567,
+  "title": "Permutation in String",
+  "slug": "permutation-in-string",
+  "difficulty": "Medium",
+  "patterns": [
+    "sliding-window",
+    "frequency-counting"
+  ],
+  "method": "checkInclusion",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "kind": "method",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(m + n) for the fixed 26-letter alphabet",
+    "space": "O(1)"
+  },
+  "judge_status": "not_recorded"
+}
