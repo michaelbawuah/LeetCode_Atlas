@@ -1,0 +1,27 @@
+{
+  "id": 56,
+  "title": "Merge Intervals",
+  "slug": "merge-intervals",
+  "difficulty": "Medium",
+  "patterns": [
+    "sorting",
+    "intervals"
+  ],
+  "method": "merge",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "unordered_rows",
+  "complexity": {
+    "time": "O(n log n)",
+    "space": "O(n) auxiliary; O(n) output"
+  },
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n log n)",
+    "space": "O(n) output; std::sort auxiliary storage is implementation-dependent"
+  }
+}
