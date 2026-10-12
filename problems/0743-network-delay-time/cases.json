@@ -1,0 +1,172 @@
+[
+  {
+    "name": "four node network",
+    "args": [
+      [
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      4,
+      2
+    ],
+    "expected": 2
+  },
+  {
+    "name": "one edge",
+    "args": [
+      [
+        [
+          1,
+          2,
+          1
+        ]
+      ],
+      2,
+      1
+    ],
+    "expected": 1
+  },
+  {
+    "name": "unreachable source direction",
+    "args": [
+      [
+        [
+          1,
+          2,
+          1
+        ]
+      ],
+      2,
+      2
+    ],
+    "expected": -1
+  },
+  {
+    "name": "missing vertex",
+    "args": [
+      [
+        [
+          1,
+          2,
+          1
+        ]
+      ],
+      3,
+      1
+    ],
+    "expected": -1
+  },
+  {
+    "name": "zero delays",
+    "args": [
+      [
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          2,
+          3,
+          0
+        ]
+      ],
+      3,
+      1
+    ],
+    "expected": 0
+  },
+  {
+    "name": "indirect route wins",
+    "args": [
+      [
+        [
+          1,
+          2,
+          10
+        ],
+        [
+          1,
+          3,
+          1
+        ],
+        [
+          3,
+          2,
+          1
+        ]
+      ],
+      3,
+      1
+    ],
+    "expected": 2
+  },
+  {
+    "name": "directed cycle",
+    "args": [
+      [
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          3,
+          3
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      3,
+      2
+    ],
+    "expected": 4
+  },
+  {
+    "name": "late stale heap entry",
+    "args": [
+      [
+        [
+          1,
+          2,
+          9
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          3,
+          2,
+          1
+        ],
+        [
+          2,
+          4,
+          1
+        ]
+      ],
+      4,
+      1
+    ],
+    "expected": 4
+  }
+]

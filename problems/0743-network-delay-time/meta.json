@@ -1,0 +1,30 @@
+{
+  "id": 743,
+  "title": "Network Delay Time",
+  "slug": "network-delay-time",
+  "difficulty": "Medium",
+  "patterns": [
+    "graph",
+    "dijkstra",
+    "heap"
+  ],
+  "method": "networkDelayTime",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity_language": "Python",
+  "complexity": {
+    "time": "O((V + E) log(V + 1))",
+    "space": "O(V + E)"
+  },
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O((V + E) log(V + 1))",
+    "space": "O(V + E) auxiliary; O(1) scalar output"
+  }
+}
