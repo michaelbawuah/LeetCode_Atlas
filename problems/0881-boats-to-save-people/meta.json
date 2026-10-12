@@ -1,0 +1,23 @@
+{
+  "id": 881,
+  "title": "Boats to Save People",
+  "slug": "boats-to-save-people",
+  "difficulty": "Medium",
+  "patterns": [
+    "greedy",
+    "two-pointers"
+  ],
+  "method": "numRescueBoats",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n log n)",
+    "space": "O(n)"
+  },
+  "judge_status": "not_recorded"
+}

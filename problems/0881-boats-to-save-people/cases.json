@@ -1,0 +1,87 @@
+[
+  {
+    "name": "one paired boat",
+    "args": [
+      [
+        1,
+        2
+      ],
+      3
+    ],
+    "expected": 1
+  },
+  {
+    "name": "one pair plus singletons",
+    "args": [
+      [
+        3,
+        2,
+        2,
+        1
+      ],
+      3
+    ],
+    "expected": 3
+  },
+  {
+    "name": "everyone alone",
+    "args": [
+      [
+        3,
+        5,
+        3,
+        4
+      ],
+      5
+    ],
+    "expected": 4
+  },
+  {
+    "name": "singleton",
+    "args": [
+      [
+        2
+      ],
+      2
+    ],
+    "expected": 1
+  },
+  {
+    "name": "equal light people",
+    "args": [
+      [
+        1,
+        1,
+        1,
+        1
+      ],
+      2
+    ],
+    "expected": 2
+  },
+  {
+    "name": "no feasible pair",
+    "args": [
+      [
+        2,
+        2,
+        2
+      ],
+      3
+    ],
+    "expected": 3
+  },
+  {
+    "name": "two optimal pairs",
+    "args": [
+      [
+        1,
+        2,
+        2,
+        3
+      ],
+      4
+    ],
+    "expected": 2
+  }
+]
