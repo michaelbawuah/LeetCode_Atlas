@@ -21,3 +21,7 @@ O((k+1)(V+E)) time, including O(V) table copies each round, and O(V) auxiliary s
 In-place relaxation can cascade along several input-ordered edges during one round and silently exceed the stop limit. The named four-city chain exposes this bug. Generated tests enumerate all walks capped at k+1 edges, including cycles, independently of the dynamic program.
 
 **Follow-up:** reconstruct a cheapest valid route without losing its edge-count state.
+
+## Python and C++23 comparison
+
+Both sources read the previous cost layer while writing a separate next layer, so one iteration permits at most one additional flight. C++ owns both vectors and swaps them after each layer; the flight list remains unchanged. O((k+1)(V+E)) time includes O(V) copies each round, with O(V) auxiliary storage. The C++ infinity sentinel is never added to a price. At most 100 allowed edges priced at most 10,000 keep all finite candidates within `int`; runner input copies are outside the solution bounds.

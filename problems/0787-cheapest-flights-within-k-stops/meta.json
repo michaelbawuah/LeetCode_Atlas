@@ -24,5 +24,9 @@
     "time": "O((k + 1)(V + E))",
     "space": "O(V)"
   },
-  "judge_status": "not_recorded"
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O((k + 1)(V + E))",
+    "space": "O(V) auxiliary; O(1) scalar output"
+  }
 }
