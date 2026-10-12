@@ -1,0 +1,24 @@
+{
+  "id": 92,
+  "title": "Reverse Linked List II",
+  "difficulty": "Medium",
+  "patterns": [
+    "linked-list",
+    "two-pointers"
+  ],
+  "method": "reverseBetween",
+  "args_types": [
+    "listnode",
+    "value",
+    "value"
+  ],
+  "return_type": "listnode",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "slug": "reverse-linked-list-ii",
+  "kind": "method",
+  "judge_status": "not_recorded",
+  "checker": "exact"
+}
