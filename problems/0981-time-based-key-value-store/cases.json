@@ -1,0 +1,197 @@
+[
+  {
+    "name": "timestamp-example",
+    "operations": [
+      "TimeMap",
+      "set",
+      "get",
+      "get",
+      "set",
+      "get",
+      "get"
+    ],
+    "arguments": [
+      [],
+      [
+        "foo",
+        "bar",
+        1
+      ],
+      [
+        "foo",
+        1
+      ],
+      [
+        "foo",
+        3
+      ],
+      [
+        "foo",
+        "bar2",
+        4
+      ],
+      [
+        "foo",
+        4
+      ],
+      [
+        "foo",
+        5
+      ]
+    ],
+    "expected": [
+      null,
+      null,
+      "bar",
+      "bar",
+      null,
+      "bar2",
+      "bar2"
+    ]
+  },
+  {
+    "name": "unknown-key",
+    "operations": [
+      "TimeMap",
+      "get"
+    ],
+    "arguments": [
+      [],
+      [
+        "missing",
+        1
+      ]
+    ],
+    "expected": [
+      null,
+      ""
+    ]
+  },
+  {
+    "name": "before-first",
+    "operations": [
+      "TimeMap",
+      "set",
+      "get"
+    ],
+    "arguments": [
+      [],
+      [
+        "a",
+        "v",
+        5
+      ],
+      [
+        "a",
+        4
+      ]
+    ],
+    "expected": [
+      null,
+      null,
+      ""
+    ]
+  },
+  {
+    "name": "between-records",
+    "operations": [
+      "TimeMap",
+      "set",
+      "set",
+      "get"
+    ],
+    "arguments": [
+      [],
+      [
+        "a",
+        "x",
+        1
+      ],
+      [
+        "a",
+        "y",
+        3
+      ],
+      [
+        "a",
+        2
+      ]
+    ],
+    "expected": [
+      null,
+      null,
+      null,
+      "x"
+    ]
+  },
+  {
+    "name": "independent-keys",
+    "operations": [
+      "TimeMap",
+      "set",
+      "set",
+      "get",
+      "get"
+    ],
+    "arguments": [
+      [],
+      [
+        "a",
+        "x",
+        1
+      ],
+      [
+        "b",
+        "y",
+        2
+      ],
+      [
+        "a",
+        2
+      ],
+      [
+        "b",
+        2
+      ]
+    ],
+    "expected": [
+      null,
+      null,
+      null,
+      "x",
+      "y"
+    ]
+  },
+  {
+    "name": "same-value-new-time",
+    "operations": [
+      "TimeMap",
+      "set",
+      "set",
+      "get"
+    ],
+    "arguments": [
+      [],
+      [
+        "a",
+        "x",
+        1
+      ],
+      [
+        "a",
+        "x",
+        2
+      ],
+      [
+        "a",
+        100
+      ]
+    ],
+    "expected": [
+      null,
+      null,
+      null,
+      "x"
+    ]
+  }
+]

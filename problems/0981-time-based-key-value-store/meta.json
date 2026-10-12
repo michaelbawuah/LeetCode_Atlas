@@ -1,0 +1,27 @@
+{
+  "id": 981,
+  "slug": "time-based-key-value-store",
+  "title": "Time Based Key-Value Store",
+  "difficulty": "Medium",
+  "patterns": [
+    "binary-search",
+    "hash-map",
+    "design"
+  ],
+  "method": null,
+  "args_types": [],
+  "kind": "design",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "set O(1) amortized expected; get O(log h)",
+    "space": "O(S)"
+  },
+  "judge_status": "not_recorded",
+  "class_name": "TimeMap",
+  "complexity_cpp": {
+    "time": "set O(|key| + |value|) amortized expected; get O(|key| + log h + |answer|) expected",
+    "space": "O(S)"
+  },
+  "complexity_language": "Python"
+}
