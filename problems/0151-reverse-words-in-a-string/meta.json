@@ -1,0 +1,26 @@
+{
+  "id": 151,
+  "slug": "reverse-words-in-a-string",
+  "title": "Reverse Words in a String",
+  "difficulty": "Medium",
+  "patterns": [
+    "string"
+  ],
+  "method": "reverseWords",
+  "args_types": [
+    "value"
+  ],
+  "kind": "method",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n) including output"
+  },
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n) amortized",
+    "space": "O(n) including output and stream/token copies"
+  }
+}

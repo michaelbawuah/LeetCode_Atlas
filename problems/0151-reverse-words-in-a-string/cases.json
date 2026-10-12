@@ -1,0 +1,37 @@
+[
+  {
+    "name": "ordinary",
+    "args": [
+      "the sky is blue"
+    ],
+    "expected": "blue is sky the"
+  },
+  {
+    "name": "outer-spaces",
+    "args": [
+      "  hello world  "
+    ],
+    "expected": "world hello"
+  },
+  {
+    "name": "repeated-spaces",
+    "args": [
+      "a good   example"
+    ],
+    "expected": "example good a"
+  },
+  {
+    "name": "one-word",
+    "args": [
+      "a"
+    ],
+    "expected": "a"
+  },
+  {
+    "name": "digits",
+    "args": [
+      "  a1 b2 c3 "
+    ],
+    "expected": "c3 b2 a1"
+  }
+]
