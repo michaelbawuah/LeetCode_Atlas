@@ -19,3 +19,9 @@ The targets are original node references, not just matching values. The source p
 
 ## Follow-up
 Return an LCA for repeated queries after preprocessing depth and ancestor jumps.
+
+## C++23 implementation
+
+C++23 uses an iterative enter/leave traversal with one active root path and copies the paths only when the actual p and q pointers are found. Their last common prefix node is the LCA. This gives deterministic O(n) time and O(h) auxiliary space, including the two saved paths; it avoids the Python version’s retained parent hash map. `TreeReferences` validates original result identity and an unchanged tree.
+
+C++23 submission cost: **O(n) time; O(h) space**. Here n is node count, h is tree height, w is maximum level width, and L is the number of returned path elements when applicable. Adapter construction, snapshots, and serialization are measured separately.

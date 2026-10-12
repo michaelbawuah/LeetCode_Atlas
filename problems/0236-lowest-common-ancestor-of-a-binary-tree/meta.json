@@ -20,5 +20,10 @@
   "checker": "exact",
   "slug": "lowest-common-ancestor-of-a-binary-tree",
   "kind": "method",
-  "judge_status": "not_recorded"
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n)",
+    "space": "O(h)"
+  }
 }
