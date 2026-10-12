@@ -1,0 +1,23 @@
+{
+  "id": 145,
+  "title": "Binary Tree Postorder Traversal",
+  "difficulty": "Easy",
+  "patterns": [
+    "tree",
+    "depth-first-search",
+    "stack"
+  ],
+  "method": "postorderTraversal",
+  "args_types": [
+    "treenode"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(h) auxiliary; O(n) output"
+  },
+  "slug": "binary-tree-postorder-traversal",
+  "kind": "method",
+  "judge_status": "not_recorded",
+  "checker": "exact"
+}
