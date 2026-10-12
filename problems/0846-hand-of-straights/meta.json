@@ -1,0 +1,25 @@
+{
+  "id": 846,
+  "title": "Hand of Straights",
+  "slug": "hand-of-straights",
+  "difficulty": "Medium",
+  "patterns": [
+    "greedy",
+    "sorting",
+    "frequency-counting"
+  ],
+  "method": "isNStraightHand",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity_language": "Python",
+  "complexity": {
+    "time": "O(N + u log u) expected",
+    "space": "O(u)"
+  },
+  "judge_status": "not_recorded"
+}
