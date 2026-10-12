@@ -1,0 +1,22 @@
+{
+  "id": 179,
+  "title": "Largest Number",
+  "slug": "largest-number",
+  "difficulty": "Medium",
+  "patterns": [
+    "sorting",
+    "custom-comparator"
+  ],
+  "method": "largestNumber",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n log n * d)",
+    "space": "O(nd) auxiliary and output"
+  },
+  "judge_status": "not_recorded"
+}

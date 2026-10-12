@@ -1,0 +1,74 @@
+[
+  {
+    "name": "different lengths",
+    "args": [
+      [
+        10,
+        2
+      ]
+    ],
+    "expected": "210"
+  },
+  {
+    "name": "classic mixture",
+    "args": [
+      [
+        3,
+        30,
+        34,
+        5,
+        9
+      ]
+    ],
+    "expected": "9534330"
+  },
+  {
+    "name": "all zeroes",
+    "args": [
+      [
+        0,
+        0
+      ]
+    ],
+    "expected": "0"
+  },
+  {
+    "name": "singleton",
+    "args": [
+      [
+        1
+      ]
+    ],
+    "expected": "1"
+  },
+  {
+    "name": "prefix comparison",
+    "args": [
+      [
+        121,
+        12
+      ]
+    ],
+    "expected": "12121"
+  },
+  {
+    "name": "shared long prefix",
+    "args": [
+      [
+        8308,
+        830
+      ]
+    ],
+    "expected": "8308830"
+  },
+  {
+    "name": "large values",
+    "args": [
+      [
+        999999999,
+        1000000000
+      ]
+    ],
+    "expected": "9999999991000000000"
+  }
+]
