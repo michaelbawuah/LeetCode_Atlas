@@ -10,6 +10,8 @@ The historical [foundation record](../verification/foundation.json) covers **25 
 
 The [75-problem milestone report](../verification/milestone75.json) records **75 Python implementations and 25 C++23 counterparts**, with 720 pytest checks and 3,750 generated comparisons. The separate [150-problem report](../verification/milestone150.json) covers the current **150 Python implementations and 75 C++23 counterparts**: 1,456 pytest checks passed, including 1,106 named fixtures and **11,250 generated comparisons: 150 for each counterpart**. The CTest adapter suite also passed. Earlier totals remain historical records.
 
+The [300-problem report](../verification/milestone300.json) records the main target: **300 Python implementations and 150 C++23 counterparts**, including **22,500 generated comparison cases**. All 2,598 pytest checks passed, with 1,975 named fixtures and the 66-assertion CTest adapter suite. Its command outcomes, focused follow-up, and source digest identify the verified milestone.
+
 ## Run the Python checks
 
 From the repository root, with Python 3.11 or newer:
@@ -60,10 +62,16 @@ Hypothesis generates and shrinks counterexamples when a property fails. A useful
 | `gas_station` | Any returned index completing the full circuit; `-1` requires total gas below total cost. |
 | `graph_adjacency` | Neighbor order within each labeled node may vary; node labels, edges, and multiplicity remain meaningful. |
 | `approx` | Numeric results may differ within relative tolerance 1e-9 and absolute tolerance 1e-12; booleans are rejected. |
+| `approx_list` | Each finite numeric element follows its declared `numeric_tolerance`, or the default scalar tolerance; length and order remain meaningful. |
+| `peak_index` | Any in-range index strictly above its existing neighbors is valid. |
+| `balanced_bst` | Any height-balanced strict BST containing the original sorted input values in inorder is valid. |
+| `bst_inorder` | Any strict BST whose inorder values equal the expected values is valid. |
 
 [Course Schedule II](../problems/0210-course-schedule-ii/README.md) uses the semantic topological checker with its original course count and edges. Comparing it to one expected ordering would reject other correct witnesses; sorting the result would erase the dependency evidence.
 
 Named fixtures honor the official input contracts, including unique-answer conditions. Generated Two Sum inputs deliberately allow several valid pairs and check index bounds, distinctness, and the target sum. Generated Minimum Window inputs deliberately allow tied shortest windows and check returned length and character coverage. These extensions test valid witnesses rather than requiring one incidental choice. Reverse Bits also has a separately labeled robustness property over the full unsigned 32-bit domain. Each problem's notes identify any broader test domain.
+
+Average of Levels uses absolute tolerance 1e-5 with zero relative tolerance. Evaluate Division uses relative and absolute tolerances 1e-5. These explicit local comparison policies are separate from recorded official judge evidence.
 
 ## Node representation and ownership
 
@@ -74,6 +82,8 @@ Linked List Cycle accepts `{"values": [3,2,0,-4], "pos": 1}`: `pos` identifies t
 The C++ [adapter arenas](../cpp/atlas_adapter.hpp) retain ownership of every allocated node, including nodes detached from a returned list. Submission methods borrow pointers and can rewire links without assuming responsibility for deleting those nodes. Adapter tests cover decoding, serialization, and lifetime-sensitive behavior.
 
 Newly constructed tree outputs use `TreeResultOwner` rather than an input arena. The construction submission stages allocations for exception safety; the local owner releases the returned tree after serialization. This ownership path is tested independently of tree values.
+
+List-array fixtures build each list independently. Tree-reference fixtures resolve integer query values inside a single original tree and require returned references to belong to it. C++ fresh-list results use `ListResultOwner`; borrowed lists remain owned by their input arena. Negative adapter regressions check incorrect references, malformed witnesses, and invalid numeric values.
 
 ## Run the C++23 checks
 

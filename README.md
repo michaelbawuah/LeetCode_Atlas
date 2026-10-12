@@ -5,10 +5,10 @@
 An algorithm collection organized around **why a solution works**: the state it maintains, the invariant that makes it correct, and the counterexamples that test it.
 
 <!-- atlas:stats:start -->
-**150 distinct problems · 150 Python solutions · 75 C++23 counterparts**
+**300 distinct problems · 300 Python solutions · 150 C++23 counterparts**
 <!-- atlas:stats:end -->
 
-[Browse every problem](docs/problems.md) · [Explore patterns](docs/patterns.md) · [Follow algorithm traces](docs/traces.md) · [Run the checks](docs/verification.md) · [See the roadmap](docs/roadmap.md)
+[Browse every problem](docs/problems.md) · [Explore patterns](docs/patterns.md) · [Follow algorithm traces](docs/traces.md) · [Choose a practice route](docs/practice.md) · [Run the checks](docs/verification.md)
 
 ## Start with a pattern
 
@@ -33,6 +33,9 @@ Python is the primary interview-practice track; selected C++23 counterparts make
 | Shortest paths | [Network Delay Time](problems/0743-network-delay-time/README.md) | Separate the best known distance from an obsolete heap candidate. |
 | Cache design | [LRU Cache](problems/0146-lru-cache/README.md) | Keep lookup and recency order synchronized. |
 | Mutable range queries | [Range Sum Query — Mutable](problems/0307-range-sum-query-mutable/README.md) | Update only the prefix blocks affected by a changed value. |
+| String matching | [First Occurrence in a String](problems/0028-find-the-index-of-the-first-occurrence-in-a-string/README.md) | Reuse the longest viable prefix after a mismatch. |
+| Interval DP | [Burst Balloons](problems/0312-burst-balloons/README.md) | Choose the final action so two smaller intervals become independent. |
+| Bridges | [Critical Connections](problems/1192-critical-connections-in-a-network/README.md) | Compare a child's earliest reachable discovery time with its parent. |
 
 The [full catalog](docs/problems.md) links every implementation, explanation, fixture, and property suite. The [generated pattern index](docs/pattern-index.md) lists every problem tagged with each technique.
 
@@ -82,4 +85,4 @@ Official LeetCode submission evidence is tracked separately from local verificat
 
 ## Grow the atlas
 
-The **25 / 10 foundation**, **75 / 25 essential-pattern milestone**, and **150 / 75 interview core** are present. The next cumulative target is **300 Python / 150 C++23**. The [roadmap](docs/roadmap.md) describes the remaining coverage and practice goals.
+The **300-problem target is present: 300 Python implementations and 150 C++23 counterparts**. The [roadmap](docs/roadmap.md) records the cumulative milestones; the [practice routes](docs/practice.md) connect the collection to explanation, timed attempts, and re-solving. A later 500-problem stretch can follow the remaining pattern gaps.

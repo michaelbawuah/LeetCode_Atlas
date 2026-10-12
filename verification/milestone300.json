@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "milestone": "main-target-300",
+  "verified_on": "2026-10-12",
+  "source_base_commit": "87eed33f4463ed8eb921b96c249d3b40535ada0e",
+  "verified_sources_sha256": "fc6e3f79cffe0abac633b2f8d68da851dbdd97d606de4eaa980d79bb9ceea367",
+  "digest_definition": "SHA-256 of sorted source/fixture repository paths, each followed by a null byte and its binary SHA-256. Includes .py/.cpp/.hpp/.json, CMakeLists.txt, pyproject.toml, and CI; excludes catalog.json and verification reports.",
+  "distinct_problems": 300,
+  "implementations": {
+    "Python": 300,
+    "C++23": 150
+  },
+  "difficulty": {
+    "Easy": 72,
+    "Hard": 28,
+    "Medium": 200
+  },
+  "pattern_tags": 90,
+  "design_problems": 21,
+  "named_python_fixtures": 1975,
+  "named_cpp_shared_fixtures": 988,
+  "generated_cpp_python_comparisons": 22500,
+  "official_catalog_identity_checks": {
+    "entries": 300,
+    "source": "https://leetcode.com/graphql/"
+  },
+  "new_official_interfaces_and_constraints_reviewed": 150,
+  "python_version": "3.12.14",
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0",
+  "pytest": {
+    "tests": 2598,
+    "passed": 2598,
+    "failures_or_errors": 0,
+    "skipped": 0
+  },
+  "focused_follow_up": {
+    "tests": 1,
+    "passed": 1,
+    "reason": "Removed impossible deque branches from the circular-queue property and restricted generated operations to its real interface; the revised test passed separately after the full suite."
+  },
+  "post_suite_changes": "Only complexity documentation/metadata and the separately verified queue-test cleanup changed after the full run; catalog validation was repeated.",
+  "ctest": {
+    "targets": 1,
+    "passed": 1,
+    "catch2_cases": 14,
+    "assertions": 66
+  },
+  "instrumentation": [
+    "AddressSanitizer",
+    "UndefinedBehaviorSanitizer"
+  ],
+  "leak_check": "Disabled locally because LeakSanitizer cannot run under this container ptrace; enabled in Linux Clang CI.",
+  "local_environment_adjustment": "Restored execute permissions on five owned ELF build artifacts before the full test run.",
+  "worked_traces_checked": [
+    239,
+    146,
+    307,
+    743,
+    28,
+    312,
+    236,
+    1192
+  ],
+  "practice_routes": 6,
+  "commands": [
+    "ASAN_OPTIONS=detect_leaks=0 UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1 ATLAS_CPP_BIN_DIR=build/bin python -m pytest -q --junitxml=build/milestone300-tests.xml",
+    "python -m pytest -q problems/0622-design-circular-queue",
+    "ASAN_OPTIONS=detect_leaks=0 UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1 ctest --test-dir build --output-on-failure",
+    "python -m ruff check .",
+    "python -m ruff format --check .",
+    "python tools/catalog.py --check"
+  ],
+  "official_leetcode_acceptances_recorded": 0
+}

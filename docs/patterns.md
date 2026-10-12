@@ -279,6 +279,42 @@ Loop direction encodes reuse: [Partition Equal Subset Sum](../problems/0416-part
 
 [Reverse Bits](../problems/0190-reverse-bits/README.md) follows exactly 32 input positions. [Counting Bits](../problems/0338-counting-bits/README.md) reuses the count of a smaller integer. Keep the integer width, signedness, and state transition explicit; Python's unbounded integers do not automatically impose a fixed word size.
 
+## Prefix reuse in string matching
+
+[First Occurrence in a String](../problems/0028-find-the-index-of-the-first-occurrence-in-a-string/README.md) uses KMP's prefix table to recover after a mismatch. The table gives the longest proper prefix that is also a suffix of the portion already matched. This suffix can remain useful without rereading earlier text characters; arbitrary substring restarting loses that information. See the [KMP trace](traces.md).
+
+Do not confuse subsequences with contiguous matches. [Longest Common Subsequence](../problems/1143-longest-common-subsequence/README.md) permits skipped positions; KMP matches consecutive characters. [Wildcard Matching](../problems/0044-wildcard-matching/README.md) must additionally account for a star consuming different numbers of characters.
+
+## Interval dynamic programming
+
+**Recognition:** removing or combining objects changes their neighbors, but a final operation can separate two independent subranges.
+
+**State:** a range with clear endpoint conventions and any boundary information that remains fixed while it is solved.
+
+| Problem | Dependency that determines the transition |
+|---|---|
+| [Burst Balloons](../problems/0312-burst-balloons/README.md) | Choose the last balloon so its two surviving boundary values are known. |
+| [Longest Palindromic Subsequence](../problems/0516-longest-palindromic-subsequence/README.md) | Compare endpoint characters and depend on smaller ranges. |
+| [Palindrome Partitioning II](../problems/0132-palindrome-partitioning-ii/README.md) | A palindromic final segment connects a known prefix optimum to a new endpoint. |
+
+Fill states in an order that makes every required smaller state available. The number of states and the work inside each transition are separate factors; an O(n²) table does not imply O(n²) time.
+
+## DFS relationships and graph bridges
+
+[Critical Connections](../problems/1192-critical-connections-in-a-network/README.md) records discovery times and low-link values. A child's subtree can get around its parent edge exactly when it can reach that parent or an earlier ancestor without using the parent edge. If its low-link value is greater than the parent's discovery time, that edge is a bridge.
+
+An iterative DFS needs to retain the information normally stored in a recursive frame: the next neighbor to explore, the parent edge, and the postorder update to apply when a child finishes. Returning from a child is a meaningful transition, not just another queue visit. The [bridge trace](traces.md) compares a triangle with an attached leaf.
+
+[Lowest Common Ancestor](../problems/0236-lowest-common-ancestor-of-a-binary-tree/README.md) also depends on relationships rather than values alone. The answer must be an existing tree node, and a node can be its own ancestor. The BST variant can instead use ordering to discard a whole side.
+
+## Operation histories and event boundaries
+
+[My Calendar I](../problems/0729-my-calendar-i/README.md) uses half-open intervals: an event ending exactly when another begins does not overlap. [My Calendar II](../problems/0731-my-calendar-ii/README.md) must reject triple overlap and undo every effect of a rejected booking. Tests compare the whole accepted history with an independent overlap model.
+
+[Circular Queue](../problems/0622-design-circular-queue/README.md) and [Circular Deque](../problems/0641-design-circular-deque/README.md) need separate logical size and wrapped positions to distinguish empty from full. [Online Stock Span](../problems/0901-online-stock-span/README.md) compresses dominated prices together with their accumulated spans; many pops on one call still allow an amortized bound across a history.
+
+The [practice routes](practice.md) group related problems by the invariant you should explain before attempting the next variation.
+
 ## Use the connections
 
 A useful comparison sequence is **Two Sum → Group Anagrams → Permutation in String**: a map supports lookup, a signature supports grouping, and a changing signature supports a window. Another is **Valid Parentheses → Min Stack → Daily Temperatures**, where the same last-in, first-out structure maintains three different invariants. Compare **Number of Islands → Rotting Oranges → Course Schedule** to see how a frontier changes from component exploration to elapsed layers to dependency readiness.

@@ -2,11 +2,11 @@
 
 [Problem catalog](problems.md) · [Verification](verification.md) · [Repository](../README.md)
 
-The 75 C++23 counterparts share named fixtures with Python, plus 150 generated comparisons per counterpart. Different representations and algorithms make the comparison useful: Python favors an explicit problem-solving path, while C++ makes fixed-width arithmetic, references, container operations, and node lifetime visible.
+The 150 C++23 counterparts share named fixtures with Python, plus 150 generated comparisons per counterpart. Different representations and algorithms make the comparison useful: Python favors an explicit problem-solving path, while C++ makes fixed-width arithmetic, references, container operations, and node lifetime visible.
 
 ## Selected comparisons
 
-The [full catalog](problems.md) identifies all 75 counterparts. These entries illustrate recurring language choices.
+The [full catalog](problems.md) identifies all 150 counterparts. These entries illustrate recurring language choices.
 
 | Problem | Python | C++23 | Comparison to examine |
 |---|---|---|---|
@@ -52,6 +52,8 @@ The C++ substring implementations index fixed tables through `unsigned char`, pr
 
 [Coin Change II](../problems/0518-coin-change-ii/README.md) has a subtle numeric boundary: its final answer fits a signed 32-bit integer, but other subtotal counts can exceed 64 bits. Python keeps arbitrary-precision counts. C++ widens each addition and saturates nonnegative counts at `INT_MAX`; because no transition subtracts, this preserves the guaranteed-bounded final answer. A named fixture uses an odd target with many even denominations: the answer is zero while unrelated even-subtotal counts grow large.
 
+[Unique Paths II](../problems/0063-unique-paths-ii/README.md) has a related numeric boundary: a blocked destination can keep the final count small while earlier open regions accumulate enormous counts. A nonnegative saturated recurrence preserves the guaranteed-bounded final answer; obstacle cells reset their counts to zero. [Reverse Integer](../problems/0007-reverse-integer/README.md) instead checks the permitted range before returning an accumulated reversed value.
+
 ## Collections, ordering, and mutation
 
 Hash-table costs are generally expected rather than worst-case constant time. Iteration order should only affect the answer when the problem requires it. Declared checkers preserve multiplicity and only remove ordering distinctions that the problem permits.
@@ -73,6 +75,8 @@ Binary search needs a consistent interval convention. Rotated-array search uses 
 
 Each C++ design adapter creates a fresh local object for a legal history. Its JSON input is `[operations, arguments]`, and constructor/void operations produce `null`, matching Python's serialized `None`.
 
+[Online Stock Span](../problems/0901-online-stock-span/README.md) accumulates spans when dominated prices leave its stack; count pushes and pops over the entire history for its amortized bound. [Circular Queue](../problems/0622-design-circular-queue/README.md) stores a logical size separately from its wrapped position, so a full queue and an empty queue cannot become ambiguous.
+
 ## Node ownership and local adapters
 
 `solution.py` and `solution.cpp` retain LeetCode's class and method interfaces. The platform supplies node types; local adapters supply compatible definitions and construct nodes from JSON fixtures.
@@ -85,6 +89,10 @@ Trees use queue-based level-order encoding with `null` child positions. `[1,null
 
 The Python adapter copies JSON inputs before constructing nodes or passing mutable values. For [Reorder List](../problems/0143-reorder-list/README.md) and [Move Zeroes](../problems/0283-move-zeroes/README.md), `result_from_arg: 0` selects the mutated first argument after the method returns `None`. Submission signatures remain unchanged.
 
+[Add Two Numbers](../problems/0002-add-two-numbers/README.md) constructs a fresh result list; the adapter's `ListResultOwner` releases those nodes after serialization. [Merge K Sorted Lists](../problems/0023-merge-k-sorted-lists/README.md) receives several independently built lists and rewires borrowed nodes while the arena retains ownership. A new result and a rearrangement of existing nodes require different ownership paths.
+
+Python LCA fixtures resolve query values to the original nodes in one adapted tree. The result serializer requires that the returned node belong to that tree; an equal value stored in a fresh node cannot substitute for identity. [Structural tests](verification.md) inspect links and references directly.
+
 ## Build and compare
 
 ```bash
@@ -94,6 +102,6 @@ ctest --test-dir build --output-on-failure
 ATLAS_CPP_BIN_DIR=build/bin python -m pytest tests/test_cases.py tests/test_cpp_properties.py
 ```
 
-The shared-fixture suite requires every configured counterpart runner. The generated suite includes 11,250 comparisons across 75 counterparts. Independent Python oracles provide another verification path because two language implementations can share the same algorithmic mistake.
+The shared-fixture suite requires every configured counterpart runner. The generated suite includes 22,500 comparisons across 150 counterparts. New pairs declare valid input generation in their own `parity.py` module, while the earlier generators remain supported. Independent Python oracles provide another verification path because two language implementations can share the same algorithmic mistake.
 
 See [verification](verification.md) for sanitizer settings, recorded command results, and the distinction between local checks and official judge evidence.
