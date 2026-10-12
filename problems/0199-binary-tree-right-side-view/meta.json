@@ -1,0 +1,22 @@
+{
+  "id": 199,
+  "title": "Binary Tree Right Side View",
+  "difficulty": "Medium",
+  "patterns": [
+    "tree",
+    "depth-first-search"
+  ],
+  "method": "rightSideView",
+  "args_types": [
+    "treenode"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(h) auxiliary; O(h) output"
+  },
+  "slug": "binary-tree-right-side-view",
+  "kind": "method",
+  "checker": "exact",
+  "judge_status": "not_recorded"
+}
