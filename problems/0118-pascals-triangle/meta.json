@@ -1,0 +1,26 @@
+{
+  "id": 118,
+  "title": "Pascal's Triangle",
+  "slug": "pascals-triangle",
+  "difficulty": "Easy",
+  "patterns": [
+    "dynamic-programming"
+  ],
+  "method": "generate",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(r^2)",
+    "space": "O(1) auxiliary; O(r^2) output"
+  },
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(r^2)",
+    "space": "O(1) auxiliary; O(r^2) output"
+  }
+}
