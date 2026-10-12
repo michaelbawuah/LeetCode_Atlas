@@ -1,0 +1,37 @@
+[
+  {
+    "name": "first",
+    "args": [
+      "A"
+    ],
+    "expected": 1
+  },
+  {
+    "name": "last-single",
+    "args": [
+      "Z"
+    ],
+    "expected": 26
+  },
+  {
+    "name": "first-double",
+    "args": [
+      "AA"
+    ],
+    "expected": 27
+  },
+  {
+    "name": "mixed",
+    "args": [
+      "ZY"
+    ],
+    "expected": 701
+  },
+  {
+    "name": "maximum",
+    "args": [
+      "FXSHRXW"
+    ],
+    "expected": 2147483647
+  }
+]
