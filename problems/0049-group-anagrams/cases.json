@@ -1,0 +1,122 @@
+[
+  {
+    "name": "mixed groups",
+    "args": [
+      [
+        "eat",
+        "tea",
+        "tan",
+        "ate",
+        "nat",
+        "bat"
+      ]
+    ],
+    "expected": [
+      [
+        "eat",
+        "tea",
+        "ate"
+      ],
+      [
+        "tan",
+        "nat"
+      ],
+      [
+        "bat"
+      ]
+    ]
+  },
+  {
+    "name": "one empty string",
+    "args": [
+      [
+        ""
+      ]
+    ],
+    "expected": [
+      [
+        ""
+      ]
+    ]
+  },
+  {
+    "name": "one letter",
+    "args": [
+      [
+        "a"
+      ]
+    ],
+    "expected": [
+      [
+        "a"
+      ]
+    ]
+  },
+  {
+    "name": "different lengths and groups",
+    "args": [
+      [
+        "ab",
+        "ba",
+        "abc",
+        "cab",
+        "bca",
+        "xy"
+      ]
+    ],
+    "expected": [
+      [
+        "ab",
+        "ba"
+      ],
+      [
+        "abc",
+        "cab",
+        "bca"
+      ],
+      [
+        "xy"
+      ]
+    ]
+  },
+  {
+    "name": "empty and different multiplicities",
+    "args": [
+      [
+        "aa",
+        "a",
+        ""
+      ]
+    ],
+    "expected": [
+      [
+        "aa"
+      ],
+      [
+        "a"
+      ],
+      [
+        ""
+      ]
+    ]
+  },
+  {
+    "name": "duplicate words",
+    "args": [
+      [
+        "z",
+        "z",
+        "zz"
+      ]
+    ],
+    "expected": [
+      [
+        "z",
+        "z"
+      ],
+      [
+        "zz"
+      ]
+    ]
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "id": 49,
+  "title": "Group Anagrams",
+  "slug": "group-anagrams",
+  "difficulty": "Medium",
+  "patterns": [
+    "hash-map",
+    "frequency-counting"
+  ],
+  "method": "groupAnagrams",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "unordered_groups",
+  "complexity_language": "Python",
+  "complexity": {
+    "time": "O(N + L) expected",
+    "space": "O(N) auxiliary/output references"
+  },
+  "complexity_cpp": {
+    "time": "O(N + sum |word| log(|word| + 1)) expected",
+    "space": "O(N + L) including signatures and copied output strings"
+  },
+  "judge_status": "not_recorded"
+}
