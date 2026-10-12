@@ -1,0 +1,25 @@
+{
+  "id": 474,
+  "title": "Ones and Zeroes",
+  "slug": "ones-and-zeroes",
+  "difficulty": "Medium",
+  "patterns": [
+    "dynamic-programming",
+    "knapsack"
+  ],
+  "method": "findMaxForm",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(T + W(m + 1)(n + 1))",
+    "space": "O((m + 1)(n + 1))"
+  },
+  "complexity_language": "Python",
+  "judge_status": "not_recorded"
+}
