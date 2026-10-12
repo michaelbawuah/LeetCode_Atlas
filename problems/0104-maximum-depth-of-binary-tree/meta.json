@@ -1,0 +1,22 @@
+{
+  "id": 104,
+  "title": "Maximum Depth of Binary Tree",
+  "difficulty": "Easy",
+  "patterns": [
+    "tree",
+    "depth-first-search"
+  ],
+  "method": "maxDepth",
+  "args_types": [
+    "treenode"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(h)"
+  },
+  "slug": "maximum-depth-of-binary-tree",
+  "kind": "method",
+  "checker": "exact",
+  "judge_status": "not_recorded"
+}
