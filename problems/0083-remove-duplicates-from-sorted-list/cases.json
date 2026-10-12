@@ -1,0 +1,81 @@
+[
+  {
+    "name": "short_run",
+    "args": [
+      [
+        1,
+        1,
+        2
+      ]
+    ],
+    "expected": [
+      1,
+      2
+    ]
+  },
+  {
+    "name": "multiple_runs",
+    "args": [
+      [
+        1,
+        1,
+        2,
+        3,
+        3
+      ]
+    ],
+    "expected": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "name": "empty",
+    "args": [
+      []
+    ],
+    "expected": []
+  },
+  {
+    "name": "singleton",
+    "args": [
+      [
+        5
+      ]
+    ],
+    "expected": [
+      5
+    ]
+  },
+  {
+    "name": "all_equal",
+    "args": [
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "expected": [
+      0
+    ]
+  },
+  {
+    "name": "negative_runs",
+    "args": [
+      [
+        -2,
+        -2,
+        -1,
+        0,
+        0
+      ]
+    ],
+    "expected": [
+      -2,
+      -1,
+      0
+    ]
+  }
+]

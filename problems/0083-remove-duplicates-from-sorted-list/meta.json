@@ -1,0 +1,26 @@
+{
+  "id": 83,
+  "title": "Remove Duplicates from Sorted List",
+  "difficulty": "Easy",
+  "method": "deleteDuplicates",
+  "args_types": [
+    "listnode"
+  ],
+  "return_type": "listnode",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "patterns": [
+    "linked-list"
+  ],
+  "checker": "exact",
+  "slug": "remove-duplicates-from-sorted-list",
+  "kind": "method",
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n)",
+    "space": "O(1)"
+  }
+}
