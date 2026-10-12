@@ -1,0 +1,21 @@
+{
+  "id": 22,
+  "title": "Generate Parentheses",
+  "slug": "generate-parentheses",
+  "difficulty": "Medium",
+  "patterns": [
+    "backtracking"
+  ],
+  "method": "generateParenthesis",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "unordered",
+  "complexity": {
+    "time": "O(n C_n), where C_n is the nth Catalan number",
+    "space": "O(n) auxiliary; O(n C_n) output"
+  },
+  "judge_status": "not_recorded"
+}
