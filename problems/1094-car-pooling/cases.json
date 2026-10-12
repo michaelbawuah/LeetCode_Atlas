@@ -1,0 +1,135 @@
+[
+  {
+    "name": "over capacity",
+    "args": [
+      [
+        [
+          2,
+          1,
+          5
+        ],
+        [
+          3,
+          3,
+          7
+        ]
+      ],
+      4
+    ],
+    "expected": false
+  },
+  {
+    "name": "exact capacity",
+    "args": [
+      [
+        [
+          2,
+          1,
+          5
+        ],
+        [
+          3,
+          3,
+          7
+        ]
+      ],
+      5
+    ],
+    "expected": true
+  },
+  {
+    "name": "drop off before pickup",
+    "args": [
+      [
+        [
+          2,
+          1,
+          5
+        ],
+        [
+          3,
+          5,
+          7
+        ]
+      ],
+      3
+    ],
+    "expected": true
+  },
+  {
+    "name": "single oversized trip",
+    "args": [
+      [
+        [
+          100,
+          0,
+          1000
+        ]
+      ],
+      99
+    ],
+    "expected": false
+  },
+  {
+    "name": "single passenger",
+    "args": [
+      [
+        [
+          1,
+          0,
+          1
+        ]
+      ],
+      1
+    ],
+    "expected": true
+  },
+  {
+    "name": "nested then disjoint",
+    "args": [
+      [
+        [
+          3,
+          0,
+          4
+        ],
+        [
+          2,
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          5
+        ]
+      ],
+      5
+    ],
+    "expected": true
+  },
+  {
+    "name": "three simultaneous trips",
+    "args": [
+      [
+        [
+          2,
+          0,
+          5
+        ],
+        [
+          2,
+          1,
+          4
+        ],
+        [
+          2,
+          2,
+          3
+        ]
+      ],
+      5
+    ],
+    "expected": false
+  }
+]
