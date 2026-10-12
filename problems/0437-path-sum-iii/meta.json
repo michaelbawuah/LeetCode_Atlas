@@ -1,0 +1,24 @@
+{
+  "id": 437,
+  "title": "Path Sum III",
+  "difficulty": "Medium",
+  "method": "pathSum",
+  "args_types": [
+    "treenode",
+    "value"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(n) expected",
+    "space": "O(h)"
+  },
+  "patterns": [
+    "tree",
+    "prefix-sum",
+    "hash-map"
+  ],
+  "checker": "exact",
+  "slug": "path-sum-iii",
+  "kind": "method",
+  "judge_status": "not_recorded"
+}

@@ -1,0 +1,76 @@
+[
+  {
+    "name": "classic",
+    "args": [
+      [
+        10,
+        5,
+        -3,
+        3,
+        2,
+        null,
+        11,
+        3,
+        -2,
+        null,
+        1
+      ],
+      8
+    ],
+    "expected": 3
+  },
+  {
+    "name": "empty",
+    "args": [
+      [],
+      0
+    ],
+    "expected": 0
+  },
+  {
+    "name": "singleton",
+    "args": [
+      [
+        5
+      ],
+      5
+    ],
+    "expected": 1
+  },
+  {
+    "name": "zero_paths",
+    "args": [
+      [
+        0,
+        0,
+        0
+      ],
+      0
+    ],
+    "expected": 5
+  },
+  {
+    "name": "negative_values",
+    "args": [
+      [
+        1,
+        -1,
+        -1
+      ],
+      0
+    ],
+    "expected": 2
+  },
+  {
+    "name": "below_root",
+    "args": [
+      [
+        5,
+        1,
+        2
+      ],
+      1
+    ],
+    "expected": 1
+  }
+]
