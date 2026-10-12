@@ -1,0 +1,102 @@
+[
+  {
+    "name": "present-example",
+    "args": [
+      [
+        -1,
+        0,
+        3,
+        5,
+        9,
+        12
+      ],
+      9
+    ],
+    "expected": 4
+  },
+  {
+    "name": "absent-example",
+    "args": [
+      [
+        -1,
+        0,
+        3,
+        5,
+        9,
+        12
+      ],
+      2
+    ],
+    "expected": -1
+  },
+  {
+    "name": "single-hit",
+    "args": [
+      [
+        5
+      ],
+      5
+    ],
+    "expected": 0
+  },
+  {
+    "name": "single-miss",
+    "args": [
+      [
+        5
+      ],
+      -5
+    ],
+    "expected": -1
+  },
+  {
+    "name": "first-element",
+    "args": [
+      [
+        -8,
+        -3,
+        0,
+        7
+      ],
+      -8
+    ],
+    "expected": 0
+  },
+  {
+    "name": "last-element",
+    "args": [
+      [
+        -8,
+        -3,
+        0,
+        7
+      ],
+      7
+    ],
+    "expected": 3
+  },
+  {
+    "name": "below-range",
+    "args": [
+      [
+        -8,
+        -3,
+        0,
+        7
+      ],
+      -9
+    ],
+    "expected": -1
+  },
+  {
+    "name": "between-two-elements",
+    "args": [
+      [
+        1,
+        3
+      ],
+      2
+    ],
+    "expected": -1
+  }
+]

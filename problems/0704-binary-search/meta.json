@@ -1,0 +1,22 @@
+{
+  "id": 704,
+  "title": "Binary Search",
+  "slug": "binary-search",
+  "difficulty": "Easy",
+  "patterns": [
+    "binary-search"
+  ],
+  "method": "search",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "kind": "method",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(log n)",
+    "space": "O(1)"
+  },
+  "judge_status": "not_recorded"
+}
