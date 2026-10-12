@@ -1,0 +1,23 @@
+{
+  "id": 1482,
+  "title": "Minimum Number of Days to Make m Bouquets",
+  "slug": "minimum-number-of-days-to-make-m-bouquets",
+  "difficulty": "Medium",
+  "patterns": [
+    "binary-search-on-answer"
+  ],
+  "method": "minDays",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n log(D + 1))",
+    "space": "O(1)"
+  },
+  "judge_status": "not_recorded"
+}

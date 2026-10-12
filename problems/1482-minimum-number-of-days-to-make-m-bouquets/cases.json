@@ -1,0 +1,100 @@
+[
+  {
+    "name": "individual flowers",
+    "args": [
+      [
+        1,
+        10,
+        3,
+        10,
+        2
+      ],
+      3,
+      1
+    ],
+    "expected": 3
+  },
+  {
+    "name": "insufficient total flowers",
+    "args": [
+      [
+        1,
+        10,
+        3,
+        10,
+        2
+      ],
+      3,
+      2
+    ],
+    "expected": -1
+  },
+  {
+    "name": "adjacency delays second bouquet",
+    "args": [
+      [
+        7,
+        7,
+        7,
+        7,
+        12,
+        7,
+        7
+      ],
+      2,
+      3
+    ],
+    "expected": 12
+  },
+  {
+    "name": "singleton",
+    "args": [
+      [
+        1
+      ],
+      1,
+      1
+    ],
+    "expected": 1
+  },
+  {
+    "name": "same bloom day",
+    "args": [
+      [
+        5,
+        5,
+        5,
+        5
+      ],
+      2,
+      2
+    ],
+    "expected": 5
+  },
+  {
+    "name": "adjacent pairs",
+    "args": [
+      [
+        1,
+        2,
+        1,
+        2
+      ],
+      2,
+      2
+    ],
+    "expected": 2
+  },
+  {
+    "name": "largest bloom day",
+    "args": [
+      [
+        1000000000,
+        1000000000
+      ],
+      1,
+      2
+    ],
+    "expected": 1000000000
+  }
+]
