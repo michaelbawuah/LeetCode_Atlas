@@ -1,0 +1,23 @@
+{
+  "id": 45,
+  "title": "Jump Game II",
+  "slug": "jump-game-ii",
+  "difficulty": "Medium",
+  "patterns": [
+    "greedy",
+    "breadth-first-search"
+  ],
+  "method": "jump",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity_language": "Python",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "judge_status": "not_recorded"
+}
