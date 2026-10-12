@@ -1,0 +1,58 @@
+[
+  {
+    "name": "distinct_letters",
+    "args": [
+      "abc"
+    ],
+    "expected": 3
+  },
+  {
+    "name": "all_equal_three",
+    "args": [
+      "aaa"
+    ],
+    "expected": 6
+  },
+  {
+    "name": "singleton",
+    "args": [
+      "a"
+    ],
+    "expected": 1
+  },
+  {
+    "name": "even_center",
+    "args": [
+      "abba"
+    ],
+    "expected": 6
+  },
+  {
+    "name": "overlapping_odd_centers",
+    "args": [
+      "ababa"
+    ],
+    "expected": 9
+  },
+  {
+    "name": "matching_endpoints_not_whole",
+    "args": [
+      "abca"
+    ],
+    "expected": 4
+  },
+  {
+    "name": "all_equal_four",
+    "args": [
+      "aaaa"
+    ],
+    "expected": 10
+  },
+  {
+    "name": "nested_palindromes",
+    "args": [
+      "abcba"
+    ],
+    "expected": 7
+  }
+]

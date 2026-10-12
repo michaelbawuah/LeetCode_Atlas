@@ -1,0 +1,23 @@
+{
+  "id": 647,
+  "title": "Palindromic Substrings",
+  "slug": "palindromic-substrings",
+  "difficulty": "Medium",
+  "patterns": [
+    "two-pointers",
+    "center-expansion"
+  ],
+  "method": "countSubstrings",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n\u00b2)",
+    "space": "O(1)"
+  },
+  "complexity_language": "Python",
+  "judge_status": "not_recorded"
+}
