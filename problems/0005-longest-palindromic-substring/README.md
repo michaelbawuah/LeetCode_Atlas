@@ -22,3 +22,9 @@ How would Manacher’s algorithm reuse information across neighboring centers to
 
 ## Verification
 Named fixtures and independent generated-input references accompany the implementation. Official judge results are tracked separately in metadata.
+
+## C++23 counterpart
+
+The submission method takes a string by value, so the input copy costs O(n) storage; the center-expansion core retains only indices, and the final substring owns its output. The semantic checker accepts every longest palindromic witness rather than imposing a tie choice. Signed boundary indices are checked before conversion to size_t.
+
+C++: **O(n² + n) time; O(n) input copy and output; O(1) core auxiliary space**. Named fixtures and 150 reproducible generated inputs compare this implementation with the Python track.
