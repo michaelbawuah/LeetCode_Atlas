@@ -2,9 +2,13 @@
 
 [CI workflow](https://github.com/michaelbawuah/LeetCode_Atlas/actions/workflows/ci.yml) · [Problem catalog](problems.md) · [Repository](../README.md)
 
-The repository checks each problem from several directions: readable named cases, independently computed results on generated inputs, structural properties, and shared fixtures for Python/C++ counterparts.
+The repository checks problems from several directions: named cases, independently computed results on generated inputs, structural properties, and shared Python/C++ fixtures. These checks have separate purposes and separate evidence.
 
-The [foundation verification record](../verification/foundation.json) contains the local environment, commands, and results: **255 pytest tests passed**, including **180 named fixtures** and **1,500 generated Python/C++ comparisons**, plus the CTest adapter suite. AddressSanitizer and UndefinedBehaviorSanitizer were enabled. LeakSanitizer was disabled locally because the test container runs under ptrace; Linux Clang CI enables it.
+## Milestone records
+
+The historical [foundation record](../verification/foundation.json) covers **25 Python problems and 10 C++23 counterparts**: 255 pytest tests passed, including 180 named fixtures and 1,500 generated Python/C++ comparisons, plus the CTest adapter suite. AddressSanitizer and UndefinedBehaviorSanitizer were enabled. LeakSanitizer was disabled locally because the container runs under ptrace; the Linux Clang CI configuration enables it.
+
+The [75-problem milestone report](../verification/milestone75.json) is the separate command-result record for **75 Python implementations and 25 C++23 counterparts**. The current generated comparison suite contains **3,750 cases: 150 for each of 25 counterparts**. Test totals and observed command outcomes belong in that report; the foundation totals remain a historical record.
 
 ## Run the Python checks
 
@@ -18,52 +22,65 @@ python -m pytest
 python tools/catalog.py --check
 ```
 
-On Windows, activate the virtual environment with the activation script appropriate to your shell. The remaining Python commands are the same.
-
-To run one problem's generated checks, point pytest at its folder:
+On Windows, use the virtual environment activation script for your shell. To run one problem's generated checks:
 
 ```bash
-python -m pytest problems/0424-longest-repeating-character-replacement
+python -m pytest problems/0143-reorder-list
 ```
 
 ## What each check answers
 
 | Check | Evidence it provides | Its limit |
 |---|---|---|
-| Named fixtures | Examples, boundaries, and known failure cases produce the expected result. | A finite case list does not cover every input. |
-| Independent generated-input oracle | The optimized result agrees with a simpler calculation over many bounded inputs. | Generated domains are deliberately small enough for the oracle to run. |
-| Structural properties | Outputs obey constraints such as list shape, valid indexes, or absence of cycles. | A structural property alone may not prove the numerical answer. |
-| Python/C++ shared fixtures | Both implementations satisfy the same problem-specific checker. | Shared algorithm mistakes can survive language agreement. |
-| Catalog checks | Structured metadata and generated navigation stay synchronized. | Metadata is not a correctness proof. |
-| Compiler and sanitizer checks | Tested C++ paths compile and are checked for selected memory and undefined-behavior errors. | They do not establish algorithmic correctness on all inputs. |
+| Named fixtures | Examples, boundaries, and known failure cases produce the expected result. | A finite list does not cover every input. |
+| Independent generated-input oracle | An optimized result agrees with a simpler calculation over bounded generated inputs. | Generated domains remain small enough for the oracle to run. |
+| Structural properties | Outputs obey node identity, shape, valid-index, and cycle constraints. | A structural property alone may not establish the numerical answer. |
+| Python/C++ shared fixtures and generated inputs | Both implementations satisfy the same checker or witness conditions. | The implementations can share an algorithmic mistake. |
+| Catalog checks | Metadata and generated navigation stay synchronized. | Metadata is not a correctness proof. |
+| Compiler and sanitizer checks | Tested C++ paths compile and receive memory/undefined-behavior instrumentation. | Instrumentation does not establish correctness on all inputs. |
 
-For example, [stock profit](../problems/0121-best-time-to-buy-and-sell-stock/test_properties.py) is compared with every legal buy/sell pair on small generated price lists. [Character replacement](../problems/0424-longest-repeating-character-replacement/test_properties.py) is compared with enumerated substrings, and [Min Stack](../problems/0155-min-stack/test_properties.py) is compared with a plain list and direct minimum queries.
+Examples of independent checks include [House Robber](../problems/0198-house-robber/test_properties.py)'s enumeration of legal subsets, [Number of Islands](../problems/0200-number-of-islands/test_properties.py)'s disjoint-set reference, and [Right Side View](../problems/0199-binary-tree-right-side-view/test_properties.py)'s BFS oracle for a DFS implementation. [Reorder List](../problems/0143-reorder-list/test_properties.py) also checks that the exact existing nodes appear once in the required order.
 
-Hypothesis generates and shrinks counterexamples when a property fails. A small failing example should become a named regression case when it demonstrates a useful boundary or failure mode.
+Hypothesis generates and shrinks counterexamples when a property fails. A useful failure should become a named regression fixture when it demonstrates a boundary or mistake worth retaining.
 
-## Shared fixtures and checkers
+## Shared fixtures and semantic checkers
 
-`cases.json` stores the inputs and expected results. Method-style problems use argument lists; design problems store legal operation sequences. Adapters construct linked lists or trees for interfaces that need node objects.
+`cases.json` stores inputs and expected results. Method problems use argument arrays; design problems store legal constructor and operation histories. Runtime adapters construct list/tree nodes, isolate calls by copying JSON inputs, and serialize outputs.
 
-The checker is part of `meta.json`. Exact-output problems compare values directly. Order-insensitive outputs use the declared comparison so permitted reorderings are accepted. Generated oracles can additionally validate a result's semantics directly. Compare the meaning of a result without sorting away a distinction the problem requires.
+[Reorder List](../problems/0143-reorder-list/meta.json) and [Move Zeroes](../problems/0283-move-zeroes/meta.json) retain their in-place, `None`-returning submission methods. Metadata `result_from_arg: 0` asks the local runner to compare the changed first argument instead of that return value. Input isolation protects fixtures while still exposing the actual mutation result.
 
-Generated tests largely follow the official input contract. Min Stack's `pop`, `top`, and `getMin` are only called while nonempty, and rotated-array search receives distinct values. Two Sum's generators additionally permit multiple valid pairs to check that any returned pair is valid; named fixtures retain the problem's unique-pair contract.
+| Checker | Permitted difference |
+|---|---|
+| `exact` | No value, scalar-type, or ordering differences. |
+| `unordered` | Flat item order may vary; duplicate counts still matter. |
+| `unordered_rows` | Outer row order may vary; positions within each row remain meaningful. |
+| `unordered_groups` | Group order and flat member order may vary; multiplicity remains meaningful. |
+| `topological_order` | Any complete, duplicate-free course ordering respecting every prerequisite is valid. A cyclic fixture requires an empty result. |
+
+[Course Schedule II](../problems/0210-course-schedule-ii/README.md) uses the semantic topological checker with its original course count and edges. Comparing it to one expected ordering would reject other correct witnesses; sorting the result would erase the dependency evidence.
+
+Named fixtures honor the official input contracts, including unique-answer conditions. Generated Two Sum inputs deliberately allow several valid pairs and check index bounds, distinctness, and the target sum. Generated Minimum Window inputs deliberately allow tied shortest windows and check returned length and character coverage. These extensions test valid witnesses rather than requiring one incidental choice. Reverse Bits also has a separately labeled robustness property over the full unsigned 32-bit domain. Each problem's notes identify any broader test domain.
+
+## Node representation and ownership
+
+Sparse trees use LeetCode's queue-based level order with null children, not heap-array positions. `[1,null,2,3]` places 3 below the right child 2. List serialization detects cycles, and tree serialization rejects cycles or shared children.
+
+The C++ [adapter arenas](../cpp/atlas_adapter.hpp) retain ownership of every allocated node, including nodes detached from a returned list. Submission methods borrow pointers and can rewire links without assuming responsibility for deleting those nodes. Adapter tests cover decoding, serialization, and lifetime-sensitive behavior.
 
 ## Run the C++23 checks
 
-Install CMake 3.24 or newer and a C++23-capable compiler. The first configuration fetches pinned nlohmann JSON and Catch2 dependencies when matching versions are not already installed. Then build the adapters and run the configured CTest suite:
+Install CMake 3.24 or newer and a C++23-capable compiler. The first configuration fetches pinned nlohmann JSON and Catch2 dependencies when matching versions are not installed:
 
 ```bash
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug
 cmake --build build --parallel
 ctest --test-dir build --output-on-failure
-ATLAS_CPP_BIN_DIR=build/bin python -m pytest tests/test_cases.py
-ATLAS_CPP_BIN_DIR=build/bin python -m pytest tests/test_cpp_properties.py
+ATLAS_CPP_BIN_DIR=build/bin python -m pytest tests/test_cases.py tests/test_cpp_properties.py
 ```
 
-`ATLAS_CPP_BIN_DIR` tells the fixture runner where to find compiled counterparts. Use the directory matching your current build configuration.
+`ATLAS_CPP_BIN_DIR` selects the compiled runners. Shared-fixture checks require the configured counterpart set, and generated coverage checks require a strategy for every C++ implementation. Missing runners and incorrect JSON output lengths fail the checks.
 
-For AddressSanitizer and UndefinedBehaviorSanitizer with a supported GCC or Clang toolchain, configure a separate build:
+For AddressSanitizer and UndefinedBehaviorSanitizer with GCC or Clang, use a separate build:
 
 ```bash
 cmake -S . -B build-sanitized -DCMAKE_BUILD_TYPE=Debug -DATLAS_SANITIZERS=ON
@@ -72,16 +89,16 @@ ctest --test-dir build-sanitized --output-on-failure
 ATLAS_CPP_BIN_DIR=build-sanitized/bin python -m pytest tests/test_cases.py tests/test_cpp_properties.py
 ```
 
-Keeping instrumented and ordinary binaries in different directories makes the selected test path explicit. The CI workflow contains the maintained compiler configuration.
+If a container's ptrace environment prevents LeakSanitizer from starting, run its local commands with `ASAN_OPTIONS=detect_leaks=0` and record that limitation. The maintained Linux Clang CI configuration enables leak detection. A configured workflow is distinct from an observed successful run.
 
 ## Complexity review
 
-Each problem explains its time and space cost alongside the invariant. Review hidden costs such as copied slices, sorting, hash-signature construction, recursion depth, and output storage. Qualify expected hash-table costs and amortized stack operations where appropriate.
+Read time/space bounds alongside the invariant. Review hidden costs such as copied slices, sorting, signature construction, retained traversal state, and output storage. Qualify expected hash-table costs and amortized stack operations. Python and C++ can use different algorithms; Kth Largest's heap and partition implementations illustrate why one language's metadata cannot imply the other's bound.
 
-The complexity notes describe algorithmic bounds; this foundation does not publish performance benchmark rankings.
+The notes describe algorithmic bounds. Recorded command results establish the verification performed for a particular milestone.
 
-## Local verification and judge results
+## Local verification and official judge results
 
-The CI badge links to the actual workflow's status. Its current result belongs to the workflow, rather than a manually maintained success claim in this document.
+The badge links to the actual workflow status. Use the workflow's run details to check its commit and observed result.
 
-Official LeetCode submission results are a separate metadata field. Current entries use `judge_status: "not_recorded"`. A local test pass does not change that field; a recorded official result should have submission evidence and a date.
+Official LeetCode submission results are a separate metadata field. Current entries use `judge_status: "not_recorded"`. Local passes do not change that field; a recorded official result needs dated submission evidence.

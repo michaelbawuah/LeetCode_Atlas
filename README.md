@@ -4,29 +4,34 @@
 
 An algorithm collection organized around **why a solution works**: the state it maintains, the invariant that makes it correct, and the counterexamples that test it.
 
-**25 distinct problems · 25 Python solutions · 10 C++23 counterparts**
+<!-- atlas:stats:start -->
+**75 distinct problems · 75 Python solutions · 25 C++23 counterparts**
+<!-- atlas:stats:end -->
 
 [Browse every problem](docs/problems.md) · [Explore patterns](docs/patterns.md) · [Run the checks](docs/verification.md) · [See the roadmap](docs/roadmap.md)
 
 ## Start with a pattern
 
-Every problem folder contains submission-ready code, an explanation, named test cases, generated-input checks, and structured metadata. The foundation includes 180 named fixtures and 1,500 generated Python/C++ comparison cases. The C++ track uses the same fixtures as Python.
+Python is the primary interview-practice track; selected C++23 counterparts make container, arithmetic, ownership, and implementation tradeoffs visible. Every problem has submission-ready code, original reasoning, named fixtures, generated checks, and metadata. Both languages use the same fixtures, with 150 additional generated comparisons for each of the 25 C++ counterparts.
 
-| Pattern and representative problem | Source | Explanation | Fixtures | Generated checks |
-|---|---|---|---|---|
-| Hash lookup: [Two Sum](problems/0001-two-sum/) | [Python](problems/0001-two-sum/solution.py) · [C++](problems/0001-two-sum/solution.cpp) | [Notes](problems/0001-two-sum/README.md) | [Cases](problems/0001-two-sum/cases.json) | [Properties](problems/0001-two-sum/test_properties.py) |
-| Two pointers: [3Sum](problems/0015-3sum/) | [Python](problems/0015-3sum/solution.py) · [C++](problems/0015-3sum/solution.cpp) | [Notes](problems/0015-3sum/README.md) | [Cases](problems/0015-3sum/cases.json) | [Properties](problems/0015-3sum/test_properties.py) |
-| Sliding window: [Longest Substring](problems/0003-longest-substring-without-repeating-characters/) | [Python](problems/0003-longest-substring-without-repeating-characters/solution.py) · [C++](problems/0003-longest-substring-without-repeating-characters/solution.cpp) | [Notes](problems/0003-longest-substring-without-repeating-characters/README.md) | [Cases](problems/0003-longest-substring-without-repeating-characters/cases.json) | [Properties](problems/0003-longest-substring-without-repeating-characters/test_properties.py) |
-| Prefix/suffix state: [Product Except Self](problems/0238-product-of-array-except-self/) | [Python](problems/0238-product-of-array-except-self/solution.py) · [C++](problems/0238-product-of-array-except-self/solution.cpp) | [Notes](problems/0238-product-of-array-except-self/README.md) | [Cases](problems/0238-product-of-array-except-self/cases.json) | [Properties](problems/0238-product-of-array-except-self/test_properties.py) |
-| Stack: [Valid Parentheses](problems/0020-valid-parentheses/) | [Python](problems/0020-valid-parentheses/solution.py) · [C++](problems/0020-valid-parentheses/solution.cpp) | [Notes](problems/0020-valid-parentheses/README.md) | [Cases](problems/0020-valid-parentheses/cases.json) | [Properties](problems/0020-valid-parentheses/test_properties.py) |
-| Monotonic stack: [Daily Temperatures](problems/0739-daily-temperatures/) | [Python](problems/0739-daily-temperatures/solution.py) · [C++](problems/0739-daily-temperatures/solution.cpp) | [Notes](problems/0739-daily-temperatures/README.md) | [Cases](problems/0739-daily-temperatures/cases.json) | [Properties](problems/0739-daily-temperatures/test_properties.py) |
-| Binary search: [Rotated Array Search](problems/0033-search-in-rotated-sorted-array/) | [Python](problems/0033-search-in-rotated-sorted-array/solution.py) · [C++](problems/0033-search-in-rotated-sorted-array/solution.cpp) | [Notes](problems/0033-search-in-rotated-sorted-array/README.md) | [Cases](problems/0033-search-in-rotated-sorted-array/cases.json) | [Properties](problems/0033-search-in-rotated-sorted-array/test_properties.py) |
-| Linked-list pointers: [Reverse Linked List](problems/0206-reverse-linked-list/) | [Python](problems/0206-reverse-linked-list/solution.py) · [C++](problems/0206-reverse-linked-list/solution.cpp) | [Notes](problems/0206-reverse-linked-list/README.md) | [Cases](problems/0206-reverse-linked-list/cases.json) | [Properties](problems/0206-reverse-linked-list/test_properties.py) |
-| Tree traversal: [Level Order Traversal](problems/0102-binary-tree-level-order-traversal/) | [Python](problems/0102-binary-tree-level-order-traversal/solution.py) | [Notes](problems/0102-binary-tree-level-order-traversal/README.md) | [Cases](problems/0102-binary-tree-level-order-traversal/cases.json) | [Properties](problems/0102-binary-tree-level-order-traversal/test_properties.py) |
-| Graph traversal: [Number of Islands](problems/0200-number-of-islands/) | [Python](problems/0200-number-of-islands/solution.py) | [Notes](problems/0200-number-of-islands/README.md) | [Cases](problems/0200-number-of-islands/cases.json) | [Properties](problems/0200-number-of-islands/test_properties.py) |
-| Dynamic programming: [House Robber](problems/0198-house-robber/) | [Python](problems/0198-house-robber/solution.py) · [C++](problems/0198-house-robber/solution.cpp) | [Notes](problems/0198-house-robber/README.md) | [Cases](problems/0198-house-robber/cases.json) | [Properties](problems/0198-house-robber/test_properties.py) |
+| Family | Representative problem | What the explanation makes explicit |
+|---|---|---|
+| Hashing | [Longest Consecutive Sequence](problems/0128-longest-consecutive-sequence/README.md) | Start only at a sequence boundary. |
+| Two pointers | [3Sum](problems/0015-3sum/README.md) | Which candidate pairs a pointer move eliminates. |
+| Sliding window | [Minimum Window Substring](problems/0076-minimum-window-substring/README.md) | Track missing occurrences, including repeated letters. |
+| Stack | [Daily Temperatures](problems/0739-daily-temperatures/README.md) | Each unresolved index is pushed and popped at most once. |
+| Binary search | [Koko Eating Bananas](problems/0875-koko-eating-bananas/README.md) | Search a monotone feasibility boundary rather than an array index. |
+| Linked lists | [Reorder List](problems/0143-reorder-list/README.md) | Split, reverse, and weave existing nodes without losing links. |
+| Trees | [Validate Binary Search Tree](problems/0098-validate-binary-search-tree/README.md) | Strict global ordering, including ancestor constraints. |
+| Intervals | [Merge Intervals](problems/0056-merge-intervals/README.md) | Maintain a completed prefix and one extendable range. |
+| Heaps | [Find Median from Data Stream](problems/0295-find-median-from-data-stream/README.md) | Balance two partitions while preserving their value ordering. |
+| Tries | [Implement Trie](problems/0208-implement-trie-prefix-tree/README.md) | A reachable prefix and a complete word are different states. |
+| Backtracking | [Combination Sum](problems/0039-combination-sum/README.md) | Choose, explore, and undo with a rule that prevents duplicate combinations. |
+| Graphs and dependencies | [Course Schedule II](problems/0210-course-schedule-ii/README.md) | Validate any complete ordering that respects every prerequisite. |
+| Disjoint sets | [Redundant Connection](problems/0684-redundant-connection/README.md) | An edge inside one existing component closes a cycle. |
+| Sequence and grid DP | [Longest Common Subsequence](problems/1143-longest-common-subsequence/README.md) · [Unique Paths](problems/0062-unique-paths/README.md) | Define the state before compressing its storage. |
 
-The [full catalog](docs/problems.md) includes difficulty, patterns, available languages, and links to all 25 entries.
+The [full catalog](docs/problems.md) links every implementation, explanation, fixture, and property suite. The [generated pattern index](docs/pattern-index.md) lists every problem tagged with each technique.
 
 ## Run locally
 
@@ -40,33 +45,38 @@ python -m pytest
 python tools/catalog.py --check
 ```
 
-For the C++23 track, install CMake 3.24 or newer and a C++23-capable compiler, then build and include the runners in the shared-case tests:
+For C++23, install CMake 3.24 or newer and a compatible compiler:
 
 ```bash
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug
 cmake --build build --parallel
 ctest --test-dir build --output-on-failure
-ATLAS_CPP_BIN_DIR=build/bin python -m pytest tests/test_cases.py
+ATLAS_CPP_BIN_DIR=build/bin python -m pytest tests/test_cases.py tests/test_cpp_properties.py
 ```
 
-See [verification](docs/verification.md) for the different checks and [C++ notes](docs/cpp-notes.md) for language-specific implementation details.
+See [verification](docs/verification.md) for the checks and [C++ notes](docs/cpp-notes.md) for language-specific differences and node ownership.
 
 ## Browse from the terminal
 
-Filter the catalog by pattern, run a problem's default fixture, or supply one input directly:
+Filter by pattern, run a default fixture, or supply JSON arguments:
 
 ```bash
-python -m atlas list --pattern binary-search
+python -m atlas list --pattern trie
+python -m atlas list --pattern dynamic-programming --difficulty Medium
 python -m atlas run 1
 python -m atlas run 1 --args '[[2,7,11,15],9]'
+python -m atlas run 143
+python -m atlas run 210
 ```
+
+In-place methods keep their LeetCode interface: Reorder List and Move Zeroes return `None`, while local metadata tells the adapter which mutated argument to display. Design problems use their named operation-sequence fixtures.
 
 ## Read a solution
 
-Start with the baseline, identify what repeated work can be removed, and state the optimized algorithm's invariant before reading the code. Each explanation includes complexity, edge cases, and a follow-up that changes one assumption.
+Start with the baseline, identify the repeated work, and state the optimized algorithm's invariant before reading its code. Each explanation includes complexity, pitfalls, and a follow-up that changes one assumption. Tests compare independently expressed answers or inspect structural behavior such as node reuse and absence of cycles.
 
-Local fixtures and generated tests have their own verification path. Official LeetCode submission results are tracked separately in metadata; none are recorded yet.
+Official LeetCode submission evidence is tracked separately from local verification. Current entries have no recorded official acceptances.
 
 ## Grow the atlas
 
-The next cumulative milestones are **75 / 25**, **150 / 75**, and **300 / 150** Python problems / C++ counterparts. Additions should expand pattern coverage and bring explanations and tests with the code. The [roadmap](docs/roadmap.md) describes the sequence.
+The **25 / 10 foundation** and **75 / 25 essential-pattern milestone** are present. The next cumulative targets are **150 Python / 75 C++23**, then **300 / 150**. The [roadmap](docs/roadmap.md) describes the remaining coverage and practice goals.
