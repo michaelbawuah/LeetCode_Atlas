@@ -19,3 +19,9 @@ There can be several correct balanced shapes. The semantic checker compares inor
 
 ## Follow-up
 Build a balanced BST from a sorted linked list while avoiding repeated midpoint scans.
+
+## C++23 implementation
+
+C++23 uses the same half-open midpoint ranges. Every newly created node is staged in a `unique_ptr` until construction succeeds, giving exception-safe cleanup at the cost of O(n) ownership bookkeeping. Only then does the output transfer to the judge, or local `TreeResultOwner`; borrowed arena nodes are never owned this way. The adapter also verifies that the input array is unchanged.
+
+C++23 submission cost: **O(n) time; O(n) ownership staging; O(log(n + 1)) traversal; O(n) output space**. Here n is node count, h is tree height, w is maximum level width, and L is the number of returned path elements when applicable. Adapter construction, snapshots, and serialization are measured separately.
