@@ -1,0 +1,27 @@
+{
+  "id": 103,
+  "title": "Binary Tree Zigzag Level Order Traversal",
+  "difficulty": "Medium",
+  "method": "zigzagLevelOrder",
+  "args_types": [
+    "treenode"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(w) auxiliary; O(n) output"
+  },
+  "patterns": [
+    "tree",
+    "breadth-first-search"
+  ],
+  "checker": "exact",
+  "slug": "binary-tree-zigzag-level-order-traversal",
+  "kind": "method",
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n)",
+    "space": "O(w) auxiliary; O(n) output"
+  }
+}
