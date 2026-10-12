@@ -19,3 +19,9 @@ Appending the mutable path itself would alias all answers. Equal-valued paths th
 
 ## Follow-up
 Count matching paths without materializing them, or extend the condition to paths that may begin below the root.
+
+## C++23 implementation
+
+C++23 enter/leave frames maintain one active path and copy only matching answers, preserving equal-valued path multiplicity. Signed sums fit `int` under the official node-count and value limits. The adapter verifies all original links and values remain unchanged.
+
+C++23 submission cost: **O(n + L), L = total returned path elements time; O(h) auxiliary; O(L) output space**. Here n is node count, h is tree height, w is maximum level width, and L is the number of returned path elements when applicable. Adapter construction, snapshots, and serialization are measured separately.

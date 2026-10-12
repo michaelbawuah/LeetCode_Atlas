@@ -20,5 +20,10 @@
   },
   "slug": "path-sum-ii",
   "kind": "method",
-  "judge_status": "not_recorded"
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n + L), L = total returned path elements",
+    "space": "O(h) auxiliary; O(L) output"
+  }
 }
