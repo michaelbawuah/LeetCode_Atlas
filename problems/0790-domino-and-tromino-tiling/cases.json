@@ -1,0 +1,44 @@
+[
+  {
+    "name": "one_column",
+    "args": [
+      1
+    ],
+    "expected": 1
+  },
+  {
+    "name": "two_columns",
+    "args": [
+      2
+    ],
+    "expected": 2
+  },
+  {
+    "name": "first_trominos",
+    "args": [
+      3
+    ],
+    "expected": 5
+  },
+  {
+    "name": "four_columns",
+    "args": [
+      4
+    ],
+    "expected": 11
+  },
+  {
+    "name": "five_columns",
+    "args": [
+      5
+    ],
+    "expected": 24
+  },
+  {
+    "name": "modular_upper_bound",
+    "args": [
+      1000
+    ],
+    "expected": 979232805
+  }
+]
