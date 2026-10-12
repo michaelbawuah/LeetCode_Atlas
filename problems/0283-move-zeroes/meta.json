@@ -1,0 +1,23 @@
+{
+  "id": 283,
+  "title": "Move Zeroes",
+  "slug": "move-zeroes",
+  "difficulty": "Easy",
+  "patterns": [
+    "two-pointers",
+    "in-place"
+  ],
+  "method": "moveZeroes",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "judge_status": "not_recorded",
+  "result_from_arg": 0
+}
