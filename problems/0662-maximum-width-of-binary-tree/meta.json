@@ -1,0 +1,23 @@
+{
+  "id": 662,
+  "title": "Maximum Width of Binary Tree",
+  "difficulty": "Medium",
+  "method": "widthOfBinaryTree",
+  "args_types": [
+    "treenode"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(n) under the bounded-width contract",
+    "space": "O(w)"
+  },
+  "patterns": [
+    "tree",
+    "breadth-first-search",
+    "position-index"
+  ],
+  "checker": "exact",
+  "slug": "maximum-width-of-binary-tree",
+  "kind": "method",
+  "judge_status": "not_recorded"
+}
