@@ -1,0 +1,69 @@
+[
+  {
+    "name": "small",
+    "args": [
+      [
+        3,
+        4,
+        2
+      ]
+    ],
+    "expected": 6
+  },
+  {
+    "name": "duplicate_clusters",
+    "args": [
+      [
+        2,
+        2,
+        3,
+        3,
+        3,
+        4
+      ]
+    ],
+    "expected": 9
+  },
+  {
+    "name": "single",
+    "args": [
+      [
+        8
+      ]
+    ],
+    "expected": 8
+  },
+  {
+    "name": "separated",
+    "args": [
+      [
+        1,
+        3,
+        5
+      ]
+    ],
+    "expected": 9
+  },
+  {
+    "name": "all_equal",
+    "args": [
+      [
+        4,
+        4,
+        4
+      ]
+    ],
+    "expected": 12
+  },
+  {
+    "name": "gapped_large_values",
+    "args": [
+      [
+        1,
+        1,
+        10000
+      ]
+    ],
+    "expected": 10002
+  }
+]
