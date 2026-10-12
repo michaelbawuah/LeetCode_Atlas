@@ -1,0 +1,21 @@
+{
+  "id": 91,
+  "title": "Decode Ways",
+  "difficulty": "Medium",
+  "patterns": [
+    "dynamic-programming"
+  ],
+  "method": "numDecodings",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "slug": "decode-ways",
+  "kind": "method",
+  "checker": "exact",
+  "judge_status": "not_recorded"
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "name": "two_groupings",
+    "args": [
+      "12"
+    ],
+    "expected": 2
+  },
+  {
+    "name": "three_groupings",
+    "args": [
+      "226"
+    ],
+    "expected": 3
+  },
+  {
+    "name": "leading_zero",
+    "args": [
+      "06"
+    ],
+    "expected": 0
+  },
+  {
+    "name": "zero_digit",
+    "args": [
+      "0"
+    ],
+    "expected": 0
+  },
+  {
+    "name": "zero_requires_pair",
+    "args": [
+      "10"
+    ],
+    "expected": 1
+  },
+  {
+    "name": "invalid_double_zero",
+    "args": [
+      "100"
+    ],
+    "expected": 0
+  },
+  {
+    "name": "internal_zero",
+    "args": [
+      "11106"
+    ],
+    "expected": 2
+  },
+  {
+    "name": "pair_over_limit",
+    "args": [
+      "27"
+    ],
+    "expected": 1
+  }
+]
