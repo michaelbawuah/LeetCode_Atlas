@@ -1,0 +1,72 @@
+[
+  {
+    "name": "interior pivot",
+    "args": [
+      [
+        1,
+        7,
+        3,
+        6,
+        5,
+        6
+      ]
+    ],
+    "expected": 3
+  },
+  {
+    "name": "no pivot",
+    "args": [
+      [
+        1,
+        2,
+        3
+      ]
+    ],
+    "expected": -1
+  },
+  {
+    "name": "left endpoint pivot",
+    "args": [
+      [
+        2,
+        1,
+        -1
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "singleton",
+    "args": [
+      [
+        8
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "leftmost among multiple pivots",
+    "args": [
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "negative sums",
+    "args": [
+      [
+        -1,
+        -1,
+        0,
+        1,
+        1,
+        0
+      ]
+    ],
+    "expected": 5
+  }
+]
