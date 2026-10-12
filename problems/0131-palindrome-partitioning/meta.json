@@ -1,0 +1,23 @@
+{
+  "id": 131,
+  "title": "Palindrome Partitioning",
+  "slug": "palindrome-partitioning",
+  "difficulty": "Medium",
+  "patterns": [
+    "backtracking",
+    "dynamic-programming"
+  ],
+  "method": "partition",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "unordered_rows",
+  "complexity": {
+    "time": "O(n\u00b2 + n 2^n)",
+    "space": "O(n\u00b2) auxiliary; O(K n) output"
+  },
+  "complexity_language": "Python",
+  "judge_status": "not_recorded"
+}

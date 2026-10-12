@@ -1,0 +1,153 @@
+[
+  {
+    "name": "short_example",
+    "args": [
+      "aab"
+    ],
+    "expected": [
+      [
+        "aa",
+        "b"
+      ],
+      [
+        "a",
+        "a",
+        "b"
+      ]
+    ]
+  },
+  {
+    "name": "singleton",
+    "args": [
+      "a"
+    ],
+    "expected": [
+      [
+        "a"
+      ]
+    ]
+  },
+  {
+    "name": "even_suffix",
+    "args": [
+      "abb"
+    ],
+    "expected": [
+      [
+        "a",
+        "bb"
+      ],
+      [
+        "a",
+        "b",
+        "b"
+      ]
+    ]
+  },
+  {
+    "name": "whole_even_palindrome",
+    "args": [
+      "abba"
+    ],
+    "expected": [
+      [
+        "abba"
+      ],
+      [
+        "a",
+        "bb",
+        "a"
+      ],
+      [
+        "a",
+        "b",
+        "b",
+        "a"
+      ]
+    ]
+  },
+  {
+    "name": "no_longer_palindrome",
+    "args": [
+      "ab"
+    ],
+    "expected": [
+      [
+        "a",
+        "b"
+      ]
+    ]
+  },
+  {
+    "name": "all_equal",
+    "args": [
+      "aaa"
+    ],
+    "expected": [
+      [
+        "aaa"
+      ],
+      [
+        "a",
+        "aa"
+      ],
+      [
+        "aa",
+        "a"
+      ],
+      [
+        "a",
+        "a",
+        "a"
+      ]
+    ]
+  },
+  {
+    "name": "nested_odd_palindrome",
+    "args": [
+      "racecar"
+    ],
+    "expected": [
+      [
+        "racecar"
+      ],
+      [
+        "r",
+        "aceca",
+        "r"
+      ],
+      [
+        "r",
+        "a",
+        "cec",
+        "a",
+        "r"
+      ],
+      [
+        "r",
+        "a",
+        "c",
+        "e",
+        "c",
+        "a",
+        "r"
+      ]
+    ]
+  },
+  {
+    "name": "whole_odd_palindrome",
+    "args": [
+      "aba"
+    ],
+    "expected": [
+      [
+        "aba"
+      ],
+      [
+        "a",
+        "b",
+        "a"
+      ]
+    ]
+  }
+]
