@@ -1,0 +1,24 @@
+{
+  "id": 106,
+  "title": "Construct Binary Tree from Inorder and Postorder Traversal",
+  "difficulty": "Medium",
+  "patterns": [
+    "tree",
+    "stack",
+    "tree-construction"
+  ],
+  "method": "buildTree",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "return_type": "treenode",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(h) auxiliary; O(n) output"
+  },
+  "slug": "construct-binary-tree-from-inorder-and-postorder-traversal",
+  "kind": "method",
+  "judge_status": "not_recorded",
+  "checker": "exact"
+}
