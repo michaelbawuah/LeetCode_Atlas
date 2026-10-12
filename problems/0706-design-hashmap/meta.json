@@ -1,0 +1,21 @@
+{
+  "id": 706,
+  "slug": "design-hashmap",
+  "title": "Design HashMap",
+  "difficulty": "Easy",
+  "patterns": [
+    "design",
+    "direct-addressing"
+  ],
+  "method": null,
+  "args_types": [],
+  "kind": "design",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "constructor O(U); each operation O(1)",
+    "space": "O(U), U = 1000001"
+  },
+  "judge_status": "not_recorded",
+  "class_name": "MyHashMap"
+}

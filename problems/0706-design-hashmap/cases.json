@@ -1,0 +1,143 @@
+[
+  {
+    "name": "write-query",
+    "operations": [
+      "MyHashMap",
+      "put",
+      "get",
+      "get"
+    ],
+    "arguments": [
+      [],
+      [
+        1,
+        2
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "expected": [
+      null,
+      null,
+      2,
+      -1
+    ]
+  },
+  {
+    "name": "overwrite",
+    "operations": [
+      "MyHashMap",
+      "put",
+      "put",
+      "get"
+    ],
+    "arguments": [
+      [],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1
+      ]
+    ],
+    "expected": [
+      null,
+      null,
+      null,
+      3
+    ]
+  },
+  {
+    "name": "remove",
+    "operations": [
+      "MyHashMap",
+      "put",
+      "remove",
+      "get"
+    ],
+    "arguments": [
+      [],
+      [
+        1,
+        2
+      ],
+      [
+        1
+      ],
+      [
+        1
+      ]
+    ],
+    "expected": [
+      null,
+      null,
+      null,
+      -1
+    ]
+  },
+  {
+    "name": "remove-absent",
+    "operations": [
+      "MyHashMap",
+      "remove",
+      "get"
+    ],
+    "arguments": [
+      [],
+      [
+        9
+      ],
+      [
+        9
+      ]
+    ],
+    "expected": [
+      null,
+      null,
+      -1
+    ]
+  },
+  {
+    "name": "key-value-boundaries",
+    "operations": [
+      "MyHashMap",
+      "put",
+      "put",
+      "get",
+      "get"
+    ],
+    "arguments": [
+      [],
+      [
+        0,
+        0
+      ],
+      [
+        1000000,
+        1000000
+      ],
+      [
+        0
+      ],
+      [
+        1000000
+      ]
+    ],
+    "expected": [
+      null,
+      null,
+      null,
+      0,
+      1000000
+    ]
+  }
+]
