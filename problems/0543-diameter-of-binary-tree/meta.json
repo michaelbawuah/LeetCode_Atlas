@@ -1,0 +1,28 @@
+{
+  "id": 543,
+  "title": "Diameter of Binary Tree",
+  "difficulty": "Easy",
+  "patterns": [
+    "tree",
+    "depth-first-search",
+    "dynamic-programming"
+  ],
+  "method": "diameterOfBinaryTree",
+  "args_types": [
+    "treenode"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "slug": "diameter-of-binary-tree",
+  "kind": "method",
+  "judge_status": "not_recorded",
+  "checker": "exact",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n) expected with unordered-map height storage",
+    "space": "O(n)"
+  }
+}
