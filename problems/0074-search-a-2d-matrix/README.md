@@ -23,3 +23,11 @@ Search a matrix that only has sorted rows and sorted columns. What ordering argu
 
 ## Verification
 Named fixtures and an independent generated-input reference accompany this implementation. Official judge results are tracked separately in metadata.
+
+## C++23 counterpart
+
+[Source](solution.cpp) · [Local adapter](cpp_runner.cpp)
+
+C++ searches a virtual row-major sequence using a half-open interval. It neither flattens nor mutates the matrix.
+
+Time: O(log(mn)). Space: O(1). The local adapter constructs a fresh object for each fixture and owns any converted inputs.
