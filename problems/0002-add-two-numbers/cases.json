@@ -1,0 +1,105 @@
+[
+  {
+    "name": "basic",
+    "args": [
+      [
+        2,
+        4,
+        3
+      ],
+      [
+        5,
+        6,
+        4
+      ]
+    ],
+    "expected": [
+      7,
+      0,
+      8
+    ]
+  },
+  {
+    "name": "zero",
+    "args": [
+      [
+        0
+      ],
+      [
+        0
+      ]
+    ],
+    "expected": [
+      0
+    ]
+  },
+  {
+    "name": "carry_tail",
+    "args": [
+      [
+        9,
+        9
+      ],
+      [
+        1
+      ]
+    ],
+    "expected": [
+      0,
+      0,
+      1
+    ]
+  },
+  {
+    "name": "unequal_lengths",
+    "args": [
+      [
+        1
+      ],
+      [
+        2,
+        3,
+        4
+      ]
+    ],
+    "expected": [
+      3,
+      3,
+      4
+    ]
+  },
+  {
+    "name": "internal_zeros",
+    "args": [
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        2
+      ]
+    ],
+    "expected": [
+      0,
+      0,
+      3
+    ]
+  },
+  {
+    "name": "single_digit",
+    "args": [
+      [
+        4
+      ],
+      [
+        5
+      ]
+    ],
+    "expected": [
+      9
+    ]
+  }
+]

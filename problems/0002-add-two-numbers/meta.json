@@ -1,0 +1,28 @@
+{
+  "id": 2,
+  "title": "Add Two Numbers",
+  "difficulty": "Medium",
+  "method": "addTwoNumbers",
+  "args_types": [
+    "listnode",
+    "listnode"
+  ],
+  "return_type": "listnode",
+  "complexity": {
+    "time": "O(max(m, n))",
+    "space": "O(1) auxiliary; O(max(m, n)) fresh output"
+  },
+  "patterns": [
+    "linked-list",
+    "arithmetic"
+  ],
+  "checker": "exact",
+  "slug": "add-two-numbers",
+  "kind": "method",
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(max(m, n))",
+    "space": "O(max(m, n)) auxiliary ownership staging; O(max(m, n)) fresh output"
+  }
+}
