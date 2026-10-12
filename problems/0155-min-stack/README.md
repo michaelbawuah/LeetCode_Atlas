@@ -23,3 +23,11 @@ Support `getMax` as well, or design a queue that supports a minimum query using 
 
 ## Verification
 Named local cases and an independent generated-input oracle accompany this solution. No official judge result is recorded.
+
+## C++23 counterpart
+
+[Source](solution.cpp) · [Local adapter](cpp_runner.cpp)
+
+C++ stores value/prefix-minimum pairs in a vector. Duplicate minima remain represented after one copy is popped.
+
+Time: push/pop O(1) amortized; top/getMin O(1). Space: O(n). The local adapter constructs a fresh object for each fixture and owns any converted inputs.

@@ -13,9 +13,14 @@
   "return_type": "value",
   "checker": "exact",
   "complexity": {
-    "time": "O(1) per operation",
+    "time": "push/pop O(1) amortized; top/getMin O(1)",
     "space": "O(n)"
   },
   "judge_status": "not_recorded",
-  "class_name": "MinStack"
+  "class_name": "MinStack",
+  "complexity_cpp": {
+    "time": "push/pop O(1) amortized; top/getMin O(1)",
+    "space": "O(n)"
+  },
+  "complexity_language": "Python"
 }
