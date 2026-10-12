@@ -1,0 +1,67 @@
+[
+  {
+    "name": "repeated value",
+    "args": [
+      [
+        1,
+        2,
+        3,
+        1
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "name": "all distinct",
+    "args": [
+      [
+        1,
+        2,
+        3,
+        4
+      ]
+    ],
+    "expected": false
+  },
+  {
+    "name": "single element",
+    "args": [
+      [
+        1
+      ]
+    ],
+    "expected": false
+  },
+  {
+    "name": "two zeroes",
+    "args": [
+      [
+        0,
+        0
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "name": "signed distinct values",
+    "args": [
+      [
+        -1,
+        0,
+        1
+      ]
+    ],
+    "expected": false
+  },
+  {
+    "name": "far-apart repetition",
+    "args": [
+      [
+        1000000000,
+        -1000000000,
+        1000000000
+      ]
+    ],
+    "expected": true
+  }
+]
