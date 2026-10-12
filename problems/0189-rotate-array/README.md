@@ -30,3 +30,7 @@ Normalize k before defining reversal ranges. Rebinding the parameter to a new
 list would fail to update the caller's list.
 
 **Follow-up:** how do greatest-common-divisor cycles implement the same mapping?
+
+## C++23 counterpart
+
+C++ reduces the nonnegative step count modulo the nonempty vector length before constructing iterator ranges. Three `std::reverse` calls then mutate that vector in place without copied slices. The method returns `void`; the adapter serializes the mutated argument. O(n) time and O(1) auxiliary space also cover a zero or full-revolution step.

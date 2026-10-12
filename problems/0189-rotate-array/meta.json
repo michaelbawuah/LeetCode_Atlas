@@ -20,5 +20,10 @@
     "space": "O(1)"
   },
   "judge_status": "not_recorded",
-  "result_from_arg": 0
+  "result_from_arg": 0,
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n)",
+    "space": "O(1)"
+  }
 }
