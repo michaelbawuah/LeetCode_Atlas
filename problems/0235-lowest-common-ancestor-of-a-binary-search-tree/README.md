@@ -19,3 +19,9 @@ Return the original node, not a new node with the same value. Both distinct targ
 
 ## Follow-up
 Compare the general-tree solution when ordering information is unavailable.
+
+## C++23 implementation
+
+C++23 follows the shared BST search region iteratively and returns the original node. `TreeReferences` resolves the two input values to actual node references and validates original result identity plus unchanged input links and values before serializing the answer. Its indexing and snapshots are outside submission costs.
+
+C++23 submission cost: **O(h) time; O(1) space**. Here n is node count, h is tree height, w is maximum level width, and L is the number of returned path elements when applicable. Adapter construction, snapshots, and serialization are measured separately.
