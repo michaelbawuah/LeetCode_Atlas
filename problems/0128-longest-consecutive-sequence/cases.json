@@ -1,0 +1,97 @@
+[
+  {
+    "name": "unsorted sequence",
+    "args": [
+      [
+        100,
+        4,
+        200,
+        1,
+        3,
+        2
+      ]
+    ],
+    "expected": 4
+  },
+  {
+    "name": "duplicates inside long sequence",
+    "args": [
+      [
+        0,
+        3,
+        7,
+        2,
+        5,
+        8,
+        4,
+        6,
+        0,
+        1
+      ]
+    ],
+    "expected": 9
+  },
+  {
+    "name": "empty input",
+    "args": [
+      []
+    ],
+    "expected": 0
+  },
+  {
+    "name": "singleton",
+    "args": [
+      [
+        8
+      ]
+    ],
+    "expected": 1
+  },
+  {
+    "name": "duplicate singleton",
+    "args": [
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    "expected": 1
+  },
+  {
+    "name": "sequence through zero",
+    "args": [
+      [
+        -2,
+        -1,
+        0,
+        2
+      ]
+    ],
+    "expected": 3
+  },
+  {
+    "name": "equal length disjoint runs",
+    "args": [
+      [
+        5,
+        6,
+        7,
+        20,
+        21,
+        22
+      ]
+    ],
+    "expected": 3
+  },
+  {
+    "name": "large separated endpoints",
+    "args": [
+      [
+        -1000000000,
+        1000000000
+      ]
+    ],
+    "expected": 1
+  }
+]
