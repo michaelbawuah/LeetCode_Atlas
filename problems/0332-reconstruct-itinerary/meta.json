@@ -1,0 +1,24 @@
+{
+  "id": 332,
+  "title": "Reconstruct Itinerary",
+  "slug": "reconstruct-itinerary",
+  "difficulty": "Hard",
+  "patterns": [
+    "graph",
+    "eulerian-path",
+    "heap"
+  ],
+  "method": "findItinerary",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity_language": "Python",
+  "complexity": {
+    "time": "O(E log(E + 1))",
+    "space": "O(E) auxiliary and output"
+  },
+  "judge_status": "not_recorded"
+}

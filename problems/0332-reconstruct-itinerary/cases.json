@@ -1,0 +1,127 @@
+[
+  {
+    "name": "standard chain",
+    "args": [
+      [
+        [
+          "MUC",
+          "LHR"
+        ],
+        [
+          "JFK",
+          "MUC"
+        ],
+        [
+          "SFO",
+          "SJC"
+        ],
+        [
+          "LHR",
+          "SFO"
+        ]
+      ]
+    ],
+    "expected": [
+      "JFK",
+      "MUC",
+      "LHR",
+      "SFO",
+      "SJC"
+    ]
+  },
+  {
+    "name": "greedy dead end",
+    "args": [
+      [
+        [
+          "JFK",
+          "KUL"
+        ],
+        [
+          "JFK",
+          "NRT"
+        ],
+        [
+          "NRT",
+          "JFK"
+        ]
+      ]
+    ],
+    "expected": [
+      "JFK",
+      "NRT",
+      "JFK",
+      "KUL"
+    ]
+  },
+  {
+    "name": "single ticket",
+    "args": [
+      [
+        [
+          "JFK",
+          "AAA"
+        ]
+      ]
+    ],
+    "expected": [
+      "JFK",
+      "AAA"
+    ]
+  },
+  {
+    "name": "duplicate tickets",
+    "args": [
+      [
+        [
+          "JFK",
+          "AAA"
+        ],
+        [
+          "AAA",
+          "JFK"
+        ],
+        [
+          "JFK",
+          "AAA"
+        ]
+      ]
+    ],
+    "expected": [
+      "JFK",
+      "AAA",
+      "JFK",
+      "AAA"
+    ]
+  },
+  {
+    "name": "two possible round trips",
+    "args": [
+      [
+        [
+          "JFK",
+          "BBB"
+        ],
+        [
+          "BBB",
+          "JFK"
+        ],
+        [
+          "JFK",
+          "AAA"
+        ],
+        [
+          "AAA",
+          "JFK"
+        ]
+      ]
+    ],
+    "expected": [
+      "JFK",
+      "AAA",
+      "JFK",
+      "BBB",
+      "JFK"
+    ]
+  }
+]
