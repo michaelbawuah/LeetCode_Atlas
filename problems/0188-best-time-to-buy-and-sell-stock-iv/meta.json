@@ -1,0 +1,24 @@
+{
+  "id": 188,
+  "title": "Best Time to Buy and Sell Stock IV",
+  "slug": "best-time-to-buy-and-sell-stock-iv",
+  "difficulty": "Hard",
+  "patterns": [
+    "dynamic-programming",
+    "state-machine"
+  ],
+  "method": "maxProfit",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(1 + n min(k, n))",
+    "space": "O(k) general case; O(1) unlimited branch"
+  },
+  "complexity_language": "Python",
+  "judge_status": "not_recorded"
+}
