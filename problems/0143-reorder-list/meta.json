@@ -1,0 +1,23 @@
+{
+  "id": 143,
+  "title": "Reorder List",
+  "difficulty": "Medium",
+  "patterns": [
+    "linked-list",
+    "two-pointers"
+  ],
+  "method": "reorderList",
+  "args_types": [
+    "listnode"
+  ],
+  "return_type": "listnode",
+  "result_from_arg": 0,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "slug": "reorder-list",
+  "kind": "method",
+  "checker": "exact",
+  "judge_status": "not_recorded"
+}
