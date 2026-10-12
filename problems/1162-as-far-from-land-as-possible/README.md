@@ -21,3 +21,7 @@ O(n^2) time. O(n^2) space. These bounds describe the submitted implementation, e
 Distance to the farthest individual land cell is not the nearest-land distance. Named fixtures cover different structural boundaries. An independent bounded reference accompanies deterministic generated inputs in `test_properties.py`; `parity.py` supplies varied inputs for the shared language checks.
 
 **Follow-up:** Return all farthest water coordinates as well as the distance.
+
+## Python and C++23 comparison
+
+Both sources seed BFS from every land cell and assign nearest-land distances to water. C++ owns a distance matrix and queue and does not change the grid. O(n²) time and auxiliary storage exclude the runner’s decoded O(n²) matrix copy. Empty source sets and all-land grids return -1, and no recursive traversal is used.

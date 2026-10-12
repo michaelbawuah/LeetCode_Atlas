@@ -20,5 +20,9 @@
     "time": "O(n^2)",
     "space": "O(n^2)"
   },
-  "judge_status": "not_recorded"
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O(n^2)",
+    "space": "O(n^2) auxiliary; O(1) scalar output"
+  }
 }
