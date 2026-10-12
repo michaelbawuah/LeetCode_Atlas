@@ -1,0 +1,30 @@
+{
+  "id": 454,
+  "title": "4Sum II",
+  "slug": "4sum-ii",
+  "difficulty": "Medium",
+  "patterns": [
+    "hash-map",
+    "meet-in-the-middle"
+  ],
+  "method": "fourSumCount",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value",
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n^2) expected",
+    "space": "O(n^2)"
+  },
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n^2) expected",
+    "space": "O(n^2)"
+  }
+}

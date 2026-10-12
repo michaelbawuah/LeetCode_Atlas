@@ -1,0 +1,118 @@
+[
+  {
+    "name": "two index combinations",
+    "args": [
+      [
+        1,
+        2
+      ],
+      [
+        -2,
+        -1
+      ],
+      [
+        -1,
+        2
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "expected": 2
+  },
+  {
+    "name": "all zero singletons",
+    "args": [
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ]
+    ],
+    "expected": 1
+  },
+  {
+    "name": "no combination",
+    "args": [
+      [
+        1
+      ],
+      [
+        1
+      ],
+      [
+        1
+      ],
+      [
+        1
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "duplicate indices count separately",
+    "args": [
+      [
+        1,
+        1
+      ],
+      [
+        -1,
+        -1
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "expected": 16
+  },
+  {
+    "name": "signed singleton combination",
+    "args": [
+      [
+        -2
+      ],
+      [
+        -1
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "expected": 1
+  },
+  {
+    "name": "integer bounds cancel",
+    "args": [
+      [
+        -268435456
+      ],
+      [
+        268435455
+      ],
+      [
+        0
+      ],
+      [
+        1
+      ]
+    ],
+    "expected": 1
+  }
+]
