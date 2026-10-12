@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "verified_on": "2026-10-12",
+  "distinct_problems": 25,
+  "implementations": {
+    "Python": 25,
+    "C++23": 10
+  },
+  "named_python_fixtures": 180,
+  "generated_cpp_python_comparisons": 1500,
+  "python_version": "3.12.14",
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0",
+  "pytest": {
+    "tests": 255,
+    "passed": 255,
+    "failures_or_errors": 0,
+    "skipped": 0
+  },
+  "ctest": {
+    "targets": 1,
+    "passed": 1
+  },
+  "instrumentation": [
+    "AddressSanitizer",
+    "UndefinedBehaviorSanitizer"
+  ],
+  "leak_check": "Disabled locally because LeakSanitizer cannot run under this container ptrace; enabled in Linux Clang CI.",
+  "commands": [
+    "ATLAS_CPP_BIN_DIR=build/bin ASAN_OPTIONS=detect_leaks=0 UBSAN_OPTIONS=halt_on_error=1 python -m pytest",
+    "ASAN_OPTIONS=detect_leaks=0 ctest --test-dir build --output-on-failure",
+    "python -m ruff check .",
+    "python -m ruff format --check .",
+    "python tools/catalog.py --check"
+  ],
+  "official_leetcode_acceptances_recorded": 0
+}
