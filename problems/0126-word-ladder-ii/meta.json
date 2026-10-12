@@ -1,0 +1,26 @@
+{
+  "id": 126,
+  "title": "Word Ladder II",
+  "slug": "word-ladder-ii",
+  "difficulty": "Hard",
+  "patterns": [
+    "graph",
+    "breadth-first-search",
+    "backtracking"
+  ],
+  "method": "findLadders",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "unordered_rows",
+  "complexity_language": "Python",
+  "complexity": {
+    "time": "O(N L^2 + P D) expected",
+    "space": "O(N L + E + D) auxiliary; O(P D) output word references"
+  },
+  "judge_status": "not_recorded"
+}

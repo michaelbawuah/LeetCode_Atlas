@@ -1,0 +1,98 @@
+[
+  {
+    "name": "two shortest chains",
+    "args": [
+      "hit",
+      "cog",
+      [
+        "hot",
+        "dot",
+        "dog",
+        "lot",
+        "log",
+        "cog"
+      ]
+    ],
+    "expected": [
+      [
+        "hit",
+        "hot",
+        "lot",
+        "log",
+        "cog"
+      ],
+      [
+        "hit",
+        "hot",
+        "dot",
+        "dog",
+        "cog"
+      ]
+    ]
+  },
+  {
+    "name": "missing target",
+    "args": [
+      "hit",
+      "cog",
+      [
+        "hot",
+        "dot",
+        "dog"
+      ]
+    ],
+    "expected": []
+  },
+  {
+    "name": "direct transformation",
+    "args": [
+      "ab",
+      "ac",
+      [
+        "ac"
+      ]
+    ],
+    "expected": [
+      [
+        "ab",
+        "ac"
+      ]
+    ]
+  },
+  {
+    "name": "no connecting word",
+    "args": [
+      "aa",
+      "cc",
+      [
+        "cc",
+        "bc"
+      ]
+    ],
+    "expected": []
+  },
+  {
+    "name": "branching diamond",
+    "args": [
+      "aa",
+      "bb",
+      [
+        "ab",
+        "ba",
+        "bb"
+      ]
+    ],
+    "expected": [
+      [
+        "aa",
+        "ab",
+        "bb"
+      ],
+      [
+        "aa",
+        "ba",
+        "bb"
+      ]
+    ]
+  }
+]
