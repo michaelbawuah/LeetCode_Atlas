@@ -19,3 +19,9 @@ Do not return both child gains upward: that would form a branching structure rat
 
 ## Follow-up
 Recover the actual maximum path while maintaining the same distinction between a joining candidate and an upward gain.
+
+## C++23 implementation
+
+C++23 explicit postorder frames propagate one upward gain and discard each completed frame. This gives deterministic O(n) time and O(h) auxiliary space without recursion or a hash map. With at most 30,000 nodes and absolute node values at most 1,000, the path sums fit signed `int`. The adapter verifies the original tree is unchanged.
+
+C++23 submission cost: **O(n) time; O(h) space**. Here n is node count, h is tree height, w is maximum level width, and L is the number of returned path elements when applicable. Adapter construction, snapshots, and serialization are measured separately.
