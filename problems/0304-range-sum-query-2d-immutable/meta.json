@@ -1,0 +1,22 @@
+{
+  "id": 304,
+  "slug": "range-sum-query-2d-immutable",
+  "title": "Range Sum Query 2D - Immutable",
+  "difficulty": "Medium",
+  "patterns": [
+    "prefix-sum",
+    "matrix",
+    "design"
+  ],
+  "method": null,
+  "args_types": [],
+  "kind": "design",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "constructor O(mn); sumRegion O(1)",
+    "space": "O(mn)"
+  },
+  "judge_status": "not_recorded",
+  "class_name": "NumMatrix"
+}
