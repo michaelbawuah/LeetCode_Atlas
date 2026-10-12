@@ -1,0 +1,44 @@
+[
+  {
+    "name": "one_cut",
+    "args": [
+      "aab"
+    ],
+    "expected": 1
+  },
+  {
+    "name": "single",
+    "args": [
+      "a"
+    ],
+    "expected": 0
+  },
+  {
+    "name": "two_distinct",
+    "args": [
+      "ab"
+    ],
+    "expected": 1
+  },
+  {
+    "name": "whole_palindrome",
+    "args": [
+      "abba"
+    ],
+    "expected": 0
+  },
+  {
+    "name": "all_distinct",
+    "args": [
+      "abcde"
+    ],
+    "expected": 4
+  },
+  {
+    "name": "overlapping_centers",
+    "args": [
+      "abacdc"
+    ],
+    "expected": 1
+  }
+]
