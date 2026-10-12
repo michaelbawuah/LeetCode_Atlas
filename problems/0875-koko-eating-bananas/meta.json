@@ -1,0 +1,27 @@
+{
+  "id": 875,
+  "title": "Koko Eating Bananas",
+  "slug": "koko-eating-bananas",
+  "difficulty": "Medium",
+  "patterns": [
+    "binary-search"
+  ],
+  "method": "minEatingSpeed",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "kind": "method",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n log M)",
+    "space": "O(1)"
+  },
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n log(M + 1))",
+    "space": "O(1) auxiliary; O(1) scalar output"
+  }
+}
