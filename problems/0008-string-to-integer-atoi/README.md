@@ -25,3 +25,11 @@ Return both the parsed integer and the first unconsumed character index.
 ## Verification
 
 Named cases and an independent generated-input oracle or operation model accompany the source. Judge results are recorded separately in metadata.
+
+## C++23 counterpart
+
+The unsigned magnitude has a sign-specific 32-bit limit. Compare against (limit-digit)/10 before multiplying; the negative magnitude 2147483648 is converted through int64_t before negation, so INT_MIN is represented without signed overflow. ASCII spaces and digits match Python behavior.
+
+Time: O(n). Space: O(n) including the by-value input copy; O(1) parsing state.
+
+The JSON adapter creates fresh state per case. Named fixtures and 150 deterministic generated inputs compare the two language implementations; existing independent Python oracles supply a separate behavioral reference.

@@ -40,5 +40,40 @@
       "+-12"
     ],
     "expected": 0
+  },
+  {
+    "name": "maximum-exact",
+    "args": [
+      "2147483647"
+    ],
+    "expected": 2147483647
+  },
+  {
+    "name": "minimum-exact",
+    "args": [
+      "-2147483648"
+    ],
+    "expected": -2147483648
+  },
+  {
+    "name": "negative-clamp-one-below",
+    "args": [
+      "-2147483649"
+    ],
+    "expected": -2147483648
+  },
+  {
+    "name": "positive-clamp-one-above",
+    "args": [
+      "2147483648"
+    ],
+    "expected": 2147483647
+  },
+  {
+    "name": "long-zero-prefix-stops-at-sign",
+    "args": [
+      "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000-1"
+    ],
+    "expected": 0
   }
 ]
