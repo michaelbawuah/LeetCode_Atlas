@@ -1,0 +1,28 @@
+{
+  "id": 240,
+  "title": "Search a 2D Matrix II",
+  "slug": "search-a-2d-matrix-ii",
+  "difficulty": "Medium",
+  "patterns": [
+    "matrix",
+    "staircase-search"
+  ],
+  "method": "searchMatrix",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(m + n)",
+    "space": "O(1)"
+  },
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(m + n)",
+    "space": "O(1)"
+  }
+}

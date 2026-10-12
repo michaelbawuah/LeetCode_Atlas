@@ -1,0 +1,180 @@
+[
+  {
+    "name": "interior present",
+    "args": [
+      [
+        [
+          1,
+          4,
+          7,
+          11,
+          15
+        ],
+        [
+          2,
+          5,
+          8,
+          12,
+          19
+        ],
+        [
+          3,
+          6,
+          9,
+          16,
+          22
+        ],
+        [
+          10,
+          13,
+          14,
+          17,
+          24
+        ],
+        [
+          18,
+          21,
+          23,
+          26,
+          30
+        ]
+      ],
+      5
+    ],
+    "expected": true
+  },
+  {
+    "name": "interior absent",
+    "args": [
+      [
+        [
+          1,
+          4,
+          7,
+          11,
+          15
+        ],
+        [
+          2,
+          5,
+          8,
+          12,
+          19
+        ],
+        [
+          3,
+          6,
+          9,
+          16,
+          22
+        ],
+        [
+          10,
+          13,
+          14,
+          17,
+          24
+        ],
+        [
+          18,
+          21,
+          23,
+          26,
+          30
+        ]
+      ],
+      20
+    ],
+    "expected": false
+  },
+  {
+    "name": "singleton present",
+    "args": [
+      [
+        [
+          1
+        ]
+      ],
+      1
+    ],
+    "expected": true
+  },
+  {
+    "name": "singleton absent",
+    "args": [
+      [
+        [
+          1
+        ]
+      ],
+      2
+    ],
+    "expected": false
+  },
+  {
+    "name": "single row below minimum",
+    "args": [
+      [
+        [
+          1,
+          2,
+          3
+        ]
+      ],
+      0
+    ],
+    "expected": false
+  },
+  {
+    "name": "single column present",
+    "args": [
+      [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      2
+    ],
+    "expected": true
+  },
+  {
+    "name": "duplicate values",
+    "args": [
+      [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      1
+    ],
+    "expected": true
+  },
+  {
+    "name": "negative matrix",
+    "args": [
+      [
+        [
+          -5,
+          -3
+        ],
+        [
+          -4,
+          0
+        ]
+      ],
+      -4
+    ],
+    "expected": true
+  }
+]
