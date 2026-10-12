@@ -1,0 +1,28 @@
+{
+  "id": 86,
+  "title": "Partition List",
+  "difficulty": "Medium",
+  "method": "partition",
+  "args_types": [
+    "listnode",
+    "value"
+  ],
+  "return_type": "listnode",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "patterns": [
+    "linked-list",
+    "stable-partition"
+  ],
+  "checker": "exact",
+  "slug": "partition-list",
+  "kind": "method",
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n)",
+    "space": "O(1)"
+  }
+}

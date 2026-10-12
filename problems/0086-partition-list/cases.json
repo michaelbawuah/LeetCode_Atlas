@@ -1,0 +1,94 @@
+[
+  {
+    "name": "mixed",
+    "args": [
+      [
+        1,
+        4,
+        3,
+        2,
+        5,
+        2
+      ],
+      3
+    ],
+    "expected": [
+      1,
+      2,
+      2,
+      4,
+      3,
+      5
+    ]
+  },
+  {
+    "name": "two_nodes",
+    "args": [
+      [
+        2,
+        1
+      ],
+      2
+    ],
+    "expected": [
+      1,
+      2
+    ]
+  },
+  {
+    "name": "empty",
+    "args": [
+      [],
+      0
+    ],
+    "expected": []
+  },
+  {
+    "name": "all_smaller",
+    "args": [
+      [
+        1,
+        2,
+        1
+      ],
+      5
+    ],
+    "expected": [
+      1,
+      2,
+      1
+    ]
+  },
+  {
+    "name": "all_larger",
+    "args": [
+      [
+        3,
+        4
+      ],
+      3
+    ],
+    "expected": [
+      3,
+      4
+    ]
+  },
+  {
+    "name": "negative_values",
+    "args": [
+      [
+        -1,
+        2,
+        -2,
+        0
+      ],
+      0
+    ],
+    "expected": [
+      -1,
+      -2,
+      2,
+      0
+    ]
+  }
+]
