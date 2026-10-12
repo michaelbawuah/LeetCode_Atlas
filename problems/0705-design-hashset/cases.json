@@ -1,0 +1,137 @@
+[
+  {
+    "name": "add-query",
+    "operations": [
+      "MyHashSet",
+      "add",
+      "contains",
+      "contains"
+    ],
+    "arguments": [
+      [],
+      [
+        1
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "expected": [
+      null,
+      null,
+      true,
+      false
+    ]
+  },
+  {
+    "name": "duplicate",
+    "operations": [
+      "MyHashSet",
+      "add",
+      "add",
+      "contains"
+    ],
+    "arguments": [
+      [],
+      [
+        1
+      ],
+      [
+        1
+      ],
+      [
+        1
+      ]
+    ],
+    "expected": [
+      null,
+      null,
+      null,
+      true
+    ]
+  },
+  {
+    "name": "remove",
+    "operations": [
+      "MyHashSet",
+      "add",
+      "remove",
+      "contains"
+    ],
+    "arguments": [
+      [],
+      [
+        1
+      ],
+      [
+        1
+      ],
+      [
+        1
+      ]
+    ],
+    "expected": [
+      null,
+      null,
+      null,
+      false
+    ]
+  },
+  {
+    "name": "remove-absent",
+    "operations": [
+      "MyHashSet",
+      "remove",
+      "contains"
+    ],
+    "arguments": [
+      [],
+      [
+        9
+      ],
+      [
+        9
+      ]
+    ],
+    "expected": [
+      null,
+      null,
+      false
+    ]
+  },
+  {
+    "name": "key-boundaries",
+    "operations": [
+      "MyHashSet",
+      "add",
+      "add",
+      "contains",
+      "contains"
+    ],
+    "arguments": [
+      [],
+      [
+        0
+      ],
+      [
+        1000000
+      ],
+      [
+        0
+      ],
+      [
+        1000000
+      ]
+    ],
+    "expected": [
+      null,
+      null,
+      null,
+      true,
+      true
+    ]
+  }
+]
