@@ -1,0 +1,21 @@
+{
+  "id": 228,
+  "title": "Summary Ranges",
+  "slug": "summary-ranges",
+  "difficulty": "Easy",
+  "patterns": [
+    "two-pointers"
+  ],
+  "method": "summaryRanges",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n) output; O(1) auxiliary"
+  },
+  "judge_status": "not_recorded"
+}
