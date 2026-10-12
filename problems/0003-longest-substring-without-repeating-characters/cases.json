@@ -1,0 +1,58 @@
+[
+  {
+    "name": "repeating-block",
+    "args": [
+      "abcabcbb"
+    ],
+    "expected": 3
+  },
+  {
+    "name": "single-character-repeated",
+    "args": [
+      "bbbbb"
+    ],
+    "expected": 1
+  },
+  {
+    "name": "overlapping-windows",
+    "args": [
+      "pwwkew"
+    ],
+    "expected": 3
+  },
+  {
+    "name": "empty",
+    "args": [
+      ""
+    ],
+    "expected": 0
+  },
+  {
+    "name": "left-boundary-never-moves-back",
+    "args": [
+      "abba"
+    ],
+    "expected": 2
+  },
+  {
+    "name": "all-distinct",
+    "args": [
+      "abcXYZ123"
+    ],
+    "expected": 9
+  },
+  {
+    "name": "spaces-are-characters",
+    "args": [
+      "a b a"
+    ],
+    "expected": 3
+  },
+  {
+    "name": "one-character",
+    "args": [
+      "x"
+    ],
+    "expected": 1
+  }
+]

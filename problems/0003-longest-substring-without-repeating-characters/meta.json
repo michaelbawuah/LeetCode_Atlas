@@ -1,0 +1,22 @@
+{
+  "id": 3,
+  "title": "Longest Substring Without Repeating Characters",
+  "slug": "longest-substring-without-repeating-characters",
+  "difficulty": "Medium",
+  "patterns": [
+    "sliding-window",
+    "hash-map"
+  ],
+  "method": "lengthOfLongestSubstring",
+  "args_types": [
+    "value"
+  ],
+  "kind": "method",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(min(n, a)) where a is the alphabet size"
+  },
+  "judge_status": "not_recorded"
+}
