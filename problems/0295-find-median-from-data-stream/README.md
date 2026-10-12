@@ -23,3 +23,11 @@ If the value range is very small and fixed, replace the heaps with frequency cou
 
 ## Verification
 Named fixtures and an independent generated-input reference accompany this implementation. Official judge results are tracked separately in metadata.
+
+## C++23 counterpart
+
+C++ uses native max/min priority queues. Convert heap boundaries to double before adding them, and return double even for odd-sized streams. Heap vector capacity growth is amortized; all median queries occur after at least one insertion. The exact checker retains numeric types, so integer serialization would fail.
+
+Time: addNum O(log n) amortized; findMedian O(1). Space: O(n).
+
+The JSON adapter creates fresh state per case. Named fixtures and 150 deterministic generated inputs compare the two language implementations; existing independent Python oracles supply a separate behavioral reference.
