@@ -1,0 +1,24 @@
+{
+  "id": 494,
+  "title": "Target Sum",
+  "slug": "target-sum",
+  "difficulty": "Medium",
+  "patterns": [
+    "dynamic-programming",
+    "frequency-counting"
+  ],
+  "method": "findTargetSumWays",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n (S + 1)) expected",
+    "space": "O(S + 1)"
+  },
+  "complexity_language": "Python",
+  "judge_status": "not_recorded"
+}
