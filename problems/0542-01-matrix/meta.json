@@ -1,0 +1,28 @@
+{
+  "id": 542,
+  "title": "01 Matrix",
+  "slug": "01-matrix",
+  "difficulty": "Medium",
+  "patterns": [
+    "graph",
+    "breadth-first-search",
+    "grid"
+  ],
+  "method": "updateMatrix",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity_language": "Python",
+  "complexity": {
+    "time": "O(rows * cols)",
+    "space": "O(rows * cols) auxiliary and output"
+  },
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O(rows * cols)",
+    "space": "O(rows * cols) auxiliary and output"
+  }
+}
