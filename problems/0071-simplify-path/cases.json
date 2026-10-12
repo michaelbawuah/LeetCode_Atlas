@@ -1,0 +1,44 @@
+[
+  {
+    "name": "trailing-slash",
+    "args": [
+      "/home/"
+    ],
+    "expected": "/home"
+  },
+  {
+    "name": "above-root",
+    "args": [
+      "/../"
+    ],
+    "expected": "/"
+  },
+  {
+    "name": "repeated-slash",
+    "args": [
+      "/home//foo/"
+    ],
+    "expected": "/home/foo"
+  },
+  {
+    "name": "dot-and-parent",
+    "args": [
+      "/a/./b/../../c/"
+    ],
+    "expected": "/c"
+  },
+  {
+    "name": "ordinary-dot-names",
+    "args": [
+      "/.../.hidden/"
+    ],
+    "expected": "/.../.hidden"
+  },
+  {
+    "name": "root",
+    "args": [
+      "///"
+    ],
+    "expected": "/"
+  }
+]

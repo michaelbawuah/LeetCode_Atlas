@@ -1,0 +1,27 @@
+{
+  "id": 71,
+  "slug": "simplify-path",
+  "title": "Simplify Path",
+  "difficulty": "Medium",
+  "patterns": [
+    "stack",
+    "string"
+  ],
+  "method": "simplifyPath",
+  "args_types": [
+    "value"
+  ],
+  "kind": "method",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(L)",
+    "space": "O(L)"
+  },
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O(L) amortized",
+    "space": "O(L)"
+  },
+  "complexity_language": "Python"
+}
