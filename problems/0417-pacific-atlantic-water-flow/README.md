@@ -21,3 +21,7 @@ O(rows × cols) time and O(rows × cols) total storage, including reached sets, 
 A strict uphill comparison loses flat terrain: equal-height neighbors may exchange water. A low center enclosed by high cells must also stay excluded even when every boundary cell reaches both oceans. The generated oracle runs a forward downhill search independently from every starting cell. Coordinate order within `[row, col]` matters; ordering between coordinates does not.
 
 **Follow-up:** intersect reachability from three or more boundary regions using a bitmask per cell.
+
+## Python and C++23 comparison
+
+Both implementations search uphill from each ocean border and intersect the reached sets. C++ uses owned boolean matrices and explicit stacks, with no recursive depth risk and no modification of the heights matrix. O(rows × cols) time and auxiliary storage exclude the O(rows × cols) maximum coordinate output and runner input copy. The shared checker ignores ordering between coordinate rows while preserving each `[row, col]` pair.
