@@ -1,0 +1,29 @@
+{
+  "id": 938,
+  "title": "Range Sum of BST",
+  "difficulty": "Easy",
+  "method": "rangeSumBST",
+  "args_types": [
+    "treenode",
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(n) worst case",
+    "space": "O(h)"
+  },
+  "patterns": [
+    "tree",
+    "binary-search-tree"
+  ],
+  "checker": "exact",
+  "slug": "range-sum-of-bst",
+  "kind": "method",
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n) worst case",
+    "space": "O(h)"
+  }
+}

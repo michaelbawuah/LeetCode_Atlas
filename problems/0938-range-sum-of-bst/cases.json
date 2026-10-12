@@ -1,0 +1,89 @@
+[
+  {
+    "name": "usual",
+    "args": [
+      [
+        10,
+        5,
+        15,
+        3,
+        7,
+        null,
+        18
+      ],
+      7,
+      15
+    ],
+    "expected": 32
+  },
+  {
+    "name": "more_nodes",
+    "args": [
+      [
+        10,
+        5,
+        15,
+        3,
+        7,
+        13,
+        18,
+        1,
+        null,
+        6
+      ],
+      6,
+      10
+    ],
+    "expected": 23
+  },
+  {
+    "name": "singleton",
+    "args": [
+      [
+        5
+      ],
+      5,
+      5
+    ],
+    "expected": 5
+  },
+  {
+    "name": "outside",
+    "args": [
+      [
+        5,
+        3,
+        7
+      ],
+      10,
+      20
+    ],
+    "expected": 0
+  },
+  {
+    "name": "inclusive_edges",
+    "args": [
+      [
+        5,
+        3,
+        7
+      ],
+      3,
+      7
+    ],
+    "expected": 15
+  },
+  {
+    "name": "one_key",
+    "args": [
+      [
+        5,
+        3,
+        7
+      ],
+      3,
+      3
+    ],
+    "expected": 3
+  }
+]
