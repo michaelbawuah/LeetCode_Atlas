@@ -1,0 +1,23 @@
+{
+  "id": 90,
+  "title": "Subsets II",
+  "slug": "subsets-ii",
+  "difficulty": "Medium",
+  "patterns": [
+    "backtracking",
+    "power-set"
+  ],
+  "method": "subsetsWithDup",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "unordered_groups",
+  "complexity": {
+    "time": "O(n log n + n 2^n)",
+    "space": "O(n) auxiliary; O(n 2^n) output"
+  },
+  "complexity_language": "Python",
+  "judge_status": "not_recorded"
+}
