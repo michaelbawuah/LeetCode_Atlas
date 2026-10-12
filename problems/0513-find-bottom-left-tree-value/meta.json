@@ -1,0 +1,27 @@
+{
+  "id": 513,
+  "title": "Find Bottom Left Tree Value",
+  "difficulty": "Medium",
+  "method": "findBottomLeftValue",
+  "args_types": [
+    "treenode"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(w)"
+  },
+  "patterns": [
+    "tree",
+    "breadth-first-search"
+  ],
+  "checker": "exact",
+  "slug": "find-bottom-left-tree-value",
+  "kind": "method",
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n)",
+    "space": "O(w)"
+  }
+}
