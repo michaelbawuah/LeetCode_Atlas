@@ -1,0 +1,49 @@
+[
+  {
+    "name": "blank cell",
+    "args": [
+      [
+        " "
+      ]
+    ],
+    "expected": 1
+  },
+  {
+    "name": "one slash",
+    "args": [
+      [
+        "/"
+      ]
+    ],
+    "expected": 2
+  },
+  {
+    "name": "one backslash",
+    "args": [
+      [
+        "\\"
+      ]
+    ],
+    "expected": 2
+  },
+  {
+    "name": "two regions",
+    "args": [
+      [
+        " /",
+        "/ "
+      ]
+    ],
+    "expected": 2
+  },
+  {
+    "name": "closed intersections",
+    "args": [
+      [
+        "/\\",
+        "\\/"
+      ]
+    ],
+    "expected": 5
+  }
+]
