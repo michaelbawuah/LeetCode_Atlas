@@ -1,0 +1,78 @@
+[
+  {
+    "name": "limit first run",
+    "args": [
+      [
+        1,
+        1,
+        1,
+        2,
+        2,
+        3
+      ]
+    ],
+    "expected": 5
+  },
+  {
+    "name": "long middle run",
+    "args": [
+      [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        2,
+        3,
+        3
+      ]
+    ],
+    "expected": 7
+  },
+  {
+    "name": "singleton",
+    "args": [
+      [
+        1
+      ]
+    ],
+    "expected": 1
+  },
+  {
+    "name": "exactly two copies",
+    "args": [
+      [
+        2,
+        2
+      ]
+    ],
+    "expected": 2
+  },
+  {
+    "name": "all equal",
+    "args": [
+      [
+        2,
+        2,
+        2,
+        2
+      ]
+    ],
+    "expected": 2
+  },
+  {
+    "name": "negative runs",
+    "args": [
+      [
+        -2,
+        -2,
+        -2,
+        -1,
+        -1,
+        0
+      ]
+    ],
+    "expected": 5
+  }
+]
