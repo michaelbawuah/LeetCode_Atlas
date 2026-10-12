@@ -1,0 +1,23 @@
+{
+  "id": 108,
+  "title": "Convert Sorted Array to Binary Search Tree",
+  "difficulty": "Easy",
+  "method": "sortedArrayToBST",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "treenode",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(log(n + 1)) auxiliary; O(n) output"
+  },
+  "patterns": [
+    "tree",
+    "binary-search-tree",
+    "divide-and-conquer"
+  ],
+  "checker": "balanced_bst",
+  "slug": "convert-sorted-array-to-binary-search-tree",
+  "kind": "method",
+  "judge_status": "not_recorded"
+}
