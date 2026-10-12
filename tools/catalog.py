@@ -261,7 +261,7 @@ def render(entries: list[dict]) -> dict[str, str]:
         "implementations": dict(counts),
         "fixed_cases": sum(e["fixed_cases"] for e in entries),
         "official_acceptances_recorded": accepted,
-        "targets": {"distinct_problems": 300, "Python": 300, "C++23": 150},
+        "targets": {"distinct_problems": 300, "Python": 300, "C++23": 225},
         "problems": entries,
     }
     lines = [

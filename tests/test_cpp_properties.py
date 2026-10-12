@@ -172,12 +172,91 @@ NEW_FOLDERS = [
     "1971-find-if-path-exists-in-graph",
 ]
 
-FOLDERS = sorted(LEGACY_FOLDERS + NEW_FOLDERS)
+ADDED_FOLDERS = [
+    "0004-median-of-two-sorted-arrays",
+    "0005-longest-palindromic-substring",
+    "0006-zigzag-conversion",
+    "0008-string-to-integer-atoi",
+    "0010-regular-expression-matching",
+    "0016-3sum-closest",
+    "0017-letter-combinations-of-a-phone-number",
+    "0018-4sum",
+    "0025-reverse-nodes-in-k-group",
+    "0036-valid-sudoku",
+    "0038-count-and-say",
+    "0040-combination-sum-ii",
+    "0044-wildcard-matching",
+    "0047-permutations-ii",
+    "0048-rotate-image",
+    "0050-powx-n",
+    "0054-spiral-matrix",
+    "0073-set-matrix-zeroes",
+    "0090-subsets-ii",
+    "0091-decode-ways",
+    "0092-reverse-linked-list-ii",
+    "0097-interleaving-string",
+    "0102-binary-tree-level-order-traversal",
+    "0108-convert-sorted-array-to-binary-search-tree",
+    "0110-balanced-binary-tree",
+    "0113-path-sum-ii",
+    "0114-flatten-binary-tree-to-linked-list",
+    "0115-distinct-subsequences",
+    "0123-best-time-to-buy-and-sell-stock-iii",
+    "0124-binary-tree-maximum-path-sum",
+    "0127-word-ladder",
+    "0129-sum-root-to-leaf-numbers",
+    "0130-surrounded-regions",
+    "0131-palindrome-partitioning",
+    "0132-palindrome-partitioning-ii",
+    "0141-linked-list-cycle",
+    "0143-reorder-list",
+    "0153-find-minimum-in-rotated-sorted-array",
+    "0162-find-peak-element",
+    "0167-two-sum-ii-input-array-is-sorted",
+    "0188-best-time-to-buy-and-sell-stock-iv",
+    "0189-rotate-array",
+    "0200-number-of-islands",
+    "0209-minimum-size-subarray-sum",
+    "0210-course-schedule-ii",
+    "0211-design-add-and-search-words-data-structure",
+    "0225-implement-stack-using-queues",
+    "0232-implement-queue-using-stacks",
+    "0234-palindrome-linked-list",
+    "0235-lowest-common-ancestor-of-a-binary-search-tree",
+    "0236-lowest-common-ancestor-of-a-binary-tree",
+    "0295-find-median-from-data-stream",
+    "0304-range-sum-query-2d-immutable",
+    "0312-burst-balloons",
+    "0329-longest-increasing-path-in-a-matrix",
+    "0337-house-robber-iii",
+    "0377-combination-sum-iv",
+    "0399-evaluate-division",
+    "0417-pacific-atlantic-water-flow",
+    "0424-longest-repeating-character-replacement",
+    "0494-target-sum",
+    "0567-permutation-in-string",
+    "0641-design-circular-deque",
+    "0673-number-of-longest-increasing-subsequence",
+    "0729-my-calendar-i",
+    "0785-is-graph-bipartite",
+    "0787-cheapest-flights-within-k-stops",
+    "0881-boats-to-save-people",
+    "0934-shortest-bridge",
+    "1143-longest-common-subsequence",
+    "1162-as-far-from-land-as-possible",
+    "1192-critical-connections-in-a-network",
+    "1254-number-of-closed-islands",
+    "1462-course-schedule-iv",
+    "2050-parallel-courses-iii",
+]
+
+PER_PROBLEM_FOLDERS = NEW_FOLDERS + ADDED_FOLDERS
+FOLDERS = sorted(LEGACY_FOLDERS + PER_PROBLEM_FOLDERS)
 
 
 def validate_counterpart_coverage(discovered):
     registered = set(FOLDERS)
-    if len(FOLDERS) != 150 or len(registered) != 150 or discovered != registered:
+    if len(FOLDERS) != 225 or len(registered) != 225 or discovered != registered:
         raise ValueError(
             f"C++ strategy coverage mismatch: missing={sorted(registered - discovered)}, "
             f"unexpected={sorted(discovered - registered)}"
@@ -255,7 +334,7 @@ def test_every_cpp_counterpart_has_a_generated_case_strategy():
     discovered = {folder.name for folder in problem_dirs() if (folder / "solution.cpp").is_file()}
     validate_counterpart_coverage(discovered)
     root = Path(__file__).resolve().parents[1]
-    for folder in NEW_FOLDERS:
+    for folder in PER_PROBLEM_FOLDERS:
         generator = load_parity_generator(root / "problems" / folder / "parity.py")
         meta = metadata(folder)
         seed = 20261012 + int(folder.split("-", 1)[0])
@@ -321,7 +400,7 @@ def _gas_starts(gas, cost):
 
 
 def generated_args(folder, rng):
-    if folder in NEW_FOLDERS:
+    if folder in PER_PROBLEM_FOLDERS:
         path = Path(__file__).resolve().parents[1] / "problems" / folder / "parity.py"
         return validate_generated_payload(metadata(folder), load_parity_generator(path)(rng))
     if folder == "0001-two-sum":
@@ -696,7 +775,7 @@ def generated_args(folder, rng):
 )
 @pytest.mark.parametrize("folder", FOLDERS)
 def test_generated_cpp_python_parity(folder):
-    """150 cases per counterpart: 22,500 comparisons across the two language tracks."""
+    """150 cases per counterpart: 33,750 comparisons across the two language tracks."""
     rng = random.Random(20261012 + int(folder.split("-", 1)[0]))
     meta = metadata(folder)
     cases = [validate_generated_payload(meta, generated_args(folder, rng)) for _ in range(150)]
@@ -735,3 +814,93 @@ def test_generated_cpp_python_parity(folder):
                 actual,
                 expected,
             )
+
+
+def _run_cpp_stress_case(folder, args):
+    binary_dir = Path(os.environ["ATLAS_CPP_BIN_DIR"]).resolve()
+    suffix = ".exe" if os.name == "nt" else ""
+    binary = binary_dir / f"atlas_{folder.replace('-', '_')}{suffix}"
+    result = subprocess.run(
+        [str(binary)],
+        input=json.dumps(args) + "\n",
+        capture_output=True,
+        text=True,
+        timeout=30,
+        check=False,
+    )
+    assert result.returncode == 0, result.stderr
+    lines = result.stdout.splitlines()
+    assert len(lines) == 1, f"{folder}: stress input must produce exactly one result"
+    return json.loads(lines[0])
+
+
+@pytest.mark.skipif(
+    not os.environ.get("ATLAS_CPP_BIN_DIR"), reason="C++ runners enabled by ATLAS_CPP_BIN_DIR"
+)
+def test_cpp_bridges_support_a_hundred_thousand_node_chain():
+    """The official maximum-depth shape needs an iterative traversal, not call-stack DFS."""
+    size = 100_000
+    edges = [[node - 1, node] for node in range(1, size)]
+    actual = _run_cpp_stress_case("1192-critical-connections-in-a-network", [size, edges])
+    assert isinstance(actual, list) and len(actual) == size - 1
+    shape_valid = all(
+        isinstance(edge, list) and len(edge) == 2 and all(type(node) is int for node in edge)
+        for edge in actual
+    )
+    assert shape_valid, "Every chain bridge must contain two integer node labels"
+    matches = {tuple(sorted(edge)) for edge in actual} == {tuple(edge) for edge in edges}
+    assert matches, "Every input edge must be reported exactly once as a bridge"
+
+
+@pytest.mark.skipif(
+    not os.environ.get("ATLAS_CPP_BIN_DIR"), reason="C++ runners enabled by ATLAS_CPP_BIN_DIR"
+)
+def test_cpp_increasing_path_handles_a_full_size_serpentine_matrix():
+    side = 200
+    matrix = [
+        [row * side + (column if row % 2 == 0 else side - 1 - column) for column in range(side)]
+        for row in range(side)
+    ]
+    assert _run_cpp_stress_case("0329-longest-increasing-path-in-a-matrix", [matrix]) == side**2
+
+
+@pytest.mark.skipif(
+    not os.environ.get("ATLAS_CPP_BIN_DIR"), reason="C++ runners enabled by ATLAS_CPP_BIN_DIR"
+)
+def test_cpp_parallel_courses_accumulates_the_largest_valid_chain_duration():
+    size = 50_000
+    prerequisites = [[course - 1, course] for course in range(2, size + 1)]
+    actual = _run_cpp_stress_case(
+        "2050-parallel-courses-iii", [size, prerequisites, [10_000] * size]
+    )
+    assert type(actual) is int and actual == 500_000_000
+
+
+@pytest.mark.skipif(
+    not os.environ.get("ATLAS_CPP_BIN_DIR"), reason="C++ runners enabled by ATLAS_CPP_BIN_DIR"
+)
+@pytest.mark.parametrize(
+    "folder",
+    [
+        "0235-lowest-common-ancestor-of-a-binary-search-tree",
+        "0236-lowest-common-ancestor-of-a-binary-tree",
+    ],
+)
+def test_cpp_ancestor_references_preserve_identities_on_a_hundred_thousand_node_tree(folder):
+    size = 100_000
+    tree = [0]
+    for value in range(1, size):
+        tree.extend([None, value])
+    actual = _run_cpp_stress_case(folder, [tree, size // 2, size - 1])
+    assert type(actual) is int and actual == size // 2
+    # Each runner also checks that the result is an original node and all labels/links survive.
+
+
+@pytest.mark.skipif(
+    not os.environ.get("ATLAS_CPP_BIN_DIR"), reason="C++ runners enabled by ATLAS_CPP_BIN_DIR"
+)
+def test_cpp_palindrome_restores_a_hundred_thousand_borrowed_list_nodes():
+    half = [index % 10 for index in range(50_000)]
+    actual = _run_cpp_stress_case("0234-palindrome-linked-list", [half + half[::-1]])
+    assert actual is True
+    # The runner validates every original node identity, label and next link after the call.

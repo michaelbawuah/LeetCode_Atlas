@@ -184,3 +184,116 @@ TEST_CASE("Fresh list ownership safely destroys cyclic results after serializati
     REQUIRE_THROWS_AS(list_to_json(owned.get()), std::invalid_argument);
     // Sanitizer builds verify every newly allocated node is deleted exactly once.
 }
+
+TEST_CASE("Cyclic-list fixtures preserve target identities and arena ownership") {
+    ListArena arena;
+    ListNode* borrowed = arena.build(json::array({7, 8}));
+    REQUIRE(arena.build_cycle(json{{"values", json::array()}, {"pos", -1}}) == nullptr);
+    ListNode* linear = arena.build_cycle(json{{"values", {1, 2, 3}}, {"pos", -1}});
+    REQUIRE(list_to_json(linear) == json::array({1, 2, 3}));
+    ListNode* cyclic = arena.build_cycle(json{{"values", {4, 5, 6}}, {"pos", 1}});
+    REQUIRE(cyclic->next->next->next == cyclic->next);
+    REQUIRE_THROWS_AS(list_to_json(cyclic), std::invalid_argument);
+    ListNode* self = arena.build_cycle(json{{"values", {9}}, {"pos", 0}});
+    REQUIRE(self->next == self);
+    REQUIRE(list_to_json(borrowed) == json::array({7, 8}));
+    REQUIRE(list_to_json(linear) == json::array({1, 2, 3}));
+    // ASan verifies arena destruction frees every cyclic node once without following links.
+}
+
+TEST_CASE("Invalid cyclic-list fixtures cannot damage previously built inputs") {
+    ListArena arena;
+    ListNode* original = arena.build(json::array({1, 2}));
+    for (const json& payload : {
+             json::array(), json::object(), json{{"values", {1}}},
+             json{{"values", {1}}, {"pos", -1}, {"extra", 0}},
+             json{{"values", nullptr}, {"pos", -1}}, json{{"values", {true}}, {"pos", -1}},
+             json{{"values", {1.0}}, {"pos", -1}}, json{{"values", {1}}, {"pos", true}},
+             json{{"values", {1}}, {"pos", 0.0}}, json{{"values", {1}}, {"pos", "0"}},
+             json{{"values", {1}}, {"pos", -2}}, json{{"values", {1}}, {"pos", 1}},
+             json{{"values", json::array()}, {"pos", 0}},
+             json{{"values", {1}}, {"pos", std::numeric_limits<std::uint64_t>::max()}}}) {
+        REQUIRE_THROWS_AS(arena.build_cycle(payload), std::invalid_argument);
+        REQUIRE(list_to_json(original) == json::array({1, 2}));
+    }
+    const auto above_max = static_cast<std::int64_t>(std::numeric_limits<int>::max()) + 1;
+    REQUIRE_THROWS_AS(arena.build_cycle(json{{"values", {above_max}}, {"pos", -1}}), std::out_of_range);
+    REQUIRE(list_to_json(original) == json::array({1, 2}));
+    REQUIRE(arena.build_cycle(json{{"values", {3}}, {"pos", 0}})->next->val == 3);
+}
+
+TEST_CASE("Tree references resolve and serialize original borrowed identities") {
+    TreeArena arena;
+    TreeNode* root = arena.build(json::array({6, 2, 8, 0, 4, 7, 9, nullptr, nullptr, 3, 5}));
+    {
+        TreeReferences references(root);
+        REQUIRE(references.resolve(2) == root->left);
+        REQUIRE(references.resolve(5) == root->left->right->right);
+        REQUIRE(references.serialize(root->left) == 2);
+        REQUIRE(references.serialize(nullptr).is_null());
+        REQUIRE_THROWS_AS(references.resolve(10), std::invalid_argument);
+        TreeNode counterfeit(6);
+        REQUIRE_THROWS_AS(references.serialize(&counterfeit), std::invalid_argument);
+    }
+    REQUIRE(tree_to_json(root) == json::array({6, 2, 8, 0, 4, 7, 9, nullptr, nullptr, 3, 5}));
+    TreeReferences empty(nullptr);
+    REQUIRE(empty.serialize(nullptr).is_null());
+    REQUIRE_THROWS_AS(empty.resolve(0), std::invalid_argument);
+    TreeNode* duplicates = arena.build(json::array({1, 2, 2}));
+    TreeReferences ambiguous(duplicates);
+    REQUIRE_THROWS_AS(ambiguous.resolve(2), std::invalid_argument);
+    REQUIRE(ambiguous.resolve(1) == duplicates);
+}
+
+TEST_CASE("Tree references reject input label or link rewrites anywhere in the tree") {
+    TreeArena arena;
+    TreeNode* root = arena.build(json::array({2, 1, 3}));
+    TreeReferences references(root);
+    root->left->val = 2;
+    REQUIRE_THROWS_AS(references.serialize(root->left), std::invalid_argument);
+    REQUIRE_THROWS_AS(references.serialize(root), std::invalid_argument);
+    REQUIRE_THROWS_AS(references.resolve(2), std::invalid_argument);
+    root->left->val = 1;
+    TreeNode* right = root->right;
+    root->right = root->left;
+    REQUIRE_THROWS_AS(references.serialize(root), std::invalid_argument);
+    REQUIRE_THROWS_AS(references.serialize(nullptr), std::invalid_argument);
+    root->right = right;
+    right->left = root;
+    REQUIRE_THROWS_AS(references.serialize(root->left), std::invalid_argument);
+    right->left = nullptr;
+    REQUIRE(references.serialize(root) == 2);
+    REQUIRE(tree_to_json(root) == json::array({2, 1, 3}));
+}
+
+TEST_CASE("Tree references reject cycles and shared input children on construction") {
+    TreeArena arena;
+    TreeNode* root = arena.build(json::array({1, 2, 3}));
+    root->left->left = root;
+    REQUIRE_THROWS_AS(TreeReferences(root), std::invalid_argument);
+    root->left->left = nullptr;
+    TreeNode* right = root->right;
+    root->right = root->left;
+    REQUIRE_THROWS_AS(TreeReferences(root), std::invalid_argument);
+    root->right = right;
+    REQUIRE(TreeReferences(root).serialize(right) == 3);
+}
+
+TEST_CASE("Reference snapshots and borrowed tree cleanup support deep trees iteratively") {
+    constexpr int depth = 30000;
+    json values = json::array({0});
+    for (int value = 1; value < depth; ++value) {
+        values.push_back(value);
+        values.push_back(nullptr);
+    }
+    TreeArena arena;
+    TreeNode* root = arena.build(values);
+    TreeNode* last = root;
+    for (int level = 1; level < depth; ++level) {
+        last = last->left;
+    }
+    TreeReferences references(root);
+    REQUIRE(references.resolve(depth - 1) == last);
+    REQUIRE(references.serialize(last) == depth - 1);
+    REQUIRE(tree_to_json(root).size() == static_cast<std::size_t>(2 * depth - 2));
+}

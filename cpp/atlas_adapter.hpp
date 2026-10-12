@@ -8,6 +8,7 @@
 #include <queue>
 #include <stdexcept>
 #include <string>
+#include <unordered_map>
 #include <unordered_set>
 #include <utility>
 #include <vector>
@@ -44,6 +45,48 @@ public:
         for (auto& node : new_nodes) {
             nodes_.push_back(std::move(node));
         }
+        return head;
+    }
+
+    ListNode* build_cycle(const json& payload) {
+        if (!payload.is_object() || payload.size() != 2 || !payload.contains("values") ||
+            !payload.contains("pos")) {
+            throw std::invalid_argument("a cyclic list requires values and pos only");
+        }
+        const json& values = payload.at("values");
+        const json& position = payload.at("pos");
+        if (!values.is_array() || !position.is_number_integer()) {
+            throw std::invalid_argument("cyclic-list values must be an array and pos an integer");
+        }
+        std::optional<std::size_t> cycle_index;
+        if (position.is_number_unsigned()) {
+            const auto index = position.get<std::uint64_t>();
+            if (index >= values.size()) {
+                throw std::invalid_argument("cyclic-list pos must be -1 or a valid node index");
+            }
+            cycle_index = static_cast<std::size_t>(index);
+        } else {
+            const auto index = position.get<std::int64_t>();
+            if (index < -1 || (index >= 0 && static_cast<std::uint64_t>(index) >= values.size())) {
+                throw std::invalid_argument("cyclic-list pos must be -1 or a valid node index");
+            }
+            if (index >= 0) {
+                cycle_index = static_cast<std::size_t>(index);
+            }
+        }
+        ListNode* head = build(values);
+        if (cycle_index.has_value()) {
+            ListNode* target = head;
+            ListNode* last = head;
+            for (std::size_t index = 0; index < *cycle_index; ++index) {
+                target = target->next;
+            }
+            while (last->next != nullptr) {
+                last = last->next;
+            }
+            last->next = target;
+        }
+        // Arena ownership is independent of next links, including cycles and self-links.
         return head;
     }
 
@@ -233,6 +276,69 @@ private:
     }
 
     std::vector<std::unique_ptr<TreeNode>> nodes_;
+};
+
+// Snapshot borrowed input identities for APIs that return an existing tree node.
+class TreeReferences {
+public:
+    explicit TreeReferences(TreeNode* root) {
+        std::vector<TreeNode*> pending;
+        if (root != nullptr) {
+            pending.push_back(root);
+        }
+        while (!pending.empty()) {
+            TreeNode* node = pending.back();
+            pending.pop_back();
+            if (node == nullptr) {
+                continue;
+            }
+            if (!original_.emplace(node, Snapshot{node->val, node->left, node->right}).second) {
+                throw std::invalid_argument("tree references require an acyclic tree without shared children");
+            }
+            by_value_[node->val].push_back(node);
+            pending.push_back(node->right);
+            pending.push_back(node->left);
+        }
+    }
+
+    TreeNode* resolve(int value) const {
+        verify_unchanged();
+        const auto found = by_value_.find(value);
+        if (found == by_value_.end() || found->second.size() != 1) {
+            throw std::invalid_argument("a tree reference must identify exactly one original node");
+        }
+        return found->second.front();
+    }
+
+    json serialize(TreeNode* node) const {
+        verify_unchanged();
+        if (node == nullptr) {
+            return nullptr;
+        }
+        const auto found = original_.find(node);
+        if (found == original_.end()) {
+            throw std::invalid_argument("a tree-reference result must belong to the original tree");
+        }
+        return found->second.value;
+    }
+
+private:
+    struct Snapshot {
+        int value;
+        TreeNode* left;
+        TreeNode* right;
+    };
+
+    void verify_unchanged() const {
+        for (const auto& [node, snapshot] : original_) {
+            if (node->val != snapshot.value || node->left != snapshot.left || node->right != snapshot.right) {
+                throw std::invalid_argument("tree-reference input labels and links must remain unchanged");
+            }
+        }
+    }
+
+    std::unordered_map<TreeNode*, Snapshot> original_;
+    std::unordered_map<int, std::vector<TreeNode*>> by_value_;
 };
 
 inline json tree_to_json(const TreeNode* root) {

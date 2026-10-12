@@ -201,6 +201,9 @@ def _load_file(name, path):
 def test_parity_registration_detects_missing_and_unexpected_counterparts():
     parity = _load_file("atlas_parity_tests300", ROOT / "tests/test_cpp_properties.py")
     assert len(parity.LEGACY_FOLDERS) == len(parity.NEW_FOLDERS) == 75
+    assert len(parity.ADDED_FOLDERS) == 75
+    assert len(parity.PER_PROBLEM_FOLDERS) == 150
+    assert len(parity.FOLDERS) == 225
     parity.validate_counterpart_coverage(set(parity.FOLDERS))
     incomplete = set(parity.FOLDERS) - {parity.FOLDERS[0]}
     with pytest.raises(ValueError, match="missing"):
