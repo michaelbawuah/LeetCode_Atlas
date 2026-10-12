@@ -1,0 +1,91 @@
+[
+  {
+    "name": "mixed",
+    "args": [
+      [
+        3,
+        9,
+        20,
+        null,
+        null,
+        15,
+        7
+      ]
+    ],
+    "expected": [
+      3.0,
+      14.5,
+      11.0
+    ]
+  },
+  {
+    "name": "singleton",
+    "args": [
+      [
+        5
+      ]
+    ],
+    "expected": [
+      5.0
+    ]
+  },
+  {
+    "name": "negative",
+    "args": [
+      [
+        0,
+        -3,
+        1
+      ]
+    ],
+    "expected": [
+      0.0,
+      -1.0
+    ]
+  },
+  {
+    "name": "fraction",
+    "args": [
+      [
+        1,
+        1,
+        2
+      ]
+    ],
+    "expected": [
+      1.0,
+      1.5
+    ]
+  },
+  {
+    "name": "chain",
+    "args": [
+      [
+        1,
+        null,
+        2,
+        null,
+        3
+      ]
+    ],
+    "expected": [
+      1.0,
+      2.0,
+      3.0
+    ]
+  },
+  {
+    "name": "integer_limits",
+    "args": [
+      [
+        2147483647,
+        -2147483648,
+        2147483647
+      ]
+    ],
+    "expected": [
+      2147483647.0,
+      -0.5
+    ]
+  }
+]

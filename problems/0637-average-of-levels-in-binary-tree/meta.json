@@ -1,0 +1,26 @@
+{
+  "id": 637,
+  "title": "Average of Levels in Binary Tree",
+  "difficulty": "Easy",
+  "method": "averageOfLevels",
+  "args_types": [
+    "treenode"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(w) auxiliary; O(h) output"
+  },
+  "patterns": [
+    "tree",
+    "breadth-first-search"
+  ],
+  "checker": "approx_list",
+  "slug": "average-of-levels-in-binary-tree",
+  "kind": "method",
+  "judge_status": "not_recorded",
+  "numeric_tolerance": {
+    "relative": 0.0,
+    "absolute": 1e-05
+  }
+}
