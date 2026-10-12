@@ -1,0 +1,28 @@
+{
+  "id": 344,
+  "slug": "reverse-string",
+  "title": "Reverse String",
+  "difficulty": "Easy",
+  "patterns": [
+    "two-pointers",
+    "in-place"
+  ],
+  "method": "reverseString",
+  "args_types": [
+    "value"
+  ],
+  "kind": "method",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "judge_status": "not_recorded",
+  "result_from_arg": 0,
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n)",
+    "space": "O(1)"
+  }
+}

@@ -1,0 +1,79 @@
+[
+  {
+    "name": "ordinary",
+    "args": [
+      [
+        "h",
+        "e",
+        "l",
+        "l",
+        "o"
+      ]
+    ],
+    "expected": [
+      "o",
+      "l",
+      "l",
+      "e",
+      "h"
+    ]
+  },
+  {
+    "name": "even",
+    "args": [
+      [
+        "a",
+        "b",
+        "c",
+        "d"
+      ]
+    ],
+    "expected": [
+      "d",
+      "c",
+      "b",
+      "a"
+    ]
+  },
+  {
+    "name": "singleton",
+    "args": [
+      [
+        "a"
+      ]
+    ],
+    "expected": [
+      "a"
+    ]
+  },
+  {
+    "name": "repeated",
+    "args": [
+      [
+        "a",
+        "a",
+        "a"
+      ]
+    ],
+    "expected": [
+      "a",
+      "a",
+      "a"
+    ]
+  },
+  {
+    "name": "punctuation",
+    "args": [
+      [
+        "a",
+        "!",
+        "?"
+      ]
+    ],
+    "expected": [
+      "?",
+      "!",
+      "a"
+    ]
+  }
+]
