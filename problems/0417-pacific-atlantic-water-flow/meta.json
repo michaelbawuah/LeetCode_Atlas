@@ -1,0 +1,23 @@
+{
+  "id": 417,
+  "title": "Pacific Atlantic Water Flow",
+  "slug": "pacific-atlantic-water-flow",
+  "difficulty": "Medium",
+  "patterns": [
+    "graph",
+    "depth-first-search",
+    "grid"
+  ],
+  "method": "pacificAtlantic",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "unordered_rows",
+  "complexity": {
+    "time": "O(rows * cols)",
+    "space": "O(rows * cols)"
+  },
+  "judge_status": "not_recorded"
+}
