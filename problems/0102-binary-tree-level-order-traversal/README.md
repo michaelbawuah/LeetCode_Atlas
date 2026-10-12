@@ -19,3 +19,9 @@ Do not keep processing until the queue empties inside a level: newly enqueued ch
 
 ## Follow-up
 Adapt the traversal to zigzag output without changing the actual child-enqueue order.
+
+## C++23 implementation
+
+C++23 freezes the queue size at each level and enqueues left before right. Its adapter verifies every original node value and child link remain unchanged.
+
+C++23 submission cost: **O(n) time; O(w) auxiliary; O(n) output space**. Here n is node count, h is tree height, w is maximum level width, and L is the number of returned path elements when applicable. Adapter construction, snapshots, and serialization are measured separately.
