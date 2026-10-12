@@ -1,0 +1,24 @@
+{
+  "id": 212,
+  "slug": "word-search-ii",
+  "title": "Word Search II",
+  "difficulty": "Hard",
+  "patterns": [
+    "trie",
+    "backtracking",
+    "grid"
+  ],
+  "method": "findWords",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "kind": "method",
+  "return_type": "value",
+  "checker": "unordered",
+  "complexity": {
+    "time": "O(T + mn * 4^L)",
+    "space": "O(T + L + K)"
+  },
+  "judge_status": "not_recorded"
+}

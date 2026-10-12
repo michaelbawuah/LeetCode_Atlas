@@ -1,0 +1,133 @@
+[
+  {
+    "name": "dictionary-example",
+    "args": [
+      [
+        [
+          "o",
+          "a",
+          "a",
+          "n"
+        ],
+        [
+          "e",
+          "t",
+          "a",
+          "e"
+        ],
+        [
+          "i",
+          "h",
+          "k",
+          "r"
+        ],
+        [
+          "i",
+          "f",
+          "l",
+          "v"
+        ]
+      ],
+      [
+        "oath",
+        "pea",
+        "eat",
+        "rain"
+      ]
+    ],
+    "expected": [
+      "oath",
+      "eat"
+    ]
+  },
+  {
+    "name": "one-cell",
+    "args": [
+      [
+        [
+          "a"
+        ]
+      ],
+      [
+        "a",
+        "b"
+      ]
+    ],
+    "expected": [
+      "a"
+    ]
+  },
+  {
+    "name": "one-word-many-paths",
+    "args": [
+      [
+        [
+          "a",
+          "a"
+        ]
+      ],
+      [
+        "a"
+      ]
+    ],
+    "expected": [
+      "a"
+    ]
+  },
+  {
+    "name": "prefix-word",
+    "args": [
+      [
+        [
+          "a",
+          "b"
+        ]
+      ],
+      [
+        "a",
+        "ab"
+      ]
+    ],
+    "expected": [
+      "a",
+      "ab"
+    ]
+  },
+  {
+    "name": "cell-reuse-forbidden",
+    "args": [
+      [
+        [
+          "a",
+          "b"
+        ]
+      ],
+      [
+        "aba"
+      ]
+    ],
+    "expected": []
+  },
+  {
+    "name": "no-diagonal",
+    "args": [
+      [
+        [
+          "a",
+          "b"
+        ],
+        [
+          "c",
+          "d"
+        ]
+      ],
+      [
+        "ad",
+        "ab"
+      ]
+    ],
+    "expected": [
+      "ab"
+    ]
+  }
+]
