@@ -1,0 +1,24 @@
+{
+  "id": 230,
+  "title": "Kth Smallest Element in a BST",
+  "difficulty": "Medium",
+  "patterns": [
+    "tree",
+    "depth-first-search",
+    "binary-search-tree"
+  ],
+  "method": "kthSmallest",
+  "args_types": [
+    "treenode",
+    "value"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(h + k)",
+    "space": "O(h)"
+  },
+  "slug": "kth-smallest-element-in-a-bst",
+  "kind": "method",
+  "checker": "exact",
+  "judge_status": "not_recorded"
+}
