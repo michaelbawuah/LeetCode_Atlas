@@ -1,0 +1,28 @@
+{
+  "id": 310,
+  "title": "Minimum Height Trees",
+  "slug": "minimum-height-trees",
+  "difficulty": "Medium",
+  "patterns": [
+    "graph",
+    "topological-sort"
+  ],
+  "method": "findMinHeightTrees",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "unordered",
+  "complexity_language": "Python",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n) auxiliary; O(1) roots output"
+  },
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O(n)",
+    "space": "O(n) auxiliary; O(1) roots output"
+  }
+}
