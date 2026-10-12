@@ -23,3 +23,7 @@ Allow different replacement costs for different letters. Does the same frequency
 
 ## Verification
 Named local cases and an independent generated-input oracle accompany this solution. No official judge result is recorded.
+
+## C++23 counterpart
+
+C++ recomputes the exact maximum of its 26 counts after each boundary movement, matching the proof above. The uppercase A–Z contract makes character-to-array indexing valid. Boundary work is O(n) for this fixed alphabet and the count state is O(1). The standard by-value string interface may copy O(n) input storage; this is excluded from the auxiliary algorithm bound.
