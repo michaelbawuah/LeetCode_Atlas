@@ -1,0 +1,23 @@
+{
+  "id": 1035,
+  "title": "Uncrossed Lines",
+  "slug": "uncrossed-lines",
+  "difficulty": "Medium",
+  "patterns": [
+    "dynamic-programming"
+  ],
+  "method": "maxUncrossedLines",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(m n)",
+    "space": "O(min(m, n))"
+  },
+  "complexity_language": "Python",
+  "judge_status": "not_recorded"
+}
