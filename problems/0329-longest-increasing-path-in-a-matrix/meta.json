@@ -1,0 +1,24 @@
+{
+  "id": 329,
+  "title": "Longest Increasing Path in a Matrix",
+  "slug": "longest-increasing-path-in-a-matrix",
+  "difficulty": "Hard",
+  "patterns": [
+    "graph",
+    "topological-sort",
+    "grid"
+  ],
+  "method": "longestIncreasingPath",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity_language": "Python",
+  "complexity": {
+    "time": "O(rows * cols)",
+    "space": "O(rows * cols)"
+  },
+  "judge_status": "not_recorded"
+}
