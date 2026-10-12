@@ -17,5 +17,10 @@
     "space": "O(T) stored; O(min(N, 26^w)) search frontier"
   },
   "judge_status": "not_recorded",
-  "class_name": "WordDictionary"
+  "class_name": "WordDictionary",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "addWord O(L); search O(L + min(N, L * 26^w)) including query copy",
+    "space": "O(T) stored; O(L + min(N, 26^w)) per search including query copy"
+  }
 }

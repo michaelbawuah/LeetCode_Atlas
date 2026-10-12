@@ -23,3 +23,11 @@ Add a wildcard that matches zero or more characters. What additional search stat
 
 ## Verification
 Named fixtures and an independent generated-input reference accompany this implementation. Official judge results are tracked separately in metadata.
+
+## C++23 counterpart
+
+C++ owns every child through unique_ptr in a fixed 26-slot array, with automatic cleanup after each runner history. Array lookup removes Python dictionary lookup expectations; the fixed alphabet keeps node storage O(T). The standard by-value query parameter can copy L characters before an early trie mismatch; the C++ bounds include that input-copy cost. N is trie nodes, T inserted characters, L query length, and w wildcard count. Valid queries have at most two dots; words have length at most 25, which also bounds recursive ownership destruction depth.
+
+Time: addWord O(L); search O(L + min(N, L * 26^w)) including query copy. Space: O(T) stored; O(L + min(N, 26^w)) per search including query copy.
+
+The JSON adapter creates fresh state per case. Named fixtures and 150 deterministic generated inputs compare the two language implementations; existing independent Python oracles supply a separate behavioral reference.
