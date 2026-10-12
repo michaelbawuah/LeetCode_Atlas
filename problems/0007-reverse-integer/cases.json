@@ -1,0 +1,44 @@
+[
+  {
+    "name": "positive",
+    "args": [
+      123
+    ],
+    "expected": 321
+  },
+  {
+    "name": "negative",
+    "args": [
+      -123
+    ],
+    "expected": -321
+  },
+  {
+    "name": "trailing-zero",
+    "args": [
+      120
+    ],
+    "expected": 21
+  },
+  {
+    "name": "overflow",
+    "args": [
+      1534236469
+    ],
+    "expected": 0
+  },
+  {
+    "name": "minimum-int",
+    "args": [
+      -2147483648
+    ],
+    "expected": 0
+  },
+  {
+    "name": "negative-in-range",
+    "args": [
+      -2147483412
+    ],
+    "expected": -2143847412
+  }
+]

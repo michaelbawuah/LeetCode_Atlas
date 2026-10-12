@@ -1,0 +1,26 @@
+{
+  "id": 7,
+  "slug": "reverse-integer",
+  "title": "Reverse Integer",
+  "difficulty": "Medium",
+  "patterns": [
+    "math"
+  ],
+  "method": "reverse",
+  "args_types": [
+    "value"
+  ],
+  "kind": "method",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(log(|x| + 1))",
+    "space": "O(1)"
+  },
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(log(|x| + 1))",
+    "space": "O(1)"
+  }
+}
