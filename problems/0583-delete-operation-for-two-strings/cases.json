@@ -1,0 +1,50 @@
+[
+  {
+    "name": "two_deletions",
+    "args": [
+      "sea",
+      "eat"
+    ],
+    "expected": 2
+  },
+  {
+    "name": "shared_code",
+    "args": [
+      "leetcode",
+      "etco"
+    ],
+    "expected": 4
+  },
+  {
+    "name": "equal",
+    "args": [
+      "abc",
+      "abc"
+    ],
+    "expected": 0
+  },
+  {
+    "name": "disjoint",
+    "args": [
+      "abc",
+      "def"
+    ],
+    "expected": 6
+  },
+  {
+    "name": "single_mismatch",
+    "args": [
+      "a",
+      "b"
+    ],
+    "expected": 2
+  },
+  {
+    "name": "repeated",
+    "args": [
+      "aaaa",
+      "aa"
+    ],
+    "expected": 2
+  }
+]
