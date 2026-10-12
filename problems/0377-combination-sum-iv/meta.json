@@ -1,0 +1,23 @@
+{
+  "id": 377,
+  "title": "Combination Sum IV",
+  "slug": "combination-sum-iv",
+  "difficulty": "Medium",
+  "patterns": [
+    "dynamic-programming"
+  ],
+  "method": "combinationSum4",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n T) arithmetic operations",
+    "space": "O(T) integer states"
+  },
+  "complexity_language": "Python",
+  "judge_status": "not_recorded"
+}
