@@ -1,0 +1,23 @@
+{
+  "id": 424,
+  "title": "Longest Repeating Character Replacement",
+  "slug": "longest-repeating-character-replacement",
+  "difficulty": "Medium",
+  "patterns": [
+    "sliding-window",
+    "frequency-counting"
+  ],
+  "method": "characterReplacement",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "kind": "method",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n) for the fixed 26-letter alphabet",
+    "space": "O(1)"
+  },
+  "judge_status": "not_recorded"
+}

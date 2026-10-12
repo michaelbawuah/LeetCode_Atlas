@@ -1,0 +1,66 @@
+[
+  {
+    "name": "replace-two",
+    "args": [
+      "ABAB",
+      2
+    ],
+    "expected": 4
+  },
+  {
+    "name": "mixed-example",
+    "args": [
+      "AABABBA",
+      1
+    ],
+    "expected": 4
+  },
+  {
+    "name": "no-replacements",
+    "args": [
+      "ABAA",
+      0
+    ],
+    "expected": 2
+  },
+  {
+    "name": "one-character",
+    "args": [
+      "A",
+      0
+    ],
+    "expected": 1
+  },
+  {
+    "name": "already-uniform",
+    "args": [
+      "AAAA",
+      0
+    ],
+    "expected": 4
+  },
+  {
+    "name": "replace-every-character",
+    "args": [
+      "ABCDE",
+      5
+    ],
+    "expected": 5
+  },
+  {
+    "name": "different-characters",
+    "args": [
+      "ABCDE",
+      1
+    ],
+    "expected": 2
+  },
+  {
+    "name": "best-window-at-end",
+    "args": [
+      "ABBB",
+      1
+    ],
+    "expected": 4
+  }
+]
