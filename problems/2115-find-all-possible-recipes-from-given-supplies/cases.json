@@ -1,0 +1,117 @@
+[
+  {
+    "name": "one recipe",
+    "args": [
+      [
+        "bread"
+      ],
+      [
+        [
+          "flour",
+          "yeast"
+        ]
+      ],
+      [
+        "flour",
+        "yeast"
+      ]
+    ],
+    "expected": [
+      "bread"
+    ]
+  },
+  {
+    "name": "recipe chain",
+    "args": [
+      [
+        "bread",
+        "sandwich"
+      ],
+      [
+        [
+          "flour",
+          "yeast"
+        ],
+        [
+          "bread",
+          "ham"
+        ]
+      ],
+      [
+        "flour",
+        "yeast",
+        "ham"
+      ]
+    ],
+    "expected": [
+      "bread",
+      "sandwich"
+    ]
+  },
+  {
+    "name": "missing ingredient",
+    "args": [
+      [
+        "bread"
+      ],
+      [
+        [
+          "flour",
+          "yeast"
+        ]
+      ],
+      [
+        "flour"
+      ]
+    ],
+    "expected": []
+  },
+  {
+    "name": "mutual cycle",
+    "args": [
+      [
+        "a",
+        "b"
+      ],
+      [
+        [
+          "b"
+        ],
+        [
+          "a"
+        ]
+      ],
+      [
+        "salt"
+      ]
+    ],
+    "expected": []
+  },
+  {
+    "name": "independent recipe despite cycle",
+    "args": [
+      [
+        "a",
+        "b",
+        "c"
+      ],
+      [
+        [
+          "b"
+        ],
+        [
+          "a"
+        ],
+        [
+          "salt"
+        ]
+      ],
+      [
+        "salt"
+      ]
+    ],
+    "expected": [
+      "c"
+    ]
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "id": 2115,
+  "title": "Find All Possible Recipes from Given Supplies",
+  "slug": "find-all-possible-recipes-from-given-supplies",
+  "difficulty": "Medium",
+  "patterns": [
+    "graph",
+    "topological-sort"
+  ],
+  "method": "findAllRecipes",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "unordered",
+  "complexity_language": "Python",
+  "complexity": {
+    "time": "O(I + S + R) expected",
+    "space": "O(I + S + R) auxiliary; O(R) output"
+  },
+  "judge_status": "not_recorded"
+}
