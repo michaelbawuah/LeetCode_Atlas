@@ -1,0 +1,28 @@
+{
+  "id": 1584,
+  "title": "Min Cost to Connect All Points",
+  "slug": "min-cost-to-connect-all-points",
+  "difficulty": "Medium",
+  "patterns": [
+    "graph",
+    "minimum-spanning-tree",
+    "prim"
+  ],
+  "method": "minCostConnectPoints",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity_language": "Python",
+  "complexity": {
+    "time": "O(n^2)",
+    "space": "O(n)"
+  },
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O(n^2)",
+    "space": "O(n) auxiliary; O(1) scalar output"
+  }
+}
