@@ -1,0 +1,110 @@
+[
+  {
+    "name": "one component",
+    "args": [
+      [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ]
+    ],
+    "expected": 5
+  },
+  {
+    "name": "single stone",
+    "args": [
+      [
+        [
+          0,
+          0
+        ]
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "no shared coordinates",
+    "args": [
+      [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "same row",
+    "args": [
+      [
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          7
+        ]
+      ]
+    ],
+    "expected": 2
+  },
+  {
+    "name": "two components",
+    "args": [
+      [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ]
+    ],
+    "expected": 2
+  }
+]

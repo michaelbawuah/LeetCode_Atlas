@@ -1,0 +1,27 @@
+{
+  "id": 947,
+  "title": "Most Stones Removed with Same Row or Column",
+  "slug": "most-stones-removed-with-same-row-or-column",
+  "difficulty": "Medium",
+  "patterns": [
+    "graph",
+    "union-find"
+  ],
+  "method": "removeStones",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity_language": "Python",
+  "complexity": {
+    "time": "O(N alpha(N)) expected amortized",
+    "space": "O(N)"
+  },
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O(N alpha(N)) expected amortized",
+    "space": "O(N)"
+  }
+}
