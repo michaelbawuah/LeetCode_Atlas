@@ -22,3 +22,9 @@ How would you count only selections whose chosen source positions are at most a 
 
 ## Verification
 Named fixtures and independent generated-input references accompany the implementation. Official judge results are tracked separately in metadata.
+
+## C++23 counterpart
+
+Every count update uses only nonnegative addition and copying. Clamping each count to INT_MAX commutes with these operations: min(M, min(M, a) + min(M, b)) = min(M, a + b). Each sum is widened to int64_t before addition and then clamped. The guaranteed final answer fits int, so its clamped value remains exact even when unrelated intermediate counts exceed 64 bits. Descending column updates preserve use of each source position at most once. The regression uses 1000 source a characters and a target of 500 a characters followed by b: target-prefix counts become huge while the final count remains zero. By-value strings add O(m + n) bytes, and the core holds O(n + 1) fixed-width states.
+
+C++: **O(m n + m + n) time; O(m + n) including string copies; O(n + 1) DP states space**. Named fixtures and 150 reproducible generated inputs compare this implementation with the Python track.

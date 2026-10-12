@@ -19,5 +19,9 @@
     "space": "O(n) integer states"
   },
   "complexity_language": "Python",
-  "judge_status": "not_recorded"
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O(m n + m + n)",
+    "space": "O(m + n) including string copies; O(n + 1) DP states"
+  }
 }
