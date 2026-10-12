@@ -1,0 +1,23 @@
+{
+  "id": 10,
+  "slug": "regular-expression-matching",
+  "title": "Regular Expression Matching",
+  "difficulty": "Hard",
+  "patterns": [
+    "dynamic-programming",
+    "string"
+  ],
+  "method": "isMatch",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "kind": "method",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(mp)",
+    "space": "O(p)"
+  },
+  "judge_status": "not_recorded"
+}

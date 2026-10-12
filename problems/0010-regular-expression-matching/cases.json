@@ -1,0 +1,50 @@
+[
+  {
+    "name": "literal-miss",
+    "args": [
+      "aa",
+      "a"
+    ],
+    "expected": false
+  },
+  {
+    "name": "star-repetition",
+    "args": [
+      "aa",
+      "a*"
+    ],
+    "expected": true
+  },
+  {
+    "name": "dot-star",
+    "args": [
+      "ab",
+      ".*"
+    ],
+    "expected": true
+  },
+  {
+    "name": "skip-star-groups",
+    "args": [
+      "aab",
+      "c*a*b"
+    ],
+    "expected": true
+  },
+  {
+    "name": "full-match-required",
+    "args": [
+      "mississippi",
+      "mis*is*p*."
+    ],
+    "expected": false
+  },
+  {
+    "name": "single-dot",
+    "args": [
+      "a",
+      "."
+    ],
+    "expected": true
+  }
+]
