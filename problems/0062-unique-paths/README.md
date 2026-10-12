@@ -19,3 +19,6 @@ The starting cell counts as one route, including a 1 by 1 grid. Update from left
 
 ## Follow-up
 How would blocked cells change initialization and the cell update?
+
+## C++23 counterpart
+The C++23 counterpart matches O(mn) time/O(min(m,n)) auxiliary space and uses int64_t for row additions. Every partial-cell path count can be extended to the bottom-right cell, so it is no larger than the guaranteed-bounded final count. The final conversion to int is therefore valid.
