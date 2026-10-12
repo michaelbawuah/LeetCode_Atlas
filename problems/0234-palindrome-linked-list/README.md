@@ -19,3 +19,9 @@ Returning immediately on a mismatch would skip restoration. The odd middle value
 
 ## Follow-up
 If reversing links is forbidden, compare the O(n)-space array approach with a stack holding only one half.
+
+## C++23 implementation
+
+C++23 records mismatches without returning early, then reverses the second half back and reconnects it. The adapter verifies every original pointer, value, and next link after both successful and unsuccessful comparisons, so restored values alone cannot conceal lost or replaced nodes.
+
+C++23 submission cost: **O(n) time; O(1) space**. Here n is node count, h is tree height, w is maximum level width, and L is the number of returned path elements when applicable. Adapter construction, snapshots, and serialization are measured separately.

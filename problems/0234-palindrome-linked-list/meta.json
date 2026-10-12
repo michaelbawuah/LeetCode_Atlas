@@ -18,5 +18,10 @@
   "slug": "palindrome-linked-list",
   "kind": "method",
   "judge_status": "not_recorded",
-  "checker": "exact"
+  "checker": "exact",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n)",
+    "space": "O(1)"
+  }
 }
