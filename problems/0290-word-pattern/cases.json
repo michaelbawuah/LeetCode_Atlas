@@ -1,0 +1,42 @@
+[
+  {
+    "name": "matching",
+    "args": [
+      "abba",
+      "dog cat cat dog"
+    ],
+    "expected": true
+  },
+  {
+    "name": "mismatch",
+    "args": [
+      "abba",
+      "dog cat cat fish"
+    ],
+    "expected": false
+  },
+  {
+    "name": "many-to-one",
+    "args": [
+      "ab",
+      "dog dog"
+    ],
+    "expected": false
+  },
+  {
+    "name": "length-mismatch",
+    "args": [
+      "abc",
+      "dog cat"
+    ],
+    "expected": false
+  },
+  {
+    "name": "single",
+    "args": [
+      "a",
+      "dog"
+    ],
+    "expected": true
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "id": 290,
+  "slug": "word-pattern",
+  "title": "Word Pattern",
+  "difficulty": "Easy",
+  "patterns": [
+    "hash-map",
+    "string"
+  ],
+  "method": "wordPattern",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "kind": "method",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n + m) expected",
+    "space": "O(n + m)"
+  },
+  "judge_status": "not_recorded"
+}
