@@ -1,0 +1,27 @@
+{
+  "id": 933,
+  "slug": "number-of-recent-calls",
+  "title": "Number of Recent Calls",
+  "difficulty": "Easy",
+  "patterns": [
+    "queue",
+    "sliding-window",
+    "design"
+  ],
+  "method": null,
+  "args_types": [],
+  "kind": "design",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "constructor O(1); ping O(1) amortized; O(w) worst case",
+    "space": "O(w), maximum active-window calls"
+  },
+  "judge_status": "not_recorded",
+  "class_name": "RecentCounter",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "constructor O(1); ping O(1) amortized; O(w) worst case",
+    "space": "O(w), maximum active-window calls"
+  }
+}

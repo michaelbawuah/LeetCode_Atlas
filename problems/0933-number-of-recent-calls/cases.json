@@ -1,0 +1,142 @@
+[
+  {
+    "name": "ordinary",
+    "operations": [
+      "RecentCounter",
+      "ping",
+      "ping",
+      "ping",
+      "ping"
+    ],
+    "arguments": [
+      [],
+      [
+        1
+      ],
+      [
+        100
+      ],
+      [
+        3001
+      ],
+      [
+        3002
+      ]
+    ],
+    "expected": [
+      null,
+      1,
+      2,
+      3,
+      3
+    ]
+  },
+  {
+    "name": "inclusive-boundary",
+    "operations": [
+      "RecentCounter",
+      "ping",
+      "ping"
+    ],
+    "arguments": [
+      [],
+      [
+        1
+      ],
+      [
+        3001
+      ]
+    ],
+    "expected": [
+      null,
+      1,
+      2
+    ]
+  },
+  {
+    "name": "expire-boundary",
+    "operations": [
+      "RecentCounter",
+      "ping",
+      "ping"
+    ],
+    "arguments": [
+      [],
+      [
+        1
+      ],
+      [
+        3002
+      ]
+    ],
+    "expected": [
+      null,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "large-gaps",
+    "operations": [
+      "RecentCounter",
+      "ping",
+      "ping",
+      "ping"
+    ],
+    "arguments": [
+      [],
+      [
+        1
+      ],
+      [
+        10000
+      ],
+      [
+        20000
+      ]
+    ],
+    "expected": [
+      null,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "dense",
+    "operations": [
+      "RecentCounter",
+      "ping",
+      "ping",
+      "ping",
+      "ping",
+      "ping"
+    ],
+    "arguments": [
+      [],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ]
+    ],
+    "expected": [
+      null,
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  }
+]
