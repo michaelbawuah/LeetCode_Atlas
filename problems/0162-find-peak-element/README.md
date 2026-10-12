@@ -21,3 +21,7 @@ The peak_index fixture checker validates the returned index against the original
 Adjacent values must differ under the contract. Compare middle with middle + 1 only while left < right, which keeps that neighbor in bounds.
 
 **Follow-up:** Why can equal adjacent values invalidate the strict-peak slope argument?
+
+## C++23 counterpart
+
+C++ uses the same neighboring-slope comparison and returns a zero-based index. It reads `middle + 1` only while `left < right`, keeping the neighbor in range, and performs no arithmetic on element values. Time is O(log n), auxiliary space O(1), and input is preserved. The semantic checker accepts every valid strict peak instead of requiring identical index choices.
