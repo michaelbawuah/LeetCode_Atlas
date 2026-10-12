@@ -1,0 +1,22 @@
+{
+  "id": 350,
+  "title": "Intersection of Two Arrays II",
+  "slug": "intersection-of-two-arrays-ii",
+  "difficulty": "Easy",
+  "patterns": [
+    "frequency-counting"
+  ],
+  "method": "intersect",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "unordered",
+  "complexity": {
+    "time": "O(n + m) expected",
+    "space": "O(u) auxiliary; O(min(n, m)) output"
+  },
+  "judge_status": "not_recorded"
+}
