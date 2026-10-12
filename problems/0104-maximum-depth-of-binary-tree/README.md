@@ -19,3 +19,8 @@ Count nodes rather than edges. Using recursive DFS on a valid deeply skewed tree
 
 ## Follow-up
 Return a deepest path as well as its length, without copying every partial path.
+
+## Python and C++23
+Both versions carry node depth in an explicit DFS stack, avoiding recursion on skewed trees. Input tree links remain unchanged; adapter allocation and serialization are separate from the submission method's O(h) storage.
+
+C++23 submission-method complexity: **O(n) time; O(h) space**. Adapter ownership and JSON conversion costs are separate.
