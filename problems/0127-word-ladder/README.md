@@ -21,3 +21,7 @@ For N dictionary words plus the start and length L, constructing and hashing sli
 The end word must belong to the dictionary; reaching an absent word through a conceptual edit is invalid. Tests compare wildcard traversal against pairwise Hamming-distance edges and Floyd–Warshall on small dictionaries. The named cases include branches, missing targets, and a start already in the dictionary.
 
 **Follow-up:** keep all shortest predecessor edges to return every shortest transformation chain.
+
+## Python and C++23 comparison
+
+Both implementations create wildcard buckets and scan each bucket once during BFS. Python buckets reference immutable word objects; C++ bucket vectors own copies of their words, and hash keys own pattern strings. Including string creation and hashing, both take expected O(NL²) time and O(NL²) auxiliary storage. The word list remains unchanged. The runner owns decoded strings and containers; the solution owns its local buckets, visited set, and queue through standard containers.

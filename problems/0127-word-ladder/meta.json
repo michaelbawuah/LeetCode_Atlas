@@ -21,5 +21,9 @@
     "time": "O(N L^2) expected",
     "space": "O(N L^2) including wildcard keys"
   },
-  "judge_status": "not_recorded"
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O(N L^2) expected",
+    "space": "O(N L^2) auxiliary; O(1) scalar output"
+  }
 }
