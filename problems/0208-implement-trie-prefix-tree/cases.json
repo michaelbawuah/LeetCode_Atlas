@@ -1,0 +1,199 @@
+[
+  {
+    "name": "prefix-before-complete-word",
+    "operations": [
+      "Trie",
+      "insert",
+      "search",
+      "search",
+      "startsWith",
+      "insert",
+      "search"
+    ],
+    "arguments": [
+      [],
+      [
+        "apple"
+      ],
+      [
+        "apple"
+      ],
+      [
+        "app"
+      ],
+      [
+        "app"
+      ],
+      [
+        "app"
+      ],
+      [
+        "app"
+      ]
+    ],
+    "expected": [
+      null,
+      null,
+      true,
+      false,
+      true,
+      null,
+      true
+    ]
+  },
+  {
+    "name": "empty-trie-query",
+    "operations": [
+      "Trie",
+      "search",
+      "startsWith"
+    ],
+    "arguments": [
+      [],
+      [
+        "a"
+      ],
+      [
+        "a"
+      ]
+    ],
+    "expected": [
+      null,
+      false,
+      false
+    ]
+  },
+  {
+    "name": "shared-prefixes",
+    "operations": [
+      "Trie",
+      "insert",
+      "insert",
+      "search",
+      "search",
+      "startsWith"
+    ],
+    "arguments": [
+      [],
+      [
+        "car"
+      ],
+      [
+        "cat"
+      ],
+      [
+        "car"
+      ],
+      [
+        "ca"
+      ],
+      [
+        "ca"
+      ]
+    ],
+    "expected": [
+      null,
+      null,
+      null,
+      true,
+      false,
+      true
+    ]
+  },
+  {
+    "name": "duplicate-insert",
+    "operations": [
+      "Trie",
+      "insert",
+      "insert",
+      "search",
+      "startsWith"
+    ],
+    "arguments": [
+      [],
+      [
+        "a"
+      ],
+      [
+        "a"
+      ],
+      [
+        "a"
+      ],
+      [
+        "a"
+      ]
+    ],
+    "expected": [
+      null,
+      null,
+      null,
+      true,
+      true
+    ]
+  },
+  {
+    "name": "longer-query-is-missing",
+    "operations": [
+      "Trie",
+      "insert",
+      "search",
+      "startsWith"
+    ],
+    "arguments": [
+      [],
+      [
+        "app"
+      ],
+      [
+        "apple"
+      ],
+      [
+        "apple"
+      ]
+    ],
+    "expected": [
+      null,
+      null,
+      false,
+      false
+    ]
+  },
+  {
+    "name": "different-branches",
+    "operations": [
+      "Trie",
+      "insert",
+      "insert",
+      "search",
+      "startsWith",
+      "startsWith"
+    ],
+    "arguments": [
+      [],
+      [
+        "zoo"
+      ],
+      [
+        "apple"
+      ],
+      [
+        "zoo"
+      ],
+      [
+        "z"
+      ],
+      [
+        "b"
+      ]
+    ],
+    "expected": [
+      null,
+      null,
+      null,
+      true,
+      true,
+      false
+    ]
+  }
+]
