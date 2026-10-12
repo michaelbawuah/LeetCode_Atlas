@@ -1,0 +1,29 @@
+{
+  "id": 886,
+  "title": "Possible Bipartition",
+  "slug": "possible-bipartition",
+  "difficulty": "Medium",
+  "patterns": [
+    "graph",
+    "graph-coloring",
+    "breadth-first-search"
+  ],
+  "method": "possibleBipartition",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity_language": "Python",
+  "complexity": {
+    "time": "O(n + E)",
+    "space": "O(n + E)"
+  },
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O(n + E)",
+    "space": "O(n + E)"
+  }
+}
