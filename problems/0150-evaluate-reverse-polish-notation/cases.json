@@ -1,0 +1,102 @@
+[
+  {
+    "name": "multiply-after-add",
+    "args": [
+      [
+        "2",
+        "1",
+        "+",
+        "3",
+        "*"
+      ]
+    ],
+    "expected": 9
+  },
+  {
+    "name": "divide-before-add",
+    "args": [
+      [
+        "4",
+        "13",
+        "5",
+        "/",
+        "+"
+      ]
+    ],
+    "expected": 6
+  },
+  {
+    "name": "nested-expression",
+    "args": [
+      [
+        "10",
+        "6",
+        "9",
+        "3",
+        "+",
+        "-11",
+        "*",
+        "/",
+        "*",
+        "17",
+        "+",
+        "5",
+        "+"
+      ]
+    ],
+    "expected": 22
+  },
+  {
+    "name": "negative-numerator-truncates",
+    "args": [
+      [
+        "-7",
+        "3",
+        "/"
+      ]
+    ],
+    "expected": -2
+  },
+  {
+    "name": "negative-denominator-truncates",
+    "args": [
+      [
+        "7",
+        "-3",
+        "/"
+      ]
+    ],
+    "expected": -2
+  },
+  {
+    "name": "both-operands-negative",
+    "args": [
+      [
+        "-7",
+        "-3",
+        "/"
+      ]
+    ],
+    "expected": 2
+  },
+  {
+    "name": "subtraction-order",
+    "args": [
+      [
+        "2",
+        "5",
+        "-"
+      ]
+    ],
+    "expected": -3
+  },
+  {
+    "name": "single-negative-number",
+    "args": [
+      [
+        "-200"
+      ]
+    ],
+    "expected": -200
+  }
+]

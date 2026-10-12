@@ -1,0 +1,26 @@
+{
+  "id": 150,
+  "title": "Evaluate Reverse Polish Notation",
+  "slug": "evaluate-reverse-polish-notation",
+  "difficulty": "Medium",
+  "patterns": [
+    "stack"
+  ],
+  "method": "evalRPN",
+  "args_types": [
+    "value"
+  ],
+  "kind": "method",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n) under the bounded-token arithmetic model",
+    "space": "O(n) auxiliary; O(1) scalar output"
+  }
+}
