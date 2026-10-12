@@ -1,0 +1,26 @@
+{
+  "id": 32,
+  "title": "Longest Valid Parentheses",
+  "slug": "longest-valid-parentheses",
+  "difficulty": "Hard",
+  "patterns": [
+    "stack"
+  ],
+  "method": "longestValidParentheses",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "complexity_language": "Python",
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O(n)",
+    "space": "O(n)"
+  }
+}

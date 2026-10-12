@@ -1,0 +1,44 @@
+[
+  {
+    "name": "empty",
+    "args": [
+      ""
+    ],
+    "expected": 0
+  },
+  {
+    "name": "odd_prefix",
+    "args": [
+      "(()"
+    ],
+    "expected": 2
+  },
+  {
+    "name": "unmatched_suffix",
+    "args": [
+      ")()())"
+    ],
+    "expected": 4
+  },
+  {
+    "name": "nested",
+    "args": [
+      "((()))"
+    ],
+    "expected": 6
+  },
+  {
+    "name": "two_regions",
+    "args": [
+      "()(()"
+    ],
+    "expected": 2
+  },
+  {
+    "name": "all_open",
+    "args": [
+      "(((("
+    ],
+    "expected": 0
+  }
+]
