@@ -18,5 +18,10 @@
     "time": "Output-sensitive exponential time; O(c log c + d c^d) conservative bound",
     "space": "O(c + d) auxiliary; O(kd) output"
   },
-  "judge_status": "not_recorded"
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(c log c + d c^d) conservative bound",
+    "space": "O(c + d) explicit auxiliary state plus implementation-dependent sorting workspace; O(kd) output"
+  }
 }

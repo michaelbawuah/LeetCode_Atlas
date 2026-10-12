@@ -21,3 +21,7 @@ Let c be the candidate count, d = floor(target / min(candidates)), and k the num
 Advancing to index + 1 after choosing a candidate would lose `[2, 2, 3]` for target 7. Restarting at index zero generates duplicate reorderings. Fixtures cover reuse and unsorted input; the independent oracle enumerates candidate multiplicity vectors rather than recursive paths.
 
 **Follow-up:** require each candidate to be used at most once, including duplicate values in the input.
+
+## Python and C++23 comparison
+
+Both versions sort a private candidate copy, allow reuse of the current index, and emit independent path copies. C++ passes its path and output vectors by reference during recursion; the caller's candidate vector remains unchanged. For c candidates, maximum depth d, and k answers, the conservative time bound is O(c log c + d c^d), explicit auxiliary storage O(c+d), and output O(kd). The standard does not specify the internal auxiliary storage of `std::sort`; that implementation-dependent workspace is additional to the explicit candidate copy, path, and recursion state.
