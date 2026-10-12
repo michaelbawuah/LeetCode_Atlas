@@ -1,0 +1,82 @@
+[
+  {
+    "name": "middle_runs",
+    "args": [
+      [
+        1,
+        2,
+        3,
+        3,
+        4,
+        4,
+        5
+      ]
+    ],
+    "expected": [
+      1,
+      2,
+      5
+    ]
+  },
+  {
+    "name": "head_run",
+    "args": [
+      [
+        1,
+        1,
+        1,
+        2,
+        3
+      ]
+    ],
+    "expected": [
+      2,
+      3
+    ]
+  },
+  {
+    "name": "empty",
+    "args": [
+      []
+    ],
+    "expected": []
+  },
+  {
+    "name": "all_duplicate",
+    "args": [
+      [
+        2,
+        2
+      ]
+    ],
+    "expected": []
+  },
+  {
+    "name": "no_duplicates",
+    "args": [
+      [
+        -2,
+        0,
+        3
+      ]
+    ],
+    "expected": [
+      -2,
+      0,
+      3
+    ]
+  },
+  {
+    "name": "tail_run",
+    "args": [
+      [
+        1,
+        2,
+        2
+      ]
+    ],
+    "expected": [
+      1
+    ]
+  }
+]
