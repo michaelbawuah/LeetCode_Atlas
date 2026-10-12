@@ -1,0 +1,170 @@
+[
+  {
+    "name": "mixed quadruplets",
+    "args": [
+      [
+        1,
+        0,
+        -1,
+        0,
+        -2,
+        2
+      ],
+      0
+    ],
+    "expected": [
+      [
+        -2,
+        -1,
+        1,
+        2
+      ],
+      [
+        -2,
+        0,
+        0,
+        2
+      ],
+      [
+        -1,
+        0,
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "name": "repeated equal values",
+    "args": [
+      [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      8
+    ],
+    "expected": [
+      [
+        2,
+        2,
+        2,
+        2
+      ]
+    ]
+  },
+  {
+    "name": "fewer than four elements",
+    "args": [
+      [
+        1
+      ],
+      1
+    ],
+    "expected": []
+  },
+  {
+    "name": "many zeroes one result",
+    "args": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      0
+    ],
+    "expected": [
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "name": "single distinct quadruplet",
+    "args": [
+      [
+        -2,
+        -1,
+        0,
+        1,
+        2
+      ],
+      0
+    ],
+    "expected": [
+      [
+        -2,
+        -1,
+        1,
+        2
+      ]
+    ]
+  },
+  {
+    "name": "duplicate partner combinations",
+    "args": [
+      [
+        -1,
+        -1,
+        0,
+        0,
+        1,
+        1
+      ],
+      0
+    ],
+    "expected": [
+      [
+        -1,
+        -1,
+        1,
+        1
+      ],
+      [
+        -1,
+        0,
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "name": "32 bit wraparound must not create a match",
+    "args": [
+      [
+        1000000000,
+        1000000000,
+        1000000000,
+        1000000000
+      ],
+      -294967296
+    ],
+    "expected": []
+  },
+  {
+    "name": "large opposite values",
+    "args": [
+      [
+        -1000000000,
+        -1000000000,
+        1000000000,
+        1000000000
+      ],
+      0
+    ],
+    "expected": [
+      [
+        -1000000000,
+        -1000000000,
+        1000000000,
+        1000000000
+      ]
+    ]
+  }
+]

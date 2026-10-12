@@ -1,0 +1,23 @@
+{
+  "id": 18,
+  "title": "4Sum",
+  "slug": "4sum",
+  "difficulty": "Medium",
+  "patterns": [
+    "sorting",
+    "two-pointers"
+  ],
+  "method": "fourSum",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "unordered_groups",
+  "complexity": {
+    "time": "O(n^3)",
+    "space": "O(n) auxiliary; up to O(n^3) output"
+  },
+  "judge_status": "not_recorded"
+}
