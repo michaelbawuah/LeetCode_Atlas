@@ -1,0 +1,21 @@
+{
+  "id": 153,
+  "title": "Find Minimum in Rotated Sorted Array",
+  "difficulty": "Medium",
+  "patterns": [
+    "binary-search"
+  ],
+  "method": "findMin",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(log n)",
+    "space": "O(1)"
+  },
+  "slug": "find-minimum-in-rotated-sorted-array",
+  "kind": "method",
+  "checker": "exact",
+  "judge_status": "not_recorded"
+}
