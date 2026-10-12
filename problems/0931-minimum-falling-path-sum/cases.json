@@ -1,0 +1,107 @@
+[
+  {
+    "name": "classic_square",
+    "args": [
+      [
+        [
+          2,
+          1,
+          3
+        ],
+        [
+          6,
+          5,
+          4
+        ],
+        [
+          7,
+          8,
+          9
+        ]
+      ]
+    ],
+    "expected": 13
+  },
+  {
+    "name": "negative_values",
+    "args": [
+      [
+        [
+          -19,
+          57
+        ],
+        [
+          -40,
+          -5
+        ]
+      ]
+    ],
+    "expected": -59
+  },
+  {
+    "name": "single",
+    "args": [
+      [
+        [
+          -7
+        ]
+      ]
+    ],
+    "expected": -7
+  },
+  {
+    "name": "all_zero",
+    "args": [
+      [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "left_boundary",
+    "args": [
+      [
+        [
+          1,
+          9
+        ],
+        [
+          1,
+          9
+        ]
+      ]
+    ],
+    "expected": 2
+  },
+  {
+    "name": "diagonal_best",
+    "args": [
+      [
+        [
+          1,
+          9,
+          9
+        ],
+        [
+          9,
+          1,
+          9
+        ],
+        [
+          9,
+          9,
+          1
+        ]
+      ]
+    ],
+    "expected": 3
+  }
+]
