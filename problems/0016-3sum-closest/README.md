@@ -30,3 +30,7 @@ values, and exact matches. Compare absolute distance rather than signed differen
 Pointer motion depends on whether the sum is above or below target.
 
 **Follow-up:** what pruning bounds can skip anchors whose entire attainable range is too far away?
+
+## C++23 counterpart
+
+The C++ method sorts a copied vector, preserving the caller's input. Its O(n) copy dominates the O(log n) sorting stack. Sums and distance comparisons use `long long`, with widening before addition. The valid value bounds keep the returned three-value sum within `int`. Generated parity inputs independently enumerate sums and reject ambiguous closest-sum ties.
