@@ -1,0 +1,28 @@
+{
+  "id": 67,
+  "slug": "add-binary",
+  "title": "Add Binary",
+  "difficulty": "Easy",
+  "patterns": [
+    "string",
+    "math"
+  ],
+  "method": "addBinary",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "kind": "method",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n + m)",
+    "space": "O(n + m) including output"
+  },
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n + m)",
+    "space": "O(n + m) including output"
+  }
+}

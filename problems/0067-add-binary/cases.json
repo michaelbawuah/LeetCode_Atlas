@@ -1,0 +1,42 @@
+[
+  {
+    "name": "small",
+    "args": [
+      "11",
+      "1"
+    ],
+    "expected": "100"
+  },
+  {
+    "name": "different-lengths",
+    "args": [
+      "1010",
+      "1011"
+    ],
+    "expected": "10101"
+  },
+  {
+    "name": "zero",
+    "args": [
+      "0",
+      "0"
+    ],
+    "expected": "0"
+  },
+  {
+    "name": "carry-chain",
+    "args": [
+      "1111",
+      "1"
+    ],
+    "expected": "10000"
+  },
+  {
+    "name": "no-carry",
+    "args": [
+      "100",
+      "10"
+    ],
+    "expected": "110"
+  }
+]
