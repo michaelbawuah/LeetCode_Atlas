@@ -1,0 +1,24 @@
+{
+  "id": 114,
+  "title": "Flatten Binary Tree to Linked List",
+  "difficulty": "Medium",
+  "patterns": [
+    "tree",
+    "depth-first-search",
+    "in-place"
+  ],
+  "method": "flatten",
+  "args_types": [
+    "treenode"
+  ],
+  "return_type": "treenode",
+  "result_from_arg": 0,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(h)"
+  },
+  "slug": "flatten-binary-tree-to-linked-list",
+  "kind": "method",
+  "judge_status": "not_recorded",
+  "checker": "exact"
+}
