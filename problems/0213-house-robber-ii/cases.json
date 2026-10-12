@@ -1,0 +1,94 @@
+[
+  {
+    "name": "triangle",
+    "args": [
+      [
+        2,
+        3,
+        2
+      ]
+    ],
+    "expected": 3
+  },
+  {
+    "name": "four_houses",
+    "args": [
+      [
+        1,
+        2,
+        3,
+        1
+      ]
+    ],
+    "expected": 4
+  },
+  {
+    "name": "singleton",
+    "args": [
+      [
+        8
+      ]
+    ],
+    "expected": 8
+  },
+  {
+    "name": "two_houses",
+    "args": [
+      [
+        2,
+        7
+      ]
+    ],
+    "expected": 7
+  },
+  {
+    "name": "all_zeros",
+    "args": [
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "large_endpoints",
+    "args": [
+      [
+        10,
+        1,
+        1,
+        10
+      ]
+    ],
+    "expected": 11
+  },
+  {
+    "name": "odd_equal_circle",
+    "args": [
+      [
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    ],
+    "expected": 10
+  },
+  {
+    "name": "alternate",
+    "args": [
+      [
+        4,
+        1,
+        4,
+        1,
+        4,
+        1
+      ]
+    ],
+    "expected": 12
+  }
+]
