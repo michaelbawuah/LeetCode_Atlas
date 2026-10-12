@@ -1,0 +1,21 @@
+{
+  "id": 729,
+  "slug": "my-calendar-i",
+  "title": "My Calendar I",
+  "difficulty": "Medium",
+  "patterns": [
+    "intervals",
+    "design"
+  ],
+  "method": null,
+  "args_types": [],
+  "kind": "design",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n) per book",
+    "space": "O(n)"
+  },
+  "judge_status": "not_recorded",
+  "class_name": "MyCalendar"
+}

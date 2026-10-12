@@ -1,0 +1,158 @@
+[
+  {
+    "name": "overlap-example",
+    "operations": [
+      "MyCalendar",
+      "book",
+      "book",
+      "book"
+    ],
+    "arguments": [
+      [],
+      [
+        10,
+        20
+      ],
+      [
+        15,
+        25
+      ],
+      [
+        20,
+        30
+      ]
+    ],
+    "expected": [
+      null,
+      true,
+      false,
+      true
+    ]
+  },
+  {
+    "name": "repeated",
+    "operations": [
+      "MyCalendar",
+      "book",
+      "book",
+      "book"
+    ],
+    "arguments": [
+      [],
+      [
+        10,
+        20
+      ],
+      [
+        10,
+        20
+      ],
+      [
+        10,
+        20
+      ]
+    ],
+    "expected": [
+      null,
+      true,
+      false,
+      false
+    ]
+  },
+  {
+    "name": "touching",
+    "operations": [
+      "MyCalendar",
+      "book",
+      "book",
+      "book"
+    ],
+    "arguments": [
+      [],
+      [
+        0,
+        10
+      ],
+      [
+        10,
+        20
+      ],
+      [
+        20,
+        30
+      ]
+    ],
+    "expected": [
+      null,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "name": "reject-preserves-state",
+    "operations": [
+      "MyCalendar",
+      "book",
+      "book",
+      "book",
+      "book"
+    ],
+    "arguments": [
+      [],
+      [
+        10,
+        40
+      ],
+      [
+        15,
+        25
+      ],
+      [
+        20,
+        30
+      ],
+      [
+        40,
+        50
+      ]
+    ],
+    "expected": [
+      null,
+      true,
+      false,
+      false,
+      true
+    ]
+  },
+  {
+    "name": "endpoint-bounds",
+    "operations": [
+      "MyCalendar",
+      "book",
+      "book",
+      "book"
+    ],
+    "arguments": [
+      [],
+      [
+        0,
+        1
+      ],
+      [
+        999999999,
+        1000000000
+      ],
+      [
+        1,
+        999999999
+      ]
+    ],
+    "expected": [
+      null,
+      true,
+      true,
+      true
+    ]
+  }
+]
