@@ -1,0 +1,66 @@
+[
+  {
+    "name": "classic mixed window",
+    "args": [
+      "ADOBECODEBANC",
+      "ABC"
+    ],
+    "expected": "BANC"
+  },
+  {
+    "name": "exact single character",
+    "args": [
+      "a",
+      "a"
+    ],
+    "expected": "a"
+  },
+  {
+    "name": "not enough copies",
+    "args": [
+      "a",
+      "aa"
+    ],
+    "expected": ""
+  },
+  {
+    "name": "repeated requirement",
+    "args": [
+      "acbbaca",
+      "aba"
+    ],
+    "expected": "baca"
+  },
+  {
+    "name": "minimum at final suffix",
+    "args": [
+      "zzab",
+      "ab"
+    ],
+    "expected": "ab"
+  },
+  {
+    "name": "case sensitive requirements",
+    "args": [
+      "aAbB",
+      "AB"
+    ],
+    "expected": "AbB"
+  },
+  {
+    "name": "irrelevant repeated prefix",
+    "args": [
+      "bba",
+      "ab"
+    ],
+    "expected": "ba"
+  },
+  {
+    "name": "target absent",
+    "args": [
+      "abc",
+      "z"
+    ],
+    "expected": ""
+  }
+]
