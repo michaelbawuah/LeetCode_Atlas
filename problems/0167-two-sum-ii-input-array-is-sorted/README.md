@@ -32,3 +32,7 @@ The returned indices are **one-based**. Keep `left < right` so an element is
 never paired with itself.
 
 **Follow-up:** what extra storage would be useful if the input were unsorted?
+
+## C++23 counterpart
+
+C++ searches without copying the already sorted vector and widens the pair sum to `std::int64_t` before addition. It returns one-based indices with distinct positions. Generated cases enumerate index pairs and retain exactly one answer under the contract; they also keep both values and target within the stated bounds. Time is O(n) and auxiliary space O(1), excluding the two-index result.
