@@ -1,0 +1,22 @@
+{
+  "id": 226,
+  "title": "Invert Binary Tree",
+  "difficulty": "Easy",
+  "patterns": [
+    "tree",
+    "depth-first-search"
+  ],
+  "method": "invertTree",
+  "args_types": [
+    "treenode"
+  ],
+  "return_type": "treenode",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(h)"
+  },
+  "slug": "invert-binary-tree",
+  "kind": "method",
+  "checker": "exact",
+  "judge_status": "not_recorded"
+}
