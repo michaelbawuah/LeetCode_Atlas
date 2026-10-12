@@ -32,3 +32,7 @@ inside the selected set. Generated tests compare against full sorting with disti
 frequencies. Output order is irrelevant; output length and uniqueness still matter.
 
 **Follow-up:** how would you maintain top-k values in an unbounded stream?
+
+## Python and C++23
+
+Both versions count with a hash map and select using frequency buckets: O(n) expected time and O(n) auxiliary space, plus O(k) output. C++ receives the vector by reference and preserves it. Hash iteration can change output order, which the unordered checker permits; tied values still obey the unique selected-set guarantee. Adapter input copies are excluded from the solution bounds.
