@@ -1,0 +1,23 @@
+{
+  "id": 44,
+  "title": "Wildcard Matching",
+  "slug": "wildcard-matching",
+  "difficulty": "Hard",
+  "patterns": [
+    "dynamic-programming"
+  ],
+  "method": "isMatch",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(m n + m + n + 1)",
+    "space": "O(n + 1)"
+  },
+  "complexity_language": "Python",
+  "judge_status": "not_recorded"
+}

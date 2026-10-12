@@ -1,0 +1,58 @@
+[
+  {
+    "name": "literal_mismatch",
+    "args": [
+      "aa",
+      "a"
+    ],
+    "expected": false
+  },
+  {
+    "name": "star_entire",
+    "args": [
+      "aa",
+      "*"
+    ],
+    "expected": true
+  },
+  {
+    "name": "single_any",
+    "args": [
+      "cb",
+      "?b"
+    ],
+    "expected": true
+  },
+  {
+    "name": "multiple_stars",
+    "args": [
+      "adceb",
+      "*a*b"
+    ],
+    "expected": true
+  },
+  {
+    "name": "pattern_failure",
+    "args": [
+      "acdcb",
+      "a*c?b"
+    ],
+    "expected": false
+  },
+  {
+    "name": "both_empty",
+    "args": [
+      "",
+      ""
+    ],
+    "expected": true
+  },
+  {
+    "name": "empty_many_stars",
+    "args": [
+      "",
+      "***"
+    ],
+    "expected": true
+  }
+]
