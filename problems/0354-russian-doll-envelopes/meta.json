@@ -1,0 +1,24 @@
+{
+  "id": 354,
+  "title": "Russian Doll Envelopes",
+  "slug": "russian-doll-envelopes",
+  "difficulty": "Hard",
+  "patterns": [
+    "sorting",
+    "binary-search",
+    "dynamic-programming"
+  ],
+  "method": "maxEnvelopes",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n log n)",
+    "space": "O(n)"
+  },
+  "complexity_language": "Python",
+  "judge_status": "not_recorded"
+}
