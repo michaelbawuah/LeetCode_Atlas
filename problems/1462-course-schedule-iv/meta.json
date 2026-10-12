@@ -1,0 +1,25 @@
+{
+  "id": 1462,
+  "title": "Course Schedule IV",
+  "slug": "course-schedule-iv",
+  "difficulty": "Medium",
+  "patterns": [
+    "graph",
+    "transitive-closure"
+  ],
+  "method": "checkIfPrerequisite",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity_language": "Python",
+  "complexity": {
+    "time": "O(n^3 + Q)",
+    "space": "O(n^2) auxiliary; O(Q) output"
+  },
+  "judge_status": "not_recorded"
+}
