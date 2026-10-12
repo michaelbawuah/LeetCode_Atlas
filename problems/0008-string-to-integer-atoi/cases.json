@@ -1,0 +1,44 @@
+[
+  {
+    "name": "plain",
+    "args": [
+      "42"
+    ],
+    "expected": 42
+  },
+  {
+    "name": "leading-space-sign",
+    "args": [
+      "   -042"
+    ],
+    "expected": -42
+  },
+  {
+    "name": "stop-at-letter",
+    "args": [
+      "1337c0d3"
+    ],
+    "expected": 1337
+  },
+  {
+    "name": "no-number",
+    "args": [
+      "words and 987"
+    ],
+    "expected": 0
+  },
+  {
+    "name": "positive-clamp",
+    "args": [
+      "91283472332"
+    ],
+    "expected": 2147483647
+  },
+  {
+    "name": "sign-without-digits",
+    "args": [
+      "+-12"
+    ],
+    "expected": 0
+  }
+]
