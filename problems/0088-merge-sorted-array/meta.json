@@ -1,0 +1,31 @@
+{
+  "id": 88,
+  "title": "Merge Sorted Array",
+  "slug": "merge-sorted-array",
+  "difficulty": "Easy",
+  "patterns": [
+    "two-pointers",
+    "in-place"
+  ],
+  "method": "merge",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value",
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(m + n)",
+    "space": "O(1)"
+  },
+  "judge_status": "not_recorded",
+  "result_from_arg": 0,
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(m + n)",
+    "space": "O(1)"
+  }
+}
