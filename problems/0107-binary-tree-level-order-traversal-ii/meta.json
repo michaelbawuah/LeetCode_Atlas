@@ -1,0 +1,27 @@
+{
+  "id": 107,
+  "title": "Binary Tree Level Order Traversal II",
+  "difficulty": "Medium",
+  "method": "levelOrderBottom",
+  "args_types": [
+    "treenode"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(w) auxiliary; O(n) output"
+  },
+  "patterns": [
+    "tree",
+    "breadth-first-search"
+  ],
+  "checker": "exact",
+  "slug": "binary-tree-level-order-traversal-ii",
+  "kind": "method",
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n)",
+    "space": "O(w) auxiliary; O(n) output"
+  }
+}
