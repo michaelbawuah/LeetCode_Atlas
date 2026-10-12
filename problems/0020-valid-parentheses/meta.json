@@ -1,0 +1,21 @@
+{
+  "id": 20,
+  "title": "Valid Parentheses",
+  "slug": "valid-parentheses",
+  "difficulty": "Easy",
+  "patterns": [
+    "stack"
+  ],
+  "method": "isValid",
+  "args_types": [
+    "value"
+  ],
+  "kind": "method",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "judge_status": "not_recorded"
+}
