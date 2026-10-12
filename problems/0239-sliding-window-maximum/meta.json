@@ -1,0 +1,28 @@
+{
+  "id": 239,
+  "title": "Sliding Window Maximum",
+  "slug": "sliding-window-maximum",
+  "difficulty": "Hard",
+  "patterns": [
+    "monotonic-deque",
+    "sliding-window"
+  ],
+  "method": "maxSlidingWindow",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(k) auxiliary; O(n - k + 1) output"
+  },
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n)",
+    "space": "O(k) auxiliary; O(n - k + 1) output"
+  }
+}
