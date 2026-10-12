@@ -17,3 +17,11 @@ Follow-up: move the O(n) work to pop instead. Compare the costs for workloads do
 ## Verification
 
 Named fixtures and an independent generated-input reference cover behavior. Judge results are recorded separately in metadata.
+
+## C++23 counterpart
+
+C++ uses std::queue and only its front, push, pop, size, and empty operations. Each push rotates the previous n entries behind the new front. pop and top require nonempty state; generated histories enforce that precondition.
+
+Time: push O(n); pop/top/empty O(1). Space: O(n).
+
+The JSON adapter creates fresh state per case. Named fixtures and 150 deterministic generated inputs compare the two language implementations; existing independent Python oracles supply a separate behavioral reference.
