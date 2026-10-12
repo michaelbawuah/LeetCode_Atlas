@@ -30,3 +30,7 @@ duplicates, odd/even totals, and extreme cuts. The combined length must be nonze
 Return a float consistently; do not accidentally use integer division.
 
 **Follow-up:** how would a partition search find an arbitrary kth element?
+
+## C++23 counterpart
+
+The C++ method keeps references to the shorter and longer vectors, so choosing the search side copies no values. Boundary sentinels and median arithmetic use `double`; conversion occurs before averaging. Under the ±10⁶ value bounds, all integer boundaries and half-integer medians are represented exactly. The numeric checker accepts the standard `double` return, including odd totals. Both inputs are preserved.
