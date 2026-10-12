@@ -23,3 +23,7 @@ How would the state change if two transactions were allowed, or each sale charge
 
 ## Verification
 Named local cases and an independent generated-input oracle accompany this solution. No official judge result is recorded.
+
+## Python and C++23
+
+The C++ implementation uses the same running minimum and best-profit recurrence as Python, with O(n) time and O(1) auxiliary space. It receives the input vector by reference, preserves it, and uses `int` arithmetic within the official price bounds. JSON decoding belongs to the adapter rather than the solution.
