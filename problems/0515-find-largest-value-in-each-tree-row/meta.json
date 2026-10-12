@@ -1,0 +1,27 @@
+{
+  "id": 515,
+  "title": "Find Largest Value in Each Tree Row",
+  "difficulty": "Medium",
+  "method": "largestValues",
+  "args_types": [
+    "treenode"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(w) auxiliary; O(h) output"
+  },
+  "patterns": [
+    "tree",
+    "breadth-first-search"
+  ],
+  "checker": "exact",
+  "slug": "find-largest-value-in-each-tree-row",
+  "kind": "method",
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n)",
+    "space": "O(w) auxiliary; O(h) output"
+  }
+}
