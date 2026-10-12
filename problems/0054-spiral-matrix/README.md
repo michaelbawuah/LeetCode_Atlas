@@ -29,3 +29,7 @@ column, and a singleton. Recheck whether boundaries have crossed before reading
 the bottom or left edge of the final layer.
 
 **Follow-up:** how would you fill an empty matrix in spiral order instead?
+
+## C++23 counterpart
+
+C++ uses signed boundary indexes so decrementing a collapsed edge cannot wrap an unsigned value. It reserves the returned O(mn) sequence once, while boundary state uses O(1) auxiliary space. The nonempty rectangular matrix is preserved. Single-row and single-column fixtures exercise the final-layer guards.
