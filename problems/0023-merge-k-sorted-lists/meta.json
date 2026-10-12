@@ -1,0 +1,27 @@
+{
+  "id": 23,
+  "title": "Merge k Sorted Lists",
+  "difficulty": "Hard",
+  "method": "mergeKLists",
+  "args_types": [
+    "listnode_array"
+  ],
+  "return_type": "listnode",
+  "complexity": {
+    "time": "O(k + N log(k + 1))",
+    "space": "O(k) auxiliary; existing nodes reused"
+  },
+  "patterns": [
+    "linked-list",
+    "heap"
+  ],
+  "checker": "exact",
+  "slug": "merge-k-sorted-lists",
+  "kind": "method",
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(k + N log(k + 1))",
+    "space": "O(k) auxiliary; existing nodes reused"
+  }
+}

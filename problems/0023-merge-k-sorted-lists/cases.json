@@ -1,0 +1,104 @@
+[
+  {
+    "name": "three_lists",
+    "args": [
+      [
+        [
+          1,
+          4,
+          5
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          6
+        ]
+      ]
+    ],
+    "expected": [
+      1,
+      1,
+      2,
+      3,
+      4,
+      4,
+      5,
+      6
+    ]
+  },
+  {
+    "name": "no_lists",
+    "args": [
+      []
+    ],
+    "expected": []
+  },
+  {
+    "name": "empty_list",
+    "args": [
+      [
+        []
+      ]
+    ],
+    "expected": []
+  },
+  {
+    "name": "mixed_empty",
+    "args": [
+      [
+        [],
+        [
+          1,
+          2
+        ],
+        []
+      ]
+    ],
+    "expected": [
+      1,
+      2
+    ]
+  },
+  {
+    "name": "negative_duplicates",
+    "args": [
+      [
+        [
+          -3,
+          -1
+        ],
+        [
+          -3,
+          0
+        ]
+      ]
+    ],
+    "expected": [
+      -3,
+      -3,
+      -1,
+      0
+    ]
+  },
+  {
+    "name": "one_list",
+    "args": [
+      [
+        [
+          2,
+          2,
+          5
+        ]
+      ]
+    ],
+    "expected": [
+      2,
+      2,
+      5
+    ]
+  }
+]
