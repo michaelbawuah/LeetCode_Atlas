@@ -1,0 +1,95 @@
+[
+  {
+    "name": "overlapping positive windows",
+    "args": [
+      [
+        1,
+        1,
+        1
+      ],
+      2
+    ],
+    "expected": 2
+  },
+  {
+    "name": "different length windows",
+    "args": [
+      [
+        1,
+        2,
+        3
+      ],
+      3
+    ],
+    "expected": 2
+  },
+  {
+    "name": "all zeroes",
+    "args": [
+      [
+        0,
+        0,
+        0
+      ],
+      0
+    ],
+    "expected": 6
+  },
+  {
+    "name": "repeated prefix sums",
+    "args": [
+      [
+        1,
+        -1,
+        0
+      ],
+      0
+    ],
+    "expected": 3
+  },
+  {
+    "name": "negative target",
+    "args": [
+      [
+        -1,
+        -1,
+        1
+      ],
+      -1
+    ],
+    "expected": 3
+  },
+  {
+    "name": "matching singleton",
+    "args": [
+      [
+        5
+      ],
+      5
+    ],
+    "expected": 1
+  },
+  {
+    "name": "empty subarray must not count",
+    "args": [
+      [
+        5
+      ],
+      0
+    ],
+    "expected": 0
+  },
+  {
+    "name": "alternating signs",
+    "args": [
+      [
+        2,
+        -2,
+        2,
+        -2
+      ],
+      0
+    ],
+    "expected": 4
+  }
+]

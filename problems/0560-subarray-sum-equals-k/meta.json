@@ -1,0 +1,28 @@
+{
+  "id": 560,
+  "title": "Subarray Sum Equals K",
+  "slug": "subarray-sum-equals-k",
+  "difficulty": "Medium",
+  "patterns": [
+    "prefix-sum",
+    "hash-map"
+  ],
+  "method": "subarraySum",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n) expected",
+    "space": "O(n)"
+  },
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n) expected",
+    "space": "O(n) auxiliary and scalar output"
+  }
+}
