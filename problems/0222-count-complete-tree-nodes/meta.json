@@ -1,0 +1,27 @@
+{
+  "id": 222,
+  "title": "Count Complete Tree Nodes",
+  "difficulty": "Medium",
+  "method": "countNodes",
+  "args_types": [
+    "treenode"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(log^2(n + 1))",
+    "space": "O(log(n + 1))"
+  },
+  "patterns": [
+    "tree",
+    "complete-tree"
+  ],
+  "checker": "exact",
+  "slug": "count-complete-tree-nodes",
+  "kind": "method",
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(log^2(n + 1))",
+    "space": "O(log(n + 1))"
+  }
+}

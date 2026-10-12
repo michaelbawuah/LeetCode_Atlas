@@ -1,0 +1,70 @@
+[
+  {
+    "name": "six_nodes",
+    "args": [
+      [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    ],
+    "expected": 6
+  },
+  {
+    "name": "empty",
+    "args": [
+      []
+    ],
+    "expected": 0
+  },
+  {
+    "name": "singleton",
+    "args": [
+      [
+        0
+      ]
+    ],
+    "expected": 1
+  },
+  {
+    "name": "two_nodes",
+    "args": [
+      [
+        1,
+        2
+      ]
+    ],
+    "expected": 2
+  },
+  {
+    "name": "perfect",
+    "args": [
+      [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    ],
+    "expected": 7
+  },
+  {
+    "name": "five_nodes",
+    "args": [
+      [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    ],
+    "expected": 5
+  }
+]
