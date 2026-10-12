@@ -1,0 +1,130 @@
+[
+  {
+    "name": "four minute spread",
+    "args": [
+      [
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ]
+    ],
+    "expected": 4
+  },
+  {
+    "name": "isolated fresh orange",
+    "args": [
+      [
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1
+        ]
+      ]
+    ],
+    "expected": -1
+  },
+  {
+    "name": "no fresh oranges",
+    "args": [
+      [
+        [
+          0,
+          2
+        ]
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "single fresh without source",
+    "args": [
+      [
+        [
+          1
+        ]
+      ]
+    ],
+    "expected": -1
+  },
+  {
+    "name": "single empty cell",
+    "args": [
+      [
+        [
+          0
+        ]
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "two simultaneous sources",
+    "args": [
+      [
+        [
+          2,
+          1,
+          1,
+          1,
+          2
+        ]
+      ]
+    ],
+    "expected": 2
+  },
+  {
+    "name": "empty cells block spread",
+    "args": [
+      [
+        [
+          2,
+          0,
+          1
+        ]
+      ]
+    ],
+    "expected": -1
+  },
+  {
+    "name": "vertical spread",
+    "args": [
+      [
+        [
+          2
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ]
+    ],
+    "expected": 3
+  }
+]

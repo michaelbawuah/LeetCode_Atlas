@@ -1,0 +1,28 @@
+{
+  "id": 994,
+  "title": "Rotting Oranges",
+  "slug": "rotting-oranges",
+  "difficulty": "Medium",
+  "patterns": [
+    "graph",
+    "breadth-first-search",
+    "grid"
+  ],
+  "method": "orangesRotting",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(rows * cols)",
+    "space": "O(rows * cols)"
+  },
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(rows * cols)",
+    "space": "O(rows * cols) auxiliary; O(1) scalar output"
+  }
+}
