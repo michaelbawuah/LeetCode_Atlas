@@ -1,0 +1,23 @@
+{
+  "id": 21,
+  "title": "Merge Two Sorted Lists",
+  "difficulty": "Easy",
+  "patterns": [
+    "linked-list",
+    "two-pointers"
+  ],
+  "method": "mergeTwoLists",
+  "args_types": [
+    "listnode",
+    "listnode"
+  ],
+  "return_type": "listnode",
+  "complexity": {
+    "time": "O(m + n)",
+    "space": "O(1)"
+  },
+  "slug": "merge-two-sorted-lists",
+  "kind": "method",
+  "checker": "exact",
+  "judge_status": "not_recorded"
+}
