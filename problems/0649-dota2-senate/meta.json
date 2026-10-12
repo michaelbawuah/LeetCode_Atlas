@@ -1,0 +1,22 @@
+{
+  "id": 649,
+  "slug": "dota2-senate",
+  "title": "Dota2 Senate",
+  "difficulty": "Medium",
+  "patterns": [
+    "queue",
+    "greedy"
+  ],
+  "method": "predictPartyVictory",
+  "args_types": [
+    "value"
+  ],
+  "kind": "method",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "judge_status": "not_recorded"
+}

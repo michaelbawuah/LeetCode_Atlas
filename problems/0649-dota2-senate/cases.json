@@ -1,0 +1,44 @@
+[
+  {
+    "name": "two-parties",
+    "args": [
+      "RD"
+    ],
+    "expected": "Radiant"
+  },
+  {
+    "name": "three",
+    "args": [
+      "RDD"
+    ],
+    "expected": "Dire"
+  },
+  {
+    "name": "one-radiant",
+    "args": [
+      "R"
+    ],
+    "expected": "Radiant"
+  },
+  {
+    "name": "one-dire",
+    "args": [
+      "D"
+    ],
+    "expected": "Dire"
+  },
+  {
+    "name": "earlier-dire",
+    "args": [
+      "DR"
+    ],
+    "expected": "Dire"
+  },
+  {
+    "name": "repeated-block",
+    "args": [
+      "RRDD"
+    ],
+    "expected": "Radiant"
+  }
+]
