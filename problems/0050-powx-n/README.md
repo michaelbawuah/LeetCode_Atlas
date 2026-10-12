@@ -15,3 +15,9 @@ Follow-up: adapt the algorithm to modular exponentiation. When does a negative e
 ## Verification
 
 Named fixtures and an independent generated-input reference cover behavior. Judge results are recorded separately in metadata.
+
+## C++23 counterpart
+
+The exponent is converted to int64_t before negating it, so n = INT_MIN is defined. Negative exponents invert the nonzero base first. An unused final squaring is skipped; rounding is compared with the existing approximate checker. Generators include signed exponent limits with unit bases and keep all pairs within the official finite result bounds. Zero bases occur only with positive exponents.
+
+C++: **O(log(|n| + 1)) time; O(1) space**. Named fixtures and 150 reproducible generated inputs compare this implementation with the Python track.

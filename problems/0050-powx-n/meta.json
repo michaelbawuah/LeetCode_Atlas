@@ -20,5 +20,10 @@
   },
   "judge_status": "not_recorded",
   "rel_tol": 1e-09,
-  "abs_tol": 1e-12
+  "abs_tol": 1e-12,
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(log(|n| + 1))",
+    "space": "O(1)"
+  }
 }
