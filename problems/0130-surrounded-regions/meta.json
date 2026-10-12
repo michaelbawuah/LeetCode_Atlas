@@ -1,0 +1,25 @@
+{
+  "id": 130,
+  "title": "Surrounded Regions",
+  "slug": "surrounded-regions",
+  "difficulty": "Medium",
+  "patterns": [
+    "graph",
+    "depth-first-search",
+    "grid"
+  ],
+  "method": "solve",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity_language": "Python",
+  "complexity": {
+    "time": "O(rows * cols)",
+    "space": "O(rows * cols)"
+  },
+  "judge_status": "not_recorded",
+  "result_from_arg": 0
+}
