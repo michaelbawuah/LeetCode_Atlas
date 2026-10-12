@@ -1,0 +1,83 @@
+[
+  {
+    "name": "through_root",
+    "args": [
+      [
+        1,
+        2,
+        3
+      ]
+    ],
+    "expected": 6
+  },
+  {
+    "name": "below_root",
+    "args": [
+      [
+        -10,
+        9,
+        20,
+        null,
+        null,
+        15,
+        7
+      ]
+    ],
+    "expected": 42
+  },
+  {
+    "name": "single_negative",
+    "args": [
+      [
+        -3
+      ]
+    ],
+    "expected": -3
+  },
+  {
+    "name": "all_negative",
+    "args": [
+      [
+        -2,
+        -1,
+        -3
+      ]
+    ],
+    "expected": -1
+  },
+  {
+    "name": "ignore_negative_branch",
+    "args": [
+      [
+        2,
+        -1,
+        3
+      ]
+    ],
+    "expected": 5
+  },
+  {
+    "name": "zero_values",
+    "args": [
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "positive_chain",
+    "args": [
+      [
+        1,
+        null,
+        2,
+        null,
+        3
+      ]
+    ],
+    "expected": 6
+  }
+]

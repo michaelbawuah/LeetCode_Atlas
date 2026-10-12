@@ -1,0 +1,23 @@
+{
+  "id": 124,
+  "title": "Binary Tree Maximum Path Sum",
+  "difficulty": "Hard",
+  "patterns": [
+    "tree",
+    "depth-first-search",
+    "dynamic-programming"
+  ],
+  "method": "maxPathSum",
+  "args_types": [
+    "treenode"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "slug": "binary-tree-maximum-path-sum",
+  "kind": "method",
+  "judge_status": "not_recorded",
+  "checker": "exact"
+}
