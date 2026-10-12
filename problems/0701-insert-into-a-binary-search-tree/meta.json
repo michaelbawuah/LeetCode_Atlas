@@ -1,0 +1,23 @@
+{
+  "id": 701,
+  "title": "Insert into a Binary Search Tree",
+  "difficulty": "Medium",
+  "method": "insertIntoBST",
+  "args_types": [
+    "treenode",
+    "value"
+  ],
+  "return_type": "treenode",
+  "complexity": {
+    "time": "O(h + 1)",
+    "space": "O(1) auxiliary; one fresh node"
+  },
+  "patterns": [
+    "tree",
+    "binary-search-tree"
+  ],
+  "checker": "bst_inorder",
+  "slug": "insert-into-a-binary-search-tree",
+  "kind": "method",
+  "judge_status": "not_recorded"
+}
