@@ -11,11 +11,16 @@
   ],
   "return_type": "value",
   "complexity": {
-    "time": "O(n)",
-    "space": "O(1)"
+    "time": "O(n) arithmetic operations",
+    "space": "O(1) integer states"
   },
   "slug": "decode-ways",
   "kind": "method",
   "checker": "exact",
-  "judge_status": "not_recorded"
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n)",
+    "space": "O(n) including string copy; O(1) core auxiliary"
+  }
 }
