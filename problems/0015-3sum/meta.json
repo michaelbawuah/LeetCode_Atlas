@@ -1,0 +1,27 @@
+{
+  "id": 15,
+  "title": "3Sum",
+  "slug": "3sum",
+  "difficulty": "Medium",
+  "patterns": [
+    "sorting",
+    "two-pointers"
+  ],
+  "method": "threeSum",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "unordered_groups",
+  "complexity_language": "Python",
+  "complexity": {
+    "time": "O(n^2)",
+    "space": "O(n) auxiliary; up to O(n^2) output"
+  },
+  "complexity_cpp": {
+    "time": "O(n^2)",
+    "space": "O(log n) typical sorting stack; up to O(n^2) output"
+  },
+  "judge_status": "not_recorded"
+}
