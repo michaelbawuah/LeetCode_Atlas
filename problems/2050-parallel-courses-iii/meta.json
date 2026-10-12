@@ -22,5 +22,9 @@
     "time": "O(V + E)",
     "space": "O(V + E)"
   },
-  "judge_status": "not_recorded"
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O(V + E)",
+    "space": "O(V + E) auxiliary; O(1) scalar output"
+  }
 }
