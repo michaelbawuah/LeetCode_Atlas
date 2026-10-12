@@ -1,0 +1,22 @@
+{
+  "id": 227,
+  "slug": "basic-calculator-ii",
+  "title": "Basic Calculator II",
+  "difficulty": "Medium",
+  "patterns": [
+    "stack",
+    "parsing"
+  ],
+  "method": "calculate",
+  "args_types": [
+    "value"
+  ],
+  "kind": "method",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n) scans/arithmetic steps; O(n B) bit work, B = maximum intermediate bit length",
+    "space": "O(n) text and stack storage under bounded input operands; retained integers may grow"
+  },
+  "judge_status": "not_recorded"
+}
