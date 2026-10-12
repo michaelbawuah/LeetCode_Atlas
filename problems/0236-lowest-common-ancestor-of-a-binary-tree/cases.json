@@ -1,0 +1,109 @@
+[
+  {
+    "name": "split",
+    "args": [
+      [
+        3,
+        5,
+        1,
+        6,
+        2,
+        0,
+        8,
+        null,
+        null,
+        7,
+        4
+      ],
+      5,
+      1
+    ],
+    "expected": 3
+  },
+  {
+    "name": "ancestor_itself",
+    "args": [
+      [
+        3,
+        5,
+        1,
+        6,
+        2,
+        0,
+        8,
+        null,
+        null,
+        7,
+        4
+      ],
+      5,
+      4
+    ],
+    "expected": 5
+  },
+  {
+    "name": "two_nodes",
+    "args": [
+      [
+        1,
+        2
+      ],
+      1,
+      2
+    ],
+    "expected": 1
+  },
+  {
+    "name": "lower_split",
+    "args": [
+      [
+        3,
+        5,
+        1,
+        6,
+        2,
+        0,
+        8,
+        null,
+        null,
+        7,
+        4
+      ],
+      7,
+      4
+    ],
+    "expected": 2
+  },
+  {
+    "name": "right_split",
+    "args": [
+      [
+        3,
+        5,
+        1,
+        6,
+        2,
+        0,
+        8
+      ],
+      0,
+      8
+    ],
+    "expected": 1
+  },
+  {
+    "name": "chain",
+    "args": [
+      [
+        1,
+        null,
+        2,
+        null,
+        3
+      ],
+      2,
+      3
+    ],
+    "expected": 2
+  }
+]
