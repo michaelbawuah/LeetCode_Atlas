@@ -1,0 +1,23 @@
+{
+  "id": 695,
+  "title": "Max Area of Island",
+  "slug": "max-area-of-island",
+  "difficulty": "Medium",
+  "patterns": [
+    "graph",
+    "depth-first-search",
+    "grid"
+  ],
+  "method": "maxAreaOfIsland",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(rows * cols)",
+    "space": "O(rows * cols)"
+  },
+  "judge_status": "not_recorded"
+}

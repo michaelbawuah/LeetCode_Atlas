@@ -1,0 +1,146 @@
+[
+  {
+    "name": "all water",
+    "args": [
+      [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "singleton land",
+    "args": [
+      [
+        [
+          1
+        ]
+      ]
+    ],
+    "expected": 1
+  },
+  {
+    "name": "diagonal is separate",
+    "args": [
+      [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    ],
+    "expected": 1
+  },
+  {
+    "name": "one row",
+    "args": [
+      [
+        [
+          1,
+          1,
+          0,
+          1
+        ]
+      ]
+    ],
+    "expected": 2
+  },
+  {
+    "name": "all land",
+    "args": [
+      [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ]
+    ],
+    "expected": 6
+  },
+  {
+    "name": "several components",
+    "args": [
+      [
+        [
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ]
+    ],
+    "expected": 3
+  },
+  {
+    "name": "ring around water",
+    "args": [
+      [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ]
+    ],
+    "expected": 8
+  },
+  {
+    "name": "separated vertical runs",
+    "args": [
+      [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ]
+    ],
+    "expected": 2
+  }
+]
