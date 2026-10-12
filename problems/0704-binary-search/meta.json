@@ -18,5 +18,10 @@
     "time": "O(log n)",
     "space": "O(1)"
   },
-  "judge_status": "not_recorded"
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O(log n)",
+    "space": "O(1)"
+  },
+  "complexity_language": "Python"
 }

@@ -23,3 +23,11 @@ Find the first position where the target could be inserted, then adapt the searc
 
 ## Verification
 Named local cases and an independent generated-input oracle accompany this solution. No official judge result is recorded.
+
+## C++23 counterpart
+
+[Source](solution.cpp) · [Local adapter](cpp_runner.cpp)
+
+C++ uses signed inclusive indexes and reads its vector by reference without copying or changing it.
+
+Time: O(log n). Space: O(1). The local adapter constructs a fresh object for each fixture and owns any converted inputs.
