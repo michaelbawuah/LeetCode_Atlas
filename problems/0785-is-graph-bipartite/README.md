@@ -21,3 +21,7 @@ O(V + E) time and O(V) auxiliary colors and queue storage, with scalar output. T
 Checking only the component containing vertex 0 misses an odd cycle elsewhere. The generated oracle enumerates all binary assignments on small undirected graphs, including disconnected components and isolated vertices.
 
 **Follow-up:** return an odd cycle as a witness when a conflict is detected.
+
+## Python and C++23 comparison
+
+Both implementations restart BFS in every uncolored connected component and enforce opposite colors across each edge. C++ owns its color vector and queue; the adjacency list stays unchanged. The solution requires O(V+E) time and O(V) auxiliary storage, excluding the runner’s O(V+E) decoded graph copy. Isolated vertices and an odd cycle in a later component are covered by the shared cases.
