@@ -1,0 +1,26 @@
+{
+  "id": 622,
+  "slug": "design-circular-queue",
+  "title": "Design Circular Queue",
+  "difficulty": "Medium",
+  "patterns": [
+    "circular-buffer",
+    "design"
+  ],
+  "method": null,
+  "args_types": [],
+  "kind": "design",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "constructor O(k); operations O(1)",
+    "space": "O(k)"
+  },
+  "judge_status": "not_recorded",
+  "class_name": "MyCircularQueue",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "constructor O(k); operations O(1)",
+    "space": "O(k)"
+  }
+}

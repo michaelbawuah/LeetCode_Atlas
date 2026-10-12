@@ -1,0 +1,164 @@
+[
+  {
+    "name": "empty",
+    "operations": [
+      "MyCircularQueue",
+      "isEmpty",
+      "Front",
+      "Rear",
+      "deQueue"
+    ],
+    "arguments": [
+      [
+        2
+      ],
+      [],
+      [],
+      [],
+      []
+    ],
+    "expected": [
+      null,
+      true,
+      -1,
+      -1,
+      false
+    ]
+  },
+  {
+    "name": "full",
+    "operations": [
+      "MyCircularQueue",
+      "enQueue",
+      "enQueue",
+      "enQueue",
+      "isFull"
+    ],
+    "arguments": [
+      [
+        2
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      []
+    ],
+    "expected": [
+      null,
+      true,
+      true,
+      false,
+      true
+    ]
+  },
+  {
+    "name": "wraparound",
+    "operations": [
+      "MyCircularQueue",
+      "enQueue",
+      "enQueue",
+      "deQueue",
+      "enQueue",
+      "Front",
+      "Rear"
+    ],
+    "arguments": [
+      [
+        2
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [],
+      [
+        3
+      ],
+      [],
+      []
+    ],
+    "expected": [
+      null,
+      true,
+      true,
+      true,
+      true,
+      2,
+      3
+    ]
+  },
+  {
+    "name": "capacity-one",
+    "operations": [
+      "MyCircularQueue",
+      "enQueue",
+      "enQueue",
+      "deQueue",
+      "enQueue",
+      "Front"
+    ],
+    "arguments": [
+      [
+        1
+      ],
+      [
+        7
+      ],
+      [
+        8
+      ],
+      [],
+      [
+        9
+      ],
+      []
+    ],
+    "expected": [
+      null,
+      true,
+      false,
+      true,
+      true,
+      9
+    ]
+  },
+  {
+    "name": "query-preserves-state",
+    "operations": [
+      "MyCircularQueue",
+      "enQueue",
+      "Front",
+      "Rear",
+      "Front",
+      "isEmpty"
+    ],
+    "arguments": [
+      [
+        3
+      ],
+      [
+        0
+      ],
+      [],
+      [],
+      [],
+      []
+    ],
+    "expected": [
+      null,
+      true,
+      0,
+      0,
+      0,
+      false
+    ]
+  }
+]
