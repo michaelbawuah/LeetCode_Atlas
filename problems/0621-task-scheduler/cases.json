@@ -1,0 +1,117 @@
+[
+  {
+    "name": "idle slots needed",
+    "args": [
+      [
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B"
+      ],
+      2
+    ],
+    "expected": 8
+  },
+  {
+    "name": "zero cooldown",
+    "args": [
+      [
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B"
+      ],
+      0
+    ],
+    "expected": 6
+  },
+  {
+    "name": "dominant task",
+    "args": [
+      [
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      2
+    ],
+    "expected": 16
+  },
+  {
+    "name": "single task huge cooldown",
+    "args": [
+      [
+        "A"
+      ],
+      100
+    ],
+    "expected": 1
+  },
+  {
+    "name": "two repeated jobs",
+    "args": [
+      [
+        "A",
+        "A"
+      ],
+      3
+    ],
+    "expected": 5
+  },
+  {
+    "name": "all unique",
+    "args": [
+      [
+        "A",
+        "B",
+        "C"
+      ],
+      2
+    ],
+    "expected": 3
+  },
+  {
+    "name": "three tied groups",
+    "args": [
+      [
+        "A",
+        "A",
+        "B",
+        "B",
+        "C",
+        "C"
+      ],
+      2
+    ],
+    "expected": 6
+  },
+  {
+    "name": "full tied blocks",
+    "args": [
+      [
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "C",
+        "C",
+        "C"
+      ],
+      2
+    ],
+    "expected": 9
+  }
+]
