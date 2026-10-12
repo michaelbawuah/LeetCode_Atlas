@@ -20,5 +20,9 @@
     "space": "O(S + 1)"
   },
   "complexity_language": "Python",
-  "judge_status": "not_recorded"
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O(n (S + 1)) expected",
+    "space": "O(S + 1)"
+  }
 }

@@ -22,3 +22,9 @@ How can the nonnegative input values convert this into a subset-sum counting pro
 
 ## Verification
 Named fixtures and independent generated-input references accompany the implementation. Official judge results are tracked separately in metadata.
+
+## C++23 counterpart
+
+The sparse frequency map preserves both sign choices even when a value is zero. Map lookup is expected constant time. For n <= 20 there are at most 2^20 sign assignments; official sum S <= 1000 bounds subtotal keys, so int arithmetic is safe for keys and multiplicities. The input vector is read by reference, and the following map replaces the previous layer without copying it.
+
+C++: **O(n (S + 1)) expected time; O(S + 1) space**. Named fixtures and 150 reproducible generated inputs compare this implementation with the Python track.
