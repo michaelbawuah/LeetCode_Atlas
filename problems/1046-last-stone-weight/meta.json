@@ -1,0 +1,22 @@
+{
+  "id": 1046,
+  "title": "Last Stone Weight",
+  "slug": "last-stone-weight",
+  "difficulty": "Easy",
+  "patterns": [
+    "heap",
+    "simulation"
+  ],
+  "method": "lastStoneWeight",
+  "args_types": [
+    "value"
+  ],
+  "kind": "method",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n log n)",
+    "space": "O(n)"
+  },
+  "judge_status": "not_recorded"
+}

@@ -1,0 +1,89 @@
+[
+  {
+    "name": "mixed-stones",
+    "args": [
+      [
+        2,
+        7,
+        4,
+        1,
+        8,
+        1
+      ]
+    ],
+    "expected": 1
+  },
+  {
+    "name": "single-stone",
+    "args": [
+      [
+        1
+      ]
+    ],
+    "expected": 1
+  },
+  {
+    "name": "equal-pair-destroys-both",
+    "args": [
+      [
+        5,
+        5
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "unequal-pair",
+    "args": [
+      [
+        9,
+        3
+      ]
+    ],
+    "expected": 6
+  },
+  {
+    "name": "odd-equal-stones",
+    "args": [
+      [
+        4,
+        4,
+        4
+      ]
+    ],
+    "expected": 4
+  },
+  {
+    "name": "even-equal-stones",
+    "args": [
+      [
+        4,
+        4,
+        4,
+        4
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "reinsert-difference",
+    "args": [
+      [
+        10,
+        4,
+        3
+      ]
+    ],
+    "expected": 3
+  },
+  {
+    "name": "weight-boundary",
+    "args": [
+      [
+        1000,
+        1
+      ]
+    ],
+    "expected": 999
+  }
+]
