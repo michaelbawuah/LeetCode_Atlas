@@ -1,0 +1,107 @@
+[
+  {
+    "name": "mixed_order",
+    "args": [
+      [
+        10,
+        9,
+        2,
+        5,
+        3,
+        7,
+        101,
+        18
+      ]
+    ],
+    "expected": 4
+  },
+  {
+    "name": "duplicates_between",
+    "args": [
+      [
+        0,
+        1,
+        0,
+        3,
+        2,
+        3
+      ]
+    ],
+    "expected": 4
+  },
+  {
+    "name": "equal_values",
+    "args": [
+      [
+        7,
+        7,
+        7,
+        7
+      ]
+    ],
+    "expected": 1
+  },
+  {
+    "name": "singleton",
+    "args": [
+      [
+        -10
+      ]
+    ],
+    "expected": 1
+  },
+  {
+    "name": "strictly_decreasing",
+    "args": [
+      [
+        5,
+        4,
+        3,
+        2,
+        1
+      ]
+    ],
+    "expected": 1
+  },
+  {
+    "name": "strictly_increasing",
+    "args": [
+      [
+        -3,
+        -2,
+        -1,
+        0,
+        1
+      ]
+    ],
+    "expected": 5
+  },
+  {
+    "name": "duplicate_plateaus",
+    "args": [
+      [
+        1,
+        1,
+        2,
+        2,
+        3,
+        3
+      ]
+    ],
+    "expected": 3
+  },
+  {
+    "name": "replacement_is_not_subsequence",
+    "args": [
+      [
+        3,
+        5,
+        6,
+        2,
+        4,
+        7
+      ]
+    ],
+    "expected": 4
+  }
+]

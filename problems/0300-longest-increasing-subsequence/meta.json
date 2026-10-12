@@ -1,0 +1,27 @@
+{
+  "id": 300,
+  "title": "Longest Increasing Subsequence",
+  "difficulty": "Medium",
+  "patterns": [
+    "binary-search",
+    "dynamic-programming"
+  ],
+  "method": "lengthOfLIS",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(n log n)",
+    "space": "O(n)"
+  },
+  "slug": "longest-increasing-subsequence",
+  "kind": "method",
+  "checker": "exact",
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n log(n + 1))",
+    "space": "O(n) auxiliary; O(1) scalar output"
+  }
+}
