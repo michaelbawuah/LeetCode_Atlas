@@ -1,0 +1,81 @@
+[
+  {
+    "name": "missing middle",
+    "args": [
+      [
+        3,
+        0,
+        1
+      ]
+    ],
+    "expected": 2
+  },
+  {
+    "name": "missing upper bound",
+    "args": [
+      [
+        0,
+        1
+      ]
+    ],
+    "expected": 2
+  },
+  {
+    "name": "shuffled range",
+    "args": [
+      [
+        9,
+        6,
+        4,
+        2,
+        3,
+        5,
+        7,
+        0,
+        1
+      ]
+    ],
+    "expected": 8
+  },
+  {
+    "name": "singleton zero",
+    "args": [
+      [
+        0
+      ]
+    ],
+    "expected": 1
+  },
+  {
+    "name": "singleton one",
+    "args": [
+      [
+        1
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "missing zero",
+    "args": [
+      [
+        1,
+        2,
+        3
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "unordered missing middle",
+    "args": [
+      [
+        4,
+        1,
+        0,
+        3
+      ]
+    ],
+    "expected": 2
+  }
+]

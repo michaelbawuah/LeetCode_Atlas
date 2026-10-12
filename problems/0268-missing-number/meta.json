@@ -1,0 +1,22 @@
+{
+  "id": 268,
+  "title": "Missing Number",
+  "slug": "missing-number",
+  "difficulty": "Easy",
+  "patterns": [
+    "bit-manipulation",
+    "xor"
+  ],
+  "method": "missingNumber",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "judge_status": "not_recorded"
+}
