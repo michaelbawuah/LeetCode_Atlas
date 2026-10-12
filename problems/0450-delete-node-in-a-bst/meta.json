@@ -1,0 +1,23 @@
+{
+  "id": 450,
+  "title": "Delete Node in a BST",
+  "difficulty": "Medium",
+  "method": "deleteNode",
+  "args_types": [
+    "treenode",
+    "value"
+  ],
+  "return_type": "treenode",
+  "complexity": {
+    "time": "O(h)",
+    "space": "O(1) auxiliary; existing nodes reused"
+  },
+  "patterns": [
+    "tree",
+    "binary-search-tree"
+  ],
+  "checker": "bst_inorder",
+  "slug": "delete-node-in-a-bst",
+  "kind": "method",
+  "judge_status": "not_recorded"
+}
