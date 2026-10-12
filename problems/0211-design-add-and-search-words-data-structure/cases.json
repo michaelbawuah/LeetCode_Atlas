@@ -1,0 +1,214 @@
+[
+  {
+    "name": "literal-and-wildcard-searches",
+    "operations": [
+      "WordDictionary",
+      "addWord",
+      "addWord",
+      "addWord",
+      "search",
+      "search",
+      "search",
+      "search"
+    ],
+    "arguments": [
+      [],
+      [
+        "bad"
+      ],
+      [
+        "dad"
+      ],
+      [
+        "mad"
+      ],
+      [
+        "pad"
+      ],
+      [
+        "bad"
+      ],
+      [
+        ".ad"
+      ],
+      [
+        "b.."
+      ]
+    ],
+    "expected": [
+      null,
+      null,
+      null,
+      null,
+      false,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "name": "search-before-add",
+    "operations": [
+      "WordDictionary",
+      "search",
+      "addWord",
+      "search"
+    ],
+    "arguments": [
+      [],
+      [
+        "a"
+      ],
+      [
+        "a"
+      ],
+      [
+        "a"
+      ]
+    ],
+    "expected": [
+      null,
+      false,
+      null,
+      true
+    ]
+  },
+  {
+    "name": "prefix-is-not-a-word",
+    "operations": [
+      "WordDictionary",
+      "addWord",
+      "search",
+      "search"
+    ],
+    "arguments": [
+      [],
+      [
+        "apple"
+      ],
+      [
+        "app"
+      ],
+      [
+        "app.e"
+      ]
+    ],
+    "expected": [
+      null,
+      null,
+      false,
+      true
+    ]
+  },
+  {
+    "name": "duplicate-add",
+    "operations": [
+      "WordDictionary",
+      "addWord",
+      "addWord",
+      "search",
+      "search"
+    ],
+    "arguments": [
+      [],
+      [
+        "a"
+      ],
+      [
+        "a"
+      ],
+      [
+        "."
+      ],
+      [
+        ".."
+      ]
+    ],
+    "expected": [
+      null,
+      null,
+      null,
+      true,
+      false
+    ]
+  },
+  {
+    "name": "length-must-match",
+    "operations": [
+      "WordDictionary",
+      "addWord",
+      "search",
+      "search",
+      "search"
+    ],
+    "arguments": [
+      [],
+      [
+        "ab"
+      ],
+      [
+        "a"
+      ],
+      [
+        ".."
+      ],
+      [
+        "a.."
+      ]
+    ],
+    "expected": [
+      null,
+      null,
+      false,
+      true,
+      false
+    ]
+  },
+  {
+    "name": "branching-wildcards",
+    "operations": [
+      "WordDictionary",
+      "addWord",
+      "addWord",
+      "addWord",
+      "search",
+      "search",
+      "search",
+      "search"
+    ],
+    "arguments": [
+      [],
+      [
+        "at"
+      ],
+      [
+        "an"
+      ],
+      [
+        "bat"
+      ],
+      [
+        ".at"
+      ],
+      [
+        "a."
+      ],
+      [
+        "b."
+      ],
+      [
+        "ba."
+      ]
+    ],
+    "expected": [
+      null,
+      null,
+      null,
+      null,
+      true,
+      true,
+      false,
+      true
+    ]
+  }
+]
