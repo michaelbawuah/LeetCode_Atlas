@@ -19,3 +19,9 @@ An internal node is not a complete number. Leading zero digits still advance the
 
 ## Follow-up
 Replace base ten with an arbitrary base and state the required digit bounds.
+
+## C++23 implementation
+
+C++23 carries numerical prefixes on an explicit DFS stack and widens decimal multiplication and the accumulated sum to `int64_t` before returning the officially bounded `int` result. Its adapter checks that every original node value and child link remain unchanged.
+
+C++23 submission cost: **O(n) time; O(h) space**. Here n is node count, h is tree height, w is maximum level width, and L is the number of returned path elements when applicable. Adapter construction, snapshots, and serialization are measured separately.
