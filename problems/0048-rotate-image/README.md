@@ -29,3 +29,7 @@ Swapping every `(row, column)` pair would transpose twice and cancel the change.
 The method assumes a square matrix; a rectangular rotation changes dimensions.
 
 **Follow-up:** how would a four-way cycle rotate one layer without transposing?
+
+## C++23 counterpart
+
+The C++ method transposes the same square matrix and reverses each existing row with `std::reverse`. It allocates no second matrix and returns `void`. The adapter serializes the mutated matrix rather than a return value, preserving the O(n²) time and O(1) auxiliary-space algorithm.
