@@ -1,0 +1,28 @@
+{
+  "id": 61,
+  "title": "Rotate List",
+  "difficulty": "Medium",
+  "method": "rotateRight",
+  "args_types": [
+    "listnode",
+    "value"
+  ],
+  "return_type": "listnode",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "patterns": [
+    "linked-list",
+    "two-pointers"
+  ],
+  "checker": "exact",
+  "slug": "rotate-list",
+  "kind": "method",
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n)",
+    "space": "O(1)"
+  }
+}

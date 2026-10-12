@@ -1,0 +1,90 @@
+[
+  {
+    "name": "basic",
+    "args": [
+      [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      2
+    ],
+    "expected": [
+      4,
+      5,
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "name": "empty",
+    "args": [
+      [],
+      7
+    ],
+    "expected": []
+  },
+  {
+    "name": "singleton",
+    "args": [
+      [
+        1
+      ],
+      2000000000
+    ],
+    "expected": [
+      1
+    ]
+  },
+  {
+    "name": "zero_rotation",
+    "args": [
+      [
+        1,
+        2,
+        3
+      ],
+      0
+    ],
+    "expected": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "name": "full_cycles",
+    "args": [
+      [
+        0,
+        1,
+        2
+      ],
+      6
+    ],
+    "expected": [
+      0,
+      1,
+      2
+    ]
+  },
+  {
+    "name": "remainder",
+    "args": [
+      [
+        0,
+        1,
+        2
+      ],
+      4
+    ],
+    "expected": [
+      2,
+      0,
+      1
+    ]
+  }
+]
