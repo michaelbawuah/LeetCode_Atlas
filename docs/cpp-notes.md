@@ -2,9 +2,11 @@
 
 [Problem catalog](problems.md) · [Verification](verification.md) · [Repository](../README.md)
 
-The 25 C++23 counterparts share named fixtures with Python, plus 150 generated comparisons per counterpart. Different representations and algorithms make the comparison useful: Python favors an explicit problem-solving path, while C++ makes fixed-width arithmetic, references, container operations, and node lifetime visible.
+The 75 C++23 counterparts share named fixtures with Python, plus 150 generated comparisons per counterpart. Different representations and algorithms make the comparison useful: Python favors an explicit problem-solving path, while C++ makes fixed-width arithmetic, references, container operations, and node lifetime visible.
 
-## Current counterparts
+## Selected comparisons
+
+The [full catalog](problems.md) identifies all 75 counterparts. These entries illustrate recurring language choices.
 
 | Problem | Python | C++23 | Comparison to examine |
 |---|---|---|---|
@@ -48,6 +50,8 @@ Python `//` rounds down, while C++ integer division truncates toward zero. The P
 
 The C++ substring implementations index fixed tables through `unsigned char`, preventing a signed byte from becoming a negative index. Those tables operate on bytes; they are not Unicode code-point dictionaries.
 
+[Coin Change II](../problems/0518-coin-change-ii/README.md) has a subtle numeric boundary: its final answer fits a signed 32-bit integer, but other subtotal counts can exceed 64 bits. Python keeps arbitrary-precision counts. C++ widens each addition and saturates nonnegative counts at `INT_MAX`; because no transition subtracts, this preserves the guaranteed-bounded final answer. A named fixture uses an odd target with many even denominations: the answer is zero while unrelated even-subtotal counts grow large.
+
 ## Collections, ordering, and mutation
 
 Hash-table costs are generally expected rather than worst-case constant time. Iteration order should only affect the answer when the problem requires it. Declared checkers preserve multiplicity and only remove ordering distinctions that the problem permits.
@@ -56,6 +60,19 @@ Python's Merge Intervals uses `sorted(intervals)` and builds fresh result ranges
 
 Binary search needs a consistent interval convention. Rotated-array search uses `[left, right]` in Python and `[left, end)` with unsigned indexes in C++; half-open bounds avoid subtracting from unsigned zero.
 
+## Stateful structures and frontiers
+
+| Problem | Representation and invariant |
+|---|---|
+| [LRU Cache](../problems/0146-lru-cache/README.md) | Python OrderedDict and C++ list plus hash map maintain the same recency order; C++ stores stable list iterators. |
+| [TimeMap](../problems/0981-time-based-key-value-store/README.md) | Per-key timestamp histories support binary search for the latest entry at or before a query. |
+| [Mutable range sums](../problems/0307-range-sum-query-mutable/README.md) | Fenwick blocks receive a replacement's delta; C++ uses widened retained sums. |
+| [Sliding Window Maximum](../problems/0239-sliding-window-maximum/README.md) | A deque stores candidate indexes, expires old positions, and discards values dominated by a newer one. |
+| [Network Delay Time](../problems/0743-network-delay-time/README.md) | A min-heap carries distance candidates; obsolete distances are skipped. |
+| [Connect All Points](../problems/1584-min-cost-to-connect-all-points/README.md) | Dense Prim keeps one best connection cost per remaining point without storing every edge. |
+
+Each C++ design adapter creates a fresh local object for a legal history. Its JSON input is `[operations, arguments]`, and constructor/void operations produce `null`, matching Python's serialized `None`.
+
 ## Node ownership and local adapters
 
 `solution.py` and `solution.cpp` retain LeetCode's class and method interfaces. The platform supplies node types; local adapters supply compatible definitions and construct nodes from JSON fixtures.
@@ -63,6 +80,8 @@ Binary search needs a consistent interval convention. Rotated-array search uses 
 C++ [ListArena and TreeArena](../cpp/atlas_adapter.hpp) own nodes through `unique_ptr` storage. Submission methods receive borrowed raw pointers. Reverse Linked List rewires links; Remove Nth Node detaches a node without deleting it. Arena cleanup remains valid even when a node is no longer reachable from the returned head. Moving the owning pointers does not move the nodes themselves.
 
 Trees use queue-based level-order encoding with `null` child positions. `[1,null,2,3]` means that 3 is the left child of 2, not an array-heap index. Serializers trim trailing nulls and reject cycles or shared-child structures. The C++ BST counterpart walks inorder with an explicit stack, taking O(n) time and O(h) auxiliary space.
+
+[Construct Tree from Preorder/Inorder](../problems/0105-construct-binary-tree-from-preorder-and-inorder-traversal/README.md) allocates new nodes instead of borrowing an input arena. Its constructor stages ownership for exception safety, then the adapter's `TreeResultOwner` takes responsibility for the returned tree. Borrowed arena trees must not be transferred to this owner. Python's stack uses O(h) auxiliary space; the C++ ownership staging uses O(n), excluding the output in both bounds.
 
 The Python adapter copies JSON inputs before constructing nodes or passing mutable values. For [Reorder List](../problems/0143-reorder-list/README.md) and [Move Zeroes](../problems/0283-move-zeroes/README.md), `result_from_arg: 0` selects the mutated first argument after the method returns `None`. Submission signatures remain unchanged.
 
@@ -75,6 +94,6 @@ ctest --test-dir build --output-on-failure
 ATLAS_CPP_BIN_DIR=build/bin python -m pytest tests/test_cases.py tests/test_cpp_properties.py
 ```
 
-The shared-fixture suite requires every configured counterpart runner. The generated suite includes 3,750 comparisons across 25 counterparts. Independent Python oracles provide another verification path because two language implementations can share the same algorithmic mistake.
+The shared-fixture suite requires every configured counterpart runner. The generated suite includes 11,250 comparisons across 75 counterparts. Independent Python oracles provide another verification path because two language implementations can share the same algorithmic mistake.
 
 See [verification](verification.md) for sanitizer settings, recorded command results, and the distinction between local checks and official judge evidence.

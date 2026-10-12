@@ -63,6 +63,7 @@ Do not apply a pointer movement rule only because it looks familiar. Explain the
 
 - [Best Time to Buy and Sell Stock](../problems/0121-best-time-to-buy-and-sell-stock/README.md): retain the cheapest earlier buy price.
 - [Product of Array Except Self](../problems/0238-product-of-array-except-self/README.md): combine products from either side without dividing.
+- [Subarray Sum Equals K](../problems/0560-subarray-sum-equals-k/README.md): count earlier prefix sums equal to the current sum minus k; negative values prevent a simple shrinking sum window.
 
 Distinguish output storage from auxiliary storage. Consider zero values and integer limits before using division or accumulating products.
 
@@ -81,6 +82,8 @@ Distinguish output storage from auxiliary storage. Consider zero values and inte
 | [Minimum Size Subarray Sum](../problems/0209-minimum-size-subarray-sum/README.md) | Positive values make shrinking a valid sum window safe. |
 
 Check that the left boundary never moves backward. Recomputing a maximum over 26 letters is constant work for that fixed alphabet; the same argument does not apply to an unbounded alphabet.
+
+[Sliding Window Maximum](../problems/0239-sliding-window-maximum/README.md) adds a monotonic deque: an older, smaller value is dominated by a newer value that expires later. Track indexes to separate expiry from value comparisons. The [worked trace](traces.md) shows the deque after each completed window.
 
 ## Stacks and monotonic stacks
 
@@ -126,6 +129,8 @@ Verify that every update shrinks the interval and that endpoints remain searchab
 
 An output with the right values can still contain a cycle or reuse a node incorrectly. Structural behavior belongs in the tests as well as the explanation.
 
+[Linked List Cycle](../problems/0141-linked-list-cycle/README.md) compares pointer identities using two traversal speeds. [Reverse Nodes in k-Group](../problems/0025-reverse-nodes-in-k-group/README.md) first confirms a complete group before changing its links. [Palindrome Linked List](../problems/0234-palindrome-linked-list/README.md) restores the reversed suffix; its tests inspect the original nodes and links afterward.
+
 ## Trees
 
 **Recognition:** parent-child relationships determine traversal order, subtree state, or globally constrained values.
@@ -141,6 +146,8 @@ An output with the right values can still contain a cycle or reuse a node incorr
 | [Right Side View](../problems/0199-binary-tree-right-side-view/README.md) | Right-first DFS records the first node reached at each depth. |
 
 Tree equality also includes shape: [Same Tree](../problems/0100-same-tree/README.md) and [Subtree of Another Tree](../problems/0572-subtree-of-another-tree/README.md) compare absent child positions. Iterative traversal avoids Python's recursion-depth limit; auxiliary space still depends on retained state and traversal shape.
+
+[Preorder/Inorder Reconstruction](../problems/0105-construct-binary-tree-from-preorder-and-inorder-traversal/README.md) uses traversal boundaries to decide when to attach a left child or finish ancestors. [Maximum Path Sum](../problems/0124-binary-tree-maximum-path-sum/README.md) distinguishes the single branch returned to a parent from a path joining two branches at the current node.
 
 ## Intervals and greedy boundaries
 
@@ -226,6 +233,28 @@ Restore mutable path state after returning from a choice. Count output construct
 
 Directed dependencies and undirected connectivity need different reasoning. A topological order is a witness rather than one uniquely determined list: Course Schedule II's semantic checker requires every course exactly once and every prerequisite before its dependent.
 
+## Weighted graphs
+
+| Problem | State and assumption |
+|---|---|
+| [Network Delay Time](../problems/0743-network-delay-time/README.md) | Dijkstra settles shortest distances with nonnegative edges; stale heap candidates are ignored. |
+| [Cheapest Flights Within K Stops](../problems/0787-cheapest-flights-within-k-stops/README.md) | Each relaxation round adds at most one edge; read the previous round to enforce the stop limit. |
+| [Min Cost to Connect All Points](../problems/1584-min-cost-to-connect-all-points/README.md) | Prim tracks the cheapest edge joining each remaining point to the connected set. |
+
+A shortest-path tree and a minimum spanning tree optimize different quantities. The [Dijkstra trace](traces.md) shows why an improved candidate can coexist with an obsolete one in the heap.
+
+## Stateful designs and range queries
+
+| Problem | Retained information |
+|---|---|
+| [LRU Cache](../problems/0146-lru-cache/README.md) | Key lookup and an ordering that changes on successful reads and writes. |
+| [TimeMap](../problems/0981-time-based-key-value-store/README.md) | Increasing timestamp histories per key; find the latest entry no later than the query. |
+| [Snapshot Array](../problems/1146-snapshot-array/README.md) | Per-index change histories; repeated writes within one snapshot replace its current entry. |
+| [Mutable Range Sum](../problems/0307-range-sum-query-mutable/README.md) | Fenwick prefix blocks plus original values for replacement deltas. |
+| [Immutable 2D Range Sum](../problems/0304-range-sum-query-2d-immutable/README.md) | A padded prefix table supports rectangle inclusion-exclusion. |
+
+Define state after every operation and test complete legal histories against a simpler model. The [LRU and Fenwick traces](traces.md) expose how a successful read or point replacement changes retained state.
+
 ## Sequence and grid dynamic programming
 
 **Recognition:** choices lead to overlapping subproblems with the same sufficient state.
@@ -243,6 +272,8 @@ Directed dependencies and undirected connectivity need different reasoning. A to
 | [Longest Increasing Subsequence](../problems/0300-longest-increasing-subsequence/README.md) | Minimum possible tail for each achieved subsequence length. |
 
 LIS's tails array supports binary search, but the array itself need not be one realized subsequence. In compressed grid DP, an entry can represent the preceding row until it is updated and the current row afterward. Preserve old values long enough for every transition that depends on them.
+
+Loop direction encodes reuse: [Partition Equal Subset Sum](../problems/0416-partition-equal-subset-sum/README.md) updates totals backward to use each number once, while [Coin Change II](../problems/0518-coin-change-ii/README.md) scans amounts forward within each denomination to permit repeated coins without counting orderings. [Edit Distance](../problems/0072-edit-distance/README.md), [Distinct Subsequences](../problems/0115-distinct-subsequences/README.md), and [Interleaving String](../problems/0097-interleaving-string/README.md) each require a different meaning for a pair of prefix positions.
 
 ## Fixed-width bit operations
 

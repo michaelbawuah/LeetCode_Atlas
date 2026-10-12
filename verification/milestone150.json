@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "milestone": "interview-core-150",
+  "verified_on": "2026-10-12",
+  "source_base_commit": "3907ce958bb38f01c1b017d066a60224b32f5a84",
+  "verified_sources_sha256": "8a955b3334985add8e9dc0c0080a3ad86318b68d046dbf05221788658dd90a0d",
+  "digest_definition": "SHA-256 of sorted source/fixture repository paths, each followed by a null byte and its binary SHA-256. Includes .py/.cpp/.hpp/.json, CMakeLists.txt, pyproject.toml, and CI; excludes catalog.json and verification reports.",
+  "distinct_problems": 150,
+  "implementations": {
+    "Python": 150,
+    "C++23": 75
+  },
+  "difficulty": {
+    "Easy": 35,
+    "Hard": 12,
+    "Medium": 103
+  },
+  "pattern_tags": 57,
+  "design_problems": 13,
+  "named_python_fixtures": 1106,
+  "named_cpp_shared_fixtures": 554,
+  "generated_cpp_python_comparisons": 11250,
+  "python_version": "3.12.14",
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0",
+  "pytest": {
+    "tests": 1456,
+    "passed": 1456,
+    "failures_or_errors": 0,
+    "skipped": 0
+  },
+  "ctest": {
+    "targets": 1,
+    "passed": 1,
+    "catch2_cases": 12,
+    "assertions": 60
+  },
+  "instrumentation": [
+    "AddressSanitizer",
+    "UndefinedBehaviorSanitizer"
+  ],
+  "leak_check": "Disabled locally because LeakSanitizer cannot run under this container ptrace; enabled in Linux Clang CI.",
+  "local_environment_adjustment": "Restored the execute permission on one owned build artifact after an initial permission-only failure; all final tests passed.",
+  "worked_traces_checked": [
+    239,
+    146,
+    307,
+    743
+  ],
+  "commands": [
+    "ASAN_OPTIONS=detect_leaks=0 UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1 ATLAS_CPP_BIN_DIR=build/bin python -m pytest -q --junitxml=build/milestone150-tests.xml",
+    "ASAN_OPTIONS=detect_leaks=0 UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1 ctest --test-dir build --output-on-failure",
+    "python -m ruff check .",
+    "python -m ruff format --check .",
+    "python tools/catalog.py --check"
+  ],
+  "official_leetcode_acceptances_recorded": 0
+}

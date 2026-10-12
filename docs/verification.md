@@ -8,7 +8,7 @@ The repository checks problems from several directions: named cases, independent
 
 The historical [foundation record](../verification/foundation.json) covers **25 Python problems and 10 C++23 counterparts**: 255 pytest tests passed, including 180 named fixtures and 1,500 generated Python/C++ comparisons, plus the CTest adapter suite. AddressSanitizer and UndefinedBehaviorSanitizer were enabled. LeakSanitizer was disabled locally because the container runs under ptrace; the Linux Clang CI configuration enables it.
 
-The [75-problem milestone report](../verification/milestone75.json) is the separate command-result record for **75 Python implementations and 25 C++23 counterparts**. The current generated comparison suite contains **3,750 cases: 150 for each of 25 counterparts**. Test totals and observed command outcomes belong in that report; the foundation totals remain a historical record.
+The [75-problem milestone report](../verification/milestone75.json) records **75 Python implementations and 25 C++23 counterparts**, with 720 pytest checks and 3,750 generated comparisons. The separate [150-problem report](../verification/milestone150.json) covers the current **150 Python implementations and 75 C++23 counterparts**: 1,456 pytest checks passed, including 1,106 named fixtures and **11,250 generated comparisons: 150 for each counterpart**. The CTest adapter suite also passed. Earlier totals remain historical records.
 
 ## Run the Python checks
 
@@ -45,7 +45,7 @@ Hypothesis generates and shrinks counterexamples when a property fails. A useful
 
 ## Shared fixtures and semantic checkers
 
-`cases.json` stores inputs and expected results. Method problems use argument arrays; design problems store legal constructor and operation histories. Runtime adapters construct list/tree nodes, isolate calls by copying JSON inputs, and serialize outputs.
+`cases.json` stores inputs and expected results. Method problems use argument arrays; design problems store legal constructor and operation histories. Runtime adapters construct list/tree/graph nodes, isolate calls by copying JSON inputs, and serialize outputs. C++ design runners accept `[operations, arguments]` and return one result for every operation, including `null` for construction and void methods.
 
 [Reorder List](../problems/0143-reorder-list/meta.json) and [Move Zeroes](../problems/0283-move-zeroes/meta.json) retain their in-place, `None`-returning submission methods. Metadata `result_from_arg: 0` asks the local runner to compare the changed first argument instead of that return value. Input isolation protects fixtures while still exposing the actual mutation result.
 
@@ -56,6 +56,10 @@ Hypothesis generates and shrinks counterexamples when a property fails. A useful
 | `unordered_rows` | Outer row order may vary; positions within each row remain meaningful. |
 | `unordered_groups` | Group order and flat member order may vary; multiplicity remains meaningful. |
 | `topological_order` | Any complete, duplicate-free course ordering respecting every prerequisite is valid. A cyclic fixture requires an empty result. |
+| `longest_palindrome` | Any source substring that is a palindrome with the expected maximum length. |
+| `gas_station` | Any returned index completing the full circuit; `-1` requires total gas below total cost. |
+| `graph_adjacency` | Neighbor order within each labeled node may vary; node labels, edges, and multiplicity remain meaningful. |
+| `approx` | Numeric results may differ within relative tolerance 1e-9 and absolute tolerance 1e-12; booleans are rejected. |
 
 [Course Schedule II](../problems/0210-course-schedule-ii/README.md) uses the semantic topological checker with its original course count and edges. Comparing it to one expected ordering would reject other correct witnesses; sorting the result would erase the dependency evidence.
 
@@ -65,7 +69,11 @@ Named fixtures honor the official input contracts, including unique-answer condi
 
 Sparse trees use LeetCode's queue-based level order with null children, not heap-array positions. `[1,null,2,3]` places 3 below the right child 2. List serialization detects cycles, and tree serialization rejects cycles or shared children.
 
+Linked List Cycle accepts `{"values": [3,2,0,-4], "pos": 1}`: `pos` identifies the node to which the final link returns, or is `-1` for an acyclic list. Graph fixtures use adjacency rows for labels 1 through n. Graph-clone properties inspect pointer identity separately from serialized adjacency so returning the original graph cannot pass on values alone.
+
 The C++ [adapter arenas](../cpp/atlas_adapter.hpp) retain ownership of every allocated node, including nodes detached from a returned list. Submission methods borrow pointers and can rewire links without assuming responsibility for deleting those nodes. Adapter tests cover decoding, serialization, and lifetime-sensitive behavior.
+
+Newly constructed tree outputs use `TreeResultOwner` rather than an input arena. The construction submission stages allocations for exception safety; the local owner releases the returned tree after serialization. This ownership path is tested independently of tree values.
 
 ## Run the C++23 checks
 

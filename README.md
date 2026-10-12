@@ -5,14 +5,14 @@
 An algorithm collection organized around **why a solution works**: the state it maintains, the invariant that makes it correct, and the counterexamples that test it.
 
 <!-- atlas:stats:start -->
-**75 distinct problems · 75 Python solutions · 25 C++23 counterparts**
+**150 distinct problems · 150 Python solutions · 75 C++23 counterparts**
 <!-- atlas:stats:end -->
 
-[Browse every problem](docs/problems.md) · [Explore patterns](docs/patterns.md) · [Run the checks](docs/verification.md) · [See the roadmap](docs/roadmap.md)
+[Browse every problem](docs/problems.md) · [Explore patterns](docs/patterns.md) · [Follow algorithm traces](docs/traces.md) · [Run the checks](docs/verification.md) · [See the roadmap](docs/roadmap.md)
 
 ## Start with a pattern
 
-Python is the primary interview-practice track; selected C++23 counterparts make container, arithmetic, ownership, and implementation tradeoffs visible. Every problem has submission-ready code, original reasoning, named fixtures, generated checks, and metadata. Both languages use the same fixtures, with 150 additional generated comparisons for each of the 25 C++ counterparts.
+Python is the primary interview-practice track; selected C++23 counterparts make container, arithmetic, ownership, and implementation tradeoffs visible. Every problem has submission-ready code, original reasoning, named fixtures, generated checks, and metadata. Both languages use the same fixtures, with 150 additional generated comparisons for every C++ counterpart.
 
 | Family | Representative problem | What the explanation makes explicit |
 |---|---|---|
@@ -30,6 +30,9 @@ Python is the primary interview-practice track; selected C++23 counterparts make
 | Graphs and dependencies | [Course Schedule II](problems/0210-course-schedule-ii/README.md) | Validate any complete ordering that respects every prerequisite. |
 | Disjoint sets | [Redundant Connection](problems/0684-redundant-connection/README.md) | An edge inside one existing component closes a cycle. |
 | Sequence and grid DP | [Longest Common Subsequence](problems/1143-longest-common-subsequence/README.md) · [Unique Paths](problems/0062-unique-paths/README.md) | Define the state before compressing its storage. |
+| Shortest paths | [Network Delay Time](problems/0743-network-delay-time/README.md) | Separate the best known distance from an obsolete heap candidate. |
+| Cache design | [LRU Cache](problems/0146-lru-cache/README.md) | Keep lookup and recency order synchronized. |
+| Mutable range queries | [Range Sum Query — Mutable](problems/0307-range-sum-query-mutable/README.md) | Update only the prefix blocks affected by a changed value. |
 
 The [full catalog](docs/problems.md) links every implementation, explanation, fixture, and property suite. The [generated pattern index](docs/pattern-index.md) lists every problem tagged with each technique.
 
@@ -79,4 +82,4 @@ Official LeetCode submission evidence is tracked separately from local verificat
 
 ## Grow the atlas
 
-The **25 / 10 foundation** and **75 / 25 essential-pattern milestone** are present. The next cumulative targets are **150 Python / 75 C++23**, then **300 / 150**. The [roadmap](docs/roadmap.md) describes the remaining coverage and practice goals.
+The **25 / 10 foundation**, **75 / 25 essential-pattern milestone**, and **150 / 75 interview core** are present. The next cumulative target is **300 Python / 150 C++23**. The [roadmap](docs/roadmap.md) describes the remaining coverage and practice goals.

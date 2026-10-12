@@ -10,20 +10,20 @@ Python is the primary track for software engineering and AI/ML interview practic
 |---|---:|---:|---|---|
 | Foundation | 25 | 10 | Present | Core patterns, repository structure, independent tests, shared fixtures |
 | Essential patterns | **75** | **25** | Present | Intervals, heaps, tries, backtracking, graph components and dependencies, sequence/grid DP |
-| Interview core | 150 | 75 | Next target | Mixed-pattern problems, deeper graph algorithms, harder transitions, systematic re-solving |
+| Interview core | **150** | **75** | Present | Weighted graphs, tree reconstruction, string/counting DP, duplicate-aware search, stateful designs |
 | Main target | **300** | **150** | Target | Broad explanations across the major interview families |
 
-Counts are cumulative: the current milestone contains 100 language implementations covering 75 distinct problems. The main target would contain 450 implementations covering 300 problems. See [verification records](verification.md) for evidence associated with each milestone.
+Counts are cumulative: the current milestone contains 225 language implementations covering 150 distinct problems. The main target would contain 450 implementations covering 300 problems. This is a custom interview collection, not a claim to reproduce a particular official study plan. See [verification records](verification.md) for evidence associated with each milestone.
 
-## Next: 150 Python / 75 C++23
+## Present: 150 Python / 75 C++23
 
-Build on the existing graph, trie, and DP foundations with shortest paths, weighted graphs, advanced tree queries, string algorithms, and mixed-pattern problems. Expand DP to interval states and less direct transitions. Add C++ counterparts where ownership, numeric bounds, container behavior, or a different algorithm provides a useful comparison.
+The expanded collection covers Dijkstra, bounded-edge relaxation, minimum spanning trees, graph cloning, tree reconstruction, linked-list groups and cycles, string/counting DP, and duplicate-aware backtracking. Stateful additions include LRU Cache, TimeMap, Twitter, snapshots, and mutable range queries. The [worked traces](traces.md) follow four representative state transitions.
 
 Practice should accompany expansion: revisit the essential patterns under time limits, explain their invariants aloud, and record which follow-ups still expose gaps. A familiar implementation alone does not demonstrate independent recall.
 
-## Then: 300 Python / 150 C++23
+## Next: 300 Python / 150 C++23
 
-Add harder graph and DP variations, substantial alternative approaches, and systematic boundary cases. A planned difficulty mix is 60 Easy, 195 Medium, and 45 Hard; coverage and explanation quality guide the actual selection.
+Add interval DP, advanced string matching, richer graph queries, and substantial alternative approaches. Select additions by missing patterns and useful follow-ups; coverage and explanation quality guide the actual difficulty mix.
 
 The existing interval, heap, trie, topological-order, union-find, and sequence/grid DP entries provide starting points for these deeper variations. The [pattern atlas](patterns.md) connects representative implementations to the state they retain.
 
@@ -48,6 +48,6 @@ Meaningful commits can group a solution with its reasoning and tests, or capture
 
 ## Later extensions
 
-A SQL track can add database interview problems and reproducible fixtures. A searchable companion guide can use the same metadata. Both remain optional extensions beyond the current 75-problem collection.
+A SQL track can add database interview problems and reproducible fixtures. A searchable companion guide can use the same metadata. Both remain optional extensions beyond the current 150-problem collection.
 
 500 distinct problems is a possible stretch target after the 300-problem core, guided by remaining gaps rather than a predetermined volume of additions.
