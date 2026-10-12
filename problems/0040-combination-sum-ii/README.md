@@ -22,3 +22,11 @@ How would zeros or negative candidates change the pruning rule and target-zero b
 
 ## Verification
 Named fixtures and independent generated-input references accompany the implementation. Official judge results are tracked separately in metadata.
+
+## C++23 counterpart
+
+C++ sorts a copy, preserving the caller input. Equal siblings are skipped while different depths may consume further equal values. Positive candidates justify early pruning, and each answer path is copied. Multiplicity is preserved by the unordered-groups checker.
+
+Time: O(n log n + n 2^n) conservative bound. Space: O(n) auxiliary; O(K n) output.
+
+The JSON adapter creates fresh state per case. Named fixtures and 150 deterministic generated inputs compare the two language implementations; existing independent Python oracles supply a separate behavioral reference.
