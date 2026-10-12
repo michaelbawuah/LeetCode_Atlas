@@ -1,0 +1,27 @@
+{
+  "id": 525,
+  "title": "Contiguous Array",
+  "slug": "contiguous-array",
+  "difficulty": "Medium",
+  "patterns": [
+    "prefix-sum",
+    "hash-map"
+  ],
+  "method": "findMaxLength",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n) expected",
+    "space": "O(n)"
+  },
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n) expected",
+    "space": "O(n)"
+  }
+}

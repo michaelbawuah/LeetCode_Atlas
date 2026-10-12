@@ -1,0 +1,70 @@
+[
+  {
+    "name": "one balanced pair",
+    "args": [
+      [
+        0,
+        1
+      ]
+    ],
+    "expected": 2
+  },
+  {
+    "name": "balanced prefix or suffix",
+    "args": [
+      [
+        0,
+        1,
+        0
+      ]
+    ],
+    "expected": 2
+  },
+  {
+    "name": "singleton zero",
+    "args": [
+      [
+        0
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "all ones",
+    "args": [
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "whole array balanced",
+    "args": [
+      [
+        0,
+        0,
+        1,
+        1
+      ]
+    ],
+    "expected": 4
+  },
+  {
+    "name": "reuse earliest balance",
+    "args": [
+      [
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0
+      ]
+    ],
+    "expected": 6
+  }
+]
