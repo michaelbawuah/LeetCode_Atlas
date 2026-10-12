@@ -32,3 +32,7 @@ all heights scales the area equally. Width is `right - left`, and capacity uses
 the minimum of the endpoint heights, not their maximum.
 
 **Follow-up:** why does moving the taller endpoint lack the same safe-discard proof?
+
+## Python and C++23
+
+Both versions use two pointers in O(n) time and O(1) auxiliary space. The C++ method accepts its vector by reference and preserves it, and computes width times height in `long long` before returning the bounded `int` answer. The JSON adapter owns its decoded input copy; that copy is excluded from solution auxiliary space.
