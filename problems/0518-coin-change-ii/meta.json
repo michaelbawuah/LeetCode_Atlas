@@ -1,0 +1,27 @@
+{
+  "id": 518,
+  "title": "Coin Change II",
+  "slug": "coin-change-ii",
+  "difficulty": "Medium",
+  "patterns": [
+    "dynamic-programming"
+  ],
+  "method": "change",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(c(a + 1)) arithmetic operations",
+    "space": "O(a + 1) integer states"
+  },
+  "complexity_language": "Python",
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O(c(a + 1)) with bounded-width saturated arithmetic",
+    "space": "O(a + 1)"
+  }
+}
