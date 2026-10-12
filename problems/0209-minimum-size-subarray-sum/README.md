@@ -34,3 +34,7 @@ windows. The proof depends on positive input values; negative values require
 a different algorithm.
 
 **Follow-up:** which prefix-sum and deque technique handles negative values?
+
+## C++23 counterpart
+
+C++ maintains the current positive-value window sum in `std::int64_t` and its boundaries in signed indexes. Positivity guarantees that repeatedly removing left values eventually makes the total too small, so every value is added and removed at most once. The input is preserved. Time is O(n), auxiliary space O(1), and the wide accumulator keeps intermediate arithmetic safe.
