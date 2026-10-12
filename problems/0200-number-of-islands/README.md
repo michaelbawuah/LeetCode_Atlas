@@ -19,3 +19,7 @@ Diagonal contact does not connect islands. Mark on discovery, not after popping,
 
 ## Follow-up
 Use disjoint sets to support adding one land cell at a time and reporting the evolving component count.
+
+## Python and C++23 comparison
+
+Both sources mark discovered land directly in the supplied grid and traverse iteratively. C++ receives `vector<vector<char>>`; the runner owns the decoded char matrix and reads each JSON cell as a one-character string. The scalar island count is returned, while the runner’s private grid is modified. O(rows × cols) time and worst-case stack space exclude the runner’s O(rows × cols) input copy. All traversal storage uses standard containers.
