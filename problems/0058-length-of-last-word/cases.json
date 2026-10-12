@@ -1,0 +1,37 @@
+[
+  {
+    "name": "two-words",
+    "args": [
+      "Hello World"
+    ],
+    "expected": 5
+  },
+  {
+    "name": "trailing-spaces",
+    "args": [
+      "   fly me   to   the moon  "
+    ],
+    "expected": 4
+  },
+  {
+    "name": "one-word",
+    "args": [
+      "a"
+    ],
+    "expected": 1
+  },
+  {
+    "name": "leading-spaces",
+    "args": [
+      "  abc"
+    ],
+    "expected": 3
+  },
+  {
+    "name": "last-word-short",
+    "args": [
+      "abc def z "
+    ],
+    "expected": 1
+  }
+]
