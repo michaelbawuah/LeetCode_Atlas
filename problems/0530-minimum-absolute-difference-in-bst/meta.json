@@ -1,0 +1,22 @@
+{
+  "id": 530,
+  "title": "Minimum Absolute Difference in BST",
+  "difficulty": "Easy",
+  "method": "getMinimumDifference",
+  "args_types": [
+    "treenode"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(h)"
+  },
+  "patterns": [
+    "tree",
+    "binary-search-tree"
+  ],
+  "checker": "exact",
+  "slug": "minimum-absolute-difference-in-bst",
+  "kind": "method",
+  "judge_status": "not_recorded"
+}
