@@ -1,0 +1,50 @@
+[
+  {
+    "name": "classic_ascii",
+    "args": [
+      "sea",
+      "eat"
+    ],
+    "expected": 231
+  },
+  {
+    "name": "different_lengths",
+    "args": [
+      "delete",
+      "leet"
+    ],
+    "expected": 403
+  },
+  {
+    "name": "equal",
+    "args": [
+      "abc",
+      "abc"
+    ],
+    "expected": 0
+  },
+  {
+    "name": "single_mismatch",
+    "args": [
+      "a",
+      "b"
+    ],
+    "expected": 195
+  },
+  {
+    "name": "repeated",
+    "args": [
+      "aaaa",
+      "aa"
+    ],
+    "expected": 194
+  },
+  {
+    "name": "order_conflict",
+    "args": [
+      "ab",
+      "ba"
+    ],
+    "expected": 194
+  }
+]
