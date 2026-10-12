@@ -1,0 +1,27 @@
+{
+  "id": 684,
+  "title": "Redundant Connection",
+  "slug": "redundant-connection",
+  "difficulty": "Medium",
+  "patterns": [
+    "graph",
+    "union-find"
+  ],
+  "method": "findRedundantConnection",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n alpha(n))",
+    "space": "O(n)"
+  },
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n alpha(n)) amortized",
+    "space": "O(n) auxiliary; O(1) two-endpoint output"
+  }
+}
