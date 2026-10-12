@@ -22,3 +22,9 @@ How would a transaction-dependent fee change the transitions?
 
 ## Verification
 Named fixtures and an independent generated-input oracle accompany this implementation. Official judge results are recorded separately in metadata.
+
+## C++23 counterpart
+
+Prices are read through a vector reference. General processing keeps k + 1 cash and held states; descending transaction updates prevent a previous-state dependency from being overwritten too early. The unlimited branch scans adjacent gains without a suffix copy. All money arithmetic uses int64_t, including the negative held sentinel with ample addition headroom. Under k <= 100 and price <= 1000, profit is at most 100000, so returning int is safe.
+
+C++: **O(1 + n min(k, n)) time; O(k) general case; O(1) unlimited branch space**. Named fixtures and 150 reproducible generated inputs compare this implementation with the Python track.

@@ -20,5 +20,9 @@
     "space": "O(k) general case; O(1) unlimited branch"
   },
   "complexity_language": "Python",
-  "judge_status": "not_recorded"
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O(1 + n min(k, n))",
+    "space": "O(k) general case; O(1) unlimited branch"
+  }
 }
