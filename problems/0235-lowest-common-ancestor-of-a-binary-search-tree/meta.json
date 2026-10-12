@@ -1,0 +1,24 @@
+{
+  "id": 235,
+  "title": "Lowest Common Ancestor of a Binary Search Tree",
+  "difficulty": "Medium",
+  "method": "lowestCommonAncestor",
+  "args_types": [
+    "treenode",
+    "tree_ref",
+    "tree_ref"
+  ],
+  "return_type": "tree_ref",
+  "complexity": {
+    "time": "O(h)",
+    "space": "O(1)"
+  },
+  "patterns": [
+    "tree",
+    "binary-search-tree"
+  ],
+  "checker": "exact",
+  "slug": "lowest-common-ancestor-of-a-binary-search-tree",
+  "kind": "method",
+  "judge_status": "not_recorded"
+}
