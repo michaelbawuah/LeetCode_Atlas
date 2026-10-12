@@ -1,0 +1,27 @@
+{
+  "id": 797,
+  "title": "All Paths From Source to Target",
+  "slug": "all-paths-from-source-to-target",
+  "difficulty": "Medium",
+  "patterns": [
+    "graph",
+    "backtracking"
+  ],
+  "method": "allPathsSourceTarget",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "unordered_rows",
+  "complexity_language": "Python",
+  "complexity": {
+    "time": "O(V 2^V) conservative bound",
+    "space": "O(V) auxiliary; O(P V) output"
+  },
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O(V 2^V) conservative bound",
+    "space": "O(V) auxiliary; O(P V) output"
+  }
+}
