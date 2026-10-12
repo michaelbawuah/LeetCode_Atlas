@@ -22,3 +22,9 @@ How would you reconstruct a minimum-cut partition from these relaxations?
 
 ## Verification
 Named fixtures and an independent generated-input oracle accompany this implementation. Official judge results are recorded separately in metadata.
+
+## C++23 counterpart
+
+The center-expansion core stores O(n + 1) minimum prefix-cut states, and the by-value string also occupies O(n) bytes. A palindrome ending at right can extend the optimum before left by one part. The initial empty-prefix cut count is -1, which makes a whole-string palindrome require zero cuts. Official nonempty inputs keep the result defined.
+
+C++: **O(n² + n) time; O(n) including string copy and prefix-cut states space**. Named fixtures and 150 reproducible generated inputs compare this implementation with the Python track.
