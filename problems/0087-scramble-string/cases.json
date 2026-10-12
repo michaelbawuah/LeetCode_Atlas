@@ -1,0 +1,50 @@
+[
+  {
+    "name": "classic_swap",
+    "args": [
+      "great",
+      "rgeat"
+    ],
+    "expected": true
+  },
+  {
+    "name": "anagram_not_scramble",
+    "args": [
+      "abcde",
+      "caebd"
+    ],
+    "expected": false
+  },
+  {
+    "name": "singleton",
+    "args": [
+      "a",
+      "a"
+    ],
+    "expected": true
+  },
+  {
+    "name": "different_letters",
+    "args": [
+      "ab",
+      "ac"
+    ],
+    "expected": false
+  },
+  {
+    "name": "full_swap",
+    "args": [
+      "ab",
+      "ba"
+    ],
+    "expected": true
+  },
+  {
+    "name": "duplicates",
+    "args": [
+      "aabb",
+      "bbaa"
+    ],
+    "expected": true
+  }
+]

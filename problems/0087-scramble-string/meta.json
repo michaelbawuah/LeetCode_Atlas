@@ -1,0 +1,25 @@
+{
+  "id": 87,
+  "title": "Scramble String",
+  "slug": "scramble-string",
+  "difficulty": "Hard",
+  "patterns": [
+    "dynamic-programming",
+    "interval-dp",
+    "memoization"
+  ],
+  "method": "isScramble",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n\u2074) expected",
+    "space": "O(n\u00b3) cached states; O(n\u00b2) recursive substring storage"
+  },
+  "complexity_language": "Python",
+  "judge_status": "not_recorded"
+}
