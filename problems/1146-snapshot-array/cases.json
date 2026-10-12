@@ -1,0 +1,206 @@
+[
+  {
+    "name": "snapshot-example",
+    "operations": [
+      "SnapshotArray",
+      "set",
+      "snap",
+      "set",
+      "get"
+    ],
+    "arguments": [
+      [
+        3
+      ],
+      [
+        0,
+        5
+      ],
+      [],
+      [
+        0,
+        6
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "expected": [
+      null,
+      null,
+      0,
+      null,
+      5
+    ]
+  },
+  {
+    "name": "default-zero",
+    "operations": [
+      "SnapshotArray",
+      "snap",
+      "get"
+    ],
+    "arguments": [
+      [
+        2
+      ],
+      [],
+      [
+        1,
+        0
+      ]
+    ],
+    "expected": [
+      null,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "coalesce-unsnapped",
+    "operations": [
+      "SnapshotArray",
+      "set",
+      "set",
+      "snap",
+      "get"
+    ],
+    "arguments": [
+      [
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        9
+      ],
+      [],
+      [
+        0,
+        0
+      ]
+    ],
+    "expected": [
+      null,
+      null,
+      null,
+      0,
+      9
+    ]
+  },
+  {
+    "name": "successive-snapshots",
+    "operations": [
+      "SnapshotArray",
+      "set",
+      "snap",
+      "set",
+      "snap",
+      "get",
+      "get"
+    ],
+    "arguments": [
+      [
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [],
+      [
+        0,
+        3
+      ],
+      [],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "expected": [
+      null,
+      null,
+      0,
+      null,
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "name": "unchanged-snapshot",
+    "operations": [
+      "SnapshotArray",
+      "snap",
+      "snap",
+      "get"
+    ],
+    "arguments": [
+      [
+        1
+      ],
+      [],
+      [],
+      [
+        0,
+        1
+      ]
+    ],
+    "expected": [
+      null,
+      0,
+      1,
+      0
+    ]
+  },
+  {
+    "name": "independent-indexes",
+    "operations": [
+      "SnapshotArray",
+      "set",
+      "set",
+      "snap",
+      "get",
+      "get"
+    ],
+    "arguments": [
+      [
+        2
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        8
+      ],
+      [],
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "expected": [
+      null,
+      null,
+      null,
+      0,
+      4,
+      8
+    ]
+  }
+]

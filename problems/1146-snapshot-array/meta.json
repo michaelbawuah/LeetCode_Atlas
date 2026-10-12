@@ -1,0 +1,21 @@
+{
+  "id": 1146,
+  "slug": "snapshot-array",
+  "title": "Snapshot Array",
+  "difficulty": "Medium",
+  "patterns": [
+    "binary-search",
+    "design"
+  ],
+  "method": null,
+  "args_types": [],
+  "kind": "design",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "constructor O(length); set/snap O(1) amortized; get O(log h)",
+    "space": "O(length + U)"
+  },
+  "judge_status": "not_recorded",
+  "class_name": "SnapshotArray"
+}
