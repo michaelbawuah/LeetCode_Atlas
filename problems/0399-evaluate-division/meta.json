@@ -26,5 +26,9 @@
   "numeric_tolerance": {
     "relative": 1e-05,
     "absolute": 1e-05
+  },
+  "complexity_cpp": {
+    "time": "O(E + Q(V + E)) expected",
+    "space": "O(V + E) auxiliary; O(Q) output"
   }
 }
