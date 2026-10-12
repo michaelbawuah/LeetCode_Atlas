@@ -1,0 +1,23 @@
+{
+  "id": 4,
+  "title": "Median of Two Sorted Arrays",
+  "slug": "median-of-two-sorted-arrays",
+  "difficulty": "Hard",
+  "patterns": [
+    "binary-search",
+    "partition"
+  ],
+  "method": "findMedianSortedArrays",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(log(min(m, n) + 1))",
+    "space": "O(1)"
+  },
+  "judge_status": "not_recorded"
+}

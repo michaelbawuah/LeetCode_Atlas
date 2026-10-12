@@ -1,0 +1,105 @@
+[
+  {
+    "name": "odd combined length",
+    "args": [
+      [
+        1,
+        3
+      ],
+      [
+        2
+      ]
+    ],
+    "expected": 2.0
+  },
+  {
+    "name": "even combined length",
+    "args": [
+      [
+        1,
+        2
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    "expected": 2.5
+  },
+  {
+    "name": "first array empty",
+    "args": [
+      [],
+      [
+        1
+      ]
+    ],
+    "expected": 1.0
+  },
+  {
+    "name": "second array empty",
+    "args": [
+      [
+        2
+      ],
+      []
+    ],
+    "expected": 2.0
+  },
+  {
+    "name": "negative middle pair",
+    "args": [
+      [
+        -5,
+        -3
+      ],
+      [
+        -4,
+        -2
+      ]
+    ],
+    "expected": -3.5
+  },
+  {
+    "name": "repeated zeroes",
+    "args": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "expected": 0.0
+  },
+  {
+    "name": "cut at short array boundary",
+    "args": [
+      [
+        1,
+        2
+      ],
+      [
+        10,
+        11,
+        12,
+        13
+      ]
+    ],
+    "expected": 10.5
+  },
+  {
+    "name": "opposite extremes",
+    "args": [
+      [
+        -1000000
+      ],
+      [
+        1000000
+      ]
+    ],
+    "expected": 0.0
+  }
+]
