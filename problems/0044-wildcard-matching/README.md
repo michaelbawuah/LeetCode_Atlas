@@ -22,3 +22,9 @@ What invariant makes a greedy algorithm with one remembered star position correc
 
 ## Verification
 Named fixtures and an independent generated-input oracle accompany this implementation. Official judge results are recorded separately in metadata.
+
+## C++23 counterpart
+
+For text length m and pattern length n, two packed Boolean rows retain O(n + 1) states. By-value string copies occupy O(m + n) bytes and are included in the C++ space bound. Empty text/pattern and repeated stars remain valid. This star consumes arbitrary text rather than repeating a preceding regular-expression atom.
+
+C++: **O(m n + m + n + 1) time; O(m + n + 1) including string copies; O(n + 1) DP states space**. Named fixtures and 150 reproducible generated inputs compare this implementation with the Python track.
