@@ -19,3 +19,8 @@ Do not decrement k while pushing nodes: pushing is not visiting. This traversal 
 
 ## Follow-up
 Store subtree sizes to answer repeated kth-rank queries in O(h) time while supporting inserts and deletes.
+
+## Python and C++23
+Both versions emit inorder values until the kth visit, retaining only pending ancestors. They assume a valid BST and rank, and leave all input links intact.
+
+C++23 submission-method complexity: **O(h + k) time; O(h) space**. Adapter ownership and JSON conversion costs are separate.
