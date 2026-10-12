@@ -1,0 +1,21 @@
+{
+  "id": 17,
+  "slug": "letter-combinations-of-a-phone-number",
+  "title": "Letter Combinations of a Phone Number",
+  "difficulty": "Medium",
+  "patterns": [
+    "backtracking"
+  ],
+  "method": "letterCombinations",
+  "args_types": [
+    "value"
+  ],
+  "kind": "method",
+  "return_type": "value",
+  "checker": "unordered",
+  "complexity": {
+    "time": "O(d * 4^d)",
+    "space": "O(d * 4^d) output; O(d) auxiliary"
+  },
+  "judge_status": "not_recorded"
+}

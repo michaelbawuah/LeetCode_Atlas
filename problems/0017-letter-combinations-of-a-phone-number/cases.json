@@ -1,0 +1,90 @@
+[
+  {
+    "name": "empty",
+    "args": [
+      ""
+    ],
+    "expected": []
+  },
+  {
+    "name": "single-two",
+    "args": [
+      "2"
+    ],
+    "expected": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "name": "single-nine",
+    "args": [
+      "9"
+    ],
+    "expected": [
+      "w",
+      "x",
+      "y",
+      "z"
+    ]
+  },
+  {
+    "name": "two-digits",
+    "args": [
+      "23"
+    ],
+    "expected": [
+      "ad",
+      "ae",
+      "af",
+      "bd",
+      "be",
+      "bf",
+      "cd",
+      "ce",
+      "cf"
+    ]
+  },
+  {
+    "name": "four-choice-pair",
+    "args": [
+      "79"
+    ],
+    "expected": [
+      "pw",
+      "px",
+      "py",
+      "pz",
+      "qw",
+      "qx",
+      "qy",
+      "qz",
+      "rw",
+      "rx",
+      "ry",
+      "rz",
+      "sw",
+      "sx",
+      "sy",
+      "sz"
+    ]
+  },
+  {
+    "name": "repeated-digit",
+    "args": [
+      "22"
+    ],
+    "expected": [
+      "aa",
+      "ab",
+      "ac",
+      "ba",
+      "bb",
+      "bc",
+      "ca",
+      "cb",
+      "cc"
+    ]
+  }
+]
