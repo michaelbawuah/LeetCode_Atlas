@@ -25,3 +25,11 @@ Generate the output by periodic index jumps without storing intermediate rows.
 ## Verification
 
 Named cases and an independent generated-input oracle or operation model accompany the source. Judge results are recorded separately in metadata.
+
+## C++23 counterpart
+
+The C++ implementation accumulates row strings with amortized append, reserves the final n-character result, and copies each retained character once into it. n is input length and r is the requested row count; the early guard avoids allocating excess rows.
+
+Time: O(n + r) amortized string appends. Space: O(n + r), including row storage and returned string.
+
+The JSON adapter creates fresh state per case. Named fixtures and 150 deterministic generated inputs compare the two language implementations; existing independent Python oracles supply a separate behavioral reference.
