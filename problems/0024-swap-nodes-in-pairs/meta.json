@@ -1,0 +1,27 @@
+{
+  "id": 24,
+  "title": "Swap Nodes in Pairs",
+  "difficulty": "Medium",
+  "patterns": [
+    "linked-list",
+    "two-pointers"
+  ],
+  "method": "swapPairs",
+  "args_types": [
+    "listnode"
+  ],
+  "return_type": "listnode",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "slug": "swap-nodes-in-pairs",
+  "kind": "method",
+  "judge_status": "not_recorded",
+  "checker": "exact",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n)",
+    "space": "O(1)"
+  }
+}
