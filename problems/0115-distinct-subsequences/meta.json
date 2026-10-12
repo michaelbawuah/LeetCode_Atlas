@@ -1,0 +1,23 @@
+{
+  "id": 115,
+  "title": "Distinct Subsequences",
+  "slug": "distinct-subsequences",
+  "difficulty": "Hard",
+  "patterns": [
+    "dynamic-programming"
+  ],
+  "method": "numDistinct",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(m n) arithmetic operations",
+    "space": "O(n) integer states"
+  },
+  "complexity_language": "Python",
+  "judge_status": "not_recorded"
+}

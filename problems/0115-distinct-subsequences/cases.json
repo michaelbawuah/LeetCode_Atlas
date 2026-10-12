@@ -1,0 +1,66 @@
+[
+  {
+    "name": "repeated_source_letter",
+    "args": [
+      "rabbbit",
+      "rabbit"
+    ],
+    "expected": 3
+  },
+  {
+    "name": "interleaved_choices",
+    "args": [
+      "babgbag",
+      "bag"
+    ],
+    "expected": 5
+  },
+  {
+    "name": "single_match",
+    "args": [
+      "a",
+      "a"
+    ],
+    "expected": 1
+  },
+  {
+    "name": "single_mismatch",
+    "args": [
+      "a",
+      "b"
+    ],
+    "expected": 0
+  },
+  {
+    "name": "target_longer",
+    "args": [
+      "abc",
+      "abcd"
+    ],
+    "expected": 0
+  },
+  {
+    "name": "choose_two_of_five",
+    "args": [
+      "aaaaa",
+      "aa"
+    ],
+    "expected": 10
+  },
+  {
+    "name": "uppercase_letters",
+    "args": [
+      "ABCDE",
+      "ACE"
+    ],
+    "expected": 1
+  },
+  {
+    "name": "case_sensitive",
+    "args": [
+      "aAaA",
+      "AA"
+    ],
+    "expected": 1
+  }
+]
