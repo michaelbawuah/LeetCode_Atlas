@@ -1,0 +1,23 @@
+{
+  "id": 25,
+  "title": "Reverse Nodes in k-Group",
+  "difficulty": "Hard",
+  "patterns": [
+    "linked-list",
+    "two-pointers"
+  ],
+  "method": "reverseKGroup",
+  "args_types": [
+    "listnode",
+    "value"
+  ],
+  "return_type": "listnode",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "slug": "reverse-nodes-in-k-group",
+  "kind": "method",
+  "judge_status": "not_recorded",
+  "checker": "exact"
+}
