@@ -19,3 +19,9 @@ Check both `fast` and `fast.next` before advancing twice. Equal values are not a
 
 ## Follow-up
 After a meeting, move one pointer to the head and advance both one step at a time to locate the cycle entry.
+
+## C++23 implementation
+
+C++23 Floyd pointers compare node identity and do not modify the list. `ListArena.build_cycle` links the final borrowed node to the requested position and retains independent ownership, so a cycle cannot cause recursive destruction. The adapter snapshots each distinct reachable node and checks all values and links after detection.
+
+C++23 submission cost: **O(n) time; O(1) space**. Here n is node count, h is tree height, w is maximum level width, and L is the number of returned path elements when applicable. Adapter construction, snapshots, and serialization are measured separately.
