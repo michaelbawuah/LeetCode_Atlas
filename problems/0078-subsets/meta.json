@@ -18,5 +18,10 @@
     "time": "O(n 2^n)",
     "space": "O(n 2^n) total including output"
   },
-  "judge_status": "not_recorded"
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n 2^n)",
+    "space": "O(n 2^n) total including output"
+  }
 }

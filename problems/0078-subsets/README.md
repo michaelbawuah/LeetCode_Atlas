@@ -21,3 +21,7 @@ O(n 2^n) time and O(n 2^n) total storage, including the required output. Buildin
 Appending to old subset objects would alter previously emitted answers and break the partition invariant. Each addition creates a new list. The independent oracle enumerates combinations separately for every subset size and verifies the 2^n count. The empty subset belongs to every result, even though LeetCode's input itself has at least one value.
 
 **Follow-up:** return only subsets of exactly size k, and prune choices that cannot reach k.
+
+## Python and C++23 comparison
+
+Both versions double their answer collection for each new value. C++ captures the previous result count before extending, creates a copied subset, then moves that new subset into the output; it holds no reference across vector growth. Python builds the additions before extending its list. Time and total storage are O(n 2^n), including the output. Both retain independent subset objects and preserve the input.
