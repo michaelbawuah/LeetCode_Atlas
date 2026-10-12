@@ -1,0 +1,50 @@
+[
+  {
+    "name": "first-match",
+    "args": [
+      "sadbutsad",
+      "sad"
+    ],
+    "expected": 0
+  },
+  {
+    "name": "missing",
+    "args": [
+      "leetcode",
+      "leeto"
+    ],
+    "expected": -1
+  },
+  {
+    "name": "overlapping-prefix",
+    "args": [
+      "aaaab",
+      "aaab"
+    ],
+    "expected": 1
+  },
+  {
+    "name": "whole-text",
+    "args": [
+      "abc",
+      "abc"
+    ],
+    "expected": 0
+  },
+  {
+    "name": "fallback-chain",
+    "args": [
+      "abababac",
+      "ababac"
+    ],
+    "expected": 2
+  },
+  {
+    "name": "longer-needle",
+    "args": [
+      "a",
+      "aa"
+    ],
+    "expected": -1
+  }
+]

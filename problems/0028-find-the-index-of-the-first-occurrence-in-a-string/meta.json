@@ -1,0 +1,29 @@
+{
+  "id": 28,
+  "slug": "find-the-index-of-the-first-occurrence-in-a-string",
+  "title": "Find the Index of the First Occurrence in a String",
+  "difficulty": "Easy",
+  "patterns": [
+    "string",
+    "kmp",
+    "string-matching"
+  ],
+  "method": "strStr",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "kind": "method",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n + m)",
+    "space": "O(m)"
+  },
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n + m)",
+    "space": "O(m)"
+  }
+}
