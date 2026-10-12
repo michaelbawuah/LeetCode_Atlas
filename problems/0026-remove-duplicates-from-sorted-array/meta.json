@@ -1,0 +1,22 @@
+{
+  "id": 26,
+  "title": "Remove Duplicates from Sorted Array",
+  "slug": "remove-duplicates-from-sorted-array",
+  "difficulty": "Easy",
+  "patterns": [
+    "two-pointers",
+    "in-place"
+  ],
+  "method": "removeDuplicates",
+  "kind": "method",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "judge_status": "not_recorded"
+}
