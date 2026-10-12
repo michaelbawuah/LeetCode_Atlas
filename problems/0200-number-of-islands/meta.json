@@ -1,0 +1,23 @@
+{
+  "id": 200,
+  "title": "Number of Islands",
+  "difficulty": "Medium",
+  "patterns": [
+    "graph",
+    "depth-first-search",
+    "grid"
+  ],
+  "method": "numIslands",
+  "args_types": [
+    "value"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(rows * cols)",
+    "space": "O(rows * cols)"
+  },
+  "slug": "number-of-islands",
+  "kind": "method",
+  "checker": "exact",
+  "judge_status": "not_recorded"
+}
