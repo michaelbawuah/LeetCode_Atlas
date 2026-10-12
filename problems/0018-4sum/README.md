@@ -32,3 +32,7 @@ The checker ignores both quadruplet ordering and result-list ordering while
 preserving duplicate multiplicity, so duplicate answers still fail.
 
 **Follow-up:** how would recursive k-sum share the same two-pointer base case?
+
+## C++23 counterpart
+
+C++ also sorts a copy and skips duplicate anchor and partner values. Each sum widens its first term to `std::int64_t` before addition: four valid ±10⁹ inputs can reach ±4×10⁹ and overflow signed 32-bit arithmetic. The existing wraparound fixture catches a false match caused by that mistake. O(n) auxiliary storage excludes the up-to-O(n³) output; input is preserved.

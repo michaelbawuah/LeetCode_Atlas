@@ -19,5 +19,10 @@
     "time": "O(n^3)",
     "space": "O(n) auxiliary; up to O(n^3) output"
   },
-  "judge_status": "not_recorded"
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(n^3)",
+    "space": "O(n) auxiliary; up to O(n^3) output"
+  }
 }
