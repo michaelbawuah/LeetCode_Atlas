@@ -19,3 +19,6 @@ The zero-height count is one because doing nothing is one completed route. Updat
 
 ## Follow-up
 How does the state change if jumps of one, two, or three stairs are allowed?
+
+## C++23 counterpart
+The C++23 counterpart uses the same rolling recurrence and O(n) time/O(1) auxiliary space. States use int64_t before the final int conversion; n ≤ 45 guarantees the returned count fits. Both versions leave the input unchanged.
