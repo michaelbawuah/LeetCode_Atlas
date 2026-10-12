@@ -1,0 +1,24 @@
+{
+  "id": 50,
+  "slug": "powx-n",
+  "title": "Pow(x, n)",
+  "difficulty": "Medium",
+  "patterns": [
+    "binary-exponentiation"
+  ],
+  "method": "myPow",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "kind": "method",
+  "return_type": "value",
+  "checker": "approx",
+  "complexity": {
+    "time": "O(log(|n| + 1))",
+    "space": "O(1)"
+  },
+  "judge_status": "not_recorded",
+  "rel_tol": 1e-09,
+  "abs_tol": 1e-12
+}
