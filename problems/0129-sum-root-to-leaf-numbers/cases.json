@@ -1,0 +1,79 @@
+[
+  {
+    "name": "two_numbers",
+    "args": [
+      [
+        1,
+        2,
+        3
+      ]
+    ],
+    "expected": 25
+  },
+  {
+    "name": "mixed",
+    "args": [
+      [
+        4,
+        9,
+        0,
+        5,
+        1
+      ]
+    ],
+    "expected": 1026
+  },
+  {
+    "name": "singleton",
+    "args": [
+      [
+        9
+      ]
+    ],
+    "expected": 9
+  },
+  {
+    "name": "zero",
+    "args": [
+      [
+        0
+      ]
+    ],
+    "expected": 0
+  },
+  {
+    "name": "leading_zero",
+    "args": [
+      [
+        0,
+        1,
+        2
+      ]
+    ],
+    "expected": 3
+  },
+  {
+    "name": "internal_zero",
+    "args": [
+      [
+        1,
+        0,
+        2
+      ]
+    ],
+    "expected": 22
+  },
+  {
+    "name": "one_chain",
+    "args": [
+      [
+        1,
+        null,
+        2,
+        null,
+        3
+      ]
+    ],
+    "expected": 123
+  }
+]

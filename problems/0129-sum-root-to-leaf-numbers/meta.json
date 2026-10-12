@@ -1,0 +1,22 @@
+{
+  "id": 129,
+  "title": "Sum Root to Leaf Numbers",
+  "difficulty": "Medium",
+  "patterns": [
+    "tree",
+    "depth-first-search"
+  ],
+  "method": "sumNumbers",
+  "args_types": [
+    "treenode"
+  ],
+  "return_type": "value",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(h)"
+  },
+  "slug": "sum-root-to-leaf-numbers",
+  "kind": "method",
+  "judge_status": "not_recorded",
+  "checker": "exact"
+}
