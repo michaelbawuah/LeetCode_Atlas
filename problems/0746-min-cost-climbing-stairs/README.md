@@ -19,3 +19,6 @@ The cost belongs to the stair being departed, not the destination. The top has n
 
 ## Follow-up
 How would you reconstruct a cheapest route, and what extra storage would that require?
+
+## C++23 counterpart
+The C++23 counterpart uses the same O(n)-time/O(1)-space recurrence. Rolling states are int64_t, so adding a stair cost is widened before the operation. The returned optimum fits the official bounds. Neither version modifies the cost array.
