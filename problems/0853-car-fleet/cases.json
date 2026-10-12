@@ -1,0 +1,128 @@
+[
+  {
+    "name": "three-fleets",
+    "args": [
+      12,
+      [
+        10,
+        8,
+        0,
+        5,
+        3
+      ],
+      [
+        2,
+        4,
+        1,
+        1,
+        3
+      ]
+    ],
+    "expected": 3
+  },
+  {
+    "name": "single-car",
+    "args": [
+      10,
+      [
+        3
+      ],
+      [
+        3
+      ]
+    ],
+    "expected": 1
+  },
+  {
+    "name": "all-catch-front-car",
+    "args": [
+      100,
+      [
+        0,
+        2,
+        4
+      ],
+      [
+        4,
+        2,
+        1
+      ]
+    ],
+    "expected": 1
+  },
+  {
+    "name": "meet-exactly-at-target",
+    "args": [
+      10,
+      [
+        0,
+        5
+      ],
+      [
+        2,
+        1
+      ]
+    ],
+    "expected": 1
+  },
+  {
+    "name": "no-catching",
+    "args": [
+      10,
+      [
+        0,
+        5
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "expected": 2
+  },
+  {
+    "name": "unordered-input",
+    "args": [
+      10,
+      [
+        9,
+        0,
+        4
+      ],
+      [
+        1,
+        10,
+        2
+      ]
+    ],
+    "expected": 2
+  },
+  {
+    "name": "very-fast-single-car",
+    "args": [
+      1,
+      [
+        0
+      ],
+      [
+        1000000
+      ]
+    ],
+    "expected": 1
+  },
+  {
+    "name": "distant-slow-car",
+    "args": [
+      1000000,
+      [
+        0,
+        999999
+      ],
+      [
+        1,
+        1000000
+      ]
+    ],
+    "expected": 2
+  }
+]

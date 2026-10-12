@@ -1,0 +1,24 @@
+{
+  "id": 853,
+  "title": "Car Fleet",
+  "slug": "car-fleet",
+  "difficulty": "Medium",
+  "patterns": [
+    "sorting",
+    "greedy"
+  ],
+  "method": "carFleet",
+  "args_types": [
+    "value",
+    "value",
+    "value"
+  ],
+  "kind": "method",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n log n)",
+    "space": "O(n)"
+  },
+  "judge_status": "not_recorded"
+}
