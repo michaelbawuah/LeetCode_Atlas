@@ -1,0 +1,134 @@
+[
+  {
+    "name": "three steps",
+    "args": [
+      [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      3
+    ],
+    "expected": [
+      5,
+      6,
+      7,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "name": "signed entries",
+    "args": [
+      [
+        -1,
+        -100,
+        3,
+        99
+      ],
+      2
+    ],
+    "expected": [
+      3,
+      99,
+      -1,
+      -100
+    ]
+  },
+  {
+    "name": "singleton large step",
+    "args": [
+      [
+        1
+      ],
+      100000
+    ],
+    "expected": [
+      1
+    ]
+  },
+  {
+    "name": "zero steps",
+    "args": [
+      [
+        1,
+        2,
+        3
+      ],
+      0
+    ],
+    "expected": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "name": "one full revolution",
+    "args": [
+      [
+        1,
+        2,
+        3
+      ],
+      3
+    ],
+    "expected": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "name": "step larger than length",
+    "args": [
+      [
+        1,
+        2,
+        3
+      ],
+      4
+    ],
+    "expected": [
+      3,
+      1,
+      2
+    ]
+  },
+  {
+    "name": "repeated values",
+    "args": [
+      [
+        0,
+        0,
+        1
+      ],
+      1
+    ],
+    "expected": [
+      1,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "integer extremes",
+    "args": [
+      [
+        -2147483648,
+        2147483647
+      ],
+      1
+    ],
+    "expected": [
+      2147483647,
+      -2147483648
+    ]
+  }
+]

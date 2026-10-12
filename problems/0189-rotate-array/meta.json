@@ -1,0 +1,24 @@
+{
+  "id": 189,
+  "title": "Rotate Array",
+  "slug": "rotate-array",
+  "difficulty": "Medium",
+  "patterns": [
+    "two-pointers",
+    "in-place"
+  ],
+  "method": "rotate",
+  "kind": "method",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "judge_status": "not_recorded",
+  "result_from_arg": 0
+}
