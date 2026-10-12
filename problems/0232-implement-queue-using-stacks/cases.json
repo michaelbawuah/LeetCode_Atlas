@@ -1,0 +1,170 @@
+[
+  {
+    "name": "two-values",
+    "operations": [
+      "MyQueue",
+      "push",
+      "push",
+      "peek",
+      "pop",
+      "empty"
+    ],
+    "arguments": [
+      [],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [],
+      [],
+      []
+    ],
+    "expected": [
+      null,
+      null,
+      null,
+      1,
+      1,
+      false
+    ]
+  },
+  {
+    "name": "starts-empty",
+    "operations": [
+      "MyQueue",
+      "empty"
+    ],
+    "arguments": [
+      [],
+      []
+    ],
+    "expected": [
+      null,
+      true
+    ]
+  },
+  {
+    "name": "one-value",
+    "operations": [
+      "MyQueue",
+      "push",
+      "pop",
+      "empty"
+    ],
+    "arguments": [
+      [],
+      [
+        7
+      ],
+      [],
+      []
+    ],
+    "expected": [
+      null,
+      null,
+      7,
+      true
+    ]
+  },
+  {
+    "name": "interleaved",
+    "operations": [
+      "MyQueue",
+      "push",
+      "push",
+      "pop",
+      "push",
+      "peek",
+      "pop",
+      "pop",
+      "empty"
+    ],
+    "arguments": [
+      [],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [],
+      [
+        3
+      ],
+      [],
+      [],
+      [],
+      []
+    ],
+    "expected": [
+      null,
+      null,
+      null,
+      1,
+      null,
+      2,
+      2,
+      3,
+      true
+    ]
+  },
+  {
+    "name": "duplicate-values",
+    "operations": [
+      "MyQueue",
+      "push",
+      "push",
+      "pop",
+      "peek"
+    ],
+    "arguments": [
+      [],
+      [
+        2
+      ],
+      [
+        2
+      ],
+      [],
+      []
+    ],
+    "expected": [
+      null,
+      null,
+      null,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "query-preserves-state",
+    "operations": [
+      "MyQueue",
+      "push",
+      "peek",
+      "peek",
+      "pop",
+      "empty"
+    ],
+    "arguments": [
+      [],
+      [
+        4
+      ],
+      [],
+      [],
+      [],
+      []
+    ],
+    "expected": [
+      null,
+      null,
+      4,
+      4,
+      4,
+      true
+    ]
+  }
+]
