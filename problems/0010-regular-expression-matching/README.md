@@ -17,3 +17,9 @@ Follow-up: add a plus quantifier requiring one or more repetitions. Which transi
 ## Verification
 
 Named fixtures and an independent generated-input reference cover behavior. Judge results are recorded separately in metadata.
+
+## C++23 counterpart
+
+For text length m and pattern length p, two packed Boolean rows retain O(p + 1) states. The judge-facing by-value strings also occupy O(m + p) bytes, which is included in the C++ space bound. Valid patterns give every star a preceding atom, so the column-minus-two transition is defined. Boundary initialization and input copies are included in the time bound.
+
+C++: **O(m p + m + p + 1) time; O(m + p + 1) including string copies; O(p + 1) DP states space**. Named fixtures and 150 reproducible generated inputs compare this implementation with the Python track.

@@ -19,5 +19,10 @@
     "time": "O(mp)",
     "space": "O(p)"
   },
-  "judge_status": "not_recorded"
+  "judge_status": "not_recorded",
+  "complexity_language": "Python",
+  "complexity_cpp": {
+    "time": "O(m p + m + p + 1)",
+    "space": "O(m + p + 1) including string copies; O(p + 1) DP states"
+  }
 }
