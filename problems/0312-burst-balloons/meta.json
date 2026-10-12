@@ -19,5 +19,9 @@
     "space": "O(n\u00b2)"
   },
   "complexity_language": "Python",
-  "judge_status": "not_recorded"
+  "judge_status": "not_recorded",
+  "complexity_cpp": {
+    "time": "O(n\u00b3)",
+    "space": "O(n\u00b2) interval states and O(n) padded copy"
+  }
 }

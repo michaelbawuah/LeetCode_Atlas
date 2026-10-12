@@ -22,3 +22,9 @@ How would you reconstruct one optimal burst order?
 
 ## Verification
 Named fixtures and an independent generated-input oracle accompany this implementation. Official judge results are recorded separately in metadata.
+
+## C++23 counterpart
+
+The original vector is preserved; a padded O(n) copy and an O(n²) int64_t interval table hold the state. Products are widened before multiplication. With at most 300 balloons and values at most 100, every removal contributes at most 1000000, so the final score is at most 300000000 and returning int is safe. The all-100 maximum-size regression exercises large products and accumulated interval scores.
+
+C++: **O(n³) time; O(n²) interval states and O(n) padded copy space**. Named fixtures and 150 reproducible generated inputs compare this implementation with the Python track.
