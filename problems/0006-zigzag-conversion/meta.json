@@ -1,0 +1,23 @@
+{
+  "id": 6,
+  "slug": "zigzag-conversion",
+  "title": "Zigzag Conversion",
+  "difficulty": "Medium",
+  "patterns": [
+    "string",
+    "simulation"
+  ],
+  "method": "convert",
+  "args_types": [
+    "value",
+    "value"
+  ],
+  "kind": "method",
+  "return_type": "value",
+  "checker": "exact",
+  "complexity": {
+    "time": "O(n + r)",
+    "space": "O(n + r)"
+  },
+  "judge_status": "not_recorded"
+}

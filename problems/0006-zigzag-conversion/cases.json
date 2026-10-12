@@ -1,0 +1,42 @@
+[
+  {
+    "name": "three-rows",
+    "args": [
+      "PAYPALISHIRING",
+      3
+    ],
+    "expected": "PAHNAPLSIIGYIR"
+  },
+  {
+    "name": "four-rows",
+    "args": [
+      "PAYPALISHIRING",
+      4
+    ],
+    "expected": "PINALSIGYAHRPI"
+  },
+  {
+    "name": "one-row",
+    "args": [
+      "ABCDE",
+      1
+    ],
+    "expected": "ABCDE"
+  },
+  {
+    "name": "more-rows-than-letters",
+    "args": [
+      "AB",
+      5
+    ],
+    "expected": "AB"
+  },
+  {
+    "name": "two-rows",
+    "args": [
+      "ABCDE",
+      2
+    ],
+    "expected": "ACEBD"
+  }
+]
